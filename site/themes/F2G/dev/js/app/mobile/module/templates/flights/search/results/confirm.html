@@ -1,0 +1,63 @@
+<header>
+    <div class="ui three column grid">
+        <div class="column"><a id="back_btn" class="back_page" href="javascript:;" on-click="back()"><img src="/themes/F2G/img/mobile/arrow_back.png" alt="back"></a></div>
+        <div class="column"><a class="logo" href="javascript:;"><img src="/themes/F2G/img/mobile/logo.png" alt="CheapTickets24.com"></a></div>
+        <div class="column right aligned"></div>
+    </div>
+</header>
+<section>
+    <div class="confermation">
+        <div class="title_stripe">Review your Itinerary</div>
+        {{#each results.confirm}}
+        <div class="direction">
+            <div class="fromto">{{ first(segments.0).from.city }} &#8594 {{ last(segments.0).to.city }} ({{#if 0 == stops(segments.0) }}Non-stop{{else}}{{ stops(segments.0) }} stop(s){{/if}})</div>
+            <div class="time">{{ duration.format(time) }}</div>
+        </div>
+            {{#each segments}}
+            <div class="info_area">
+                <div class="info_ban">
+                    <div class="ui four column grid">
+                        <div class="column">
+                            <img class="country" src="{{ carriers.0.logo }}">
+                            <div class="flight">{{ carriers.0.name }} <br>{{ first(.).flight }}</div>
+                        </div>
+                        <div class="column">
+                            <div class="dep_time">{{ first(.).from.airportCode }} {{ first(.).depart.format('HH:mm') }}</div>
+                            <div class="dep_date">{{ first(.).depart.format('ddd, D MMM, YY') }}</div>
+                        </div>
+                        <div class="column">
+                            <div class="via_bom">{{#if via(.) }}Via{{/if}} <br><span>&#8594</span> <br> {{ via(.) }}</div>
+                        </div>
+                        <div class="column">
+                            <div class="arrival_time">{{ last(.).to.airportCode }} {{ last(.).arrive.format('HH:mm') }}</div>
+                            <div class="arrival_date">{{ first(.).arrive.format('ddd, D MMM, YY') }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        {{/each}}
+
+
+        <div class="price_det">Price Details</div>
+        <div class="price_area">
+            <div class="ui two column grid">
+                <div class="column">
+                    <!--<div class="base_price">Base Fare</div>-->
+                    <!--<div class="taxes_price">Taxes & Fee</div>-->
+                    <div class="total_price">Price</div>
+                </div>
+                <div class="column">
+                    <!--<div class="base_amount">Rs. 61,053.00</div>-->
+                    <!--<div class="taxes_amount">Rs. 47,823.00</div>-->
+                    <div class="total_amount">{{ price(results.confirm) }}</div>
+                </div>
+            </div>
+            <div class="fluid huge ui blue button" on-click="book()">CONTINUE</div>
+        </div>
+
+
+
+    </div>
+
+</section>

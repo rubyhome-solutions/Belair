@@ -1,0 +1,3326 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Belair" id="Project_1a42016f" html="y" template="Default" database="PostgreSQL" >
+	<schema name="public" catalogname="belair_db" schemaname="public" >
+		<table name="ab_status" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="ab_status_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="air_booking" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="booking_type_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="cabin_type_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="traveler_type_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="traveler_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="ticket_number" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="basic_fare" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="fuel_surcharge" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="congestion_charge" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="airport_tax" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="udf_charge" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="jn_tax" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="meal_charge" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="seat_charge" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="passtrough_fee" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="supplier_amendment_fee" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="booking_fee" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="service_tax" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="reseller_amendment_fee" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="commission_or_discount_gross" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="tds" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="baggage_charge" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="air_cart_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="source_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="destination_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="service_type_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="fare_type_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="carrier_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="booking_class" type="char" length="2" decimal="0" jt="1" />
+			<column name="oc_charge" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="airline_pnr" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="crs_pnr" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="departure_ts" type="timestamp" length="29" decimal="6" jt="93" >
+				<comment><![CDATA[First departure from air_routes]]></comment>
+			</column>
+			<column name="arrival_ts" type="timestamp" length="29" decimal="6" jt="93" >
+				<comment><![CDATA[Last arrival from air_routes]]></comment>
+			</column>
+			<column name="reseller_markup_base" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="reseller_markup_fee" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="reseller_markup_tax" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="cancellation_fee" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="special_request_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="payment_process_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="endorsment" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="fare_basis" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="air_source_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" >
+				<defo>now()</defo>
+			</column>
+			<column name="ab_status_id" type="integer" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="tour_code" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="private_fare" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="frequent_flyer" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="other_tax" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="profit" type="real" length="8" decimal="8" jt="7" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="commercial_rule_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="commercial_total_efect" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="cost_center" type="text" length="2147483647" decimal="0" jt="12" />
+			<index name="air_booking_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="air_booking_ab_status_id_fkey" unique="NORMAL" >
+				<column name="ab_status_id" />
+			</index>
+			<index name="air_booking_air_cart_id_idx" unique="NORMAL" >
+				<column name="air_cart_id" />
+			</index>
+			<index name="air_booking_air_source_id_fkey" unique="NORMAL" >
+				<column name="air_source_id" />
+			</index>
+			<index name="air_booking_payment_process_id_fkey" unique="NORMAL" >
+				<column name="payment_process_id" />
+			</index>
+			<index name="air_booking_special_request_id_fkey" unique="NORMAL" >
+				<column name="special_request_id" />
+			</index>
+			<index name="booking_fkindex3" unique="NORMAL" >
+				<column name="traveler_id" />
+			</index>
+			<index name="booking_fkindex4" unique="NORMAL" >
+				<column name="traveler_type_id" />
+			</index>
+			<index name="booking_fkindex7" unique="NORMAL" >
+				<column name="booking_type_id" />
+			</index>
+			<index name="booking_fkindex8" unique="NORMAL" >
+				<column name="cabin_type_id" />
+			</index>
+			<fk name="air_booking_ab_status_id_fkey" to_schema="public" to_table="ab_status" delete_action="restrict" update_action="cascade" >
+				<fk_column name="ab_status_id" pk="id" />
+			</fk>
+			<fk name="air_booking_air_cart_id_fkey" to_schema="public" to_table="air_cart" delete_action="restrict" update_action="cascade" >
+				<fk_column name="air_cart_id" pk="id" />
+			</fk>
+			<fk name="air_booking_air_source_id_fkey" to_schema="public" to_table="air_source" delete_action="restrict" update_action="cascade" >
+				<fk_column name="air_source_id" pk="id" />
+			</fk>
+			<fk name="air_booking_destination_id_fkey" to_schema="public" to_table="airport" delete_action="restrict" update_action="cascade" >
+				<fk_column name="destination_id" pk="id" />
+			</fk>
+			<fk name="air_booking_source_id_fkey" to_schema="public" to_table="airport" delete_action="restrict" update_action="cascade" >
+				<fk_column name="source_id" pk="id" />
+			</fk>
+			<fk name="air_booking_booking_type_id_fkey" to_schema="public" to_table="booking_type" delete_action="restrict" update_action="cascade" >
+				<fk_column name="booking_type_id" pk="id" />
+			</fk>
+			<fk name="air_booking_cabin_type_id_fkey" to_schema="public" to_table="cabin_type" delete_action="restrict" update_action="cascade" >
+				<fk_column name="cabin_type_id" pk="id" />
+			</fk>
+			<fk name="air_booking_carrier_id_fkey" to_schema="public" to_table="carrier" delete_action="restrict" update_action="cascade" >
+				<fk_column name="carrier_id" pk="id" />
+			</fk>
+			<fk name="air_booking_fare_type_id_fkey" to_schema="public" to_table="fare_type" delete_action="restrict" update_action="cascade" >
+				<fk_column name="fare_type_id" pk="id" />
+			</fk>
+			<fk name="air_booking_payment_process_id_fkey" to_schema="public" to_table="payment_process" delete_action="restrict" update_action="cascade" >
+				<fk_column name="payment_process_id" pk="id" />
+			</fk>
+			<fk name="air_booking_service_type_id_fkey" to_schema="public" to_table="service_type" delete_action="restrict" update_action="cascade" >
+				<fk_column name="service_type_id" pk="id" />
+			</fk>
+			<fk name="air_booking_special_request_id_fkey" to_schema="public" to_table="special_request" delete_action="restrict" update_action="cascade" >
+				<fk_column name="special_request_id" pk="id" />
+			</fk>
+			<fk name="air_booking_traveler_id_fkey" to_schema="public" to_table="traveler" delete_action="restrict" update_action="cascade" >
+				<fk_column name="traveler_id" pk="id" />
+			</fk>
+			<fk name="air_booking_traveler_type_id_fkey" to_schema="public" to_table="traveler_type" delete_action="restrict" update_action="cascade" >
+				<fk_column name="traveler_type_id" pk="id" />
+			</fk>
+		</table>
+		<table name="air_cart" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="user_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="booking_status_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="loged_user_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="payment_status_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<column name="note" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="approval_status_id" type="integer" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="client_source_id" type="integer" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="invoice_no" type="varchar" length="25" decimal="0" jt="12" />
+			<column name="promo_codes_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="claim_user_id" type="smallint" length="5" decimal="0" jt="5" >
+				<defo>0</defo>
+			</column>
+			<column name="claimed_ts" type="timestamp" length="29" decimal="6" jt="93" >
+				<defo>now()</defo>
+			</column>
+			<column name="process_flag" type="smallint" length="5" decimal="0" jt="5" >
+				<defo>0</defo>
+			</column>
+			<column name="cart_status_id" type="integer" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="rules" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="website_id" type="smallint" length="5" decimal="0" jt="5" >
+				<defo>1</defo>
+			</column>
+			<index name="air_cart_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="air_cart_approval_status_id_fkey" unique="NORMAL" >
+				<column name="approval_status_id" />
+			</index>
+			<index name="air_cart_client_source_id_idx" unique="NORMAL" >
+				<column name="client_source_id" />
+			</index>
+			<index name="air_cart_created_idx" unique="NORMAL" >
+				<column name="created" />
+			</index>
+			<index name="air_cart_fkindex10" unique="NORMAL" >
+				<column name="booking_status_id" />
+			</index>
+			<index name="air_cart_fkindex2" unique="NORMAL" >
+				<column name="payment_status_id" />
+			</index>
+			<index name="air_cart_fkindex4" unique="NORMAL" >
+				<column name="user_id" />
+			</index>
+			<index name="air_cart_fkindex5" unique="NORMAL" >
+				<column name="loged_user_id" />
+			</index>
+			<fk name="air_cart_approval_status_id_fkey" to_schema="public" to_table="approval_status" delete_action="restrict" update_action="cascade" >
+				<fk_column name="approval_status_id" pk="id" />
+			</fk>
+			<fk name="air_cart_booking_status_id_fkey" to_schema="public" to_table="booking_status" delete_action="restrict" update_action="cascade" >
+				<fk_column name="booking_status_id" pk="id" />
+			</fk>
+			<fk name="air_cart_client_source_id_fkey" to_schema="public" to_table="client_source" delete_action="restrict" update_action="cascade" >
+				<fk_column name="client_source_id" pk="id" />
+			</fk>
+			<fk name="air_cart_payment_status_id_fkey" to_schema="public" to_table="payment_status" delete_action="restrict" update_action="cascade" >
+				<fk_column name="payment_status_id" pk="id" />
+			</fk>
+			<fk name="air_cart_loged_user_id_fkey" to_schema="public" to_table="users" delete_action="restrict" update_action="cascade" >
+				<fk_column name="loged_user_id" pk="id" />
+			</fk>
+			<fk name="air_cart_user_id_fkey" to_schema="public" to_table="users" delete_action="restrict" update_action="cascade" >
+				<fk_column name="user_id" pk="id" />
+			</fk>
+		</table>
+		<table name="air_routes" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="destination_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="source_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="carrier_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="flight_number" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="departure_ts" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" />
+			<column name="arrival_ts" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" />
+			<column name="order_" type="smallint" length="5" decimal="0" jt="5" >
+				<defo>1</defo>
+			</column>
+			<column name="air_booking_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="source_terminal" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="destination_terminal" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="fare_basis" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="booking_class" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="meal" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="seat" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="aircraft" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="ts" type="text" length="2147483647" decimal="0" jt="12" >
+				<comment><![CDATA[Technical stops]]></comment>
+			</column>
+			<index name="air_routes_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="air_routes_fkindex1" unique="NORMAL" >
+				<column name="carrier_id" />
+			</index>
+			<index name="air_routes_fkindex2" unique="NORMAL" >
+				<column name="source_id" />
+			</index>
+			<index name="air_routes_fkindex3" unique="NORMAL" >
+				<column name="destination_id" />
+			</index>
+			<fk name="air_routes_air_booking_id_fkey" to_schema="public" to_table="air_booking" delete_action="cascade" update_action="cascade" >
+				<fk_column name="air_booking_id" pk="id" />
+			</fk>
+			<fk name="air_routes_destination_id_fkey" to_schema="public" to_table="airport" delete_action="restrict" update_action="cascade" >
+				<fk_column name="destination_id" pk="id" />
+			</fk>
+			<fk name="air_routes_source_id_fkey" to_schema="public" to_table="airport" delete_action="restrict" update_action="cascade" >
+				<fk_column name="source_id" pk="id" />
+			</fk>
+			<fk name="air_routes_carrier_id_fkey" to_schema="public" to_table="carrier" delete_action="restrict" update_action="cascade" >
+				<fk_column name="carrier_id" pk="id" />
+			</fk>
+		</table>
+		<table name="air_source" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="username" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="password" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="tran_username" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="tran_password" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="iata_number" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="profile_pcc" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="spare1" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="spare2" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="spare3" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="exclude_carriers" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="include_pass_carriers" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="balance" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="backend_id" type="integer" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="is_active" type="smallint" length="5" decimal="0" jt="5" >
+				<defo>1</defo>
+			</column>
+			<column name="type_id" type="smallint" length="5" decimal="0" jt="5" >
+				<comment><![CDATA[1=Domestic, 2=International, 3=Both]]></comment>
+			</column>
+			<column name="international_auto_ticket" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="domestic_auto_ticket" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="display_in_search" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="balance_link" type="integer" length="10" decimal="0" jt="4" >
+				<comment><![CDATA[From which scrapper to read the balance]]></comment>
+			</column>
+			<column name="currency_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<index name="air_source_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="provider_name_idx" unique="UNIQUE" >
+				<column name="name" />
+			</index>
+			<index name="air_source_currency_id_idx" unique="NORMAL" >
+				<column name="currency_id" />
+			</index>
+			<fk name="air_source_balance_fkey" to_schema="public" to_table="air_source" delete_action="restrict" update_action="cascade" >
+				<fk_column name="balance_link" pk="id" />
+			</fk>
+			<fk name="air_source_backend_id_fkey" to_schema="public" to_table="backend" delete_action="restrict" update_action="cascade" >
+				<fk_column name="backend_id" pk="id" />
+			</fk>
+			<fk name="air_source_currency_id_fkey" to_schema="public" to_table="currency" delete_action="restrict" update_action="cascade" >
+				<fk_column name="currency_id" pk="id" />
+			</fk>
+		</table>
+		<table name="aircart_file" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="aircart_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="note" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="path" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<index name="aircart_file_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="aircart_file_fkindex1" unique="NORMAL" >
+				<column name="aircart_id" />
+			</index>
+			<fk name="aircart_file_aircart_id_fkey" to_schema="public" to_table="air_cart" delete_action="cascade" update_action="cascade" >
+				<fk_column name="aircart_id" pk="id" />
+			</fk>
+		</table>
+		<table name="airline_list" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="carrier_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="is_active" type="bool" length="1" decimal="0" jt="-7" mandatory="y" >
+				<defo>true</defo>
+			</column>
+			<column name="is_domestic" type="bool" length="1" decimal="0" jt="-7" mandatory="y" >
+				<defo>true</defo>
+			</column>
+			<index name="airline_list_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="airline_list_fkindex1" unique="NORMAL" >
+				<column name="carrier_id" />
+			</index>
+			<fk name="airline_list_carrier_id_fkey" to_schema="public" to_table="carrier" delete_action="restrict" update_action="cascade" >
+				<fk_column name="carrier_id" pk="id" />
+			</fk>
+		</table>
+		<table name="airport" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="city_code" type="char" length="3" decimal="0" jt="1" mandatory="y" />
+			<column name="city_name" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="airport_type" type="smallint" length="5" decimal="0" jt="5" />
+			<column name="airport_name" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="airport_code" type="char" length="3" decimal="0" jt="1" mandatory="y" />
+			<column name="country_code" type="char" length="2" decimal="0" jt="1" mandatory="y" />
+			<column name="is_top" type="smallint" length="5" decimal="0" jt="5" >
+				<defo>0</defo>
+			</column>
+			<column name="timezone" type="text" length="2147483647" decimal="0" jt="12" />
+			<index name="airport_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="airport_cityname_idx" unique="NORMAL" >
+				<column name="city_name" />
+			</index>
+			<index name="airport_code_idx" unique="NORMAL" >
+				<column name="airport_code" />
+			</index>
+			<index name="airport_country_idx" unique="NORMAL" >
+				<column name="country_code" />
+			</index>
+		</table>
+		<table name="airsource_queue" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="queue_to" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="air_source_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="queue_number" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="type_id" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>3</defo>
+			</column>
+			<column name="carriers" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" >
+				<defo>&#039;*&#039;::text</defo>
+			</column>
+			<column name="auto_ticket" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<index name="airsource_queue_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="airsource_queue_fkindex1" unique="NORMAL" >
+				<column name="air_source_id" />
+			</index>
+			<index name="airsource_queue_fkindex2" unique="NORMAL" >
+				<column name="queue_to" />
+			</index>
+			<fk name="airsource_queue_air_source_id_fkey" to_schema="public" to_table="air_source" delete_action="cascade" update_action="cascade" >
+				<fk_column name="air_source_id" pk="id" />
+			</fk>
+			<fk name="airsource_queue_queue_to_fkey" to_schema="public" to_table="air_source" delete_action="cascade" update_action="cascade" >
+				<fk_column name="queue_to" pk="id" />
+			</fk>
+		</table>
+		<table name="airsource_rule" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="air_source_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="filter" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="order_" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<index name="pk_airsource_rule" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="idx_airsource_rule_0" unique="NORMAL" >
+				<column name="air_source_id" />
+			</index>
+			<fk name="fk_airsource_rule" to_schema="public" to_table="air_source" delete_action="cascade" update_action="cascade" >
+				<fk_column name="air_source_id" pk="id" />
+			</fk>
+		</table>
+		<table name="amendment" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="air_booking_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="payment_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="payment_status_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="invoice_status_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="amendment_status_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="amendment_type_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="loged_user_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<column name="flight_number" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="departure_ts" type="timestamp" length="29" decimal="6" jt="93" />
+			<column name="arrival_ts" type="timestamp" length="29" decimal="6" jt="93" />
+			<column name="airline_pnr" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="crs_pnr" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="ticket_number" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="basic_fare" type="real" length="8" decimal="8" jt="7" />
+			<column name="fuel_surcharge" type="real" length="8" decimal="8" jt="7" />
+			<column name="congestion_charge" type="real" length="8" decimal="8" jt="7" />
+			<column name="airport_tax" type="real" length="8" decimal="8" jt="7" />
+			<column name="udf_charge" type="real" length="8" decimal="8" jt="7" />
+			<column name="jn_tax" type="real" length="8" decimal="8" jt="7" />
+			<column name="meal_charge" type="real" length="8" decimal="8" jt="7" />
+			<column name="seat_charge" type="real" length="8" decimal="8" jt="7" />
+			<column name="passtrough_fee" type="real" length="8" decimal="8" jt="7" />
+			<column name="supplier_amendment_fee" type="real" length="8" decimal="8" jt="7" />
+			<column name="booking_fee" type="real" length="8" decimal="8" jt="7" />
+			<column name="service_tax" type="real" length="8" decimal="8" jt="7" />
+			<column name="reseller_amendment_fee" type="real" length="8" decimal="8" jt="7" />
+			<column name="commission_or_discount_gross" type="real" length="8" decimal="8" jt="7" />
+			<column name="tds" type="real" length="8" decimal="8" jt="7" />
+			<column name="refund_tds" type="bool" length="1" decimal="0" jt="-7" >
+				<defo>false</defo>
+			</column>
+			<column name="amount_to_charge" type="real" length="8" decimal="8" jt="7" />
+			<column name="oc_charge" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="air_route_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="note" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="group_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="changes" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="prev_ab_status_id" type="integer" length="10" decimal="0" jt="4" >
+				<defo>2</defo>
+			</column>
+			<column name="credit_debit_note_no" type="varchar" length="25" decimal="0" jt="12" />
+			<column name="other_tax" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<index name="amendment_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="amendment_fkindex10" unique="NORMAL" >
+				<column name="air_booking_id" />
+			</index>
+			<index name="amendment_fkindex2" unique="NORMAL" >
+				<column name="loged_user_id" />
+			</index>
+			<index name="amendment_fkindex3" unique="NORMAL" >
+				<column name="amendment_status_id" />
+			</index>
+			<index name="amendment_fkindex4" unique="NORMAL" >
+				<column name="amendment_type_id" />
+			</index>
+			<index name="amendment_fkindex5" unique="NORMAL" >
+				<column name="invoice_status_id" />
+			</index>
+			<index name="amendment_fkindex6" unique="NORMAL" >
+				<column name="payment_status_id" />
+			</index>
+			<index name="amendment_fkindex9" unique="NORMAL" >
+				<column name="payment_id" />
+			</index>
+			<index name="amendment_group_id_idx" unique="NORMAL" >
+				<column name="group_id" />
+			</index>
+			<fk name="amendment_prev_ab_status_id_fkey" to_schema="public" to_table="ab_status" delete_action="restrict" update_action="cascade" >
+				<fk_column name="prev_ab_status_id" pk="id" />
+			</fk>
+			<fk name="amendment_air_booking_id_fkey" to_schema="public" to_table="air_booking" delete_action="restrict" update_action="cascade" >
+				<fk_column name="air_booking_id" pk="id" />
+			</fk>
+			<fk name="amendment_air_route_id_fkey" to_schema="public" to_table="air_routes" delete_action="restrict" update_action="cascade" >
+				<fk_column name="air_route_id" pk="id" />
+			</fk>
+			<fk name="amendment_amendment_status_id_fkey" to_schema="public" to_table="amendment_status" delete_action="restrict" update_action="cascade" >
+				<fk_column name="amendment_status_id" pk="id" />
+			</fk>
+			<fk name="amendment_amendment_type_id_fkey" to_schema="public" to_table="amendment_type" delete_action="restrict" update_action="cascade" >
+				<fk_column name="amendment_type_id" pk="id" />
+			</fk>
+			<fk name="amendment_invoice_status_id_fkey" to_schema="public" to_table="invoice_status" delete_action="restrict" update_action="cascade" >
+				<fk_column name="invoice_status_id" pk="id" />
+			</fk>
+			<fk name="amendment_payment_id_fkey" to_schema="public" to_table="payment" delete_action="restrict" update_action="cascade" >
+				<fk_column name="payment_id" pk="id" />
+			</fk>
+			<fk name="amendment_payment_status_id_fkey" to_schema="public" to_table="payment_status" delete_action="restrict" update_action="cascade" >
+				<fk_column name="payment_status_id" pk="id" />
+			</fk>
+			<fk name="amendment_loged_user_id_fkey" to_schema="public" to_table="users" delete_action="restrict" update_action="cascade" >
+				<fk_column name="loged_user_id" pk="id" />
+			</fk>
+		</table>
+		<table name="amendment_status" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="amendment_status_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="amendment_type" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="amendment_type_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="approval_status" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="approval_status_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="backend" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="search" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="book" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="hold" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="balance" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="pnr_acquisition" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="api_source" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="pnr_resync" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="pnr_cancel" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="pnr_list" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="pnr_book" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="wsdl_file" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="pnr_load" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="city_pairs" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="carrier_id" type="integer" length="10" decimal="0" jt="4" />
+			<index name="backend_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="backend_name_unq_idx" unique="UNIQUE" >
+				<column name="name" />
+			</index>
+			<index name="backend_carrier_id_fkey" unique="NORMAL" >
+				<column name="carrier_id" />
+			</index>
+			<fk name="backend_carrier_id_fkey" to_schema="public" to_table="carrier" delete_action="restrict" update_action="cascade" >
+				<fk_column name="carrier_id" pk="id" />
+			</fk>
+		</table>
+		<table name="bin_list" >
+			<column name="bin" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="type_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="sub_brand" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="country_code" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="country_name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="bank" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="card_type" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="card_category" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="latitude" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="longitude" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="domestic" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<index name="bin_list_pkey" unique="PRIMARY_KEY" >
+				<column name="bin" />
+			</index>
+			<index name="bin_list_fkindex1" unique="NORMAL" >
+				<column name="type_id" />
+			</index>
+			<fk name="bin_list_type_id_fkey" to_schema="public" to_table="cc_type" delete_action="restrict" update_action="cascade" >
+				<fk_column name="type_id" pk="id" />
+			</fk>
+		</table>
+		<table name="booking_log" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="booking_id" type="bigint" length="19" decimal="0" jt="-5" mandatory="y" />
+			<column name="browser" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="browser_version" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="platform" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="is_mobile" type="smallint" length="5" decimal="0" jt="5" >
+				<defo>0</defo>
+			</column>
+			<column name="logs" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="booking_data" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="enabled" type="smallint" length="5" decimal="0" jt="5" >
+				<defo>1</defo>
+			</column>
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" >
+				<defo>now()</defo>
+			</column>
+			<column name="client_source_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="air_cart_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="source" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="destination" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="type_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="is_domestic" type="integer" length="10" decimal="0" jt="4" />
+			<column name="carrier_id" type="integer" length="10" decimal="0" jt="4" />
+			<index name="booking_log_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="booking_log_arch" >
+			<column name="id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="booking_id" type="bigint" length="19" decimal="0" jt="-5" mandatory="y" />
+			<column name="browser" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="browser_version" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="platform" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="is_mobile" type="smallint" length="5" decimal="0" jt="5" >
+				<defo>0</defo>
+			</column>
+			<column name="logs" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="booking_data" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="enabled" type="smallint" length="5" decimal="0" jt="5" >
+				<defo>1</defo>
+			</column>
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" />
+			<column name="client_source_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="air_cart_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="source" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="destination" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="type_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="is_domestic" type="integer" length="10" decimal="0" jt="4" />
+			<column name="carrier_id" type="integer" length="10" decimal="0" jt="4" />
+			<index name="booking_log_created_idx" unique="NORMAL" >
+				<column name="created" />
+			</index>
+		</table>
+		<table name="booking_status" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="message" type="text" length="2147483647" decimal="0" jt="12" />
+			<index name="booking_status_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="booking_type" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="booking_type_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="cabin_type" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="cabin_type_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="carrier" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="code" type="char" length="2" decimal="0" jt="1" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="is_domestic" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="disabled" type="smallint" length="5" decimal="0" jt="5" >
+				<defo>0</defo>
+			</column>
+			<index name="carrier_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="carrier_code_idx" unique="UNIQUE" >
+				<column name="code" />
+			</index>
+			<index name="carrier_name_idx" unique="NORMAL" >
+				<column name="name" />
+			</index>
+		</table>
+		<table name="carrier_helpline" >
+			<column name="carrier_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="text" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="code" type="char" length="2" decimal="0" jt="1" />
+			<index name="carrier_helpline_pkey" unique="PRIMARY_KEY" >
+				<column name="carrier_id" />
+			</index>
+			<fk name="carrier_helpline_carrier_id_fkey" to_schema="public" to_table="carrier" delete_action="cascade" update_action="cascade" >
+				<fk_column name="carrier_id" pk="id" />
+			</fk>
+		</table>
+		<table name="cart_status_log" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="air_cart_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="booking_status_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="cart_status_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="user_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<column name="time_taken_in_min" type="integer" length="10" decimal="0" jt="4" />
+			<index name="cart_status_log_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="cart_status_log_air_cart_id_fkey" to_schema="public" to_table="air_cart" delete_action="cascade" update_action="cascade" >
+				<fk_column name="air_cart_id" pk="id" />
+			</fk>
+		</table>
+		<table name="cc" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="user_info_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="number" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="exp_date" type="date" length="13" decimal="0" jt="91" mandatory="y" />
+			<column name="note" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="verification_status" type="smallint" length="5" decimal="0" jt="5" >
+				<defo>0</defo>
+			</column>
+			<column name="mask" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="hash" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="type_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="bin_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>431940</defo>
+			</column>
+			<column name="deleted" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="status_3d" type="smallint" length="5" decimal="0" jt="5" />
+			<index name="cc_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="cc_bin_id_fkey" unique="NORMAL" >
+				<column name="bin_id" />
+			</index>
+			<index name="cc_fkindex1" unique="NORMAL" >
+				<column name="user_info_id" />
+			</index>
+			<index name="cc_hash_idx" unique="NORMAL" >
+				<column name="hash" />
+			</index>
+			<index name="cc_type_id_fkey" unique="NORMAL" >
+				<column name="type_id" />
+			</index>
+			<fk name="cc_bin_id_fkey" to_schema="public" to_table="bin_list" delete_action="restrict" update_action="cascade" >
+				<fk_column name="bin_id" pk="bin" />
+			</fk>
+			<fk name="cc_type_id_fkey" to_schema="public" to_table="cc_type" delete_action="restrict" update_action="cascade" >
+				<fk_column name="type_id" pk="id" />
+			</fk>
+			<fk name="cc_user_info_id_fkey" to_schema="public" to_table="user_info" delete_action="restrict" update_action="cascade" >
+				<fk_column name="user_info_id" pk="id" />
+			</fk>
+		</table>
+		<table name="cc_passtru" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="carrier_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="cc_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="user_info_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="scope" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>1</defo>
+				<comment><![CDATA[1-Client pt, 2-All B2C, 3-All B2B, 4-All B2E, 5-All]]></comment>
+			</column>
+			<index name="cc_passtru_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="cc_passtru_fkindex1" unique="NORMAL" >
+				<column name="user_info_id" />
+			</index>
+			<index name="cc_passtru_fkindex2" unique="NORMAL" >
+				<column name="cc_id" />
+			</index>
+			<index name="cc_passtru_fkindex3" unique="NORMAL" >
+				<column name="carrier_id" />
+			</index>
+			<fk name="cc_passtru_carrier_id_fkey" to_schema="public" to_table="carrier" delete_action="cascade" update_action="cascade" >
+				<fk_column name="carrier_id" pk="id" />
+			</fk>
+			<fk name="cc_passtru_cc_id_fkey" to_schema="public" to_table="cc" delete_action="cascade" update_action="cascade" >
+				<fk_column name="cc_id" pk="id" />
+			</fk>
+			<fk name="cc_passtru_user_info_id_fkey" to_schema="public" to_table="user_info" delete_action="cascade" update_action="cascade" >
+				<fk_column name="user_info_id" pk="id" />
+			</fk>
+		</table>
+		<table name="cc_type" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="code" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="validator" type="text" length="2147483647" decimal="0" jt="12" />
+			<index name="cc_type_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="city" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="state_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="city_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="city_fkindex1" unique="NORMAL" >
+				<column name="state_id" />
+			</index>
+			<fk name="city_state_id_fkey" to_schema="public" to_table="state" delete_action="restrict" update_action="cascade" >
+				<fk_column name="state_id" pk="id" />
+			</fk>
+		</table>
+		<table name="city_pairs" >
+			<column name="source_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="destination_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="carrier_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<index name="city_pairs_pkey" unique="PRIMARY_KEY" >
+				<column name="source_id" />
+				<column name="destination_id" />
+				<column name="carrier_id" />
+			</index>
+			<index name="city_pairs_fkindex1" unique="NORMAL" >
+				<column name="destination_id" />
+			</index>
+			<index name="city_pairs_fkindex2" unique="NORMAL" >
+				<column name="source_id" />
+			</index>
+			<index name="city_pairs_fkindex3" unique="NORMAL" >
+				<column name="carrier_id" />
+			</index>
+			<fk name="city_pairs_destination_id_fkey" to_schema="public" to_table="airport" delete_action="cascade" update_action="cascade" >
+				<fk_column name="destination_id" pk="id" />
+			</fk>
+			<fk name="city_pairs_source_id_fkey" to_schema="public" to_table="airport" delete_action="cascade" update_action="cascade" >
+				<fk_column name="source_id" pk="id" />
+			</fk>
+			<fk name="city_pairs_carrier_id_fkey" to_schema="public" to_table="carrier" delete_action="cascade" update_action="cascade" >
+				<fk_column name="carrier_id" pk="id" />
+			</fk>
+		</table>
+		<table name="client_source" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="url" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="is_active" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="username" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="password" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="officeid" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="component" type="text" length="2147483647" decimal="0" jt="12" />
+			<index name="client_source_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="supplier_name_idx" unique="UNIQUE" >
+				<column name="name" />
+			</index>
+		</table>
+		<table name="cms" >
+			<column name="type_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="user_info_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="content" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="cms_pkey" unique="PRIMARY_KEY" >
+				<column name="type_id" />
+				<column name="user_info_id" />
+			</index>
+			<index name="cms_fkindex1" unique="NORMAL" >
+				<column name="user_info_id" />
+			</index>
+			<fk name="cms_user_info_id_fkey" to_schema="public" to_table="user_info" delete_action="cascade" update_action="cascade" >
+				<fk_column name="user_info_id" pk="id" />
+			</fk>
+		</table>
+		<table name="commercial_plan" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="commercial_plan_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="commercial_rule" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="client_source_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="service_type_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="carrier_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="filter" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="iata_rate_total" type="float8" length="17" decimal="17" jt="6" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="iata_rate_base" type="float8" length="17" decimal="17" jt="6" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="iata_rate_yq" type="float8" length="17" decimal="17" jt="6" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="plb_rate_total" type="float8" length="17" decimal="17" jt="6" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="plb_rate_base" type="float8" length="17" decimal="17" jt="6" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="plb_rate_yq" type="float8" length="17" decimal="17" jt="6" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="book_rate_total" type="float8" length="17" decimal="17" jt="6" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="book_rate_base" type="float8" length="17" decimal="17" jt="6" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="book_rate_yq" type="float8" length="17" decimal="17" jt="6" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="book_fix_adult" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="book_fix_child" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="book_fix_infant" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="book_fix_per_journey" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="cancel_fix_adult" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="cancel_fix_child" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="cancel_fix_infant" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="cancel_fix_per_journey" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="reschedule_fix_adult" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="reschedule_fix_child" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="reschedule_fix_infant" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="reschedule_fix_per_journey" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="markup_rate_total" type="float8" length="17" decimal="17" jt="6" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="markup_rate_base" type="float8" length="17" decimal="17" jt="6" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="markup_rate_yq" type="float8" length="17" decimal="17" jt="6" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="markup_fix_adult" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="markup_fix_child" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="markup_fix_infant" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="markup_fix_per_journey" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="air_source_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="order_" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="markup_added_to" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<index name="commercial_rule_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="commercial_rule_air_source_id_fkey" unique="NORMAL" >
+				<column name="air_source_id" />
+			</index>
+			<index name="commercial_rule_fkindex1" unique="NORMAL" >
+				<column name="carrier_id" />
+			</index>
+			<index name="commercial_rule_fkindex2" unique="NORMAL" >
+				<column name="service_type_id" />
+			</index>
+			<index name="commercial_rule_fkindex3" unique="NORMAL" >
+				<column name="client_source_id" />
+			</index>
+			<fk name="commercial_rule_air_source_id_fkey" to_schema="public" to_table="air_source" delete_action="restrict" update_action="cascade" >
+				<fk_column name="air_source_id" pk="id" />
+			</fk>
+			<fk name="commercial_rule_carrier_id_fkey" to_schema="public" to_table="carrier" delete_action="restrict" update_action="cascade" >
+				<fk_column name="carrier_id" pk="id" />
+			</fk>
+			<fk name="commercial_rule_client_source_id_fkey" to_schema="public" to_table="client_source" delete_action="restrict" update_action="cascade" >
+				<fk_column name="client_source_id" pk="id" />
+			</fk>
+			<fk name="commercial_rule_service_type_id_fkey" to_schema="public" to_table="service_type" delete_action="restrict" update_action="cascade" >
+				<fk_column name="service_type_id" pk="id" />
+			</fk>
+		</table>
+		<table name="commercial_x_rule" >
+			<column name="plan_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="rule_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<index name="commercial_x_rule_pkey" unique="PRIMARY_KEY" >
+				<column name="plan_id" />
+				<column name="rule_id" />
+			</index>
+			<index name="commercial_x_rule_fkindex1" unique="NORMAL" >
+				<column name="plan_id" />
+			</index>
+			<index name="commercial_x_rule_fkindex2" unique="NORMAL" >
+				<column name="rule_id" />
+			</index>
+			<fk name="commercial_x_rule_plan_id_fkey" to_schema="public" to_table="commercial_plan" delete_action="restrict" update_action="cascade" >
+				<fk_column name="plan_id" pk="id" />
+			</fk>
+			<fk name="commercial_x_rule_rule_id_fkey" to_schema="public" to_table="commercial_rule" delete_action="cascade" update_action="cascade" >
+				<fk_column name="rule_id" pk="id" />
+			</fk>
+		</table>
+		<table name="commision_client_source" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="client_source_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="amount" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="type" type="smallint" length="5" decimal="0" jt="5" />
+			<column name="way_type" type="smallint" length="5" decimal="0" jt="5" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<index name="commision_client_source_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="commision_client_source_fkey1" to_schema="public" to_table="client_source" delete_action="cascade" update_action="cascade" >
+				<fk_column name="client_source_id" pk="id" />
+			</fk>
+		</table>
+		<table name="commision_cs_cost" >
+			<column name="cs_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="cost_date" type="date" length="13" decimal="0" jt="91" mandatory="y" />
+			<column name="way_type" type="smallint" length="5" decimal="0" jt="5" mandatory="y" />
+			<column name="avg_cost" type="real" length="8" decimal="8" jt="7" />
+			<index name="commision_cs_cost_pkey" unique="PRIMARY_KEY" >
+				<column name="cs_id" />
+				<column name="cost_date" />
+				<column name="way_type" />
+			</index>
+			<fk name="commision_cs_cost_fkey1" to_schema="public" to_table="client_source" delete_action="cascade" update_action="cascade" >
+				<fk_column name="cs_id" pk="id" />
+			</fk>
+		</table>
+		<table name="commision_gds_lcc" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="carrier_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="amount" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="type" type="smallint" length="5" decimal="0" jt="5" />
+			<column name="way_type" type="smallint" length="5" decimal="0" jt="5" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<index name="commision_gds_lcc_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="commision_gds_lcc_fkey1" to_schema="public" to_table="carrier" delete_action="cascade" update_action="cascade" >
+				<fk_column name="carrier_id" pk="id" />
+			</fk>
+		</table>
+		<table name="commision_pg" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="pg_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="amount" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="type" type="smallint" length="5" decimal="0" jt="5" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<index name="commision_pg_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="commision_pg_fkey1" to_schema="public" to_table="payment_gateway" delete_action="cascade" update_action="cascade" >
+				<fk_column name="pg_id" pk="id" />
+			</fk>
+		</table>
+		<table name="commission_rule" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="air_source_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="service_type_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="carrier_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="filter" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="iata_rate_base" type="float8" length="17" decimal="17" jt="6" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="iata_rate_yq" type="float8" length="17" decimal="17" jt="6" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="plb_rate_base" type="float8" length="17" decimal="17" jt="6" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="plb_rate_yq" type="float8" length="17" decimal="17" jt="6" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="fix" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="fix_per_journey" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="order_" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<index name="commission_rule_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="commission_rule_fkindex1" unique="NORMAL" >
+				<column name="carrier_id" />
+			</index>
+			<index name="commission_rule_fkindex2" unique="NORMAL" >
+				<column name="service_type_id" />
+			</index>
+			<index name="commission_rule_fkindex3" unique="NORMAL" >
+				<column name="air_source_id" />
+			</index>
+			<fk name="commission_rule_air_source_id_fkey" to_schema="public" to_table="air_source" delete_action="restrict" update_action="cascade" >
+				<fk_column name="air_source_id" pk="id" />
+			</fk>
+			<fk name="commission_rule_carrier_id_fkey" to_schema="public" to_table="carrier" delete_action="restrict" update_action="cascade" >
+				<fk_column name="carrier_id" pk="id" />
+			</fk>
+			<fk name="commission_rule_service_type_id_fkey" to_schema="public" to_table="service_type" delete_action="restrict" update_action="cascade" >
+				<fk_column name="service_type_id" pk="id" />
+			</fk>
+		</table>
+		<table name="country" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="code" type="char" length="2" decimal="0" jt="1" mandatory="y" />
+			<column name="phonecode" type="varchar" length="6" decimal="0" jt="12" />
+			<index name="country_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="country_name_idx" unique="UNIQUE" >
+				<column name="code" />
+			</index>
+		</table>
+		<table name="credit_request" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="approver_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="creator_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="amount" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="use_date" type="date" length="13" decimal="0" jt="91" mandatory="y" />
+			<column name="payback_date" type="date" length="13" decimal="0" jt="91" mandatory="y" />
+			<column name="reason" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="html" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="status_id" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<index name="credit_request_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="credit_request_fkindex1" unique="NORMAL" >
+				<column name="creator_id" />
+			</index>
+			<index name="credit_request_fkindex2" unique="NORMAL" >
+				<column name="approver_id" />
+			</index>
+			<index name="credit_request_status_idx" unique="NORMAL" >
+				<column name="status_id" />
+			</index>
+			<fk name="credit_request_approver_id_fkey" to_schema="public" to_table="users" delete_action="restrict" update_action="cascade" >
+				<fk_column name="approver_id" pk="id" />
+			</fk>
+			<fk name="credit_request_creator_id_fkey" to_schema="public" to_table="users" delete_action="restrict" update_action="cascade" >
+				<fk_column name="creator_id" pk="id" />
+			</fk>
+		</table>
+		<table name="currency" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="code" type="char" length="3" decimal="0" jt="1" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="sign" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="rate" type="float8" length="17" decimal="17" jt="6" />
+			<column name="updated" type="timestamptz" length="35" decimal="6" jt="93" />
+			<index name="currency_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="currencies_name_idx" unique="UNIQUE" >
+				<column name="code" />
+			</index>
+		</table>
+		<table name="deposit_search" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="approver_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="creator_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="payment_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="amount" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="date_made" type="date" length="13" decimal="0" jt="91" mandatory="y" />
+			<column name="reason" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="html" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="status_id" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="bank_id" type="smallint" length="5" decimal="0" jt="5" mandatory="y" />
+			<index name="deposit_search_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="deposit_search_fkindex1" unique="NORMAL" >
+				<column name="payment_id" />
+			</index>
+			<index name="deposit_search_fkindex2" unique="NORMAL" >
+				<column name="creator_id" />
+			</index>
+			<index name="deposit_search_fkindex3" unique="NORMAL" >
+				<column name="approver_id" />
+			</index>
+			<index name="deposit_search_status_idx" unique="NORMAL" >
+				<column name="status_id" />
+			</index>
+			<fk name="deposit_search_payment_id_fkey" to_schema="public" to_table="payment" delete_action="restrict" update_action="cascade" >
+				<fk_column name="payment_id" pk="id" />
+			</fk>
+			<fk name="deposit_search_approver_id_fkey" to_schema="public" to_table="users" delete_action="restrict" update_action="cascade" >
+				<fk_column name="approver_id" pk="id" />
+			</fk>
+			<fk name="deposit_search_creator_id_fkey" to_schema="public" to_table="users" delete_action="restrict" update_action="cascade" >
+				<fk_column name="creator_id" pk="id" />
+			</fk>
+		</table>
+		<table name="doc_type" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="doc_type_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="email_sms_log" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="contact_type" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="sender" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="receiver" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="content" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" >
+				<defo>now()</defo>
+			</column>
+			<column name="air_cart_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="content_type" type="integer" length="10" decimal="0" jt="4" />
+			<column name="user_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="subject" type="text" length="2147483647" decimal="0" jt="12" />
+			<index name="email_sms_log_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="email_sms_log_air_cart_id_fkey" to_schema="public" to_table="air_cart" delete_action="cascade" update_action="cascade" >
+				<fk_column name="air_cart_id" pk="id" />
+			</fk>
+			<fk name="emil_sms_log_user_id_fkey" to_schema="public" to_table="users" delete_action="cascade" update_action="cascade" >
+				<fk_column name="user_id" pk="id" />
+			</fk>
+		</table>
+		<table name="fare_type" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="fare_type_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="ff_carriers" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="carrier_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="carrier_code" type="char" length="2" decimal="0" jt="1" />
+			<index name="ff_carriers_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="carrier_id_fkey" to_schema="public" to_table="carrier" delete_action="restrict" update_action="cascade" >
+				<fk_column name="carrier_id" pk="id" />
+			</fk>
+		</table>
+		<table name="ff_settings" >
+			<column name="ff_carriers_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="traveler_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="code" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="ff_settings_pkey" unique="PRIMARY_KEY" >
+				<column name="ff_carriers_id" />
+				<column name="traveler_id" />
+			</index>
+			<index name="ff_settings_fkindex1" unique="NORMAL" >
+				<column name="ff_carriers_id" />
+			</index>
+			<index name="ff_settings_fkindex2" unique="NORMAL" >
+				<column name="traveler_id" />
+			</index>
+			<fk name="ff_settings_ff_carriers_id_fkey" to_schema="public" to_table="ff_carriers" delete_action="restrict" update_action="cascade" >
+				<fk_column name="ff_carriers_id" pk="id" />
+			</fk>
+			<fk name="ff_settings_traveler_id_fkey" to_schema="public" to_table="traveler" delete_action="restrict" update_action="cascade" >
+				<fk_column name="traveler_id" pk="id" />
+			</fk>
+		</table>
+		<table name="fraud" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="pay_gate_log_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="cc_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="ip" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="email" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="phone" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<index name="fraud_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="fraud_fkindex1" unique="NORMAL" >
+				<column name="cc_id" />
+			</index>
+			<index name="fraud_fkindex2" unique="NORMAL" >
+				<column name="pay_gate_log_id" />
+			</index>
+			<fk name="fraud_cc_id_fkey" to_schema="public" to_table="cc" delete_action="cascade" update_action="cascade" >
+				<fk_column name="cc_id" pk="id" />
+			</fk>
+			<fk name="fraud_pay_gate_log_id_fkey" to_schema="public" to_table="pay_gate_log" delete_action="cascade" update_action="cascade" >
+				<fk_column name="pay_gate_log_id" pk="id" />
+			</fk>
+		</table>
+		<table name="gender" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="gender_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="invoice_status" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="code" type="char" length="1" decimal="0" jt="1" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" />
+			<index name="invoice_status_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="invoice_status_code_unq" unique="UNIQUE" >
+				<column name="code" />
+			</index>
+		</table>
+		<table name="log" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="user_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="operation_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<column name="old_value" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="new_value" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="id_value" type="integer" length="10" decimal="0" jt="4" />
+			<index name="log_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="log_date_idx" unique="NORMAL" >
+				<column name="created" />
+			</index>
+			<index name="log_fkindex2" unique="NORMAL" >
+				<column name="user_id" />
+			</index>
+			<index name="log_operation_idx" unique="NORMAL" >
+				<column name="operation_id" />
+			</index>
+			<fk name="log_operation_id_fkey" to_schema="public" to_table="log_operation" delete_action="restrict" update_action="cascade" >
+				<fk_column name="operation_id" pk="id" />
+			</fk>
+			<fk name="log_user_id_fkey" to_schema="public" to_table="users" delete_action="restrict" update_action="cascade" >
+				<fk_column name="user_id" pk="id" />
+			</fk>
+		</table>
+		<table name="log_operation" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="table_name" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="id_filed_name" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="value_field_name" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="is_reversible" type="bool" length="1" decimal="0" jt="-7" mandatory="y" >
+				<defo>true</defo>
+			</column>
+			<index name="log_operation_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="log_operation_name_unq" unique="UNIQUE" >
+				<column name="name" />
+			</index>
+		</table>
+		<table name="meal_list" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="meal_list_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="meal_list_names" unique="UNIQUE" >
+				<column name="name" />
+			</index>
+		</table>
+		<table name="notes" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="note" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<index name="notes_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="params" >
+			<column name="id" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="info" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="params_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="pay_gate_log" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="status_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="user_info_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="action_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="pg_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="cc_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="hash_our" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="hash_response" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="pg_type" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="payment_mode" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="token" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="amount" type="real" length="8" decimal="8" jt="7" mandatory="y" />
+			<column name="convince_fee" type="real" length="8" decimal="8" jt="7" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="discount" type="real" length="8" decimal="8" jt="7" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="error" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="bank_ref" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="unmapped_status" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="raw_response" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="updated" type="timestamp" length="29" decimal="6" jt="93" >
+				<defo>now()</defo>
+			</column>
+			<column name="note" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="user_ip" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="user_proxy" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="user_browser" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="reason" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="request_id" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="geoip" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="air_cart_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="status_3d" type="smallint" length="5" decimal="0" jt="5" />
+			<column name="callback" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="currency_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="original_currency_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="original_amount" type="real" length="8" decimal="8" jt="7" />
+			<column name="original_convince_fee" type="real" length="8" decimal="8" jt="7" />
+			<index name="pay_gate_log_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="pay_gate_log_air_cart_id_idx" unique="NORMAL" >
+				<column name="air_cart_id" />
+			</index>
+			<index name="pay_gate_log_currency_id_idx" unique="NORMAL" >
+				<column name="currency_id" />
+			</index>
+			<index name="pay_gate_log_fkindex1" unique="NORMAL" >
+				<column name="cc_id" />
+			</index>
+			<index name="pay_gate_log_fkindex2" unique="NORMAL" >
+				<column name="pg_id" />
+			</index>
+			<index name="pay_gate_log_fkindex3" unique="NORMAL" >
+				<column name="action_id" />
+			</index>
+			<index name="pay_gate_log_fkindex4" unique="NORMAL" >
+				<column name="user_info_id" />
+			</index>
+			<index name="pay_gate_log_fkindex5" unique="NORMAL" >
+				<column name="status_id" />
+			</index>
+			<index name="pay_gate_log_original_currency_id_idx" unique="NORMAL" >
+				<column name="original_currency_id" />
+			</index>
+			<fk name="pay_gate_log_air_cart_id_fkey" to_schema="public" to_table="air_cart" delete_action="restrict" update_action="cascade" >
+				<fk_column name="air_cart_id" pk="id" />
+			</fk>
+			<fk name="pay_gate_log_cc_id_fkey" to_schema="public" to_table="cc" delete_action="restrict" update_action="cascade" >
+				<fk_column name="cc_id" pk="id" />
+			</fk>
+			<fk name="pay_gate_log_currency_id_fkey" to_schema="public" to_table="currency" delete_action="restrict" update_action="cascade" >
+				<fk_column name="currency_id" pk="id" />
+			</fk>
+			<fk name="pay_gate_log_original_currency_id_fkey" to_schema="public" to_table="currency" delete_action="restrict" update_action="cascade" >
+				<fk_column name="original_currency_id" pk="id" />
+			</fk>
+			<fk name="pay_gate_log_pg_id_fkey" to_schema="public" to_table="payment_gateway" delete_action="restrict" update_action="cascade" >
+				<fk_column name="pg_id" pk="id" />
+			</fk>
+			<fk name="pay_gate_log_action_id_fkey" to_schema="public" to_table="tr_action" delete_action="restrict" update_action="cascade" >
+				<fk_column name="action_id" pk="id" />
+			</fk>
+			<fk name="pay_gate_log_status_id_fkey" to_schema="public" to_table="tr_status" delete_action="restrict" update_action="cascade" >
+				<fk_column name="status_id" pk="id" />
+			</fk>
+			<fk name="pay_gate_log_user_info_id_fkey" to_schema="public" to_table="user_info" delete_action="restrict" update_action="cascade" >
+				<fk_column name="user_info_id" pk="id" />
+			</fk>
+		</table>
+		<table name="payment" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="distributor_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="loged_user_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="transfer_type_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="user_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="currency_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<column name="old_balance" type="float8" length="17" decimal="17" jt="6" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="amount" type="float8" length="17" decimal="17" jt="6" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="new_balance" type="float8" length="17" decimal="17" jt="6" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="tds" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="approved" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="markup" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="service_tax" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="commision" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="note" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="pay_gate_log_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="air_cart_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="xchange_rate" type="real" length="8" decimal="8" jt="7" >
+				<defo>1</defo>
+				<comment><![CDATA[The xchange rate is the relation accounting currency / payment or airCart currency]]></comment>
+			</column>
+			<column name="receipt_no" type="varchar" length="25" decimal="0" jt="12" />
+			<index name="payment_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="payment_air_cart_id_idx" unique="NORMAL" >
+				<column name="air_cart_id" />
+			</index>
+			<index name="payment_fkindex1" unique="NORMAL" >
+				<column name="currency_id" />
+			</index>
+			<index name="payment_fkindex2" unique="NORMAL" >
+				<column name="user_id" />
+			</index>
+			<index name="payment_fkindex3" unique="NORMAL" >
+				<column name="transfer_type_id" />
+			</index>
+			<index name="payment_fkindex4" unique="NORMAL" >
+				<column name="loged_user_id" />
+			</index>
+			<index name="payment_fkindex5" unique="NORMAL" >
+				<column name="distributor_id" />
+			</index>
+			<index name="payment_pay_gate_log_id_fkey" unique="NORMAL" >
+				<column name="pay_gate_log_id" />
+			</index>
+			<fk name="payment_air_cart_id_fkey" to_schema="public" to_table="air_cart" delete_action="restrict" update_action="cascade" >
+				<fk_column name="air_cart_id" pk="id" />
+			</fk>
+			<fk name="payment_currency_id_fkey" to_schema="public" to_table="currency" delete_action="restrict" update_action="cascade" >
+				<fk_column name="currency_id" pk="id" />
+			</fk>
+			<fk name="payment_pay_gate_log_id_fkey" to_schema="public" to_table="pay_gate_log" delete_action="restrict" update_action="cascade" >
+				<fk_column name="pay_gate_log_id" pk="id" />
+			</fk>
+			<fk name="payment_transfer_type_id_fkey" to_schema="public" to_table="transfer_type" delete_action="restrict" update_action="cascade" >
+				<fk_column name="transfer_type_id" pk="id" />
+			</fk>
+			<fk name="payment_distributor_id_fkey" to_schema="public" to_table="user_info" delete_action="restrict" update_action="cascade" >
+				<fk_column name="distributor_id" pk="id" />
+			</fk>
+			<fk name="payment_loged_user_id_fkey" to_schema="public" to_table="users" delete_action="cascade" update_action="restrict" >
+				<fk_column name="loged_user_id" pk="id" />
+			</fk>
+			<fk name="payment_user_id_fkey" to_schema="public" to_table="users" delete_action="restrict" update_action="cascade" >
+				<fk_column name="user_id" pk="id" />
+			</fk>
+		</table>
+		<table name="payment_gateway" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="note" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="merchant_id" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="salt" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="base_url" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="is_active" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="api_url" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="enc_key" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="username" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="password" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="access_code" type="text" length="2147483647" decimal="0" jt="12" />
+			<index name="payment_gateway_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="payment_process" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" >
+				<comment><![CDATA[Root or Client pass-trought]]></comment>
+			</column>
+			<index name="payment_process_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="payment_status" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="code" type="char" length="1" decimal="0" jt="1" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="payment_status_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="payment_status_code_unq" unique="UNIQUE" >
+				<column name="code" />
+			</index>
+		</table>
+		<table name="permission" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="staff_only" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<index name="permission_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="permissions_name_unq" unique="UNIQUE" >
+				<column name="name" />
+			</index>
+		</table>
+		<table name="permission_x_type" >
+			<column name="permission_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="user_type_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<index name="permission_x_type_pkey" unique="PRIMARY_KEY" >
+				<column name="permission_id" />
+				<column name="user_type_id" />
+			</index>
+			<index name="permission_x_type_fkindex1" unique="NORMAL" >
+				<column name="permission_id" />
+			</index>
+			<index name="permission_x_type_fkindex2" unique="NORMAL" >
+				<column name="user_type_id" />
+			</index>
+			<fk name="permission_x_type_permission_id_fkey" to_schema="public" to_table="permission" delete_action="restrict" update_action="cascade" >
+				<fk_column name="permission_id" pk="id" />
+			</fk>
+			<fk name="permission_x_type_user_type_id_fkey" to_schema="public" to_table="user_type" delete_action="restrict" update_action="cascade" >
+				<fk_column name="user_type_id" pk="id" />
+			</fk>
+		</table>
+		<table name="permission_x_user" >
+			<column name="user_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="permission_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<index name="permission_x_user_pkey" unique="PRIMARY_KEY" >
+				<column name="user_id" />
+				<column name="permission_id" />
+			</index>
+			<index name="permission_x_user_fkindex1" unique="NORMAL" >
+				<column name="permission_id" />
+			</index>
+			<index name="permission_x_user_fkindex2" unique="NORMAL" >
+				<column name="user_id" />
+			</index>
+			<fk name="permission_x_user_permission_id_fkey" to_schema="public" to_table="permission" delete_action="restrict" update_action="cascade" >
+				<fk_column name="permission_id" pk="id" />
+			</fk>
+			<fk name="permission_x_user_user_id_fkey" to_schema="public" to_table="users" delete_action="restrict" update_action="cascade" >
+				<fk_column name="user_id" pk="id" />
+			</fk>
+		</table>
+		<table name="pf_code" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="air_source_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="carrier_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="user_info_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="code" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="scope" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<index name="pf_code_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="pf_code_fkindex1" unique="NORMAL" >
+				<column name="user_info_id" />
+			</index>
+			<index name="pf_code_fkindex2" unique="NORMAL" >
+				<column name="carrier_id" />
+			</index>
+			<index name="pf_code_fkindex3" unique="NORMAL" >
+				<column name="air_source_id" />
+			</index>
+			<fk name="pf_code_air_source_id_fkey" to_schema="public" to_table="air_source" delete_action="cascade" update_action="cascade" >
+				<fk_column name="air_source_id" pk="id" />
+			</fk>
+			<fk name="pf_code_carrier_id_fkey" to_schema="public" to_table="carrier" delete_action="cascade" update_action="cascade" >
+				<fk_column name="carrier_id" pk="id" />
+			</fk>
+			<fk name="pf_code_user_info_id_fkey" to_schema="public" to_table="user_info" delete_action="cascade" update_action="cascade" >
+				<fk_column name="user_info_id" pk="id" />
+			</fk>
+		</table>
+		<table name="preferences" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="traveler_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="int_seat_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="int_meal_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="department" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="designation" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="cost_center" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="emp_code" type="text" length="2147483647" decimal="0" jt="12" />
+			<index name="preferences_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="preferences_fkindex1" unique="NORMAL" >
+				<column name="traveler_id" />
+			</index>
+			<index name="preferences_fkindex5" unique="NORMAL" >
+				<column name="int_meal_id" />
+			</index>
+			<index name="preferences_fkindex6" unique="NORMAL" >
+				<column name="int_seat_id" />
+			</index>
+			<fk name="preferences_int_meal_id_fkey" to_schema="public" to_table="meal_list" delete_action="restrict" update_action="cascade" >
+				<fk_column name="int_meal_id" pk="id" />
+			</fk>
+			<fk name="preferences_int_seat_id_fkey" to_schema="public" to_table="seat_list" delete_action="restrict" update_action="cascade" >
+				<fk_column name="int_seat_id" pk="id" />
+			</fk>
+			<fk name="preferences_traveler_id_fkey" to_schema="public" to_table="traveler" delete_action="cascade" update_action="cascade" >
+				<fk_column name="traveler_id" pk="id" />
+			</fk>
+		</table>
+		<table name="process" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="air_source_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="search_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="queued" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<column name="started" type="timestamp" length="29" decimal="6" jt="93" />
+			<column name="ended" type="timestamp" length="29" decimal="6" jt="93" />
+			<column name="result" type="smallint" length="5" decimal="0" jt="5" />
+			<column name="note" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="parameters" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="pid" type="integer" length="10" decimal="0" jt="4" />
+			<column name="start_at" type="timestamp" length="29" decimal="6" jt="93" />
+			<column name="command" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="time_needed" type="integer" length="10" decimal="0" jt="4" />
+			<column name="memory" type="integer" length="10" decimal="0" jt="4" />
+			<index name="process_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="process_fkindex1" unique="NORMAL" >
+				<column name="search_id" />
+			</index>
+			<index name="process_fkindex2" unique="NORMAL" >
+				<column name="air_source_id" />
+			</index>
+			<fk name="process_air_source_id_fkey" to_schema="public" to_table="air_source" delete_action="restrict" update_action="cascade" >
+				<fk_column name="air_source_id" pk="id" />
+			</fk>
+			<fk name="process_search_id_fkey" to_schema="public" to_table="searches" delete_action="restrict" update_action="cascade" >
+				<fk_column name="search_id" pk="id" />
+			</fk>
+		</table>
+		<table name="promo_codes" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="code" type="varchar" length="15" decimal="0" jt="12" mandatory="y" />
+			<column name="promo_type_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="date_valid_from" type="date" length="13" decimal="0" jt="91" />
+			<column name="date_valid_to" type="date" length="13" decimal="0" jt="91" />
+			<column name="promo_date_type_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="ref_user_info_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="max_count" type="integer" length="10" decimal="0" jt="4" />
+			<column name="value" type="real" length="8" decimal="8" jt="7" >
+				<defo>0</defo>
+			</column>
+			<column name="promo_discount_type_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" >
+				<defo>now()</defo>
+			</column>
+			<column name="enabled" type="integer" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="min_amount" type="real" length="8" decimal="8" jt="7" />
+			<column name="max_value" type="real" length="8" decimal="8" jt="7" />
+			<column name="ref_value" type="real" length="8" decimal="8" jt="7" />
+			<column name="ref_value_type_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="ref_max_value" type="real" length="8" decimal="8" jt="7" />
+			<column name="filter" type="text" length="2147483647" decimal="0" jt="12" />
+			<index name="promo_codes_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="promo_codes_promo_date_type_id_fkey" unique="NORMAL" >
+				<column name="promo_date_type_id" />
+			</index>
+			<index name="promo_codes_promo_discount_type_id_fkey" unique="NORMAL" >
+				<column name="promo_discount_type_id" />
+			</index>
+			<index name="promo_codes_promo_type_id_fkey" unique="NORMAL" >
+				<column name="promo_type_id" />
+			</index>
+			<index name="promo_codes_user_info_id_fkey" unique="NORMAL" >
+				<column name="ref_user_info_id" />
+			</index>
+			<fk name="promo_codes_promo_date_type_id_fkey" to_schema="public" to_table="promo_date_type" delete_action="restrict" update_action="cascade" >
+				<fk_column name="promo_date_type_id" pk="id" />
+			</fk>
+			<fk name="promo_codes_promo_discount_type_id_fkey" to_schema="public" to_table="promo_discount_type" delete_action="restrict" update_action="cascade" >
+				<fk_column name="promo_discount_type_id" pk="id" />
+			</fk>
+		</table>
+		<table name="promo_date_type" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="code" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" />
+			<index name="promo_date_type_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="promo_discount_type" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="code" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" />
+			<index name="promo_discount_type_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="promo_log" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="promo_codes_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="air_cart_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="value" type="real" length="8" decimal="8" jt="7" />
+			<column name="promo_code" type="varchar" length="15" decimal="0" jt="12" />
+			<column name="data" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<index name="promo_log_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="promo_log_promo_codes_id_fkey" to_schema="public" to_table="promo_codes" >
+				<fk_column name="promo_codes_id" pk="id" />
+			</fk>
+		</table>
+		<table name="promo_payment_type" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" />
+			<index name="promo_payment_type_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="promo_type" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="code" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" />
+			<index name="promo_type_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="rc_transform_log" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="rc_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="total_fare" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="hash_str" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<index name="rc_transform_log_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="routes_cache" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="destination_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="origin_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="air_source_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="traveler_type_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="service_type_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="carrier_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="last_check" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<column name="updated" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<column name="departure_date" type="date" length="13" decimal="0" jt="91" mandatory="y" />
+			<column name="departure_time" type="time" length="15" decimal="6" jt="92" mandatory="y" />
+			<column name="arrival_date" type="date" length="13" decimal="0" jt="91" mandatory="y" />
+			<column name="arrival_time" type="time" length="15" decimal="6" jt="92" mandatory="y" />
+			<column name="return_date" type="date" length="13" decimal="0" jt="91" />
+			<column name="return_time" type="time" length="15" decimal="6" jt="92" />
+			<column name="round_trip" type="smallint" length="5" decimal="0" jt="5" >
+				<defo>0</defo>
+			</column>
+			<column name="tax_yq" type="real" length="8" decimal="8" jt="7" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="tax_jn" type="real" length="8" decimal="8" jt="7" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="tax_udf" type="real" length="8" decimal="8" jt="7" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="tax_psf" type="real" length="8" decimal="8" jt="7" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="tax_other" type="real" length="8" decimal="8" jt="7" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="total_tax_correction" type="real" length="8" decimal="8" jt="7" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="stops" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="legs_json" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="fare_basis" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="base_fare" type="real" length="8" decimal="8" jt="7" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="total_taxes" type="real" length="8" decimal="8" jt="7" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="total_fare" type="real" length="8" decimal="8" jt="7" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="hits" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="flight_number" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="order_" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>11</defo>
+				<comment><![CDATA[11 first of one, 12=first of two, 22=second of two ...]]></comment>
+			</column>
+			<column name="grouping" type="bigint" length="19" decimal="0" jt="-5" >
+				<comment><![CDATA[How the cache results are grouped together]]></comment>
+			</column>
+			<column name="hash_str" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="hash_id" type="bigint" length="19" decimal="0" jt="-5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="cabin_type_id" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="search_id" type="bigint" length="19" decimal="0" jt="-5" />
+			<column name="luggage" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="refundable" type="integer" length="10" decimal="0" jt="4" />
+			<index name="routes_cache_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="routes_cache_cabin_type_id_fkey" unique="NORMAL" >
+				<column name="cabin_type_id" />
+			</index>
+			<index name="routes_cache_dep_date_idx" unique="NORMAL" >
+				<column name="departure_date" />
+			</index>
+			<index name="routes_cache_fkindex1" unique="NORMAL" >
+				<column name="carrier_id" />
+			</index>
+			<index name="routes_cache_fkindex4" unique="NORMAL" >
+				<column name="air_source_id" />
+			</index>
+			<index name="routes_cache_fkindex5" unique="NORMAL" >
+				<column name="service_type_id" />
+			</index>
+			<index name="routes_cache_fkindex6" unique="NORMAL" >
+				<column name="traveler_type_id" />
+			</index>
+			<index name="routes_cache_fkindex8" unique="NORMAL" >
+				<column name="origin_id" />
+			</index>
+			<index name="routes_cache_fkindex9" unique="NORMAL" >
+				<column name="destination_id" />
+			</index>
+			<index name="routes_cache_grouping_idx" unique="NORMAL" >
+				<column name="grouping" />
+			</index>
+			<index name="routes_cache_hash_idx" unique="NORMAL" >
+				<column name="hash_id" />
+			</index>
+			<index name="routes_cache_order__idx" unique="NORMAL" >
+				<column name="order_" />
+			</index>
+			<index name="routes_cache_search_id_idx" unique="NORMAL" >
+				<column name="search_id" />
+			</index>
+			<fk name="routes_cache_air_source_id_fkey" to_schema="public" to_table="air_source" delete_action="restrict" update_action="cascade" >
+				<fk_column name="air_source_id" pk="id" />
+			</fk>
+			<fk name="routes_cache_destination_id_fkey" to_schema="public" to_table="airport" delete_action="restrict" update_action="cascade" >
+				<fk_column name="destination_id" pk="id" />
+			</fk>
+			<fk name="routes_cache_origin_id_fkey" to_schema="public" to_table="airport" delete_action="restrict" update_action="cascade" >
+				<fk_column name="origin_id" pk="id" />
+			</fk>
+			<fk name="routes_cache_cabin_type_id_fkey" to_schema="public" to_table="cabin_type" delete_action="restrict" update_action="cascade" >
+				<fk_column name="cabin_type_id" pk="id" />
+			</fk>
+			<fk name="routes_cache_carrier_id_fkey" to_schema="public" to_table="carrier" delete_action="restrict" update_action="cascade" >
+				<fk_column name="carrier_id" pk="id" />
+			</fk>
+			<fk name="routes_cache_search_id_fkey" to_schema="public" to_table="searches" delete_action="cascade" update_action="cascade" >
+				<fk_column name="search_id" pk="id" />
+			</fk>
+			<fk name="routes_cache_service_type_id_fkey" to_schema="public" to_table="service_type" delete_action="restrict" update_action="cascade" >
+				<fk_column name="service_type_id" pk="id" />
+			</fk>
+			<fk name="routes_cache_traveler_type_id_fkey" to_schema="public" to_table="traveler_type" delete_action="restrict" update_action="cascade" >
+				<fk_column name="traveler_type_id" pk="id" />
+			</fk>
+		</table>
+		<table name="search_count" >
+			<column name="date_" type="date" length="13" decimal="0" jt="91" mandatory="y" />
+			<column name="client_source_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="value" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="carts_count" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<index name="search_count_pkey" unique="PRIMARY_KEY" >
+				<column name="date_" />
+				<column name="client_source_id" />
+			</index>
+			<index name="search_count_fkindex1" unique="NORMAL" >
+				<column name="client_source_id" />
+			</index>
+			<fk name="search_count_client_source_id_fkey" to_schema="public" to_table="client_source" delete_action="cascade" update_action="cascade" >
+				<fk_column name="client_source_id" pk="id" />
+			</fk>
+		</table>
+		<table name="searches" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="user_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<column name="origin" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="destination" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="type_id" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="is_domestic" type="smallint" length="5" decimal="0" jt="5" mandatory="y" />
+			<column name="date_depart" type="date" length="13" decimal="0" jt="91" mandatory="y" />
+			<column name="date_return" type="date" length="13" decimal="0" jt="91" />
+			<column name="adults" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="children" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="infants" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="category" type="smallint" length="5" decimal="0" jt="5" >
+				<defo>1</defo>
+			</column>
+			<column name="client_source_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="hits" type="integer" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<index name="searches_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="search_fkindex1" unique="NORMAL" >
+				<column name="user_id" />
+			</index>
+			<index name="searches_client_source_id_idx" unique="NORMAL" >
+				<column name="client_source_id" />
+			</index>
+			<index name="searches_created_idx" unique="NORMAL" >
+				<column name="created" />
+			</index>
+			<fk name="searches_client_source_id_fkey" to_schema="public" to_table="client_source" delete_action="cascade" update_action="cascade" >
+				<fk_column name="client_source_id" pk="id" />
+			</fk>
+			<fk name="searches_user_id_fkey" to_schema="public" to_table="users" delete_action="restrict" update_action="cascade" >
+				<fk_column name="user_id" pk="id" />
+			</fk>
+		</table>
+		<table name="searches_arch" >
+			<column name="id" type="bigint" length="19" decimal="0" jt="-5" mandatory="y" />
+			<column name="user_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<column name="origin" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="destination" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="type_id" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="is_domestic" type="smallint" length="5" decimal="0" jt="5" mandatory="y" />
+			<column name="date_depart" type="date" length="13" decimal="0" jt="91" mandatory="y" />
+			<column name="date_return" type="date" length="13" decimal="0" jt="91" />
+			<column name="adults" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="children" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="infants" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="category" type="smallint" length="5" decimal="0" jt="5" >
+				<defo>1</defo>
+			</column>
+			<column name="client_source_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="hits" type="integer" length="10" decimal="0" jt="4" >
+				<defo>0</defo>
+			</column>
+			<index name="searches_arch_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="searches_arch_client_source_id_idx" unique="NORMAL" >
+				<column name="client_source_id" />
+			</index>
+			<index name="searches_arch_created_idx" unique="NORMAL" >
+				<column name="created" />
+			</index>
+			<fk name="searches_arch_client_source_id_fkey" to_schema="public" to_table="client_source" delete_action="cascade" update_action="cascade" >
+				<fk_column name="client_source_id" pk="id" />
+			</fk>
+		</table>
+		<table name="seat_list" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="seat_list_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="seat_list_names" unique="UNIQUE" >
+				<column name="name" />
+			</index>
+		</table>
+		<table name="service_category" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" />
+			<index name="service_category_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="service_type" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="service_type_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="special_request" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="code" type="char" length="4" decimal="0" jt="1" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="special_request_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="state" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="country_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="state_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="state_fkindex1" unique="NORMAL" >
+				<column name="country_id" />
+			</index>
+			<fk name="state_country_id_fkey" to_schema="public" to_table="country" delete_action="restrict" update_action="cascade" >
+				<fk_column name="country_id" pk="id" />
+			</fk>
+		</table>
+		<table name="sub_users" >
+			<column name="reseller_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="distributor_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<index name="sub_users_pkey" unique="PRIMARY_KEY" >
+				<column name="reseller_id" />
+			</index>
+			<index name="sub_users_fkindex1" unique="NORMAL" >
+				<column name="distributor_id" />
+			</index>
+			<fk name="sub_users_distributor_id_fkey" to_schema="public" to_table="user_info" delete_action="cascade" update_action="cascade" >
+				<fk_column name="distributor_id" pk="id" />
+			</fk>
+			<fk name="sub_users_reseller_id_fkey" to_schema="public" to_table="user_info" delete_action="cascade" update_action="cascade" >
+				<fk_column name="reseller_id" pk="id" />
+			</fk>
+		</table>
+		<table name="ticket_rules_airline" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="airline_code" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="iata_on_basic" type="varchar" length="10" decimal="0" jt="12" />
+			<column name="airline_name" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="source_a_agent_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="source_a_rbd" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="source_a_remark" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="source_b_agent_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="source_b_rbd" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="source_b_remark" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="source_c_agent_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="source_c_rbd" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="source_c_remark" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<column name="notes_a" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="notes_b" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="notes_c" type="text" length="2147483647" decimal="0" jt="12" />
+			<index name="ticket_rules_airline_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="tk_rules_airline_src_a_id_fkey" to_schema="public" to_table="ticket_rules_sources" delete_action="cascade" update_action="cascade" >
+				<fk_column name="source_a_agent_id" pk="id" />
+			</fk>
+			<fk name="tk_rules_airline_src_b_id_fkey" to_schema="public" to_table="ticket_rules_sources" delete_action="cascade" update_action="cascade" >
+				<fk_column name="source_b_agent_id" pk="id" />
+			</fk>
+			<fk name="tk_rules_airline_src_c_id_fkey" to_schema="public" to_table="ticket_rules_sources" delete_action="cascade" update_action="cascade" >
+				<fk_column name="source_c_agent_id" pk="id" />
+			</fk>
+		</table>
+		<table name="ticket_rules_cards" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="airline_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="amex_pax_card" type="smallint" length="5" decimal="0" jt="5" />
+			<column name="amex_belair_card" type="smallint" length="5" decimal="0" jt="5" />
+			<column name="amex_slip" type="smallint" length="5" decimal="0" jt="5" />
+			<column name="master_pax_card" type="smallint" length="5" decimal="0" jt="5" />
+			<column name="master_belair_card" type="smallint" length="5" decimal="0" jt="5" />
+			<column name="master_slip" type="smallint" length="5" decimal="0" jt="5" />
+			<column name="remarks" type="text" length="2147483647" decimal="0" jt="12" />
+			<index name="ticket_rules_cards_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="ticket_rules_airline_code_fkey1" to_schema="public" to_table="carrier" delete_action="cascade" update_action="cascade" >
+				<fk_column name="airline_id" pk="id" />
+			</fk>
+		</table>
+		<table name="ticket_rules_notes" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="airline_code" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="iata_on_basic" type="varchar" length="20" decimal="0" jt="12" />
+			<column name="airline_with_remarks" type="integer" length="10" decimal="0" jt="4" />
+			<column name="instructions" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<column name="note_id" type="varchar" length="200" decimal="0" jt="12" />
+			<index name="ticket_rules_notes_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="ticket_rules_sources" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="agent_name" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="amadeus_pcc" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="gal_pcc" type="varchar" length="200" decimal="0" jt="12" />
+			<column name="contact" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="email" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="office" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="night_ctc" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="mobile_no" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<index name="ticket_rules_sources_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="tour_code" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="air_source_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="user_info_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="carrier_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="code" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="scope" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<index name="tour_code_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="tour_code_fkindex1" unique="NORMAL" >
+				<column name="user_info_id" />
+			</index>
+			<index name="tour_code_fkindex2" unique="NORMAL" >
+				<column name="carrier_id" />
+			</index>
+			<index name="tour_code_fkindex3" unique="NORMAL" >
+				<column name="air_source_id" />
+			</index>
+			<fk name="tour_code_air_source_id_fkey" to_schema="public" to_table="air_source" delete_action="cascade" update_action="cascade" >
+				<fk_column name="air_source_id" pk="id" />
+			</fk>
+			<fk name="tour_code_carrier_id_fkey" to_schema="public" to_table="carrier" delete_action="cascade" update_action="cascade" >
+				<fk_column name="carrier_id" pk="id" />
+			</fk>
+			<fk name="tour_code_user_info_id_fkey" to_schema="public" to_table="user_info" delete_action="cascade" update_action="cascade" >
+				<fk_column name="user_info_id" pk="id" />
+			</fk>
+		</table>
+		<table name="tr_action" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="tr_action_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="tr_status" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="tr_status_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="transfer_type" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="transfer_type_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="traveler" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="user_info_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="gender_id" type="integer" length="10" decimal="0" jt="4" >
+				<defo>1</defo>
+			</column>
+			<column name="passport_country_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="city_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="first_name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="last_name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="birthdate" type="date" length="13" decimal="0" jt="91" />
+			<column name="email" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="mobile" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="passport_number" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="passport_issue" type="date" length="13" decimal="0" jt="91" />
+			<column name="passport_expiry" type="date" length="13" decimal="0" jt="91" />
+			<column name="passport_place" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="pincode" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="address" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="phone" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="email2" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="traveler_title_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<index name="traveler_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="passager_fkindex1" unique="NORMAL" >
+				<column name="city_id" />
+			</index>
+			<index name="traveler_fkindex3" unique="NORMAL" >
+				<column name="passport_country_id" />
+			</index>
+			<index name="traveler_fkindex4" unique="NORMAL" >
+				<column name="gender_id" />
+			</index>
+			<index name="traveler_fkindex5" unique="NORMAL" >
+				<column name="user_info_id" />
+			</index>
+			<fk name="traveler_city_id_fkey" to_schema="public" to_table="city" delete_action="restrict" update_action="cascade" >
+				<fk_column name="city_id" pk="id" />
+			</fk>
+			<fk name="traveler_passport_country_id_fkey" to_schema="public" to_table="country" delete_action="cascade" update_action="cascade" >
+				<fk_column name="passport_country_id" pk="id" />
+			</fk>
+			<fk name="traveler_gender_id_fkey" to_schema="public" to_table="gender" delete_action="restrict" update_action="cascade" >
+				<fk_column name="gender_id" pk="id" />
+			</fk>
+			<fk name="traveler_title_id_fkey" to_schema="public" to_table="traveler_title" delete_action="restrict" update_action="cascade" >
+				<fk_column name="traveler_title_id" pk="id" />
+			</fk>
+			<fk name="traveler_user_info_id_fkey" to_schema="public" to_table="user_info" delete_action="restrict" update_action="cascade" >
+				<fk_column name="user_info_id" pk="id" />
+			</fk>
+		</table>
+		<table name="traveler_file" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="traveler_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="doc_type_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="url" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="path" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<column name="user_visible" type="bool" length="1" decimal="0" jt="-7" mandatory="y" >
+				<defo>false</defo>
+			</column>
+			<index name="traveler_file_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="passager_documents_fkindex1" unique="NORMAL" >
+				<column name="traveler_id" />
+			</index>
+			<index name="passager_documents_fkindex2" unique="NORMAL" >
+				<column name="doc_type_id" />
+			</index>
+			<fk name="traveler_file_doc_type_id_fkey" to_schema="public" to_table="doc_type" delete_action="restrict" update_action="cascade" >
+				<fk_column name="doc_type_id" pk="id" />
+			</fk>
+			<fk name="traveler_file_traveler_id_fkey" to_schema="public" to_table="traveler" delete_action="cascade" update_action="cascade" >
+				<fk_column name="traveler_id" pk="id" />
+			</fk>
+		</table>
+		<table name="traveler_title" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="traveler_title_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="traveler_type" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="traveler_type_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="user_file" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="user_info_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="doc_type_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="url" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="path" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<column name="user_visible" type="bool" length="1" decimal="0" jt="-7" mandatory="y" >
+				<defo>false</defo>
+			</column>
+			<index name="user_file_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="user_document_fkindex1" unique="NORMAL" >
+				<column name="doc_type_id" />
+			</index>
+			<index name="user_file_fkindex2" unique="NORMAL" >
+				<column name="user_info_id" />
+			</index>
+			<fk name="user_file_doc_type_id_fkey" to_schema="public" to_table="doc_type" delete_action="restrict" update_action="cascade" >
+				<fk_column name="doc_type_id" pk="id" />
+			</fk>
+			<fk name="user_file_user_info_id_fkey" to_schema="public" to_table="user_info" delete_action="restrict" update_action="cascade" >
+				<fk_column name="user_info_id" pk="id" />
+			</fk>
+		</table>
+		<table name="user_info" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="currency_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1</defo>
+			</column>
+			<column name="user_type_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>10</defo>
+			</column>
+			<column name="city_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" >
+				<defo>1000021</defo>
+			</column>
+			<column name="pan_name" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="pan_number" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="stn_number" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="email" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="mobile" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="balance" type="float8" length="17" decimal="17" jt="6" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="credit_limit" type="float8" length="17" decimal="17" jt="6" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="pincode" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="address" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="rating" type="smallint" length="5" decimal="0" jt="5" />
+			<column name="note" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="cc_email_list" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="from_to_email" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="one_time_limit" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>1</defo>
+				<comment><![CDATA[Is the credit limit a one time operation]]></comment>
+			</column>
+			<column name="commercial_plan_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="tds" type="real" length="8" decimal="8" jt="7" mandatory="y" >
+				<defo>10</defo>
+			</column>
+			<column name="xrate_commission" type="real" length="8" decimal="8" jt="7" >
+				<defo>1</defo>
+				<comment><![CDATA[The xchange rate commission in percentage]]></comment>
+			</column>
+			<index name="user_info_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="corporate_info_fkindex3" unique="NORMAL" >
+				<column name="city_id" />
+			</index>
+			<index name="user_info_commercial_plan_id_fkey" unique="NORMAL" >
+				<column name="commercial_plan_id" />
+			</index>
+			<index name="user_info_fkindex2" unique="NORMAL" >
+				<column name="user_type_id" />
+			</index>
+			<index name="user_info_fkindex3" unique="NORMAL" >
+				<column name="currency_id" />
+			</index>
+			<fk name="user_info_city_id_fkey" to_schema="public" to_table="city" delete_action="restrict" update_action="cascade" >
+				<fk_column name="city_id" pk="id" />
+			</fk>
+			<fk name="user_info_commercial_plan_id_fkey" to_schema="public" to_table="commercial_plan" delete_action="restrict" update_action="cascade" >
+				<fk_column name="commercial_plan_id" pk="id" />
+			</fk>
+			<fk name="user_info_currency_id_fkey" to_schema="public" to_table="currency" delete_action="restrict" update_action="restrict" >
+				<fk_column name="currency_id" pk="id" />
+			</fk>
+			<fk name="user_info_user_type_id_fkey" to_schema="public" to_table="user_type" delete_action="restrict" update_action="cascade" >
+				<fk_column name="user_type_id" pk="id" />
+			</fk>
+		</table>
+		<table name="user_task" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="user_task_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="user_type" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="name" type="varchar" length="50" decimal="0" jt="12" mandatory="y" />
+			<column name="is_fixed" type="bool" length="1" decimal="0" jt="-7" mandatory="y" >
+				<defo>false</defo>
+			</column>
+			<column name="leading_char" type="char" length="1" decimal="0" jt="1" />
+			<index name="user_type_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="user_type_name_idx" unique="NORMAL" >
+				<column name="name" />
+			</index>
+		</table>
+		<table name="users" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="user_info_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="city_id" type="integer" length="10" decimal="0" jt="4" />
+			<column name="email" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<column name="password" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="created" type="timestamp" length="29" decimal="6" jt="93" mandatory="y" >
+				<defo>now()</defo>
+			</column>
+			<column name="name" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="activated" type="timestamp" length="29" decimal="6" jt="93" />
+			<column name="mobile" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="last_login" type="timestamp" length="29" decimal="6" jt="93" />
+			<column name="last_transaction" type="timestamp" length="29" decimal="6" jt="93" />
+			<column name="deactivated" type="timestamp" length="29" decimal="6" jt="93" />
+			<column name="pincode" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="address" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="note" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="pass_reset_code" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="emp_code" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="department" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="location" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="supervisor" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="sales_rep" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="enabled" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="b2b_api" type="smallint" length="5" decimal="0" jt="5" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<index name="users_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="users_email_unq" unique="UNIQUE" >
+				<column name="email" />
+			</index>
+			<index name="users_fkindex1" unique="NORMAL" >
+				<column name="city_id" />
+			</index>
+			<index name="users_fkindex4" unique="NORMAL" >
+				<column name="user_info_id" />
+			</index>
+			<fk name="users_city_id_fkey" to_schema="public" to_table="city" delete_action="restrict" update_action="cascade" >
+				<fk_column name="city_id" pk="id" />
+			</fk>
+			<fk name="user_info_id_fkey" to_schema="public" to_table="user_info" delete_action="restrict" update_action="cascade" >
+				<fk_column name="user_info_id" pk="id" />
+			</fk>
+		</table>
+		<table name="visa" >
+			<column name="id" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="traveler_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="issuing_country_id" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="number" type="text" length="2147483647" decimal="0" jt="12" />
+			<column name="issue_date" type="date" length="13" decimal="0" jt="91" />
+			<column name="expire_date" type="date" length="13" decimal="0" jt="91" />
+			<column name="type" type="text" length="2147483647" decimal="0" jt="12" />
+			<index name="visa_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="visa_fkindex1" unique="NORMAL" >
+				<column name="issuing_country_id" />
+			</index>
+			<index name="visa_fkindex2" unique="NORMAL" >
+				<column name="traveler_id" />
+			</index>
+			<fk name="visa_issuing_country_id_fkey" to_schema="public" to_table="country" delete_action="restrict" update_action="cascade" >
+				<fk_column name="issuing_country_id" pk="id" />
+			</fk>
+			<fk name="visa_traveler_id_fkey" to_schema="public" to_table="traveler" delete_action="restrict" update_action="cascade" >
+				<fk_column name="traveler_id" pk="id" />
+			</fk>
+		</table>
+		<table name="x_rate" >
+			<column name="updated" type="timestamptz" length="35" decimal="6" jt="93" mandatory="y" />
+			<column name="content" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="x_rate_pkey" unique="PRIMARY_KEY" >
+				<column name="updated" />
+			</index>
+		</table>
+		<view name="v_generated_month_periods_by_userinfoid" >
+			<view_script><![CDATA[SELECT user_info.id AS user_info_id, generate_series(min(ac.created), (max(ac.created) + '25 days'::interval), '1 mon'::interval) AS date_, (date_part('isoyear'::text, generate_series(min(ac.created), (max(ac.created) + '25 days'::interval), '1 mon'::interval)))::smallint AS year_, (date_part('month'::text, generate_series(min(ac.created), (max(ac.created) + '25 days'::interval), '1 mon'::interval)))::smallint AS month_ FROM ((air_cart ac JOIN users ON ((users.id = ac.user_id))) JOIN user_info ON ((users.user_info_id = user_info.id))) WHERE (ac.booking_status_id = 8) GROUP BY user_info.id;]]></view_script>
+			<column name="user_info_id" type="integer" />
+			<column name="date_" type="timestamp" />
+			<column name="year_" type="smallint" />
+			<column name="month_" type="smallint" />
+		</view>
+		<view name="v_generated_week_periods_by_userinfoid" >
+			<view_script><![CDATA[SELECT user_info.id AS user_info_id, generate_series((min(ac.created) - '2 days'::interval), (max(ac.created) + '3 days'::interval), '7 days'::interval) AS date_, (date_part('isoyear'::text, generate_series((min(ac.created) - '2 days'::interval), (max(ac.created) + '3 days'::interval), '7 days'::interval)))::smallint AS year_, (date_part('week'::text, generate_series((min(ac.created) - '2 days'::interval), (max(ac.created) + '3 days'::interval), '7 days'::interval)))::smallint AS week_ FROM ((air_cart ac JOIN users ON ((users.id = ac.user_id))) JOIN user_info ON ((users.user_info_id = user_info.id))) WHERE (ac.booking_status_id = 8) GROUP BY user_info.id;]]></view_script>
+			<column name="user_info_id" type="integer" />
+			<column name="date_" type="timestamp" />
+			<column name="year_" type="smallint" />
+			<column name="week_" type="smallint" />
+		</view>
+		<view name="v_pnrs_tickets_search_info" >
+			<view_script><![CDATA[SELECT DISTINCT air_cart.id, ((((air_booking.airline_pnr || ' '::text) || air_booking.crs_pnr) || ' '::text) || air_booking.ticket_number) AS search_info FROM (air_booking JOIN air_cart ON ((air_cart.id = air_booking.air_cart_id)));]]></view_script>
+			<column name="id" type="integer" />
+			<column name="search_info" type="text" />
+		</view>
+		<view name="v_sales_by_month" >
+			<view_script><![CDATA[SELECT user_info.id AS user_info_id, (date_part('isoyear'::text, ac.created))::smallint AS year_, (date_part('month'::text, ac.created))::smallint AS month_, count(ab.id) AS segments, (sum(ab.basic_fare))::bigint AS basic_fare, (sum(((((((ab.fuel_surcharge + ab.udf_charge) + ab.jn_tax) + ab.other_tax) + ab.basic_fare) + ab.booking_fee) - ab.commission_or_discount_gross)))::bigint AS total_fare FROM (((air_cart ac JOIN air_booking ab ON ((ac.id = ab.air_cart_id))) JOIN users ON ((users.id = ac.user_id))) JOIN user_info ON ((users.user_info_id = user_info.id))) WHERE (ac.booking_status_id = 8) GROUP BY user_info.id, (date_part('isoyear'::text, ac.created))::smallint, (date_part('month'::text, ac.created))::smallint ORDER BY user_info.id, (date_part('isoyear'::text, ac.created))::smallint, (date_part('month'::text, ac.created))::smallint;]]></view_script>
+			<column name="user_info_id" type="integer" />
+			<column name="year_" type="smallint" />
+			<column name="month_" type="smallint" />
+			<column name="segments" type="bigint" />
+			<column name="basic_fare" type="bigint" />
+			<column name="total_fare" type="bigint" />
+		</view>
+		<view name="v_sales_by_week" >
+			<view_script><![CDATA[SELECT user_info.id AS user_info_id, (date_part('isoyear'::text, ac.created))::smallint AS year_, (date_part('week'::text, ac.created))::smallint AS week_, count(ab.id) AS segments, (sum(ab.basic_fare))::bigint AS basic_fare, (sum(((((((ab.fuel_surcharge + ab.udf_charge) + ab.jn_tax) + ab.other_tax) + ab.basic_fare) + ab.booking_fee) - ab.commission_or_discount_gross)))::bigint AS total_fare FROM (((air_cart ac JOIN air_booking ab ON ((ac.id = ab.air_cart_id))) JOIN users ON ((users.id = ac.user_id))) JOIN user_info ON ((users.user_info_id = user_info.id))) WHERE (ac.booking_status_id = 8) GROUP BY user_info.id, (date_part('isoyear'::text, ac.created))::smallint, (date_part('week'::text, ac.created))::smallint ORDER BY user_info.id, (date_part('isoyear'::text, ac.created))::smallint, (date_part('week'::text, ac.created))::smallint;]]></view_script>
+			<column name="user_info_id" type="integer" />
+			<column name="year_" type="smallint" />
+			<column name="week_" type="smallint" />
+			<column name="segments" type="bigint" />
+			<column name="basic_fare" type="bigint" />
+			<column name="total_fare" type="bigint" />
+		</view>
+		<view name="v_sales_by_year" >
+			<view_script><![CDATA[SELECT user_info.id AS user_info_id, (date_part('year'::text, ac.created))::smallint AS year_, (sum(((((((ab.fuel_surcharge + ab.udf_charge) + ab.jn_tax) + ab.other_tax) + ab.basic_fare) + ab.booking_fee) - ab.commission_or_discount_gross)))::bigint AS total_fare FROM (((air_cart ac JOIN air_booking ab ON ((ac.id = ab.air_cart_id))) JOIN users ON ((users.id = ac.user_id))) JOIN user_info ON ((users.user_info_id = user_info.id))) WHERE (ac.booking_status_id = 8) GROUP BY user_info.id, (date_part('year'::text, ac.created))::smallint ORDER BY user_info.id, (date_part('year'::text, ac.created))::smallint;]]></view_script>
+			<column name="user_info_id" type="integer" />
+			<column name="year_" type="smallint" />
+			<column name="total_fare" type="bigint" />
+		</view>
+		<view name="v_search_info" >
+			<view_script><![CDATA[SELECT users.id, users.user_info_id AS company_id, ((((((((((((((user_type.leading_char)::text || users.id) || ', '::text) || users.name) || ', '::text) || users.email) || ', '::text) || users.mobile) || ', '::text) || user_info.name) || ', '::text) || user_info.mobile) || ', '::text) || user_info.email) AS search_info FROM ((users JOIN user_info ON ((users.user_info_id = user_info.id))) JOIN user_type ON ((user_type.id = user_info.user_type_id)));]]></view_script>
+			<column name="id" type="integer" />
+			<column name="company_id" type="integer" />
+			<column name="search_info" type="text" />
+		</view>
+		<view name="v_traveler_search_info" >
+			<view_script><![CDATA[SELECT traveler.id, traveler.user_info_id AS company_id, ((((((traveler_title.name || ' '::text) || traveler.first_name) || ' '::text) || traveler.last_name) || COALESCE((', '::text || traveler.email), ''::text)) || COALESCE((', '::text || traveler.mobile), ''::text)) AS search_info, traveler.birthdate FROM (traveler JOIN traveler_title ON ((traveler_title.id = traveler.traveler_title_id)));]]></view_script>
+			<column name="id" type="integer" />
+			<column name="company_id" type="integer" />
+			<column name="search_info" type="text" />
+			<column name="birthdate" type="date" />
+		</view>
+		<sequence name="ab_status_id_seq" start="1" />
+		<sequence name="air_booking_id_seq" start="1" />
+		<sequence name="air_cart_id_seq" start="1" />
+		<sequence name="air_routes_id_seq" start="1" />
+		<sequence name="air_source_id_seq" start="1" />
+		<sequence name="aircart_file_id_seq" start="1" />
+		<sequence name="airline_list_id_seq" start="1" />
+		<sequence name="airport_id_seq" start="1" />
+		<sequence name="airsource_queue_id_seq" start="1" />
+		<sequence name="amendment_group_seq" start="1" />
+		<sequence name="amendment_id_seq" start="1" />
+		<sequence name="amendment_status_id_seq" start="1" />
+		<sequence name="amendment_type_id_seq" start="1" />
+		<sequence name="approval_status_id_seq" start="1" />
+		<sequence name="backend_id_seq" start="1" />
+		<sequence name="booking_log_id_seq" start="1" />
+		<sequence name="booking_status_id_seq" start="1" />
+		<sequence name="booking_type_id_seq" start="1" />
+		<sequence name="cabin_type_id_seq" start="1" />
+		<sequence name="cache_group_seq" start="1" />
+		<sequence name="carrier_id_seq" start="1" />
+		<sequence name="cart_status_log_id_seq" start="1" />
+		<sequence name="cc_id_seq" start="1" />
+		<sequence name="cc_passtru_id_seq" start="1" />
+		<sequence name="cc_type_id_seq" start="1" />
+		<sequence name="city_id_seq" start="1" />
+		<sequence name="client_source_id_seq" start="1" />
+		<sequence name="commercial_plan_id_seq" start="1" />
+		<sequence name="commercial_rule_id_seq" start="1" />
+		<sequence name="commision_client_source_id_seq" start="1" />
+		<sequence name="commision_gds_lcc_id_seq" start="1" />
+		<sequence name="commision_pg_id_seq" start="1" />
+		<sequence name="commission_rule_id_seq" start="1" />
+		<sequence name="country_id_seq" start="1" />
+		<sequence name="credit_request_id_seq" start="1" />
+		<sequence name="currency_id_seq" start="1" />
+		<sequence name="deposit_search_id_seq" start="1" />
+		<sequence name="doc_type_id_seq" start="1" />
+		<sequence name="email_sms_log_id_seq" start="1" />
+		<sequence name="fare_type_id_seq" start="1" />
+		<sequence name="ff_carriers_id_seq" start="1" />
+		<sequence name="fraud_id_seq" start="1" />
+		<sequence name="gender_id_seq" start="1" />
+		<sequence name="invoice_status_id_seq" start="1" />
+		<sequence name="log_id_seq" start="1" />
+		<sequence name="log_operation_id_seq" start="1" />
+		<sequence name="meal_list_id_seq" start="1" />
+		<sequence name="notes_id_seq" start="1" />
+		<sequence name="pay_gate_log_id_seq" start="1" />
+		<sequence name="payment_gateway_id_seq" start="1" />
+		<sequence name="payment_id_seq" start="1" />
+		<sequence name="payment_process_id_seq" start="1" />
+		<sequence name="payment_status_id_seq" start="1" />
+		<sequence name="permission_id_seq" start="1" />
+		<sequence name="pf_code_id_seq" start="1" />
+		<sequence name="preferences_id_seq" start="1" />
+		<sequence name="process_id_seq" start="1" />
+		<sequence name="promo_code_id_seq" start="1" />
+		<sequence name="promo_date_type_id_seq" start="1" />
+		<sequence name="promo_discount_type_id_seq" start="1" />
+		<sequence name="promo_log_id_seq" start="1" />
+		<sequence name="promo_payment_type_id_seq" start="1" />
+		<sequence name="promo_type_id_seq" start="1" />
+		<sequence name="rc_transform_log_id_seq" start="1" />
+		<sequence name="routes_cache_id_seq" start="1" />
+		<sequence name="searches_id_seq" start="1" />
+		<sequence name="seat_list_id_seq" start="1" />
+		<sequence name="service_category_id_seq" start="1" />
+		<sequence name="service_type_id_seq" start="1" />
+		<sequence name="special_request_id_seq" start="1" />
+		<sequence name="state_id_seq" start="1" />
+		<sequence name="ticket_rules_airline_id_seq" start="1" />
+		<sequence name="ticket_rules_cards_id_seq" start="1" />
+		<sequence name="ticket_rules_notes_id_seq" start="1" />
+		<sequence name="ticket_rules_sources_id_seq" start="1" />
+		<sequence name="tour_code_id_seq" start="1" />
+		<sequence name="tr_action_id_seq" start="1" />
+		<sequence name="tr_status_id_seq" start="1" />
+		<sequence name="transfer_type_id_seq" start="1" />
+		<sequence name="traveler_file_id_seq" start="1" />
+		<sequence name="traveler_id_seq" start="1" />
+		<sequence name="traveler_title_id_seq" start="1" />
+		<sequence name="traveler_type_id_seq" start="1" />
+		<sequence name="user_file_id_seq" start="1" />
+		<sequence name="user_info_id_seq" start="1" />
+		<sequence name="user_task_id_seq" start="1" />
+		<sequence name="user_type_id_seq" start="1" />
+		<sequence name="users_id_seq" start="1" />
+		<sequence name="visa_id_seq" start="1" />
+	</schema>
+	<connector name="Belair" database="PostgreSQL" driver_class="org.postgresql.Driver" driver_jar="postgresql-9.4.1208.jar" host="localhost" port="5432" instance="belair_db" user="belair_dba" passwd="amhuZG1qMjReJSo=" />
+	<layout id="Layout_37a22e48" name="Default" joined_routing="y" show_relation_columns="y" >
+		<entity schema="public" name="ab_status" color="b2c9ed" x="1770" y="1515" />
+		<entity schema="public" name="air_booking" color="b2c9ed" x="1575" y="1515" >
+			<column name="id" />
+			<column name="booking_type_id" />
+			<column name="cabin_type_id" />
+			<column name="traveler_type_id" />
+			<column name="traveler_id" />
+			<column name="air_cart_id" />
+			<column name="source_id" />
+			<column name="destination_id" />
+			<column name="service_type_id" />
+			<column name="fare_type_id" />
+			<column name="carrier_id" />
+			<column name="special_request_id" />
+			<column name="payment_process_id" />
+			<column name="air_source_id" />
+			<column name="ab_status_id" />
+		</entity>
+		<entity schema="public" name="air_cart" color="b2c9ed" x="1170" y="2205" />
+		<entity schema="public" name="air_routes" color="b2b2ed" x="1830" y="630" />
+		<entity schema="public" name="air_source" color="bcedb2" x="750" y="690" />
+		<entity schema="public" name="aircart_file" color="b2c9ed" x="1365" y="2205" />
+		<entity schema="public" name="airline_list" color="edd3b2" x="1890" y="2205" />
+		<entity schema="public" name="airport" color="b2b2ed" x="780" y="2205" />
+		<entity schema="public" name="airsource_queue" color="bcedb2" x="960" y="1125" />
+		<entity schema="public" name="amendment" color="b2b2ed" x="1575" y="630" />
+		<entity schema="public" name="amendment_status" color="b2b2ed" x="1575" y="1335" />
+		<entity schema="public" name="amendment_type" color="b2b2ed" x="1830" y="1335" />
+		<entity schema="public" name="approval_status" color="c7b2ed" x="900" y="480" />
+		<entity schema="public" name="backend" color="bcedb2" x="750" y="1125" />
+		<entity schema="public" name="bin_list" color="edd3b2" x="975" y="3285" />
+		<entity schema="public" name="booking_log" color="b2c9ed" x="1365" y="2565" />
+		<entity schema="public" name="booking_log_arch" color="b2c9ed" x="1170" y="2565" />
+		<entity schema="public" name="booking_status" color="c7b2ed" x="750" y="480" />
+		<entity schema="public" name="booking_type" color="b2c9ed" x="1575" y="1845" />
+		<entity schema="public" name="cabin_type" color="b2c9ed" x="1770" y="1845" />
+		<entity schema="public" name="carrier" color="edd3b2" x="1740" y="2205" />
+		<entity schema="public" name="carrier_helpline" color="edd3b2" x="1890" y="2385" />
+		<entity schema="public" name="cart_status_log" color="bcedb2" x="1365" y="1950" />
+		<entity schema="public" name="cc" color="edd3b2" x="795" y="2985" />
+		<entity schema="public" name="cc_passtru" color="edd3b2" x="975" y="2985" />
+		<entity schema="public" name="cc_type" color="edd3b2" x="795" y="3285" />
+		<entity schema="public" name="city" color="bcedb2" x="1365" y="1515" />
+		<entity schema="public" name="city_pairs" color="b2b2ed" x="780" y="2445" />
+		<entity schema="public" name="client_source" color="b2c9ed" x="225" y="2940" />
+		<entity schema="public" name="cms" color="bcedb2" x="1170" y="1950" />
+		<entity schema="public" name="commercial_plan" color="c7b2ed" x="2295" y="2850" />
+		<entity schema="public" name="commercial_rule" color="c7b2ed" x="2070" y="2205" />
+		<entity schema="public" name="commercial_x_rule" color="c7b2ed" x="2070" y="2850" />
+		<entity schema="public" name="commision_client_source" color="b2c9ed" x="375" y="2940" />
+		<entity schema="public" name="commision_cs_cost" color="b2c9ed" x="375" y="3165" />
+		<entity schema="public" name="commision_gds_lcc" color="edd3b2" x="1575" y="2385" />
+		<entity schema="public" name="commision_pg" color="bcedb2" x="1575" y="3240" />
+		<entity schema="public" name="commission_rule" color="bcedb2" x="960" y="690" />
+		<entity schema="public" name="country" color="edd3b2" x="990" y="1515" />
+		<entity schema="public" name="credit_request" color="bcedb2" x="1350" y="765" />
+		<entity schema="public" name="currency" color="bcedb2" x="2250" y="1500" />
+		<entity schema="public" name="deposit_search" color="bcedb2" x="2250" y="1905" />
+		<entity schema="public" name="doc_type" color="c7b2ed" x="2640" y="2205" />
+		<entity schema="public" name="email_sms_log" color="bcedb2" x="1350" y="1215" />
+		<entity schema="public" name="fare_type" color="edd3b2" x="450" y="2205" />
+		<entity schema="public" name="ff_carriers" color="b2b2ed" x="405" y="1770" />
+		<entity schema="public" name="ff_settings" color="b2b2ed" x="405" y="1965" />
+		<entity schema="public" name="fraud" color="bcedb2" x="1770" y="3240" />
+		<entity schema="public" name="gender" color="edd3b2" x="450" y="2520" />
+		<entity schema="public" name="invoice_status" color="c7b2ed" x="2250" y="630" />
+		<entity schema="public" name="log" color="bcedb2" x="1170" y="1215" />
+		<entity schema="public" name="log_operation" color="c7b2ed" x="2400" y="630" />
+		<entity schema="public" name="meal_list" color="c7b2ed" x="2775" y="3045" />
+		<entity schema="public" name="notes" color="b2c9ed" x="2490" y="1860" />
+		<entity schema="public" name="params" color="b2c9ed" x="2625" y="1860" />
+		<entity schema="public" name="pay_gate_log" color="bcedb2" x="1575" y="2640" />
+		<entity schema="public" name="payment" color="bcedb2" x="2070" y="1500" />
+		<entity schema="public" name="payment_gateway" color="bcedb2" x="1770" y="2640" />
+		<entity schema="public" name="payment_process" color="edd3b2" x="1785" y="45" />
+		<entity schema="public" name="payment_status" color="b2c9ed" x="405" y="690" />
+		<entity schema="public" name="permission" color="c7b2ed" x="750" y="330" />
+		<entity schema="public" name="permission_x_type" color="bcedb2" x="555" y="105" />
+		<entity schema="public" name="permission_x_user" color="c7b2ed" x="900" y="330" />
+		<entity schema="public" name="pf_code" color="b2b2ed" x="240" y="1770" />
+		<entity schema="public" name="preferences" color="edd3b2" x="990" y="1905" />
+		<entity schema="public" name="process" color="edd3b2" x="285" y="2205" />
+		<entity schema="public" name="promo_codes" color="edd3b2" x="1575" y="45" />
+		<entity schema="public" name="promo_date_type" color="edd3b2" x="1785" y="420" />
+		<entity schema="public" name="promo_discount_type" color="edd3b2" x="1575" y="420" />
+		<entity schema="public" name="promo_log" color="b2b2ed" x="2340" y="195" />
+		<entity schema="public" name="promo_payment_type" color="b2c9ed" x="2625" y="2010" />
+		<entity schema="public" name="promo_type" color="b2c9ed" x="2490" y="2010" />
+		<entity schema="public" name="rc_transform_log" color="c7b2ed" x="2895" y="3180" />
+		<entity schema="public" name="routes_cache" color="b2b2ed" x="945" y="2205" />
+		<entity schema="public" name="search_count" color="b2c9ed" x="45" y="3165" />
+		<entity schema="public" name="searches" color="b2b2ed" x="600" y="2445" />
+		<entity schema="public" name="searches_arch" color="b2b2ed" x="2520" y="195" />
+		<entity schema="public" name="seat_list" color="c7b2ed" x="2895" y="3045" />
+		<entity schema="public" name="service_category" color="b2c9ed" x="555" y="840" />
+		<entity schema="public" name="service_type" color="c7b2ed" x="2295" y="2205" />
+		<entity schema="public" name="special_request" color="bcedb2" x="360" y="465" />
+		<entity schema="public" name="state" color="edd3b2" x="795" y="1905" />
+		<entity schema="public" name="sub_users" color="b2c9ed" x="1350" y="3240" />
+		<entity schema="public" name="ticket_rules_airline" color="bcedb2" x="360" y="105" />
+		<entity schema="public" name="ticket_rules_cards" color="edd3b2" x="2070" y="3045" />
+		<entity schema="public" name="ticket_rules_notes" color="c7b2ed" x="2055" y="780" />
+		<entity schema="public" name="ticket_rules_sources" color="b2c9ed" x="1170" y="2985" />
+		<entity schema="public" name="tour_code" color="b2c9ed" x="1350" y="2985" />
+		<entity schema="public" name="tr_action" color="b2b2ed" x="1350" y="285" />
+		<entity schema="public" name="tr_status" color="b2b2ed" x="1350" y="495" />
+		<entity schema="public" name="transfer_type" color="bcedb2" x="2070" y="1905" />
+		<entity schema="public" name="traveler" color="edd3b2" x="795" y="1515" />
+		<entity schema="public" name="traveler_file" color="c7b2ed" x="2490" y="2205" />
+		<entity schema="public" name="traveler_title" color="b2c9ed" x="1170" y="3240" />
+		<entity schema="public" name="traveler_type" color="b2c9ed" x="555" y="690" />
+		<entity schema="public" name="user_file" color="c7b2ed" x="2640" y="2430" />
+		<entity schema="public" name="user_info" color="bcedb2" x="1170" y="1515" />
+		<entity schema="public" name="user_task" color="c7b2ed" x="2250" y="780" />
+		<entity schema="public" name="user_type" color="bcedb2" x="555" y="465" />
+		<entity schema="public" name="users" color="bcedb2" x="1170" y="765" />
+		<entity schema="public" name="visa" color="b2b2ed" x="1170" y="285" />
+		<entity schema="public" name="x_rate" color="b2b2ed" x="2340" y="405" />
+		<entity schema="public" name="v_generated_month_periods_by_userinfoid" color="b2b2ed" x="2055" y="405" />
+		<entity schema="public" name="v_generated_week_periods_by_userinfoid" color="c7b2ed" x="2490" y="3180" />
+		<entity schema="public" name="v_pnrs_tickets_search_info" color="b2c9ed" x="195" y="840" />
+		<entity schema="public" name="v_sales_by_month" color="edd3b2" x="285" y="2520" />
+		<entity schema="public" name="v_sales_by_week" color="b2b2ed" x="240" y="1965" />
+		<entity schema="public" name="v_sales_by_year" color="edd3b2" x="2265" y="3045" />
+		<entity schema="public" name="v_search_info" color="edd3b2" x="2265" y="3285" />
+		<entity schema="public" name="v_traveler_search_info" color="edd3b2" x="2070" y="3285" />
+		<browser id="Browse_1a68a4e4" name="Sample Data Editor" >
+			<browse_table schema="public" entity="air_booking" x="10" y="10" width="400" height="300" >
+				<browse_table schema="public" entity="ab_status" fk="air_booking_ab_status_id_fkey" x="420" y="10" width="400" height="300" record_view="y" />
+			</browse_table>
+		</browser>
+	</layout>
+	<layout id="Layout_30a10281" name="Layout With Groups" joined_routing="y" show_relation_columns="y" >
+		<entity schema="public" name="ab_status" color="b2c9ed" x="1770" y="1515" />
+		<entity schema="public" name="air_booking" color="b2c9ed" x="1575" y="1515" >
+			<column name="id" />
+			<column name="booking_type_id" />
+			<column name="cabin_type_id" />
+			<column name="traveler_type_id" />
+			<column name="traveler_id" />
+			<column name="air_cart_id" />
+			<column name="source_id" />
+			<column name="destination_id" />
+			<column name="service_type_id" />
+			<column name="fare_type_id" />
+			<column name="carrier_id" />
+			<column name="special_request_id" />
+			<column name="payment_process_id" />
+			<column name="air_source_id" />
+			<column name="ab_status_id" />
+		</entity>
+		<entity schema="public" name="air_cart" color="b2c9ed" x="1170" y="2205" />
+		<entity schema="public" name="air_routes" color="b2b2ed" x="1830" y="630" />
+		<entity schema="public" name="air_source" color="bcedb2" x="750" y="690" />
+		<entity schema="public" name="aircart_file" color="b2c9ed" x="1365" y="2205" />
+		<entity schema="public" name="airline_list" color="edd3b2" x="1890" y="2205" />
+		<entity schema="public" name="airport" color="b2b2ed" x="780" y="2205" />
+		<entity schema="public" name="airsource_queue" color="bcedb2" x="960" y="1125" />
+		<entity schema="public" name="amendment" color="b2b2ed" x="1575" y="630" />
+		<entity schema="public" name="amendment_status" color="b2b2ed" x="1575" y="1335" />
+		<entity schema="public" name="amendment_type" color="b2b2ed" x="1830" y="1335" />
+		<entity schema="public" name="approval_status" color="c7b2ed" x="900" y="480" />
+		<entity schema="public" name="backend" color="bcedb2" x="750" y="1125" />
+		<entity schema="public" name="bin_list" color="edd3b2" x="975" y="3285" />
+		<entity schema="public" name="booking_log_arch" color="b2c9ed" x="1170" y="2565" />
+		<entity schema="public" name="booking_status" color="c7b2ed" x="750" y="480" />
+		<entity schema="public" name="booking_type" color="b2c9ed" x="1575" y="1845" />
+		<entity schema="public" name="cabin_type" color="b2c9ed" x="1770" y="1845" />
+		<entity schema="public" name="carrier" color="edd3b2" x="1740" y="2205" />
+		<entity schema="public" name="carrier_helpline" color="edd3b2" x="1890" y="2385" />
+		<entity schema="public" name="cart_status_log" color="bcedb2" x="1365" y="1950" />
+		<entity schema="public" name="cc" color="edd3b2" x="795" y="2985" />
+		<entity schema="public" name="cc_passtru" color="edd3b2" x="975" y="2985" />
+		<entity schema="public" name="cc_type" color="edd3b2" x="795" y="3285" />
+		<entity schema="public" name="city_pairs" color="b2b2ed" x="780" y="2445" />
+		<entity schema="public" name="client_source" color="b2c9ed" x="225" y="2940" />
+		<entity schema="public" name="cms" color="bcedb2" x="1170" y="1950" />
+		<entity schema="public" name="commercial_plan" color="c7b2ed" x="2295" y="2850" />
+		<entity schema="public" name="commercial_rule" color="c7b2ed" x="2070" y="2205" />
+		<entity schema="public" name="commercial_x_rule" color="c7b2ed" x="2070" y="2850" />
+		<entity schema="public" name="commision_client_source" color="b2c9ed" x="375" y="2940" />
+		<entity schema="public" name="commision_cs_cost" color="b2c9ed" x="375" y="3165" />
+		<entity schema="public" name="commision_gds_lcc" color="edd3b2" x="1575" y="2385" />
+		<entity schema="public" name="commision_pg" color="bcedb2" x="1575" y="3240" />
+		<entity schema="public" name="country" color="edd3b2" x="990" y="1515" />
+		<entity schema="public" name="credit_request" color="bcedb2" x="1350" y="765" />
+		<entity schema="public" name="currency" color="bcedb2" x="2250" y="1500" />
+		<entity schema="public" name="deposit_search" color="bcedb2" x="2250" y="1905" />
+		<entity schema="public" name="doc_type" color="c7b2ed" x="2640" y="2205" />
+		<entity schema="public" name="email_sms_log" color="bcedb2" x="1350" y="1215" />
+		<entity schema="public" name="fare_type" color="edd3b2" x="450" y="2205" />
+		<entity schema="public" name="ff_carriers" color="b2b2ed" x="405" y="1770" />
+		<entity schema="public" name="ff_settings" color="b2b2ed" x="405" y="1965" />
+		<entity schema="public" name="fraud" color="bcedb2" x="1770" y="3240" />
+		<entity schema="public" name="gender" color="edd3b2" x="450" y="2520" />
+		<entity schema="public" name="invoice_status" color="c7b2ed" x="2250" y="630" />
+		<entity schema="public" name="log" color="bcedb2" x="1170" y="1215" />
+		<entity schema="public" name="log_operation" color="c7b2ed" x="2400" y="630" />
+		<entity schema="public" name="meal_list" color="c7b2ed" x="2775" y="3045" />
+		<entity schema="public" name="notes" color="b2c9ed" x="2490" y="1860" />
+		<entity schema="public" name="params" color="b2c9ed" x="2625" y="1860" />
+		<entity schema="public" name="pay_gate_log" color="bcedb2" x="1575" y="2640" />
+		<entity schema="public" name="payment" color="bcedb2" x="2070" y="1500" />
+		<entity schema="public" name="payment_gateway" color="bcedb2" x="1770" y="2640" />
+		<entity schema="public" name="payment_process" color="edd3b2" x="1785" y="45" />
+		<entity schema="public" name="payment_status" color="b2c9ed" x="405" y="690" />
+		<entity schema="public" name="permission" color="c7b2ed" x="750" y="330" />
+		<entity schema="public" name="permission_x_type" color="bcedb2" x="555" y="105" />
+		<entity schema="public" name="permission_x_user" color="c7b2ed" x="900" y="330" />
+		<entity schema="public" name="pf_code" color="b2b2ed" x="240" y="1770" />
+		<entity schema="public" name="preferences" color="edd3b2" x="990" y="1905" />
+		<entity schema="public" name="process" color="edd3b2" x="285" y="2205" />
+		<entity schema="public" name="promo_codes" color="edd3b2" x="1575" y="45" />
+		<entity schema="public" name="promo_date_type" color="edd3b2" x="1785" y="420" />
+		<entity schema="public" name="promo_discount_type" color="edd3b2" x="1575" y="420" />
+		<entity schema="public" name="promo_log" color="b2b2ed" x="2340" y="195" />
+		<entity schema="public" name="promo_payment_type" color="b2c9ed" x="2625" y="2010" />
+		<entity schema="public" name="promo_type" color="b2c9ed" x="2490" y="2010" />
+		<entity schema="public" name="rc_transform_log" color="c7b2ed" x="2895" y="3180" />
+		<entity schema="public" name="routes_cache" color="b2b2ed" x="945" y="2205" />
+		<entity schema="public" name="search_count" color="b2c9ed" x="45" y="3165" />
+		<entity schema="public" name="searches_arch" color="b2b2ed" x="2520" y="195" />
+		<entity schema="public" name="seat_list" color="c7b2ed" x="2895" y="3045" />
+		<entity schema="public" name="service_category" color="b2c9ed" x="555" y="840" />
+		<entity schema="public" name="service_type" color="c7b2ed" x="2295" y="2205" />
+		<entity schema="public" name="special_request" color="bcedb2" x="360" y="465" />
+		<entity schema="public" name="state" color="edd3b2" x="795" y="1905" />
+		<entity schema="public" name="sub_users" color="b2c9ed" x="1350" y="3240" />
+		<entity schema="public" name="ticket_rules_airline" color="bcedb2" x="360" y="105" />
+		<entity schema="public" name="ticket_rules_cards" color="edd3b2" x="2070" y="3045" />
+		<entity schema="public" name="ticket_rules_notes" color="c7b2ed" x="2055" y="780" />
+		<entity schema="public" name="ticket_rules_sources" color="b2c9ed" x="1170" y="2985" />
+		<entity schema="public" name="tour_code" color="b2c9ed" x="1350" y="2985" />
+		<entity schema="public" name="tr_action" color="b2b2ed" x="1350" y="285" />
+		<entity schema="public" name="tr_status" color="b2b2ed" x="1350" y="495" />
+		<entity schema="public" name="transfer_type" color="bcedb2" x="2070" y="1905" />
+		<entity schema="public" name="traveler" color="edd3b2" x="795" y="1515" />
+		<entity schema="public" name="traveler_file" color="c7b2ed" x="2490" y="2205" />
+		<entity schema="public" name="traveler_title" color="b2c9ed" x="1170" y="3240" />
+		<entity schema="public" name="traveler_type" color="b2c9ed" x="555" y="690" />
+		<entity schema="public" name="user_file" color="c7b2ed" x="2640" y="2430" />
+		<entity schema="public" name="user_info" color="bcedb2" x="1170" y="1515" />
+		<entity schema="public" name="user_task" color="c7b2ed" x="2250" y="780" />
+		<entity schema="public" name="user_type" color="bcedb2" x="555" y="465" />
+		<entity schema="public" name="users" color="bcedb2" x="1170" y="765" />
+		<entity schema="public" name="visa" color="b2b2ed" x="1170" y="285" />
+		<entity schema="public" name="x_rate" color="b2b2ed" x="2340" y="405" />
+		<entity schema="public" name="v_generated_month_periods_by_userinfoid" color="b2b2ed" x="2055" y="405" />
+		<entity schema="public" name="v_generated_week_periods_by_userinfoid" color="c7b2ed" x="2490" y="3180" />
+		<entity schema="public" name="v_pnrs_tickets_search_info" color="b2c9ed" x="195" y="840" />
+		<entity schema="public" name="v_sales_by_month" color="edd3b2" x="285" y="2520" />
+		<entity schema="public" name="v_sales_by_week" color="b2b2ed" x="240" y="1965" />
+		<entity schema="public" name="v_sales_by_year" color="edd3b2" x="2265" y="3045" />
+		<entity schema="public" name="v_search_info" color="edd3b2" x="2265" y="3285" />
+		<entity schema="public" name="v_traveler_search_info" color="edd3b2" x="2070" y="3285" />
+		<entity schema="public" name="city" color="bcedb2" x="1365" y="1515" />
+		<entity schema="public" name="commission_rule" color="bcedb2" x="960" y="690" />
+		<entity schema="public" name="booking_log" color="b2c9ed" x="1365" y="2565" />
+		<entity schema="public" name="airsource_rule" color="bcedb2" x="960" y="930" />
+		<entity schema="public" name="searches" color="b2b2ed" x="600" y="2445" />
+		<group name="user_info" color="f1f7f0" >
+			<entity schema="public" name="user_info" />
+			<entity schema="public" name="city" />
+			<entity schema="public" name="cart_status_log" />
+			<entity schema="public" name="cms" />
+		</group>
+		<group name="air_booking" color="f0f3f7" >
+			<entity schema="public" name="air_booking" />
+			<entity schema="public" name="ab_status" />
+			<entity schema="public" name="cabin_type" />
+			<entity schema="public" name="booking_type" />
+		</group>
+		<group name="carrier" color="f7f4f0" >
+			<entity schema="public" name="carrier" />
+			<entity schema="public" name="airline_list" />
+			<entity schema="public" name="carrier_helpline" />
+			<entity schema="public" name="commision_gds_lcc" />
+		</group>
+		<group name="air_cart" color="f0f3f7" >
+			<entity schema="public" name="air_cart" />
+			<entity schema="public" name="aircart_file" />
+			<entity schema="public" name="booking_log" />
+			<entity schema="public" name="booking_log_arch" />
+		</group>
+		<group name="airport" color="f0f0f7" >
+			<entity schema="public" name="airport" />
+			<entity schema="public" name="routes_cache" />
+			<entity schema="public" name="searches" />
+			<entity schema="public" name="city_pairs" />
+		</group>
+		<group name="traveler" color="f7f4f0" >
+			<entity schema="public" name="traveler" />
+			<entity schema="public" name="country" />
+			<entity schema="public" name="preferences" />
+			<entity schema="public" name="state" />
+		</group>
+		<group name="air_source" color="f1f7f0" >
+			<entity schema="public" name="air_source" />
+			<entity schema="public" name="commission_rule" />
+			<entity schema="public" name="airsource_queue" />
+			<entity schema="public" name="backend" />
+		</group>
+		<group name="users" color="f1f7f0" >
+			<entity schema="public" name="users" />
+			<entity schema="public" name="credit_request" />
+			<entity schema="public" name="email_sms_log" />
+			<entity schema="public" name="log" />
+		</group>
+		<group name="amendment" color="f0f0f7" >
+			<entity schema="public" name="amendment" />
+			<entity schema="public" name="air_routes" />
+			<entity schema="public" name="amendment_type" />
+			<entity schema="public" name="amendment_status" />
+		</group>
+		<group name="commercial_rule" color="f3f0f7" >
+			<entity schema="public" name="commercial_rule" />
+			<entity schema="public" name="service_type" />
+			<entity schema="public" name="commercial_plan" />
+			<entity schema="public" name="commercial_x_rule" />
+		</group>
+		<group name="pay_gate_log" color="f1f7f0" >
+			<entity schema="public" name="pay_gate_log" />
+			<entity schema="public" name="payment_gateway" />
+			<entity schema="public" name="fraud" />
+			<entity schema="public" name="commision_pg" />
+		</group>
+		<group name="payment" color="f1f7f0" >
+			<entity schema="public" name="payment" />
+			<entity schema="public" name="currency" />
+			<entity schema="public" name="deposit_search" />
+			<entity schema="public" name="transfer_type" />
+		</group>
+		<group name="ticket_rules_sources" color="f0f3f7" >
+			<entity schema="public" name="ticket_rules_sources" />
+			<entity schema="public" name="tour_code" />
+			<entity schema="public" name="sub_users" />
+			<entity schema="public" name="traveler_title" />
+		</group>
+		<group name="cc" color="f7f4f0" >
+			<entity schema="public" name="cc" />
+			<entity schema="public" name="cc_passtru" />
+			<entity schema="public" name="bin_list" />
+			<entity schema="public" name="cc_type" />
+		</group>
+		<group name="client_source" color="f0f3f7" >
+			<entity schema="public" name="client_source" />
+			<entity schema="public" name="commision_client_source" />
+			<entity schema="public" name="commision_cs_cost" />
+			<entity schema="public" name="search_count" />
+		</group>
+		<group name="process" color="f7f4f0" >
+			<entity schema="public" name="process" />
+			<entity schema="public" name="fare_type" />
+			<entity schema="public" name="gender" />
+			<entity schema="public" name="v_sales_by_month" />
+		</group>
+		<group name="pf_code" color="f0f0f7" >
+			<entity schema="public" name="pf_code" />
+			<entity schema="public" name="ff_carriers" />
+			<entity schema="public" name="ff_settings" />
+			<entity schema="public" name="v_sales_by_week" />
+		</group>
+		<group name="payment_status" color="f0f3f7" >
+			<entity schema="public" name="payment_status" />
+			<entity schema="public" name="traveler_type" />
+			<entity schema="public" name="service_category" />
+			<entity schema="public" name="v_pnrs_tickets_search_info" />
+		</group>
+		<group name="ticket_rules_airline" color="f1f7f0" >
+			<entity schema="public" name="ticket_rules_airline" />
+			<entity schema="public" name="permission_x_type" />
+			<entity schema="public" name="user_type" />
+			<entity schema="public" name="special_request" />
+		</group>
+		<group name="permission" color="f3f0f7" >
+			<entity schema="public" name="permission" />
+			<entity schema="public" name="permission_x_user" />
+			<entity schema="public" name="approval_status" />
+			<entity schema="public" name="booking_status" />
+		</group>
+		<group name="visa" color="f0f0f7" >
+			<entity schema="public" name="visa" />
+			<entity schema="public" name="tr_action" />
+			<entity schema="public" name="tr_status" />
+		</group>
+		<group name="invoice_status" color="f3f0f7" >
+			<entity schema="public" name="invoice_status" />
+			<entity schema="public" name="log_operation" />
+			<entity schema="public" name="ticket_rules_notes" />
+			<entity schema="public" name="user_task" />
+		</group>
+		<group name="promo_codes" color="f7f4f0" >
+			<entity schema="public" name="promo_codes" />
+			<entity schema="public" name="payment_process" />
+			<entity schema="public" name="promo_date_type" />
+			<entity schema="public" name="promo_discount_type" />
+		</group>
+		<group name="promo_log" color="f0f0f7" >
+			<entity schema="public" name="promo_log" />
+			<entity schema="public" name="searches_arch" />
+			<entity schema="public" name="x_rate" />
+			<entity schema="public" name="v_generated_month_periods_by_userinfoid" />
+		</group>
+		<group name="traveler_file" color="f3f0f7" >
+			<entity schema="public" name="traveler_file" />
+			<entity schema="public" name="doc_type" />
+			<entity schema="public" name="user_file" />
+		</group>
+		<group name="meal_list" color="f3f0f7" >
+			<entity schema="public" name="meal_list" />
+			<entity schema="public" name="seat_list" />
+			<entity schema="public" name="rc_transform_log" />
+			<entity schema="public" name="v_generated_week_periods_by_userinfoid" />
+		</group>
+		<group name="ticket_rules_cards" color="f7f4f0" >
+			<entity schema="public" name="ticket_rules_cards" />
+			<entity schema="public" name="v_sales_by_year" />
+			<entity schema="public" name="v_search_info" />
+			<entity schema="public" name="v_traveler_search_info" />
+		</group>
+		<group name="notes" color="f0f3f7" >
+			<entity schema="public" name="notes" />
+			<entity schema="public" name="params" />
+			<entity schema="public" name="promo_payment_type" />
+			<entity schema="public" name="promo_type" />
+		</group>
+	</layout>
+</project>

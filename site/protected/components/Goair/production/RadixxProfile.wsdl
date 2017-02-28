@@ -1,0 +1,3100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://radixx.com/WSRadixx/RadixxProfile" xmlns:s1="http://radixx.com/NewAirServices/Profile" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://radixx.com/WSRadixx/RadixxProfile" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://radixx.com/WSRadixx/RadixxProfile">
+      <s:import namespace="http://radixx.com/NewAirServices/Profile" />
+      <s:element name="GetProfileIDByProfileLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileIDByProfileLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetProfileIDByProfileLoginResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileIDByEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileIDByEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetProfileIDByEmailResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileIDByUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileIDByUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetProfileIDByUserResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileIDByEmailPswd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileIDByEmailPswdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetProfileIDByEmailPswdResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileIDByUserPswd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileIDByUserPswdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetProfileIDByUserPswdResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendProfileForgotLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="SendPassword" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Locale" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendProfileForgotLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendProfileForgotLoginResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendProfileForgotPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LanguageCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StaffID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendProfileForgotPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendProfileForgotPasswordResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendNotificationVoucherViaEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LanguageCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="voucherNumberFull" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendNotificationVoucherViaEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendNotificationVoucherViaEmailResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendNotificationProfileViaEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LanguageCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="profileID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendNotificationProfileViaEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendNotificationProfileViaEmailResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProfileCheckUniqueEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProfileCheckUniqueEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileCheckUniqueEmailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProfileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileMain">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileMainResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProfileMainResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProfileAddressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileContactInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileContactInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProfileContactInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileIdentification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileIdentificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProfileIdentificationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfilePayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfilePaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProfilePaymentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfilePreferences">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfilePreferencesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProfilePreferencesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileBuddyLists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileBuddyListsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProfileBuddyListsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileReservations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReservationLevelOnly" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileReservationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProfileReservationsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveProfileReservations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="securityGuid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="profileId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveProfileReservationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveProfileReservationsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileVouchers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="profileId" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="activeOnly" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileVouchersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProfileVouchersResult" type="tns:ArrayOfProfileVoucher" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProfileVoucher">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProfileVoucher" nillable="true" type="s1:ProfileVoucher" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetProfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProfileData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetProfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetProfileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetProfileMain">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProfileMainData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetProfileMainResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetProfileMainResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetProfileAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProfileAddressData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetProfileAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetProfileAddressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetProfileContactInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProfileContactData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetProfileContactInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetProfileContactInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetProfileIdentification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProfileIdentData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetProfileIdentificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetProfileIdentificationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetProfilePayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProfilePaymentData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetProfilePaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetProfilePaymentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetProfilePreferences">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProfilePreferenceData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetProfilePreferencesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetProfilePreferencesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetProfileBuddyLists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProfileBuddyListData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetProfileBuddyListsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetProfileBuddyListsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveProfilePreference">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="PreferenceTypeID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="PreferenceName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveProfilePreferenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveProfilePreferenceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssignProfileToRes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OverwriteAssignment" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssignProfileToResResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AssignProfileToResResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssignProfileToResPerson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="PersonOrgID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OverwriteAssignment" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AssignProfileToResPersonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AssignProfileToResPersonResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeProfilePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeProfilePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangeProfilePasswordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeProfileEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeProfileEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangeProfileEmailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetProfileCardData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProfileCardID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProfileCardStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetProfileCardDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetProfileCardDataResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="long" type="s:long" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="int" type="s:int" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ArrayOfProfileVoucher" nillable="true" type="tns:ArrayOfProfileVoucher" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://radixx.com/NewAirServices/Profile">
+      <s:complexType name="ProfileVoucher">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProfileId" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="VoucherNum" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReasonCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VoucherReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SeriesNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sponsor" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VoucherType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TripType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EffectiveDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpirationDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TravelEffectiveDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TravelExpirationDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartTimeRestrict" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndTimeRestrict" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="OriginalAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="BalanceAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="NonTransferable" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IncludesTaxes" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IncludesSsr" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IncludesAuto" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IncludesHotel" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IncludesPenalties" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RestrictSunday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RestrictMonday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RestrictTueday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RestrictWednesday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RestrictThursday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RestrictFriday" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RestrictSaturday" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="VoucherNumberFull" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MinimumValue" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="WebBookingOnly" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PromotionCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VoucherComments" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetProfileIDByProfileLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProfileIDByProfileLogin" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByProfileLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProfileIDByProfileLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProfileIDByEmail" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProfileIDByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProfileIDByUser" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProfileIDByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByEmailPswdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProfileIDByEmailPswd" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByEmailPswdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProfileIDByEmailPswdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByUserPswdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProfileIDByUserPswd" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByUserPswdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProfileIDByUserPswdResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendProfileForgotLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:SendProfileForgotLogin" />
+  </wsdl:message>
+  <wsdl:message name="SendProfileForgotLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:SendProfileForgotLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendProfileForgotPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:SendProfileForgotPassword" />
+  </wsdl:message>
+  <wsdl:message name="SendProfileForgotPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:SendProfileForgotPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendNotificationVoucherViaEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:SendNotificationVoucherViaEmail" />
+  </wsdl:message>
+  <wsdl:message name="SendNotificationVoucherViaEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:SendNotificationVoucherViaEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendNotificationProfileViaEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:SendNotificationProfileViaEmail" />
+  </wsdl:message>
+  <wsdl:message name="SendNotificationProfileViaEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:SendNotificationProfileViaEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProfileCheckUniqueEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:ProfileCheckUniqueEmail" />
+  </wsdl:message>
+  <wsdl:message name="ProfileCheckUniqueEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:ProfileCheckUniqueEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProfile" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileMainSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProfileMain" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileMainSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProfileMainResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProfileAddress" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProfileAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileContactInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProfileContactInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileContactInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProfileContactInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIdentificationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProfileIdentification" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIdentificationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProfileIdentificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProfilePaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProfilePayment" />
+  </wsdl:message>
+  <wsdl:message name="GetProfilePaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProfilePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProfilePreferencesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProfilePreferences" />
+  </wsdl:message>
+  <wsdl:message name="GetProfilePreferencesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProfilePreferencesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileBuddyListsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProfileBuddyLists" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileBuddyListsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProfileBuddyListsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileReservationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProfileReservations" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileReservationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProfileReservationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveProfileReservationsSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveProfileReservations" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveProfileReservationsSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveProfileReservationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileVouchersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProfileVouchers" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileVouchersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProfileVouchersResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileSoapIn">
+    <wsdl:part name="parameters" element="tns:SetProfile" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileSoapOut">
+    <wsdl:part name="parameters" element="tns:SetProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileMainSoapIn">
+    <wsdl:part name="parameters" element="tns:SetProfileMain" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileMainSoapOut">
+    <wsdl:part name="parameters" element="tns:SetProfileMainResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:SetProfileAddress" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:SetProfileAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileContactInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SetProfileContactInfo" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileContactInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SetProfileContactInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileIdentificationSoapIn">
+    <wsdl:part name="parameters" element="tns:SetProfileIdentification" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileIdentificationSoapOut">
+    <wsdl:part name="parameters" element="tns:SetProfileIdentificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetProfilePaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:SetProfilePayment" />
+  </wsdl:message>
+  <wsdl:message name="SetProfilePaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:SetProfilePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetProfilePreferencesSoapIn">
+    <wsdl:part name="parameters" element="tns:SetProfilePreferences" />
+  </wsdl:message>
+  <wsdl:message name="SetProfilePreferencesSoapOut">
+    <wsdl:part name="parameters" element="tns:SetProfilePreferencesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileBuddyListsSoapIn">
+    <wsdl:part name="parameters" element="tns:SetProfileBuddyLists" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileBuddyListsSoapOut">
+    <wsdl:part name="parameters" element="tns:SetProfileBuddyListsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveProfilePreferenceSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveProfilePreference" />
+  </wsdl:message>
+  <wsdl:message name="RemoveProfilePreferenceSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveProfilePreferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="AssignProfileToResSoapIn">
+    <wsdl:part name="parameters" element="tns:AssignProfileToRes" />
+  </wsdl:message>
+  <wsdl:message name="AssignProfileToResSoapOut">
+    <wsdl:part name="parameters" element="tns:AssignProfileToResResponse" />
+  </wsdl:message>
+  <wsdl:message name="AssignProfileToResPersonSoapIn">
+    <wsdl:part name="parameters" element="tns:AssignProfileToResPerson" />
+  </wsdl:message>
+  <wsdl:message name="AssignProfileToResPersonSoapOut">
+    <wsdl:part name="parameters" element="tns:AssignProfileToResPersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeProfilePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeProfilePassword" />
+  </wsdl:message>
+  <wsdl:message name="ChangeProfilePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeProfilePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeProfileEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeProfileEmail" />
+  </wsdl:message>
+  <wsdl:message name="ChangeProfileEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeProfileEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileCardDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SetProfileCardData" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileCardDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SetProfileCardDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByProfileLoginHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByProfileLoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByEmailHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByEmailHttpGetOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByUserHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByUserHttpGetOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByEmailPswdHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByEmailPswdHttpGetOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByUserPswdHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByUserPswdHttpGetOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="SendProfileForgotLoginHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="SendPassword" type="s:string" />
+    <wsdl:part name="Locale" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendProfileForgotLoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SendProfileForgotPasswordHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="LanguageCode" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="StaffID" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendProfileForgotPasswordHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SendNotificationVoucherViaEmailHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="LanguageCode" type="s:string" />
+    <wsdl:part name="voucherNumberFull" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendNotificationVoucherViaEmailHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SendNotificationProfileViaEmailHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="LanguageCode" type="s:string" />
+    <wsdl:part name="profileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendNotificationProfileViaEmailHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="ProfileCheckUniqueEmailHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ProfileCheckUniqueEmailHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileMainHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileMainHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileAddressHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileAddressHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileContactInfoHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileContactInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIdentificationHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIdentificationHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfilePaymentHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfilePaymentHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfilePreferencesHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfilePreferencesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileBuddyListsHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileBuddyListsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileReservationsHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="ReservationLevelOnly" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileReservationsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveProfileReservationsHttpGetIn">
+    <wsdl:part name="securityGuid" type="s:string" />
+    <wsdl:part name="profileId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveProfileReservationsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileVouchersHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="profileId" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="activeOnly" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileVouchersHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProfileVoucher" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="ProfileData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileMainHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="ProfileMainData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileMainHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileAddressHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="ProfileAddressData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileAddressHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileContactInfoHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="ProfileContactData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileContactInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileIdentificationHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="ProfileIdentData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileIdentificationHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfilePaymentHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="ProfilePaymentData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfilePaymentHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfilePreferencesHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="ProfilePreferenceData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfilePreferencesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileBuddyListsHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="ProfileBuddyListData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileBuddyListsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveProfilePreferenceHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="PreferenceTypeID" type="s:string" />
+    <wsdl:part name="PreferenceName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveProfilePreferenceHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AssignProfileToResHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="SeriesNum" type="s:string" />
+    <wsdl:part name="ConfirmationNum" type="s:string" />
+    <wsdl:part name="OverwriteAssignment" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AssignProfileToResHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AssignProfileToResPersonHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="PersonOrgID" type="s:string" />
+    <wsdl:part name="OverwriteAssignment" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AssignProfileToResPersonHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ChangeProfilePasswordHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeProfilePasswordHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ChangeProfileEmailHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeProfileEmailHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileCardDataHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="ProfileCardID" type="s:string" />
+    <wsdl:part name="ProfileCardStatus" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileCardDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByProfileLoginHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByProfileLoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByEmailHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByEmailHttpPostOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByUserHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByUserHttpPostOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByEmailPswdHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByEmailPswdHttpPostOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByUserPswdHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIDByUserPswdHttpPostOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="SendProfileForgotLoginHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="SendPassword" type="s:string" />
+    <wsdl:part name="Locale" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendProfileForgotLoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SendProfileForgotPasswordHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="LanguageCode" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="StaffID" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendProfileForgotPasswordHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SendNotificationVoucherViaEmailHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="LanguageCode" type="s:string" />
+    <wsdl:part name="voucherNumberFull" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendNotificationVoucherViaEmailHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SendNotificationProfileViaEmailHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="LanguageCode" type="s:string" />
+    <wsdl:part name="profileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendNotificationProfileViaEmailHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="ProfileCheckUniqueEmailHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ProfileCheckUniqueEmailHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileMainHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileMainHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileAddressHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileAddressHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileContactInfoHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileContactInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIdentificationHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileIdentificationHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfilePaymentHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfilePaymentHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfilePreferencesHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfilePreferencesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileBuddyListsHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileBuddyListsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileReservationsHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="ReservationLevelOnly" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileReservationsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveProfileReservationsHttpPostIn">
+    <wsdl:part name="securityGuid" type="s:string" />
+    <wsdl:part name="profileId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveProfileReservationsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileVouchersHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="profileId" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="activeOnly" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileVouchersHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProfileVoucher" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="ProfileData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileMainHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="ProfileMainData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileMainHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileAddressHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="ProfileAddressData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileAddressHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileContactInfoHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="ProfileContactData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileContactInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileIdentificationHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="ProfileIdentData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileIdentificationHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfilePaymentHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="ProfilePaymentData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfilePaymentHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfilePreferencesHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="ProfilePreferenceData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfilePreferencesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileBuddyListsHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="ProfileBuddyListData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileBuddyListsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveProfilePreferenceHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="PreferenceTypeID" type="s:string" />
+    <wsdl:part name="PreferenceName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveProfilePreferenceHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AssignProfileToResHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="SeriesNum" type="s:string" />
+    <wsdl:part name="ConfirmationNum" type="s:string" />
+    <wsdl:part name="OverwriteAssignment" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AssignProfileToResHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AssignProfileToResPersonHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="PersonOrgID" type="s:string" />
+    <wsdl:part name="OverwriteAssignment" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AssignProfileToResPersonHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ChangeProfilePasswordHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeProfilePasswordHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ChangeProfileEmailHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeProfileEmailHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileCardDataHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="ProfileCardID" type="s:string" />
+    <wsdl:part name="ProfileCardStatus" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProfileCardDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="RadixxProfileSoap">
+    <wsdl:operation name="GetProfileIDByProfileLogin">
+      <wsdl:input message="tns:GetProfileIDByProfileLoginSoapIn" />
+      <wsdl:output message="tns:GetProfileIDByProfileLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByEmail">
+      <wsdl:input message="tns:GetProfileIDByEmailSoapIn" />
+      <wsdl:output message="tns:GetProfileIDByEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByUser">
+      <wsdl:input message="tns:GetProfileIDByUserSoapIn" />
+      <wsdl:output message="tns:GetProfileIDByUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByEmailPswd">
+      <wsdl:input message="tns:GetProfileIDByEmailPswdSoapIn" />
+      <wsdl:output message="tns:GetProfileIDByEmailPswdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByUserPswd">
+      <wsdl:input message="tns:GetProfileIDByUserPswdSoapIn" />
+      <wsdl:output message="tns:GetProfileIDByUserPswdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendProfileForgotLogin">
+      <wsdl:input message="tns:SendProfileForgotLoginSoapIn" />
+      <wsdl:output message="tns:SendProfileForgotLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendProfileForgotPassword">
+      <wsdl:input message="tns:SendProfileForgotPasswordSoapIn" />
+      <wsdl:output message="tns:SendProfileForgotPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendNotificationVoucherViaEmail">
+      <wsdl:input message="tns:SendNotificationVoucherViaEmailSoapIn" />
+      <wsdl:output message="tns:SendNotificationVoucherViaEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendNotificationProfileViaEmail">
+      <wsdl:input message="tns:SendNotificationProfileViaEmailSoapIn" />
+      <wsdl:output message="tns:SendNotificationProfileViaEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProfileCheckUniqueEmail">
+      <wsdl:input message="tns:ProfileCheckUniqueEmailSoapIn" />
+      <wsdl:output message="tns:ProfileCheckUniqueEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile">
+      <wsdl:input message="tns:GetProfileSoapIn" />
+      <wsdl:output message="tns:GetProfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileMain">
+      <wsdl:input message="tns:GetProfileMainSoapIn" />
+      <wsdl:output message="tns:GetProfileMainSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileAddress">
+      <wsdl:input message="tns:GetProfileAddressSoapIn" />
+      <wsdl:output message="tns:GetProfileAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileContactInfo">
+      <wsdl:input message="tns:GetProfileContactInfoSoapIn" />
+      <wsdl:output message="tns:GetProfileContactInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIdentification">
+      <wsdl:input message="tns:GetProfileIdentificationSoapIn" />
+      <wsdl:output message="tns:GetProfileIdentificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilePayment">
+      <wsdl:input message="tns:GetProfilePaymentSoapIn" />
+      <wsdl:output message="tns:GetProfilePaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilePreferences">
+      <wsdl:input message="tns:GetProfilePreferencesSoapIn" />
+      <wsdl:output message="tns:GetProfilePreferencesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileBuddyLists">
+      <wsdl:input message="tns:GetProfileBuddyListsSoapIn" />
+      <wsdl:output message="tns:GetProfileBuddyListsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileReservations">
+      <wsdl:input message="tns:GetProfileReservationsSoapIn" />
+      <wsdl:output message="tns:GetProfileReservationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveProfileReservations">
+      <wsdl:input message="tns:RetrieveProfileReservationsSoapIn" />
+      <wsdl:output message="tns:RetrieveProfileReservationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileVouchers">
+      <wsdl:input message="tns:GetProfileVouchersSoapIn" />
+      <wsdl:output message="tns:GetProfileVouchersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfile">
+      <wsdl:input message="tns:SetProfileSoapIn" />
+      <wsdl:output message="tns:SetProfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileMain">
+      <wsdl:input message="tns:SetProfileMainSoapIn" />
+      <wsdl:output message="tns:SetProfileMainSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileAddress">
+      <wsdl:input message="tns:SetProfileAddressSoapIn" />
+      <wsdl:output message="tns:SetProfileAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileContactInfo">
+      <wsdl:input message="tns:SetProfileContactInfoSoapIn" />
+      <wsdl:output message="tns:SetProfileContactInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileIdentification">
+      <wsdl:input message="tns:SetProfileIdentificationSoapIn" />
+      <wsdl:output message="tns:SetProfileIdentificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfilePayment">
+      <wsdl:input message="tns:SetProfilePaymentSoapIn" />
+      <wsdl:output message="tns:SetProfilePaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfilePreferences">
+      <wsdl:input message="tns:SetProfilePreferencesSoapIn" />
+      <wsdl:output message="tns:SetProfilePreferencesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileBuddyLists">
+      <wsdl:input message="tns:SetProfileBuddyListsSoapIn" />
+      <wsdl:output message="tns:SetProfileBuddyListsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProfilePreference">
+      <wsdl:input message="tns:RemoveProfilePreferenceSoapIn" />
+      <wsdl:output message="tns:RemoveProfilePreferenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignProfileToRes">
+      <wsdl:input message="tns:AssignProfileToResSoapIn" />
+      <wsdl:output message="tns:AssignProfileToResSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignProfileToResPerson">
+      <wsdl:input message="tns:AssignProfileToResPersonSoapIn" />
+      <wsdl:output message="tns:AssignProfileToResPersonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProfilePassword">
+      <wsdl:input message="tns:ChangeProfilePasswordSoapIn" />
+      <wsdl:output message="tns:ChangeProfilePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProfileEmail">
+      <wsdl:input message="tns:ChangeProfileEmailSoapIn" />
+      <wsdl:output message="tns:ChangeProfileEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileCardData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds or changes status of a Smartcard identification for the passenger profile.</wsdl:documentation>
+      <wsdl:input message="tns:SetProfileCardDataSoapIn" />
+      <wsdl:output message="tns:SetProfileCardDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RadixxProfileHttpGet">
+    <wsdl:operation name="GetProfileIDByProfileLogin">
+      <wsdl:input message="tns:GetProfileIDByProfileLoginHttpGetIn" />
+      <wsdl:output message="tns:GetProfileIDByProfileLoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByEmail">
+      <wsdl:input message="tns:GetProfileIDByEmailHttpGetIn" />
+      <wsdl:output message="tns:GetProfileIDByEmailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByUser">
+      <wsdl:input message="tns:GetProfileIDByUserHttpGetIn" />
+      <wsdl:output message="tns:GetProfileIDByUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByEmailPswd">
+      <wsdl:input message="tns:GetProfileIDByEmailPswdHttpGetIn" />
+      <wsdl:output message="tns:GetProfileIDByEmailPswdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByUserPswd">
+      <wsdl:input message="tns:GetProfileIDByUserPswdHttpGetIn" />
+      <wsdl:output message="tns:GetProfileIDByUserPswdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendProfileForgotLogin">
+      <wsdl:input message="tns:SendProfileForgotLoginHttpGetIn" />
+      <wsdl:output message="tns:SendProfileForgotLoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendProfileForgotPassword">
+      <wsdl:input message="tns:SendProfileForgotPasswordHttpGetIn" />
+      <wsdl:output message="tns:SendProfileForgotPasswordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendNotificationVoucherViaEmail">
+      <wsdl:input message="tns:SendNotificationVoucherViaEmailHttpGetIn" />
+      <wsdl:output message="tns:SendNotificationVoucherViaEmailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendNotificationProfileViaEmail">
+      <wsdl:input message="tns:SendNotificationProfileViaEmailHttpGetIn" />
+      <wsdl:output message="tns:SendNotificationProfileViaEmailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProfileCheckUniqueEmail">
+      <wsdl:input message="tns:ProfileCheckUniqueEmailHttpGetIn" />
+      <wsdl:output message="tns:ProfileCheckUniqueEmailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile">
+      <wsdl:input message="tns:GetProfileHttpGetIn" />
+      <wsdl:output message="tns:GetProfileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileMain">
+      <wsdl:input message="tns:GetProfileMainHttpGetIn" />
+      <wsdl:output message="tns:GetProfileMainHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileAddress">
+      <wsdl:input message="tns:GetProfileAddressHttpGetIn" />
+      <wsdl:output message="tns:GetProfileAddressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileContactInfo">
+      <wsdl:input message="tns:GetProfileContactInfoHttpGetIn" />
+      <wsdl:output message="tns:GetProfileContactInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIdentification">
+      <wsdl:input message="tns:GetProfileIdentificationHttpGetIn" />
+      <wsdl:output message="tns:GetProfileIdentificationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilePayment">
+      <wsdl:input message="tns:GetProfilePaymentHttpGetIn" />
+      <wsdl:output message="tns:GetProfilePaymentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilePreferences">
+      <wsdl:input message="tns:GetProfilePreferencesHttpGetIn" />
+      <wsdl:output message="tns:GetProfilePreferencesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileBuddyLists">
+      <wsdl:input message="tns:GetProfileBuddyListsHttpGetIn" />
+      <wsdl:output message="tns:GetProfileBuddyListsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileReservations">
+      <wsdl:input message="tns:GetProfileReservationsHttpGetIn" />
+      <wsdl:output message="tns:GetProfileReservationsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveProfileReservations">
+      <wsdl:input message="tns:RetrieveProfileReservationsHttpGetIn" />
+      <wsdl:output message="tns:RetrieveProfileReservationsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileVouchers">
+      <wsdl:input message="tns:GetProfileVouchersHttpGetIn" />
+      <wsdl:output message="tns:GetProfileVouchersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfile">
+      <wsdl:input message="tns:SetProfileHttpGetIn" />
+      <wsdl:output message="tns:SetProfileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileMain">
+      <wsdl:input message="tns:SetProfileMainHttpGetIn" />
+      <wsdl:output message="tns:SetProfileMainHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileAddress">
+      <wsdl:input message="tns:SetProfileAddressHttpGetIn" />
+      <wsdl:output message="tns:SetProfileAddressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileContactInfo">
+      <wsdl:input message="tns:SetProfileContactInfoHttpGetIn" />
+      <wsdl:output message="tns:SetProfileContactInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileIdentification">
+      <wsdl:input message="tns:SetProfileIdentificationHttpGetIn" />
+      <wsdl:output message="tns:SetProfileIdentificationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfilePayment">
+      <wsdl:input message="tns:SetProfilePaymentHttpGetIn" />
+      <wsdl:output message="tns:SetProfilePaymentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfilePreferences">
+      <wsdl:input message="tns:SetProfilePreferencesHttpGetIn" />
+      <wsdl:output message="tns:SetProfilePreferencesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileBuddyLists">
+      <wsdl:input message="tns:SetProfileBuddyListsHttpGetIn" />
+      <wsdl:output message="tns:SetProfileBuddyListsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProfilePreference">
+      <wsdl:input message="tns:RemoveProfilePreferenceHttpGetIn" />
+      <wsdl:output message="tns:RemoveProfilePreferenceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignProfileToRes">
+      <wsdl:input message="tns:AssignProfileToResHttpGetIn" />
+      <wsdl:output message="tns:AssignProfileToResHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignProfileToResPerson">
+      <wsdl:input message="tns:AssignProfileToResPersonHttpGetIn" />
+      <wsdl:output message="tns:AssignProfileToResPersonHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProfilePassword">
+      <wsdl:input message="tns:ChangeProfilePasswordHttpGetIn" />
+      <wsdl:output message="tns:ChangeProfilePasswordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProfileEmail">
+      <wsdl:input message="tns:ChangeProfileEmailHttpGetIn" />
+      <wsdl:output message="tns:ChangeProfileEmailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileCardData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds or changes status of a Smartcard identification for the passenger profile.</wsdl:documentation>
+      <wsdl:input message="tns:SetProfileCardDataHttpGetIn" />
+      <wsdl:output message="tns:SetProfileCardDataHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RadixxProfileHttpPost">
+    <wsdl:operation name="GetProfileIDByProfileLogin">
+      <wsdl:input message="tns:GetProfileIDByProfileLoginHttpPostIn" />
+      <wsdl:output message="tns:GetProfileIDByProfileLoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByEmail">
+      <wsdl:input message="tns:GetProfileIDByEmailHttpPostIn" />
+      <wsdl:output message="tns:GetProfileIDByEmailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByUser">
+      <wsdl:input message="tns:GetProfileIDByUserHttpPostIn" />
+      <wsdl:output message="tns:GetProfileIDByUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByEmailPswd">
+      <wsdl:input message="tns:GetProfileIDByEmailPswdHttpPostIn" />
+      <wsdl:output message="tns:GetProfileIDByEmailPswdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByUserPswd">
+      <wsdl:input message="tns:GetProfileIDByUserPswdHttpPostIn" />
+      <wsdl:output message="tns:GetProfileIDByUserPswdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendProfileForgotLogin">
+      <wsdl:input message="tns:SendProfileForgotLoginHttpPostIn" />
+      <wsdl:output message="tns:SendProfileForgotLoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendProfileForgotPassword">
+      <wsdl:input message="tns:SendProfileForgotPasswordHttpPostIn" />
+      <wsdl:output message="tns:SendProfileForgotPasswordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendNotificationVoucherViaEmail">
+      <wsdl:input message="tns:SendNotificationVoucherViaEmailHttpPostIn" />
+      <wsdl:output message="tns:SendNotificationVoucherViaEmailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendNotificationProfileViaEmail">
+      <wsdl:input message="tns:SendNotificationProfileViaEmailHttpPostIn" />
+      <wsdl:output message="tns:SendNotificationProfileViaEmailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProfileCheckUniqueEmail">
+      <wsdl:input message="tns:ProfileCheckUniqueEmailHttpPostIn" />
+      <wsdl:output message="tns:ProfileCheckUniqueEmailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile">
+      <wsdl:input message="tns:GetProfileHttpPostIn" />
+      <wsdl:output message="tns:GetProfileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileMain">
+      <wsdl:input message="tns:GetProfileMainHttpPostIn" />
+      <wsdl:output message="tns:GetProfileMainHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileAddress">
+      <wsdl:input message="tns:GetProfileAddressHttpPostIn" />
+      <wsdl:output message="tns:GetProfileAddressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileContactInfo">
+      <wsdl:input message="tns:GetProfileContactInfoHttpPostIn" />
+      <wsdl:output message="tns:GetProfileContactInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIdentification">
+      <wsdl:input message="tns:GetProfileIdentificationHttpPostIn" />
+      <wsdl:output message="tns:GetProfileIdentificationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilePayment">
+      <wsdl:input message="tns:GetProfilePaymentHttpPostIn" />
+      <wsdl:output message="tns:GetProfilePaymentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilePreferences">
+      <wsdl:input message="tns:GetProfilePreferencesHttpPostIn" />
+      <wsdl:output message="tns:GetProfilePreferencesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileBuddyLists">
+      <wsdl:input message="tns:GetProfileBuddyListsHttpPostIn" />
+      <wsdl:output message="tns:GetProfileBuddyListsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileReservations">
+      <wsdl:input message="tns:GetProfileReservationsHttpPostIn" />
+      <wsdl:output message="tns:GetProfileReservationsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveProfileReservations">
+      <wsdl:input message="tns:RetrieveProfileReservationsHttpPostIn" />
+      <wsdl:output message="tns:RetrieveProfileReservationsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileVouchers">
+      <wsdl:input message="tns:GetProfileVouchersHttpPostIn" />
+      <wsdl:output message="tns:GetProfileVouchersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfile">
+      <wsdl:input message="tns:SetProfileHttpPostIn" />
+      <wsdl:output message="tns:SetProfileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileMain">
+      <wsdl:input message="tns:SetProfileMainHttpPostIn" />
+      <wsdl:output message="tns:SetProfileMainHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileAddress">
+      <wsdl:input message="tns:SetProfileAddressHttpPostIn" />
+      <wsdl:output message="tns:SetProfileAddressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileContactInfo">
+      <wsdl:input message="tns:SetProfileContactInfoHttpPostIn" />
+      <wsdl:output message="tns:SetProfileContactInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileIdentification">
+      <wsdl:input message="tns:SetProfileIdentificationHttpPostIn" />
+      <wsdl:output message="tns:SetProfileIdentificationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfilePayment">
+      <wsdl:input message="tns:SetProfilePaymentHttpPostIn" />
+      <wsdl:output message="tns:SetProfilePaymentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfilePreferences">
+      <wsdl:input message="tns:SetProfilePreferencesHttpPostIn" />
+      <wsdl:output message="tns:SetProfilePreferencesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileBuddyLists">
+      <wsdl:input message="tns:SetProfileBuddyListsHttpPostIn" />
+      <wsdl:output message="tns:SetProfileBuddyListsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProfilePreference">
+      <wsdl:input message="tns:RemoveProfilePreferenceHttpPostIn" />
+      <wsdl:output message="tns:RemoveProfilePreferenceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignProfileToRes">
+      <wsdl:input message="tns:AssignProfileToResHttpPostIn" />
+      <wsdl:output message="tns:AssignProfileToResHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignProfileToResPerson">
+      <wsdl:input message="tns:AssignProfileToResPersonHttpPostIn" />
+      <wsdl:output message="tns:AssignProfileToResPersonHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProfilePassword">
+      <wsdl:input message="tns:ChangeProfilePasswordHttpPostIn" />
+      <wsdl:output message="tns:ChangeProfilePasswordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProfileEmail">
+      <wsdl:input message="tns:ChangeProfileEmailHttpPostIn" />
+      <wsdl:output message="tns:ChangeProfileEmailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileCardData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Adds or changes status of a Smartcard identification for the passenger profile.</wsdl:documentation>
+      <wsdl:input message="tns:SetProfileCardDataHttpPostIn" />
+      <wsdl:output message="tns:SetProfileCardDataHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RadixxProfileSoap" type="tns:RadixxProfileSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetProfileIDByProfileLogin">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileIDByProfileLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByEmail">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileIDByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByUser">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileIDByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByEmailPswd">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileIDByEmailPswd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByUserPswd">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileIDByUserPswd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendProfileForgotLogin">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SendProfileForgotLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendProfileForgotPassword">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SendProfileForgotPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendNotificationVoucherViaEmail">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SendNotificationVoucherViaEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendNotificationProfileViaEmail">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SendNotificationProfileViaEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProfileCheckUniqueEmail">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/ProfileCheckUniqueEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileMain">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileMain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileAddress">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileContactInfo">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileContactInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIdentification">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileIdentification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilePayment">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfilePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilePreferences">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfilePreferences" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileBuddyLists">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileBuddyLists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileReservations">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileReservations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveProfileReservations">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/RetrieveProfileReservations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileVouchers">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileVouchers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfile">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SetProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileMain">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SetProfileMain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileAddress">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SetProfileAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileContactInfo">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SetProfileContactInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileIdentification">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SetProfileIdentification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfilePayment">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SetProfilePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfilePreferences">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SetProfilePreferences" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileBuddyLists">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SetProfileBuddyLists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProfilePreference">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/RemoveProfilePreference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignProfileToRes">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/AssignProfileToRes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignProfileToResPerson">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/AssignProfileToResPerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProfilePassword">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/ChangeProfilePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProfileEmail">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/ChangeProfileEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileCardData">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SetProfileCardData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxProfileSoap12" type="tns:RadixxProfileSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetProfileIDByProfileLogin">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileIDByProfileLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByEmail">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileIDByEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByUser">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileIDByUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByEmailPswd">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileIDByEmailPswd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByUserPswd">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileIDByUserPswd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendProfileForgotLogin">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SendProfileForgotLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendProfileForgotPassword">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SendProfileForgotPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendNotificationVoucherViaEmail">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SendNotificationVoucherViaEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendNotificationProfileViaEmail">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SendNotificationProfileViaEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProfileCheckUniqueEmail">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/ProfileCheckUniqueEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileMain">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileMain" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileAddress">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileContactInfo">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileContactInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIdentification">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileIdentification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilePayment">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfilePayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilePreferences">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfilePreferences" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileBuddyLists">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileBuddyLists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileReservations">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileReservations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveProfileReservations">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/RetrieveProfileReservations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileVouchers">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/GetProfileVouchers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfile">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SetProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileMain">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SetProfileMain" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileAddress">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SetProfileAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileContactInfo">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SetProfileContactInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileIdentification">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SetProfileIdentification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfilePayment">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SetProfilePayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfilePreferences">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SetProfilePreferences" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileBuddyLists">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SetProfileBuddyLists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProfilePreference">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/RemoveProfilePreference" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignProfileToRes">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/AssignProfileToRes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignProfileToResPerson">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/AssignProfileToResPerson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProfilePassword">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/ChangeProfilePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProfileEmail">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/ChangeProfileEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileCardData">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxProfile/SetProfileCardData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxProfileHttpGet" type="tns:RadixxProfileHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetProfileIDByProfileLogin">
+      <http:operation location="/GetProfileIDByProfileLogin" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByEmail">
+      <http:operation location="/GetProfileIDByEmail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByUser">
+      <http:operation location="/GetProfileIDByUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByEmailPswd">
+      <http:operation location="/GetProfileIDByEmailPswd" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByUserPswd">
+      <http:operation location="/GetProfileIDByUserPswd" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendProfileForgotLogin">
+      <http:operation location="/SendProfileForgotLogin" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendProfileForgotPassword">
+      <http:operation location="/SendProfileForgotPassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendNotificationVoucherViaEmail">
+      <http:operation location="/SendNotificationVoucherViaEmail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendNotificationProfileViaEmail">
+      <http:operation location="/SendNotificationProfileViaEmail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProfileCheckUniqueEmail">
+      <http:operation location="/ProfileCheckUniqueEmail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile">
+      <http:operation location="/GetProfile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileMain">
+      <http:operation location="/GetProfileMain" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileAddress">
+      <http:operation location="/GetProfileAddress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileContactInfo">
+      <http:operation location="/GetProfileContactInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIdentification">
+      <http:operation location="/GetProfileIdentification" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilePayment">
+      <http:operation location="/GetProfilePayment" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilePreferences">
+      <http:operation location="/GetProfilePreferences" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileBuddyLists">
+      <http:operation location="/GetProfileBuddyLists" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileReservations">
+      <http:operation location="/GetProfileReservations" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveProfileReservations">
+      <http:operation location="/RetrieveProfileReservations" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileVouchers">
+      <http:operation location="/GetProfileVouchers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfile">
+      <http:operation location="/SetProfile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileMain">
+      <http:operation location="/SetProfileMain" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileAddress">
+      <http:operation location="/SetProfileAddress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileContactInfo">
+      <http:operation location="/SetProfileContactInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileIdentification">
+      <http:operation location="/SetProfileIdentification" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfilePayment">
+      <http:operation location="/SetProfilePayment" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfilePreferences">
+      <http:operation location="/SetProfilePreferences" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileBuddyLists">
+      <http:operation location="/SetProfileBuddyLists" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProfilePreference">
+      <http:operation location="/RemoveProfilePreference" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignProfileToRes">
+      <http:operation location="/AssignProfileToRes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignProfileToResPerson">
+      <http:operation location="/AssignProfileToResPerson" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProfilePassword">
+      <http:operation location="/ChangeProfilePassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProfileEmail">
+      <http:operation location="/ChangeProfileEmail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileCardData">
+      <http:operation location="/SetProfileCardData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxProfileHttpPost" type="tns:RadixxProfileHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetProfileIDByProfileLogin">
+      <http:operation location="/GetProfileIDByProfileLogin" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByEmail">
+      <http:operation location="/GetProfileIDByEmail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByUser">
+      <http:operation location="/GetProfileIDByUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByEmailPswd">
+      <http:operation location="/GetProfileIDByEmailPswd" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIDByUserPswd">
+      <http:operation location="/GetProfileIDByUserPswd" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendProfileForgotLogin">
+      <http:operation location="/SendProfileForgotLogin" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendProfileForgotPassword">
+      <http:operation location="/SendProfileForgotPassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendNotificationVoucherViaEmail">
+      <http:operation location="/SendNotificationVoucherViaEmail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendNotificationProfileViaEmail">
+      <http:operation location="/SendNotificationProfileViaEmail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProfileCheckUniqueEmail">
+      <http:operation location="/ProfileCheckUniqueEmail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile">
+      <http:operation location="/GetProfile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileMain">
+      <http:operation location="/GetProfileMain" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileAddress">
+      <http:operation location="/GetProfileAddress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileContactInfo">
+      <http:operation location="/GetProfileContactInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileIdentification">
+      <http:operation location="/GetProfileIdentification" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilePayment">
+      <http:operation location="/GetProfilePayment" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfilePreferences">
+      <http:operation location="/GetProfilePreferences" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileBuddyLists">
+      <http:operation location="/GetProfileBuddyLists" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileReservations">
+      <http:operation location="/GetProfileReservations" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveProfileReservations">
+      <http:operation location="/RetrieveProfileReservations" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileVouchers">
+      <http:operation location="/GetProfileVouchers" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfile">
+      <http:operation location="/SetProfile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileMain">
+      <http:operation location="/SetProfileMain" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileAddress">
+      <http:operation location="/SetProfileAddress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileContactInfo">
+      <http:operation location="/SetProfileContactInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileIdentification">
+      <http:operation location="/SetProfileIdentification" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfilePayment">
+      <http:operation location="/SetProfilePayment" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfilePreferences">
+      <http:operation location="/SetProfilePreferences" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileBuddyLists">
+      <http:operation location="/SetProfileBuddyLists" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProfilePreference">
+      <http:operation location="/RemoveProfilePreference" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignProfileToRes">
+      <http:operation location="/AssignProfileToRes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssignProfileToResPerson">
+      <http:operation location="/AssignProfileToResPerson" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProfilePassword">
+      <http:operation location="/ChangeProfilePassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeProfileEmail">
+      <http:operation location="/ChangeProfileEmail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProfileCardData">
+      <http:operation location="/SetProfileCardData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RadixxProfile">
+    <wsdl:port name="RadixxProfileSoap" binding="tns:RadixxProfileSoap">
+      <soap:address location="http://g8.service.radixx.com/RadixxProfile.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxProfileSoap12" binding="tns:RadixxProfileSoap12">
+      <soap12:address location="http://g8.service.radixx.com/RadixxProfile.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxProfileHttpGet" binding="tns:RadixxProfileHttpGet">
+      <http:address location="http://g8.service.radixx.com/RadixxProfile.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxProfileHttpPost" binding="tns:RadixxProfileHttpPost">
+      <http:address location="http://g8.service.radixx.com/RadixxProfile.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

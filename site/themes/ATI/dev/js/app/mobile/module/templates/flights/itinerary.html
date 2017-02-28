@@ -1,0 +1,72 @@
+{{#flight}}
+{{#each segments}}
+<div class="outer_itinerary {{#if data}}outer_iti{{/if}}">
+	{{#if first(.).airport_change}}
+    	<div class="airport_change margin_top">
+        	{{first(.).airport_change}}
+        </div>
+    {{/if}}
+    {{#if first(.).transitvisa_msg}}
+    	<div class="transit_itinerary margin_top">
+        	{{first(.).transitvisa_msg}}
+        </div>
+    {{/if}}
+    {{#if first(.).techStop!=null}}
+    	<div class="techstop_itenerary margin_top">Technical Stop: {{first(.).techStop}}</div>
+    {{/if}}
+    <div class="time_journey margin_top">
+		{{ duration.format(segtime(.))}}
+	</div>
+    {{#each .}}
+        <div class="myrow">
+        	<div class="mycol font_res">
+        		 <div class="name">
+                    <span class="flight-no">
+                        {{flight}}
+                    </span>
+                </div>
+        	</div>
+	    	<div class="mycol font_res
+	    		{{#if from.airportCode==name_airport_change[0] || from.airportCode==name_airport_change[1] || from.airportCode==name_airport_change[2]
+                    || from.airportCode==name_airport_change[3]}}
+                           air_change
+                    {{/if}}
+	    	">
+	    		<div class="airport_code_iti">
+	    			{{from.airportCode}}
+	    		</div>
+	    		{{#if data}}
+		    		<div class="day_time">
+		    			{{ depart.format('ddd HH:mm') }}
+		    		</div>
+		    		<div class="day_date">
+		    			{{ small ? depart.format('D MMM') : depart.format('D MMM, YYYY') }}
+		    		</div>
+	    		{{/if}}
+	    	</div>
+	    	<div class="mycol single_journey_time font_res">
+	    		<div class="mobile_time">
+	    			{{ duration.format(time) }}
+	    		</div>
+	    	</div>
+	    	<div class="mycol {{#if to.airportCode==name_airport_change[0] || to.airportCode==name_airport_change[1] || to.airportCode==name_airport_change[2]
+                    || to.airportCode==name_airport_change[3]}}
+                           air_change
+                    {{/if}} font_res">
+	    		<div class="airport_code_iti">
+	    			{{to.airportCode}}
+	    		</div>
+	    		{{#if data}}
+		    		<div class="day_time">
+		    			{{ arrive.format('ddd HH:mm') }}
+		    		</div>
+		    		<div class="day_date">
+		    			{{ small ? arrive.format('D MMM') : arrive.format('D MMM, YYYY') }}
+		    		</div>
+	    		{{/if}}
+	    	</div>
+        </div>
+    {{/each}}
+</div>
+{{/each}}
+{{/flight}}

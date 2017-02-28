@@ -1,0 +1,162 @@
+<div class="box reschedule {{#if mybookings.pending}} ui segment loading {{/if}} " >
+    <div class="ui positive  message" style="display: none" >
+        <i class="close icon" on-click='closemessage'></i>      
+        Email Sent
+    </div>
+    <div class="ui modal small" >
+        <i class="close icon"></i>
+        <div class="header">
+            Email Ticket
+        </div>
+        <div class="ui basic segment"> 
+            <form class="ui form {{#if this.submitting}}loading{{/if}}" action="javascript:;" on-submit="submit()"  >
+                <input class="ui input small" type="text"  value="{{this.uemail}}"> 
+                <input class="ui input small" type="hidden" id="cid" value="{{this.cid}}"> 
+                <div class="actions">
+                    <button type="submit" class="ui small button">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <h1>My Bookings</h1>
+
+    <h2>Upcoming Trips</h2>
+    <div class="group ">
+        {{#if mybookings.carts.length==0}}
+        <div class="ui error message">No Trips Found !!</div>
+        {{else}}
+        {{#if !mybookings.flgUpcoming}}
+        <div class="ui error message">No Trips Found !!</div>
+        {{/if}}
+        {{/if}}
+        {{#each mybookings.carts:i}}
+        {{#if upcoming=='true'}}
+        <div class="item  stackable {{formatBookingStatusClass(booking_status)}} ">
+            <div class="table">
+                <div>
+                    {{#if isMultiCity=='false'}}
+                    {{#if returndate==null}}
+                    <span class="direction">{{traveler[0].src[0].name}}<span class="to">&nbsp;</span>{{traveler[0].dest[0].name}}</span>  
+                    {{else}}
+                    <span class="direction">{{traveler[0].src[0].name}}<span class="back">&nbsp;</span>{{traveler[0].dest[0].name}}</span>
+                    {{/if}}
+                    {{else}}
+                    <span class="direction">
+                        {{#traveler[0].src:i}}                                         
+                        {{name}}&nbsp; | &nbsp; 
+                        {{/}}
+                        {{traveler[0].dest[traveler[0].dest.length-1].name}}
+                    </span>
+                    {{/if}}
+                    <span class="date">{{formatTravelDate(bookings[0].departure)}}</span>
+                </div>
+                <div class="action" >
+                    <a href="/b2c/airCart/mybookings/{{id}}#print" target="_blank"  class="print" title="Print"></a>
+                    <a class="email" on-click="toggleemail:{{id}},{{email}}" title="Email" ></a>
+                    <a href="/b2c/airCart/asPDF/{{id}}" target="_blank" class="pdf" title="Download PDF" ></a>
+
+                </div>
+
+                <div>
+                    <span class="booking-id">Booking Id: {{id}} </span>
+                    <span class="booking-date">{{formatBookingDate(created)}}</span>
+					<a class="ui blue fluid button" style='padding:5px;margin-top:8px;cursor:default;' on-click="getdetail:{{id}}">View Details</a>
+                </div>
+            </div>
+            <div class="hr">&nbsp;</div>
+            <div class="table">
+                <div>
+                    <span class="traveller">
+
+
+                        {{#traveler:i }}
+                        {{#if i==(traveler.length-1)}}
+                        <a href="#"> {{ formatName(traveler[i].name) }} </a> &nbsp; 
+                        {{else}}                                        
+                        <a href="#"> {{ formatName(traveler[i].name) }} </a> &nbsp;|&nbsp; 
+                        {{/if}}
+                        {{/}}
+
+
+                    </span>
+                </div>
+                <div>
+                    <span class="price">{{{curency}}} {{money(totalAmount)}}</span>
+                    <span class="status {{formatBookingStatusClass(booking_status)}}">{{ formatBookingStatusMessage(booking_status)}}</span>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+        {{/each}}
+    </div>
+    <h2>Previous Trips</h2>
+    <div class="group">
+        {{#if mybookings.carts.length==0}}
+        <div class="ui error message">No Trips Found !!</div>
+        {{else}}
+        {{#if !mybookings.flgPrevious}}
+        <div class="ui error message">No Trips Found !!</div>
+        {{/if}}
+        {{/if}}
+        {{#each mybookings.carts:i}}                         
+        {{#if upcoming=='false'}}
+        <div class="item  previous  stackable">
+            <div class="table">
+                <div>
+                    {{#if isMultiCity=='false'}}
+                    {{#if returndate==null}}
+                    <span class="direction">{{traveler[0].src[0].name}}<span class="to">&nbsp;</span>{{traveler[0].dest[0].name}}</span>  
+                    {{else}}
+                    <span class="direction">{{traveler[0].src[0].name}}<span class="back">&nbsp;</span>{{traveler[0].dest[0].name}}</span>
+                    {{/if}}
+                    {{else}}
+                    <span class="direction">
+                        {{#traveler[0].src:i}}                                         
+                        {{name}}&nbsp; | &nbsp; 
+                        {{/}}
+                        {{traveler[0].dest[traveler[0].dest.length-1].name}}
+                    </span>
+                    {{/if}}
+                    <span class="date">{{formatTravelDate(bookings[0].departure)}}</span>
+                </div>
+                <div class="action" >
+                    <a href="/b2c/airCart/mybookings/{{id}}#print" target="_blank"  class="print" title="Print"></a>
+                    <a class="email" on-click="toggleemail:{{id}},{{email}}" title="Email" ></a>
+                    <a href="/b2c/airCart/asPDF/{{id}}" target="_blank" class="pdf" title="Download PDF" ></a>
+                </div>
+                <div>
+                    <span class="booking-id">Booking Id: {{id}} </span>
+                    <span class="booking-date">{{formatBookingDate(created)}}</span>
+					<a class="ui blue fluid button" style='padding:5px;margin-top:8px;cursor:default;' on-click="getdetail:{{id}}">View Details</a>
+                </div>
+            </div>
+            <div class="hr">&nbsp;</div>
+            <div class="table">
+                <div>
+                    <span class="traveller">
+
+
+                        {{#traveler:i }}
+                        {{#if i==(traveler.length-1)}}
+                        <a href="#"> {{ formatName(traveler[i].name) }} </a> &nbsp; 
+                        {{else}}                                        
+                        <a href="#"> {{ formatName(traveler[i].name) }} </a> &nbsp;|&nbsp; 
+                        {{/if}}
+                        {{/}}
+
+
+                    </span>
+                </div>
+                <div>
+                    <span class="price">{{{curency}}} {{money(totalAmount)}}</span>
+                    <span class="status {{formatBookingStatusClass(booking_status)}}">{{ formatBookingStatusMessage(booking_status)}}</span>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+        {{/each}}
+
+    </div>
+</div>
+
+

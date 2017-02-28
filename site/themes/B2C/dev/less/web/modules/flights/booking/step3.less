@@ -1,0 +1,193 @@
+.step3 {
+    > .ui.segment {
+        margin-top: 0px;
+    }
+
+    .note {
+        font-size: 12px;
+        color: #767575;
+
+        span {
+            color: #2d2727;
+        }
+
+        margin-bottom: 10px;
+    }
+
+    .store.field {
+        label {
+            input {
+                vertical-align: text-bottom;
+            }
+
+            font-weight: normal;
+            font-size: 12px;
+        }
+    }
+
+    .agreement.field {
+        label {
+            input {
+                vertical-align: text-bottom;
+            }
+
+            font-weight: normal;
+            font-size: 12px;
+            color: #767575;
+            margin-bottom: 40px
+        }
+    }
+@media only screen and (max-width: 760px)
+            {
+                .amount {
+                    margin-left: 20px;
+        font-size: 16px !important;
+        font-weight: bold !important;
+        color: #202629 !important;
+        margin-right: 0px !important;
+    }
+            }
+            @media only screen and (min-width: 761px)
+            {
+    .amount {
+        font-size: 19px !important;
+        font-weight: bold !important;
+        color: #202629 !important;
+        margin-right: 0px !important;
+    }
+            }
+    .row {
+        padding-top: 0rem !important; 
+        padding-bottom: .5rem !important;
+        .amtNotice {
+            /*margin-left: -27px;*/
+            font-size: 13px !important;
+            color: #bcbdbe !important;
+        }
+    }
+}
+
+
+
+.credit-card {
+    margin-bottom: 10px;
+
+    > div {
+        padding: 5px 0;
+
+        &.field, &.fields {
+            width: 380px;
+        }
+    }
+
+    .expiry.fields {
+        .field {
+            //width: 120px;
+        }
+    }
+
+    .cvv-image {
+        width: 100%;
+        text-align: right;
+
+        > div {
+            display: inline-block;
+            line-height: 46px;
+        }
+    }
+}
+
+.netbanking {
+    margin-bottom: 10px;
+
+    > div {
+        padding: 5px 0;
+
+        &.field, &.fields {
+            width: 380px;
+        }
+    }
+}
+
+.verified {
+    position: relative;
+
+    > div {
+        position: absolute;
+        top: -27px;
+        right: -15px;
+
+        text-align: right;
+
+    }
+
+    img {
+        width: 100px;
+        vertical-align: middle;
+    }
+}
+
+.loader_x {
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    display: none;
+}
+
+.line_x {
+    animation: expand 1s ease-in-out infinite;
+    border-radius: 10px;
+    display: inline-block;
+    transform-origin: center center;
+    margin: 0 3px;
+    width: 1px;
+    height: 13px;
+}
+
+.line_x:nth-child(1) {
+    background: #AA2F41;
+}
+
+.line_x:nth-child(2) {
+    animation-delay: 100ms;
+    background: #EBC844;
+}
+
+.line_x:nth-child(3) {
+    animation-delay: 250ms;
+    background: #0C4960;
+}
+
+.line_x:nth-child(4) {
+    animation-delay: 350ms;
+    background: #e67e22;
+}
+.line_x:nth-child(5) {
+    animation-delay: 450ms;
+    background: #f1c40f;
+}
+.line_x:nth-child(6) {
+    animation-delay: 550ms;
+    background: #222233;
+}
+.line_x:nth-child(7) {
+    animation-delay: 650ms;
+    background: #BBA036;
+}
+.line_x:nth-child(8) {
+    animation-delay: 750ms;
+    background: #27ae60;
+}
+.line_x:nth-child(9) {
+    animation-delay: 850ms;
+    background:#853962;
+}
+
+@keyframes expand {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(2);
+    }
+}

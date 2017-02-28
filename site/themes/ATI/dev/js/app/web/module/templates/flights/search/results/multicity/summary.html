@@ -1,0 +1,18 @@
+<table style="width: 100%">
+    <tr>
+        {{#each results.flights:i}}
+        <td valign="top" style="width: {{ percent(results.flights) }}%;">
+            <flights
+                    caption="1"
+                    selectFn="{{selectFn}}"
+                    summary="1"
+                    class="tiny"
+                    flights="{{.}}"
+                    search="{{results.search}}"
+                    filtered="{{results.filtered}}"
+                    selected="{{selected[i]}}"
+                    ></flights>
+        </td>
+        {{/each}}
+    </tr>
+</table>

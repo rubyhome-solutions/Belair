@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xml.amadeus.com/QUQPCQ_03_1_1A" xmlns="http://xml.amadeus.com/QUQPCQ_03_1_1A" elementFormDefault="qualified">
+  <xs:element name="Queue_PlacePNR">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">place PNR onto individual or multiple queues</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="placementOption" type="SelectionDetailsTypeI">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">specify the type of placement to be done queue place on queue  queue place on another queue  queue place off queue</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="targetDetails" maxOccurs="10">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">provides upto 10 target offices where the PNR/Msg can be queue placed to</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="targetOffice" type="AdditionalBusinessSourceInformationType">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">used to specify the target office for which the queue count is to be displayed</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="queueNumber" minOccurs="0" type="QueueInformationTypeI">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">used to specify the queue if required</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="categoryDetails" minOccurs="0" type="SubQueueInformationTypeI">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">used to select the category</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="placementDate" minOccurs="0" type="StructuredDateTimeInformationType">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">used to pass the target date/time if not default</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="recordLocator" type="ReservationControlInformationTypeI">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">contains the record locator to be queue placed</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="AdditionalBusinessSourceInformationType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">To specify ownership and creator of a PNR</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="sourceType" type="SourceTypeDetailsTypeI">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">SOURCE TYPE</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="originatorDetails" minOccurs="0" type="OriginatorIdentificationDetailsTypeI">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">ORIGINATOR DETAILS</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OriginatorIdentificationDetailsTypeI">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">To identify the originator of the travel request.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="inHouseIdentification1" type="AlphaNumericString_Length1To9">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">the office that is being targetted</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="QueueInformationDetailsTypeI">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">To identify the name of the queue,  position of items, count, maximum items allowed, status and related queues.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="number" type="NumericInteger_Length1To2">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">queue number</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="QueueInformationTypeI">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">To specify details of a reservation queue.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="queueDetails" type="QueueInformationDetailsTypeI">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">queue identification</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReservationControlInformationDetailsTypeI">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">To specify the information required to identify a reservation.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="controlNumber" type="AlphaNumericString_Length1To8">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">contains the record locator to be queue placed</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReservationControlInformationTypeI">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">To specify a reference to a reservation.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="reservation" type="ReservationControlInformationDetailsTypeI">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">contains the record locator</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SelectionDetailsInformationTypeI">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">To specify a selected option and associated information.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="option" type="AlphaNumericString_Length1To3">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">to specify if noramal or delay queue</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SelectionDetailsTypeI">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">To specify the details for making a selection.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="selectionDetails" type="SelectionDetailsInformationTypeI">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">specify queue type</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SourceTypeDetailsTypeI">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">To identify the type of source.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="sourceQualifier1" type="AlphaNumericString_Length1To3">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">to define if own office or different office being targetted</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StructuredDateTimeInformationType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">This segment is designed to convey date/time in a structured way.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="timeMode" minOccurs="0" type="NumericInteger_Length1To1">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">used to select the date range</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="dateTime" minOccurs="0" type="StructuredDateTimeType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Convey date and/or time.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StructuredDateTimeType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Store date and time in a structured way</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="year" type="Year_YYYY">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Year number. The format is a little long for short term usage but it can be reduced by implementation if required.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="month" type="Month_mM">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Month number in the year ( begins to 1 )</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="day" type="Day_nN">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Day number in the month ( begins to 1 )</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="hour" minOccurs="0" type="Hour_hH">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Hour between 0 and 23</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubQueueInformationDetailsTypeI">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">To identify the name of the sub queue, count, maximum items allowed and status.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="identificationType" type="AlphaNumericString_Length1To3">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">E for every category    A for cats with items to be worked C for category number N for nickname CN for both category number and nickname numeric for date range</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="itemNumber" minOccurs="0" type="AlphaNumericString_Length1To3">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">category number</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="itemDescription" minOccurs="0" type="AlphaNumericString_Length1To35">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">used for nickname on inbound used for category name on outbound</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubQueueInformationTypeI">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">To specify details of a reservation sub queue</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="subQueueInfoDetails" type="SubQueueInformationDetailsTypeI">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">identifies the category or categories.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="NumericInteger_Length1To1">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Format limitations: n1</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer">
+      <xs:pattern value="-?[0-9]{1,1}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AlphaNumericString_Length1To3">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Format limitations: an..3</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="3" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AlphaNumericString_Length1To9">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Format limitations: an..9</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="9" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="NumericInteger_Length1To2">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Format limitations: n..2</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer">
+      <xs:pattern value="-?[0-9]{1,2}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AlphaNumericString_Length1To35">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Format limitations: an..35</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="35" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AlphaNumericString_Length1To8">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Format limitations: an..8</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="8" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Year_YYYY">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Value of the year. Example: 2003</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{4}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Month_mM">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Value of the month. Only significant digits are mandatory. Example: 7</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(0?[1-9]|1[0-2])" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Day_nN">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Value of the day in the  month. Only significant digits are mandatory. Example: 7</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(0?[1-9]|[1-2][0-9]|3[0-1])" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Hour_hH">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Value of the hours in the  time. Only significant digits are mandatory. Example: 7</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-1]?[0-9]|2[0-3]" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+<!-- SchemaRules="2010/01"-->
+<!--Created with SchemaBuilder 5.0.0 by Amadeus S.A.S.-->
+<!--"Amadeus Proprietary and Confidential Information: unauthorized use and disclosure strictly forbidden. 2010 - Amadeus s.a.s - All Rights Reserved."-->
+<!--Build Key:
+1F8B080000000000000095534B6FDB300CBEEB5708BDEC30C471960D2B02E8E0E6D10D58D2BC7A0B102816930895254F948B7A45FFFB28DB59BB5DB65D0C92A2F9F8BE8FB7D3C5749D6DA793FDDD427C48071F7BE9756F90F24D6595AC79FA69341C8E86D7FC76BE7D9FA6A33465D93C0B750938D306AC2C4050607F2351E7DB184E9E50B1834458D01B963207710EA11CF5FB4F85496421155498E4AEE8B303F53030D15EF41142D0F6847DA57364F919F2870D7D0B2982AF80E54E01A5A0B0CE46AF28C092D7BD15A5B4756C276C650C05CADAEBD33988ABAC6DC797DE955E4390BEE6D22A3E76F6A815D5D0D2F0AFF6E87C21837676C42B2BAB70765EFF00C52B84265D69CC8DC3CA03C7E0751E4CCDE99F83565423E1045BCA7BFCD20C139960F48DE1EB3807F2354DEF1F4125574CC1515626DCFA32C2A5C4511A04A65C7530B081EF15D81C9632E4E7EE05ECCD3F8109F635E73912F4B27F7E048FB415591E0C5019B2E4893AD42FEC48F4AD2B4398B9C864E33774363F47EB2F058CCBA5E92037EEA488C6C968F7659A4D7653A58F320F5BE70CEEA6DBFD446390368C8929E28F98DBCDA57F80C8789B830DD7B8FBE64E54CB9E9A41B4BAB3A66605F813746034F64C8351B8713EFC828F16479A2BC388E9EFB109B1AE4DA71CFB5F10954EDBB080D0D2D188CD3B17DE20D4F851C0096B57888862BCA3B49F0EBA18CE9CCF8CA6DA9D62A316740E382125516F12658B2216D28758F7DEEA5C87BA5B247869D134FA247C04618DFDAEF2369BF79F15184D6B4812D04B42AF2C8EA7DE9E0F89657CB999B626451AA89A4BD636674F68C25D15CA2ACC9C51E0450C30D6EBCD5B18DF21D7AF77D2EBB1162431C8D89BFE225B66FB550515EC072989BA90DA8AD5FD94C153497CED25EE27D35BB15D53A8E3874B0F520C3E5F7C4A5F2DC72B56D241683C13C52DF02D3B6240D6A38E9491D920231B1045DB756988DCE562CD2E14FD19EFF816E990FD043D547DCFFB040000
+-->
+

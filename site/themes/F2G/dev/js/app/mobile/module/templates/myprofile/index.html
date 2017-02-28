@@ -1,0 +1,79 @@
+<layout meta="{{meta}}">
+    <header>
+    <div class="ui three column grid">
+        <div class="column"><a id="m_btn" class="main_mnu" href="#"><img src="/themes/F2G/img/mobile/bars.png" alt="menu"></a></div>
+        <div class="column"><a class="logo" href="/b2c/flights"><img src="/themes/F2G/img/mobile/logo.png" alt="CheapTickets24.com"></a></div>
+       <div class="column header_right_menu"><a href="/b2c/flights"><div class="home_button"></div></a></div>
+    </div>
+    <div id="m_menu" class="ui left vertical sidebar menu push scale down overlay">
+        <div class="avat">
+            <div class="item">
+                <img id="avatar" class="ui avatar liitle image" src="/themes/F2G/img/guest.png">
+                <div class="description">WELCOME 
+                    {{#if meta.user!=null}}
+                    <h1 id="name">{{ meta.user.name }}</h1>
+                    {{else}}
+                    <h1 id="name">Guest User</h1>
+                    {{/if}}
+                    
+                    </div>
+            </div>
+        </div>
+        {{#if meta.user }}
+            <a class="ui blue fluid button" href="/site/logout">Logout</a>
+        {{/if}}
+          <a class="item">
+            <div class="home_search"></div>
+            <p><a href="/b2c/flights">Search Flights</a></p>
+        </a>
+        <a class="item">
+            <div class="prof"></div>
+            <p><a href="/b2c/mobile/myprofile/">My Profile</a></p>
+        </a>
+        <a class="item">
+            <div class="book"></div>
+            <p><a href="/b2c/mobile/mybookings/">My Bookings</a></p>
+        </a>
+        <a class="item">
+            <div class="trav"></div>
+            <p><a href="/b2c/mobile/mytraveller/">Travellers</a></p>
+        </a>
+        
+        <span id="devider" class="item">QUICK TOOLS</span>
+        <a class="item">
+            <div class="print"></div>
+            <p><a href="/b2c/mobile/mybookings/">Print / View Ticket</a></p>
+        </a>
+        <a class="item">
+            <div class="cancel"></div>
+            <p><a href="/b2c/mobile/mybookings/">Cancelations</a></p>
+        </a>
+        <a class="item">
+            <div class="change"></div>
+            <p><a href="/b2c/mobile/mybookings/"> Change / Reschedule</a></p>
+        </a>
+        
+    </div>
+</header>
+    <div class="content">
+        
+                <div class="box my-travellers">
+                    <div class="left" >
+
+                        <div id="myprofile">
+                            {{#if  !myprofile.edit}}   
+                            <myprofileview myprofile="{{myprofile}}" meta="{{meta}}"></myprofileview>
+                            {{else}}                
+                            <myprofile-form myprofile="{{myprofile}}" meta="{{meta}}"></myprofile-form>
+                            {{/if}}                
+                        </div>
+                    </div>
+                </div>
+           
+    </div>
+    {{#partial panel}}
+
+    {{> base-panel }}
+
+    {{/partial}}
+</layout>

@@ -1,0 +1,1114 @@
+.modify-search.single {
+  padding: 0.5em 0.5em;
+}
+.modify-search.single table td {
+  padding: 0 5px;
+}
+.modify-search.single table td.passenger {
+  width: 70px;
+}
+.modify-search.single table td.passenger .ui.input {
+  min-width: 70px;
+}
+.modify-search .ui.blue.button {
+  width: 100%;
+}
+.modify-search.multicity {
+  background-color: #f0efef !important;
+}
+.modify-search.multicity .item .content {
+  font-size: 13px;
+  font-weight: bold;
+  color: #202629;
+  text-align: center;
+  height: 35px;
+}
+.modify-search.multicity .item .content .header {
+  text-align: left;
+  font-family: 'gotham_bookregular', sans-serif;
+  font-size: 10px;
+  font-weight: normal;
+  color: #606f7f;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+#flights-search {
+  padding: 20px 30px;
+}
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+  #flights-search {
+    padding: -10px 15px;
+  }
+}
+#flights-search.segment {
+  max-width: 700px;
+}
+#flights-search.centered {
+  margin: 0 auto;
+}
+#flights-search .tabular.menu {
+  padding: 0 5px;
+}
+#flights-search h1 {
+  font-size: 30px;
+  margin-bottom: 2px !important;
+  font-weight: 400;
+}
+#flights-search .travel-type .deco {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+#flights-search .travel-type .deco.active {
+  background-color: #fff0a0;
+}
+#flights-search .delete {
+  width: 20px;
+  height: 20px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAAH6ji2bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjJFQzVDMTVGOEMzNTExRTQ4QkQ3RTE0RTAzN0I1NzRBIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjJFQzVDMTYwOEMzNTExRTQ4QkQ3RTE0RTAzN0I1NzRBIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MkVDNUMxNUQ4QzM1MTFFNDhCRDdFMTRFMDM3QjU3NEEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MkVDNUMxNUU4QzM1MTFFNDhCRDdFMTRFMDM3QjU3NEEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz78mMA7AAACIklEQVR42mL8np/PAATJQDyXCUjEckyYMAdI/2eEyvwH4gsAAQTjyLGARNiKixlAahl+9fYyAAQQsjo4AMnKgRggpUATwYIAAQRTCQJpQDwLpnILVPtMmDEgQW9GLi4G1rAwmI7/YBtZfHwY/mzZArcI5B6B36tWfUCynBEggJAtAin1ZsAEvED8hQlmNkgRk6wsXBbJ3s9AfB5kTRFM5N/jx2AFzFZWDD8KCpBNNcAaGlhAKMxqRii+jKYgCCq+BiCAkD3DAA1WDyD+C4oxZAkWKM0DdTQyAMXoViD2gYUuAxZFMOANDTawwvNw452dEdGLCCpvmEIDuKSBAVgxKNr/v32LbHIsEzIPlHpYfH0Z/mzezPD/2zdkKVEUhSCTflZVwU1GAmtAwRMIZKwjEOCMIBPXYwloZCCAHDx60FhABpehsfIRxAEIMPSYgQGQc+qQQwQNXADiJqhrGLDFIAjwA/EBPIagpDok/4MMd4C5kAnJRR+INAyb4R+gZoBdKIcttNmyshiY1NTAcfln7154JgLlkX+3bjH8mjYNXQvIDHmQgVHYrAVpAJcAmZkMHMBEAst4oHSAlliQQRTIy49wyYJKD1DaBRkEwiA2s6UlPu8/ArlwGRCXoocfKCUyAg1AdhHMxSBNsGBAi/llyMlmOzQzkwN2ALEnciwzQAV4oZKkGMQLMww9HYLAF2RJIFAHYhtQpMPiCoiPAPFNXDYAAAqDnbmVVefOAAAAAElFTkSuQmCC) no-repeat;
+  cursor: pointer;
+  /*position: absolute;
+margin: -37px 0px 0 185px;*/
+}
+#flights-search .add-flight {
+  text-align: right;
+}
+#flights-search .hint {
+  font-size: 10px;
+  color: #9d9e9e;
+}
+#flights-search .active.tab {
+  padding-top: 10px;
+}
+#flights-search .fields .field,
+#flights-search .field {
+  margin: 0em 0em 10px;
+}
+@media screen and (max-width: 1028px) and (min-width: 891px) {
+  #flights-search .fields > .field {
+    width: 50%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+@media screen and (max-width: 890px) {
+  #flights-search .fields > .field {
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+#flights-search h1 + p {
+  margin-top: 0px;
+}
+.results-filter .title .small {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: normal;
+}
+.recent-searches .box {
+  margin: -10px;
+  padding: 0;
+}
+.recent-searches .box .item {
+  border-bottom: 2px solid #f1f1f1;
+  padding: 13px;
+}
+.recent-searches .box .item:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 1;
+}
+.recent-searches .box .item .date {
+  width: 40px;
+  background: #afc2c9;
+  font-size: 11px;
+  font-weight: bold;
+  color: #fff;
+  padding: 2px 1px 1px;
+  text-align: center;
+  line-height: 1.4;
+  float: left;
+  margin-right: 15px;
+}
+@media only screen and (max-width: 640px) {
+  .recent-searches .box .item .date {
+    width: 22px;
+    background: #afc2c9;
+    font-size: 10px;
+    font-weight: bold;
+    color: #fff;
+    padding: 1px 1px 1px;
+    text-align: center;
+    line-height: 1;
+    float: left;
+    margin-right: 8px;
+  }
+  .recent-searches .box .item .date span {
+    display: block;
+    font-size: 10px;
+    color: #4a4f51;
+    line-height: 1;
+    background: #fff;
+    padding: 2px 0;
+  }
+}
+@media only screen and (min-width: 801px) {
+  .recent-searches .box .item .date span {
+    display: block;
+    font-size: 18px;
+    color: #4a4f51;
+    line-height: 1;
+    background: #fff;
+    padding: 4px 0;
+  }
+}
+@media only screen and (min-width: 641px) and (max-width: 800px) {
+  .recent-searches .box .item .date {
+    width: 25px;
+    background: #afc2c9;
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+    padding: 1px 1px 1px;
+    text-align: center;
+    line-height: 1;
+    float: left;
+    margin-right: 10px;
+  }
+  .recent-searches .box .item .date span {
+    display: block;
+    font-size: 10px;
+    color: #4a4f51;
+    line-height: 1;
+    background: #fff;
+    padding: 2px 0;
+  }
+}
+.recent-searches .box .item .direction {
+  font-size: 14px;
+  color: #0674a9;
+  border-bottom: 1px dotted #cfd1d0;
+  padding-bottom: 7px;
+  margin-bottom: 7px;
+  overflow: hidden;
+}
+.recent-searches .box .item .direction span {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 0 15px;
+}
+.recent-searches .box .item .direction span.to {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAFCAYAAAECiO2EAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjNDNEJENUZDOEMxNjExRTQ4RDQ3OTU3NkVCMzY5ODMxIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjNDNEJENUZEOEMxNjExRTQ4RDQ3OTU3NkVCMzY5ODMxIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6M0M0QkQ1RkE4QzE2MTFFNDhENDc5NTc2RUIzNjk4MzEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6M0M0QkQ1RkI4QzE2MTFFNDhENDc5NTc2RUIzNjk4MzEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7yADbmAAAAXElEQVR42mI0nvmfAQQAAogRxgAIIDgDBgACCFmgnAlJQgkggEAyaUDGTAYsACCAMMyBGQHEnSxAAqssyFiQJCMWCZBVswACDJex2IAgEJ8B4j1AnM7EQDq4ByIAScsUORmajVsAAAAASUVORK5CYII=) no-repeat 0 50%;
+}
+.recent-searches .box .item .direction span.back {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAAElh7xMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjU5MDY2MzRBOEMxNjExRTQ5OTNDQkMzNTc0NTg1OTQ5IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjU5MDY2MzRCOEMxNjExRTQ5OTNDQkMzNTc0NTg1OTQ5Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTkwNjYzNDg4QzE2MTFFNDk5M0NCQzM1NzQ1ODU5NDkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTkwNjYzNDk4QzE2MTFFNDk5M0NCQzM1NzQ1ODU5NDkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6eXtDcAAAAq0lEQVR42mI0nvmfAQSYGKAAIIAYMUQAAgguAgWhAAGELCDIhCSjBOLApM4CBBBImSBICQMqUAJhFiDxHoqRAYi/B2bmOyySDAABhO4cFMACNR8dnAFiIZDkPVw6mXCIC8Ek04DYGJdOnMYCBBhe16KBVUA8C+R/mE/KodYSqxkU0hWk2AgKlgqYjcgh4ALEu/FoNIFpgjkV5MyZSAqIccIsZKcaQw0wIcbdALdqJ3Hv10Q8AAAAAElFTkSuQmCC) no-repeat 0 50%;
+}
+@media only screen and (min-width: 641px) and (max-width: 800px) {
+  .recent-searches .box .item .direction {
+    font-size: 14px;
+    color: #0674a9;
+    border-bottom: 1px dotted #cfd1d0;
+    padding-bottom: 7px;
+    margin-bottom: 7px;
+    overflow: hidden;
+  }
+  .recent-searches .box .item .direction span {
+    display: inline-block;
+    width: 13px;
+    height: 11px;
+    margin: 0 5px;
+  }
+  .recent-searches .box .item .direction span.to {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAFCAYAAAECiO2EAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjNDNEJENUZDOEMxNjExRTQ4RDQ3OTU3NkVCMzY5ODMxIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjNDNEJENUZEOEMxNjExRTQ4RDQ3OTU3NkVCMzY5ODMxIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6M0M0QkQ1RkE4QzE2MTFFNDhENDc5NTc2RUIzNjk4MzEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6M0M0QkQ1RkI4QzE2MTFFNDhENDc5NTc2RUIzNjk4MzEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7yADbmAAAAXElEQVR42mI0nvmfAQQAAogRxgAIIDgDBgACCFmgnAlJQgkggEAyaUDGTAYsACCAMMyBGQHEnSxAAqssyFiQJCMWCZBVswACDJex2IAgEJ8B4j1AnM7EQDq4ByIAScsUORmajVsAAAAASUVORK5CYII=) no-repeat 0 50%;
+  }
+  .recent-searches .box .item .direction span.back {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAAElh7xMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjU5MDY2MzRBOEMxNjExRTQ5OTNDQkMzNTc0NTg1OTQ5IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjU5MDY2MzRCOEMxNjExRTQ5OTNDQkMzNTc0NTg1OTQ5Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTkwNjYzNDg4QzE2MTFFNDk5M0NCQzM1NzQ1ODU5NDkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTkwNjYzNDk4QzE2MTFFNDk5M0NCQzM1NzQ1ODU5NDkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6eXtDcAAAAq0lEQVR42mI0nvmfAQSYGKAAIIAYMUQAAgguAgWhAAGELCDIhCSjBOLApM4CBBBImSBICQMqUAJhFiDxHoqRAYi/B2bmOyySDAABhO4cFMACNR8dnAFiIZDkPVw6mXCIC8Ek04DYGJdOnMYCBBhe16KBVUA8C+R/mE/KodYSqxkU0hWk2AgKlgqYjcgh4ALEu/FoNIFpgjkV5MyZSAqIccIsZKcaQw0wIcbdALdqJ3Hv10Q8AAAAAElFTkSuQmCC) no-repeat 0 50%;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .recent-searches .box .item .direction {
+    font-size: 13px;
+    color: #0674a9;
+    border-bottom: 1px dotted #cfd1d0;
+    padding-bottom: 7px;
+    margin-bottom: 7px;
+    overflow: hidden;
+  }
+  .recent-searches .box .item .direction span {
+    display: inline-block;
+    width: 13px;
+    height: 11px;
+    margin: 0 5px;
+  }
+  .recent-searches .box .item .direction span.to {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAFCAYAAAECiO2EAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjNDNEJENUZDOEMxNjExRTQ4RDQ3OTU3NkVCMzY5ODMxIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjNDNEJENUZEOEMxNjExRTQ4RDQ3OTU3NkVCMzY5ODMxIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6M0M0QkQ1RkE4QzE2MTFFNDhENDc5NTc2RUIzNjk4MzEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6M0M0QkQ1RkI4QzE2MTFFNDhENDc5NTc2RUIzNjk4MzEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7yADbmAAAAXElEQVR42mI0nvmfAQQAAogRxgAIIDgDBgACCFmgnAlJQgkggEAyaUDGTAYsACCAMMyBGQHEnSxAAqssyFiQJCMWCZBVswACDJex2IAgEJ8B4j1AnM7EQDq4ByIAScsUORmajVsAAAAASUVORK5CYII=) no-repeat 0 50%;
+  }
+  .recent-searches .box .item .direction span.back {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAAElh7xMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjU5MDY2MzRBOEMxNjExRTQ5OTNDQkMzNTc0NTg1OTQ5IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjU5MDY2MzRCOEMxNjExRTQ5OTNDQkMzNTc0NTg1OTQ5Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTkwNjYzNDg4QzE2MTFFNDk5M0NCQzM1NzQ1ODU5NDkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTkwNjYzNDk4QzE2MTFFNDk5M0NCQzM1NzQ1ODU5NDkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6eXtDcAAAAq0lEQVR42mI0nvmfAQSYGKAAIIAYMUQAAgguAgWhAAGELCDIhCSjBOLApM4CBBBImSBICQMqUAJhFiDxHoqRAYi/B2bmOyySDAABhO4cFMACNR8dnAFiIZDkPVw6mXCIC8Ek04DYGJdOnMYCBBhe16KBVUA8C+R/mE/KodYSqxkU0hWk2AgKlgqYjcgh4ALEu/FoNIFpgjkV5MyZSAqIccIsZKcaQw0wIcbdALdqJ3Hv10Q8AAAAAElFTkSuQmCC) no-repeat 0 50%;
+  }
+}
+.recent-searches .box .item .info {
+  overflow: hidden;
+  font-size: 10px;
+  color: #4a4f51;
+}
+.ui.segment.flight-itinerary {
+  width: 100%;
+  box-shadow: none !important;
+}
+.ui.segment.flight-itinerary.relaxed {
+  padding-left: 0;
+  padding-right: 0;
+}
+.ui.segment.flight-itinerary div.title {
+  font-size: 13px;
+  color: #63778c;
+  border-bottom: 1px solid #d9dde2;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.ui.segment.flight-itinerary div.title .city {
+  font-size: 18px;
+  font-weight: 700;
+  color: #202629;
+  margin-right: 10px;
+}
+.ui.segment.flight-itinerary div.title .time {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  background: #ff7b33;
+  padding: 2px 5px;
+  margin: 0 10px;
+  position: relative;
+  top: -1px;
+  border-radius: 3px;
+}
+.ui.segment.flight-itinerary table.segments {
+  width: 100%;
+  border-bottom: 3px solid #fee252;
+}
+.ui.segment.flight-itinerary table.segments .airport {
+  font-size: 11px;
+  color: #63778c;
+}
+.ui.segment.flight-itinerary table.segments td {
+  padding: 10px;
+}
+.ui.segment.flight-itinerary table.segments td.airline .logos {
+  margin-top: 10px;
+}
+.ui.segment.flight-itinerary table.segments td.airline .name,
+.ui.segment.flight-itinerary table.segments td.airline .multi {
+  font-size: 14px;
+  color: #9b9393;
+}
+.ui.segment.flight-itinerary table.segments td.airline .name .flight-no,
+.ui.segment.flight-itinerary table.segments td.airline .multi .flight-no {
+  font-size: 12px;
+}
+.ui.segment.flight-itinerary table.segments td.from,
+.ui.segment.flight-itinerary table.segments td.to {
+  width: 35%;
+  font-size: 14px;
+  color: #2c3e50;
+}
+.ui.segment.flight-itinerary table.segments td.flight {
+  width: 80px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAANCAYAAAErqfV4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjUwMDExQTRDOEE3RTExRTRCMjlCREQ1NDhDQ0EyMzVEIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjUwMDExQTREOEE3RTExRTRCMjlCREQ1NDhDQ0EyMzVEIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTAwMTFBNEE4QTdFMTFFNEIyOUJERDU0OENDQTIzNUQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTAwMTFBNEI4QTdFMTFFNEIyOUJERDU0OENDQTIzNUQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6Fn1vzAAAByklEQVR42mL4//8/g5NjJD+IBmEmZ6eoSwwMDMxAuhFIMwAEECNIFAaYQARQBiwCEEBwGZgAEJQBcRcQ+zNADT4DxJNhhsMwQAChmIkMWGAMqJE1QNwCFgAa0wU18j8Iw4wCCQghC8AwQACh2AE0jgdIfQbiC3v3LTNEthPq0TogPo7hMKCkCpC6jcWtuUCDpoDDARR+QPoSUEAeqAGkWAWqaBZQLB2bTwECCMWtQAMS0N1PyD8wji3QhiNI4iCXPARifhY0C22B+DAIAxV9B9IyUH8JQeVvYvP8TyDFhmbQCyCWB9r6iwWqQBjI+QKVXAbECVA2SEwGKPcROXp/AbE3UCOIXgcV/ws18Sl6IIGdBFQ8GcgOB+J3QBwEVHiNAQcACDCcKQvqnydAihOUToGGzGUgEgD1gQIpEIglQHGK0xKgQmYgdQaIDdCkQOFSCbT0EVqSzAfiUlB0oam/idcnUAPWQV1FCgA5oAmIFwAd8xeUdBcBOR34whRoUTuQqsBjKCheOoB4CtCc79gy9Skgvgo0COYCf6DCC0A+KG3lQHMfehCADJoFci1Q7TtC3oKlFCdQNgZidSCeAMT2WNQuhhp6h8SgYwAAkJ8BPfyO4eMAAAAASUVORK5CYII=) no-repeat 50% 50%;
+  opacity: .4;
+  padding: 0px;
+  white-space: nowrap;
+  text-align: center;
+}
+.ui.segment.flight-itinerary table.segments td.flight .duration {
+  opacity: 1;
+  font-size: 12px;
+  color: #63778c;
+  margin-top: 43px;
+}
+.ui.segment.flight-itinerary table.segments td.time-n-cabin {
+  vertical-align: top;
+}
+.ui.segment.flight-itinerary table.segments td.time-n-cabin div {
+  font-size: 12px;
+  line-height: 1.2;
+  color: #3d4d5d;
+  border-left: 1px solid #ddd;
+  padding: 5px 10px;
+}
+.ui.segment.flight-itinerary table.segments tr.divider td {
+  padding: 0;
+}
+.ui.segment.flight-itinerary table.segments tr.divider td span {
+  display: block;
+  height: 1px;
+  border-bottom: 1px dotted #8c8c8c;
+}
+.ui.segment.flight-itinerary table.segments tr.divider td span.layover {
+  height: auto;
+  font-size: 11px;
+  color: #63778c;
+  border: 0;
+  margin: 0 10px;
+  white-space: nowrap;
+  position: relative;
+}
+.ui.segment.flight-itinerary.compact.small.from,
+.ui.segment.flight-itinerary.compact.small.to {
+  font-size: 11px;
+  color: #2c3e50;
+}
+.ui.segment.flight-itinerary.compact.small table.segments td {
+  width: 33%;
+}
+.ui.segment.flight-itinerary.compact div.title .city {
+  font-size: 15px;
+  font-weight: bold;
+  color: #0674a9;
+  margin-right: 10px;
+}
+.ui.segment.flight-itinerary.compact div.title .time {
+  font-size: 12px;
+}
+.ui.segment.flight-itinerary.compact table.segments {
+  border-bottom: none;
+}
+.ui.segment.flight-itinerary.compact table.segments .airport {
+  font-size: 11px;
+  color: #63778c;
+}
+.ui.segment.flight-itinerary.compact table.segments td.airline .name,
+.ui.segment.flight-itinerary.compact table.segments td.airline .multi {
+  font-size: 11px;
+}
+.ui.segment.flight-itinerary.compact table.segments td.airline .name .flight-no,
+.ui.segment.flight-itinerary.compact table.segments td.airline .multi .flight-no {
+  font-size: 11px;
+}
+.ui.segment.flight-itinerary.dark {
+  background: #f7f7f7;
+}
+.flights-results {
+  max-width: 1200px;
+  margin: auto !important;
+}
+/*@media only screen and (max-width: 800px) 
+{
+    .flights-results {
+  max-width: 1200px;
+  margin: auto !important;
+  .ui.form
+  {
+          max-width: 552px;
+          overflow: auto;
+  }
+}
+}*/
+.results-filter label {
+  display: inline-block;
+  margin: 5px 10px;
+  font-size: 12px;
+  color: #444444;
+}
+.results-filter .carriersLink a {
+  line-height: 1;
+  font-size: 13px;
+}
+.AirticketIndia .flights thead {
+  background: #0674a9;
+}
+.AirticketIndia .flights caption {
+  background: #cf2c23;
+  color: #fff;
+}
+.AirticketIndia #booking .step.header.active {
+  background-color: #0674a9;
+}
+.AirticketIndia .ui.segment.flight-itinerary table.segments {
+  border-bottom: 3px solid #cf2c23;
+}
+.ui.horizontal.list.flights-tabs {
+  background: #f0efef;
+  border: 1px solid #e4e4e4;
+  border-bottom-width: 0;
+  width: 100%;
+}
+.ui.horizontal.list.flights-tabs .item {
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  font-size: 11px;
+  color: #a4a4a4;
+}
+.ui.horizontal.list.flights-tabs .item .header {
+  font-size: 14px;
+  font-weight: bold;
+  color: #222323;
+}
+.ui.horizontal.list.flights-tabs .item.active {
+  background: #fff;
+}
+.ui.horizontal.list.flights-tabs .item:first-child {
+  padding-left: 1.25rem !important;
+}
+.ui.horizontal.list.flights-tabs .small .content {
+  line-height: 30px;
+}
+.flights-selection .column.book {
+  vertical-align: middle;
+}
+.flights-selection .column.book .price {
+  font-weight: bold;
+  font-size: 28px;
+  color: #2c3e50;
+}
+.flights-selection .column.book .price .discount {
+  text-decoration: line-through;
+  color: #999;
+}
+.flights-selection .item {
+  font-size: 11px;
+  color: #919ca7;
+  line-height: 1.1;
+}
+.flights-selection .item .header {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #2c3e50;
+}
+.flights-selection .item .date {
+  color: #5b5b5b;
+}
+.flights-grid {
+  width: 100%;
+}
+.flights-grid > tbody > tr > td {
+  vertical-align: top;
+}
+.flights-grid > thead > tr > td,
+.flights-grid > tbody > tr > td {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+.flights-grid > thead > tr > td:first-child,
+.flights-grid > tbody > tr > td:first-child {
+  padding-left: 0;
+}
+.flights-grid > thead > tr > td:last-child,
+.flights-grid > tbody > tr > td:last-child {
+  padding-right: 0;
+}
+.flights caption {
+  background: #fee252;
+  color: #222323;
+  font-size: 14px;
+  font-weight: bold;
+}
+.flights caption div {
+  padding: 10px 10px;
+}
+.flights thead {
+  background: #201f60;
+}
+.flights thead td {
+  padding: 11px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.flights thead td i {
+  position: absolute;
+}
+.flights tr.spacer > td {
+  height: 10px;
+}
+.flights tr > td {
+  width: 20%;
+  vertical-align: middle;
+}
+.flights tr > td.airline {
+  text-align: center;
+}
+.flights tr > td.depart {
+  text-align: right;
+}
+.flights tr > td.price {
+  text-align: center;
+}
+.flights.small .time,
+.flights.summary .time,
+.flights.small .airport,
+.flights.summary .airport,
+.flights.small .date,
+.flights.summary .date,
+.flights.small .price .amount,
+.flights.summary .price .amount {
+  font-size: 13px !important;
+  white-space: nowrap;
+}
+.flights.summary .flight.selected {
+  background: #a2a1f0;
+}
+.flights.summary .flight.selected .info {
+  background: #7c7bd1;
+}
+.flights.summary .info {
+  font-size: 10px;
+  background: #f1f1f1;
+  color: #222323;
+  padding: 4px 20px;
+}
+span.techStop {
+  text-align: center;
+  color: #8c949d;
+  font-size: 11px;
+  font-weight: 600;
+}
+tbody.flight {
+  border: 1px solid #e4e4e4;
+}
+tbody.flight.clickable {
+  cursor: pointer;
+}
+tbody.flight.selected {
+  border: 2px solid #201f60;
+}
+tbody.flight tr.main > td {
+  padding: 10px;
+}
+tbody.flight tr.main > td.airline .logos {
+  margin-top: 10px;
+}
+tbody.flight tr.main > td.airline .name,
+tbody.flight tr.main > td.airline .multi {
+  font-size: 14px;
+  color: #9b9393;
+}
+tbody.flight tr.main > td.airline .name .flight-no,
+tbody.flight tr.main > td.airline .multi .flight-no {
+  font-size: 12px;
+}
+tbody.flight tr.main > td.depart .time,
+tbody.flight tr.main > td.arrive .time {
+  font-size: 20px;
+  font-weight: bold;
+}
+tbody.flight tr.main > td.depart .airport,
+tbody.flight tr.main > td.arrive .airport {
+  font-size: 20px;
+}
+tbody.flight tr.main > td.depart .date,
+tbody.flight tr.main > td.arrive .date {
+  font-size: 12px;
+  color: #8c949d;
+}
+tbody.flight tr.main > td.arrow {
+  background: no-repeat center url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAALCAYAAAEb2d0hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjJBNjNENzc1OEY0QzExRTQ4NDZBQUI5MDkwRDA2M0RDIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjJBNjNENzc2OEY0QzExRTQ4NDZBQUI5MDkwRDA2M0RDIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MkE2M0Q3NzM4RjRDMTFFNDg0NkFBQjkwOTBEMDYzREMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MkE2M0Q3NzQ4RjRDMTFFNDg0NkFBQjkwOTBEMDYzREMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5SXk6lAAAAz0lEQVR42mK0t7ZmQAZMDKhAECCAGJFUKCHL3gMIIJBMOQN20AEQQIzoBkOBMRCfZQESuHSWgyQ7sUj8B2JGgADCZSwu8A6IXWFWkgKEoDamk6JREEozggiAACLFqe+gNmKNAnzABKoZDPAFKy4A8qMyriDHBVyg+B4pTjWGBhAjqX50gfoTDAACjNQEQCyYCbUIlFju4csQ1ALpQDwLiO9CIyEUORZBgkoMtAWroPRZkA+VoRFDbQxLVfegcQgSM2GhkY92Q1MYKCe9R5YAAAjxIB5xiAXdAAAAAElFTkSuQmCC);
+}
+tbody.flight tr.main > td.arrow .via {
+  margin-top: 45px;
+  text-align: center;
+  font-size: 12px;
+  color: #8c949d;
+}
+tbody.flight tr.main > td.arrow span.techStop {
+  display: block;
+}
+tbody.flight tr.main > td.price {
+  white-space: nowrap;
+}
+tbody.flight tr.main > td.price .amount {
+  font-size: 25px;
+  font-weight: bold;
+  color: #2b2b2b;
+}
+tbody.flight tr.main > td.price .amount .discount {
+  text-decoration: line-through;
+  color: #999;
+}
+tbody.flight tr.info {
+  height: 30px;
+  background: #f1f1f1;
+}
+tbody.flight tr.info > td {
+  width: 100%;
+  padding: 2px 20px;
+}
+tbody.flight tr.info .content {
+  line-height: 20px !important;
+  font-size: 12px;
+  color: #3d4d5d;
+}
+tbody.flight tr.info .time > .content {
+  padding-left: 30px;
+  background: no-repeat 0% 50% url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAAH6ji2bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjg3MkIxNUI2OEY0RDExRTQ4NUMyQTk2QjhDNUJFQkM3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjg3MkIxNUI3OEY0RDExRTQ4NUMyQTk2QjhDNUJFQkM3Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ODcyQjE1QjQ4RjREMTFFNDg1QzJBOTZCOEM1QkVCQzciIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6ODcyQjE1QjU4RjREMTFFNDg1QzJBOTZCOEM1QkVCQzciLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7Ng109AAACnklEQVR42mL4//8/g0dE+n0QDWLcATHAHBgDKPgdIICYQYyTN18sYARLgQBQeB+IAxBAcHVI6veAiFnoEgABBNbrGZmRBNTdBcSi25fPACv/D9U2CUprMAFlGCHWMAhC6X0gGS40i/4zAWWSoCpAZhuAdAIEEMwiVqDYLyB2BAoegCpgB1J3gbgRKDYbZEQ8EDuiGbsY3RoWoI6JQB0CDKjgG9DEmSAGUC4dSF1mBKoGufw+UECBAQsAajACUpHwgAQK6AGpC0D8CIg/ArEe1LYCkDxAACEr5AZSq4DYEojfAnEhUNEWmMlMUEWzgNR+IPYBSgoBsSqQLQIU/wl3A9CNCUDchOTD80hsVlCMg9ggE+cDTahDcj8sOkA+/g2kOoEmK4IUrmDAA4CKG4BULSgc36DJtcHCEAhuAhX2gdwLcsdX9ASEFiu2QBwNsvoK0AQ+PLbvB5q6FJSmzEEBDFQsgiVWHkHDlQE5wDcCKT8gPgfEMkAMskUeaNArkDxAgCHyAsKUOCDVDsRSQPwciA8D8RMgBnlcBYjtgJgHiE8DcR7QoBPI+pFtng2kkqEZpQqo8B+SJbxA6gc0/GFioHhZDsTuQBwLlFsCNhCUZYD0bSC+B7IdnOMw/f4A5FKgXCwWOVBY3QHiA0D5AFBog0z+h8swQgCoBxT/pkDsDzQ8D+TCr0DOTKBEES5NUBdKAvFXLFEbDFVzBki9ZoHmI2UCrlDAJw80jAlqxhkQoxCUDICCiQzkg/lAzAHElbDSyQLIOQQu2ICGA130ixhTgPqkgdRxIAaFPai4e4+SDoEKQAXRZFDhBCpGgHghUNE9JHlQ+QTKCSB1oBh/DcTBQDXHMNIhFtvlgVQQyGYgFgPiP9CEDvLJFqAhH7DpAwCNmYULAOfnkwAAAABJRU5ErkJggg==);
+}
+tbody.flight tr.info .refundability {
+  min-width: 55px;
+}
+tbody.flight tr.info .refundable {
+  color: #08a66c;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-left: 30px;
+  background: no-repeat 0% 50% url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAAH6ji2bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjBCQzM5REI1OEY0RTExRTRBMzZFRTc5OTI1NjQ5QzgyIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjBCQzM5REI2OEY0RTExRTRBMzZFRTc5OTI1NjQ5QzgyIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MEJDMzlEQjM4RjRFMTFFNEEzNkVFNzk5MjU2NDlDODIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MEJDMzlEQjQ4RjRFMTFFNEEzNkVFNzk5MjU2NDlDODIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7yPo8NAAACpUlEQVR42mL4//8/A8eynJsgmolzee4VBgaGcCBmYASJAAXagWxugABiBnE61d+uYQYSLUCRvSxAog6ILwAEEANIChkDTWMGmbQCiHMZECATIIBgJsYAOeVAbPI9cvJPkPItaNp9wSphAKiDGUQzIZnFANT6F0hZMAKVg9zzDYgfAfFykARAAMGdAcRrsDhPAoj7wFYAGRFQQQEgXo+kyAuIu6HsfhBxBcrhRzcRKu4PDkKgGwyBLpYD0jUMaAAo3gB030YgfQ7uRSAnGEjZAnExyPFAPog9E8jWAskDBBCyQnYgtQyI1YCYDYibgIqWwo2HumMCEIthcd96UIjAfB0AxEzYPAJVvB2msAcq0APEnmim8UPZoSBfl0FdAaJ5oO41BLovEMgsgcrVoYQVFmthJl4FJSALoA4FBuwgEUpfYIKG1USghlosCsWB4spAOg6W+iYCOUVAfB6Iu4BYB4g/AHE3yH1Ag+qRA/wakEoDCh6BJsJ+ID4A5K8DyQME6KTsWRIKoziuTXI/QkvgF7A5aUhycMkl5yYVGtvFIWsyyIYCIWi0IQgURHRxKpR2FyEc+wCKi/b7X84DV0V8OfDj3HvPy3Pvff7nWVCpFVziitCBD/gyoToVn4ByEspzjZwFV34wxd+QNA9tYdQc2BtOqfG3Q9MRwffgnId/oT2Mxoe4liZWDWtcPNLs24KvuB/owhtkiP1aLIp7hys4gxixnMXiuGt/s9fpcFd84WgQ7F9olaqttO2nnsJLYMNmalQyrchu4cmdSRuaKadi9bKyZtYJMc1NFi5AiZ8w0LHBP5osNfJw9yAla6CkiDo8k9sIyiaMu9MZBHmCIytOQtT6DaGtRYgdcV2FPhSc1FaEHTh+tHoKjsGz0NjGqamv8A/1JfsHThPj8VDyfA8AAAAASUVORK5CYII=);
+}
+tbody.flight tr.info .non-refundable {
+  color: #eb6060;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-left: 30px;
+  background: no-repeat 0% 50% url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAEFVwZaAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjY5RDFFNTFCOEY1MDExRTQ4NTA3RERDRTA3MDg4MjdEIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjY5RDFFNTFDOEY1MDExRTQ4NTA3RERDRTA3MDg4MjdEIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NjlEMUU1MTk4RjUwMTFFNDg1MDdERENFMDcwODgyN0QiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NjlEMUU1MUE4RjUwMTFFNDg1MDdERENFMDcwODgyN0QiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7HDQTjAAACVUlEQVR42mJ4nZDAAMS3////z8DEwMBwG4hVgRjMATNAACCAGEHKgKCECSqwGcToAOKbAAEEk4IBTyC2B8mWQAUOAPErkfnzKwACCKayG4jjgFgcKAi2xhWI14AE0K0DCbyEim2EWW0HNRMEGkCC7EC8GogdgHg30MzzAAEE064A9cJuBlRQCsSTgAp/MkFd8wCqWwJJkSYQc4AUvUlMdGeCOhkEqoH4BZLC60DcDGUnM0FdXcqAAwBNA7kxDOabbijtDvIiEK8CYkOQAFARKFwYAAIIOXxBbtoExK+B+B8QB4AMBIUiC1TBRyDmR444IGAG4q1A7A2ychFUgRias0By3kC3xYIYc4GYF4j50BTBTFUFWXcQyuFGU3QPSvcxIQm+QFP0A0qzgxRFwGIdiLdAI3cRkuIWkHVyUA4HEPsgSXJBTZsFMqkLmhLQgTAQ5wPD6TTMTaFA/Bsa+nuAuAaIHwNxP0gSIMDQU7QgEE+E+nQSEB8F4j9I8iBxXyBuhAZdD9Cmf+hJWRCazMyB+AYD8QAUOMFAA0NhsaQFxHOgsXgDquA4EFvhMCANiA8BsT4QrwAlY2As/wZiFiZoigtHUgxS8ApP8gWF11ogvghNod+h+bGdBZoq/6Bp8MfjNX4sYqdBmYkJmry5GSgDLqDEBIoAEWisgcLuL1SyHYifAvFCIP6MpEkelFaA+CQQr4SKyYKCCuhdI1hsgly4GYgXQ8OMGADSMwVUwgINAqczWKYFedUbyo4F4nlQ122HFi5foCkYVCwEA7ExEKcDcRYo58MAAMgOmEmUHChqAAAAAElFTkSuQmCC);
+}
+tbody.flight tr.info .stops > .content {
+  color: #3d4d5d;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+tbody.flight tr.info .ui.list .item a {
+  color: #0674a9 !important;
+}
+tbody.flight tr.details > td {
+  width: 100%;
+  padding: 10px;
+}
+tbody.flight table.segments {
+  width: 100%;
+  height: 65px;
+}
+tbody.flight table.segments td.arrow {
+  background: no-repeat center url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAALCAYAAAEb2d0hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjJBNjNENzc1OEY0QzExRTQ4NDZBQUI5MDkwRDA2M0RDIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjJBNjNENzc2OEY0QzExRTQ4NDZBQUI5MDkwRDA2M0RDIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MkE2M0Q3NzM4RjRDMTFFNDg0NkFBQjkwOTBEMDYzREMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MkE2M0Q3NzQ4RjRDMTFFNDg0NkFBQjkwOTBEMDYzREMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5SXk6lAAAAz0lEQVR42mK0t7ZmQAZMDKhAECCAGJFUKCHL3gMIIJBMOQN20AEQQIzoBkOBMRCfZQESuHSWgyQ7sUj8B2JGgADCZSwu8A6IXWFWkgKEoDamk6JREEozggiAACLFqe+gNmKNAnzABKoZDPAFKy4A8qMyriDHBVyg+B4pTjWGBhAjqX50gfoTDAACjNQEQCyYCbUIlFju4csQ1ALpQDwLiO9CIyEUORZBgkoMtAWroPRZkA+VoRFDbQxLVfegcQgSM2GhkY92Q1MYKCe9R5YAAAjxIB5xiAXdAAAAAElFTkSuQmCC);
+}
+tbody.flight table.segments td.arrow .via {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 12px;
+  color: #8c949d;
+}
+tbody.flight table.segments .airport {
+  font-weight: bold;
+}
+#guestbooking .header {
+  background: #7f7f7f;
+  background-repeat: no-repeat;
+  background-position: 10px 50%;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  padding: 11px 10px 11px 55px;
+  position: relative;
+}
+#guestbooking .step.header.active {
+  background-color: #201f60;
+}
+#guestbooking .step.header.step1 {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAQCAYAAAF2Pf9EAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkI3MUQzNEMzOTU3QjExRTRBMEU4Q0UxNDIxRDg2MDdCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkI3MUQzNEM0OTU3QjExRTRBMEU4Q0UxNDIxRDg2MDdCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QjcxRDM0QzE5NTdCMTFFNEEwRThDRTE0MjFEODYwN0IiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QjcxRDM0QzI5NTdCMTFFNEEwRThDRTE0MjFEODYwN0IiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4eHr3hAAABnklEQVR42mL4//8/AxDzQGkGRiDBzMDA8BeI/wOxHkAAgQQYkAETlP4PxQwAAcQA0wvEmf8hAMaHc0SBeCkQX4WKhSMpYgAIIAw7sNkHs/M2lN0L5iMZY/AfFYD9AtLBCHcphA0GAAGErBOGu6A6JbDIwfAEID6GSxIdrEPj/wFiaZDCG0C8BU0zPxYDbNAtQeZMQ1Ocg8fZYAwQQHjDmRBgwiIGMm0OHj3SQHwGiC0JBZYfkrgQEH9DkjuDTbM3lpD9gCY2Ez3AkPGf/9jBRvTQBgFFNM0z0TQdw2YJA5I/QCnKA03TDUJRJQQNxVdAzAxlvwZiGSD+hS+qAAKMgVBCAOI0ID4MzTUM1MLEKNqIFgygWCsCYjYi9IJKkcloyQMEDhBjMciC2/9xg+1ArIWUBtuB+DMe9SBHlJISPFv+kw8WAbEKelCDkl0IkZZPI9KivUBsRiiOq9GCoQ4t/pihVcFbPBadh+ZikhMXKPOdQXKlFjTucIGHQJwMdRRZqRq92LQH4nAgNoCWcHJA/BSIrwHxYiBeA8TfGagAAAz7EA7vzU1vAAAAAElFTkSuQmCC);
+}
+#guestbooking .fb-login {
+  display: inline-block;
+  width: 120px;
+  height: 46px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAAuCAYAAADeIbxeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjdERUVERjhEMjg4RjExRTM4RTkwRUVEMkQ4QkY3RjE4IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjdERUVERjhFMjg4RjExRTM4RTkwRUVEMkQ4QkY3RjE4Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6N0RFRURGOEIyODhGMTFFMzhFOTBFRUQyRDhCRjdGMTgiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6N0RFRURGOEMyODhGMTFFMzhFOTBFRUQyRDhCRjdGMTgiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5eYVS2AAAE30lEQVR42uxae0ybVRT/9UFfdB10gGN0bKgw1zkDmZoAM5OHbnEmTM0cMIkuOt1MNFmW7Q8yZ3Q6E0yGumRhWwgzM4MRGZthi6JWZsgMTBTZWDcejkKhPFoehdLy9n6XWWiGUyhtP9z9Jee7957be057fj3n3u9rBfFpORIAnxJ5hYgaDL5AD5HTRPaJySWLyLssJj5F4B0O7EJyyWDx4A12ClmZ4hXUQhYDfoERwghhYIQwQhgYIYwQBkbIfQDxbBdEPxKK995OxANBSrccd5gHcOiYDtU3TYwFdzIkc9fTbpPBgbPB2WJwk5BlIao5ORobG583W6xkuVGWThRWorzKAJt9GFKJGMFqfxQcSWWR9zYh7eZ+7DxQjB6r3akbGh6Fsb1vzjaHbBZ0Ga7Svka7yWtBMt741ms+PXbKOll41YWMJQEKREUEYd2asDnbfG59FJqqi6l4E9706bEMqahpcfY/eCcZSbEPeS2A42MjsFvbSTsKoUgMuWopaf1mnJfIVRD5yTE2YqetWKK4y56+zujsjw4POl/LtcN2K9X7B2pcfPCOkF6rw9n3JhnDDiukjnq8sWUDVColrNYBFFy4jCFZJCQyFSVDYq/H9i1P0vlrNxpwu8WCiOWBMJon0DxDRc07ffZOT4kHgyegCZI616zVxtKZ3HwdRpVafm/qvkBM+AiyD38OhULu1O3IeBF7MrNR2wksEvbi+NF9WLlCM1WSDK1kHIYzRT/hWFHdXTazDu2l7fr043g+OQbpLyWgqZmsCZ8qv0/FrcPLe/Ip6bwhhHvD/6YPUMlQkvOqx7LjowO7KBm5Z68g78I17EhZi9e3xVH95jdzsTv1cUqGvq4Fmdk6qBfLcPT9lFn7Uvor8cLuLyfXH0yhNmMfXYqqhsGF9ehkZVigx2xzAQkOUpNvr4mSQcsNabkxp+fmox+LovpLuj/Q1efAreZe/Phz9ax9lZb95lx/u7lt8su2SL7wnmVFaDz3E35gwGS5sNlsLvq/x9y8QDD5kS3mDucG39dj/n/eh5SfeWvGMjVdP18wG351GfuR01JLZwDthwSr0WOqhYKcrgbJaSokeCvVt3Q6yGbcC+0qctCIX42vS04gNEiBjcnp98eduidRdHK/y7ixyYSsr/TQ17dhdeQyfHEwFd/pfsHGxFRarjg9V17O/XALCYSMpIQ4lBZGkL1AQfYcKSNkLhBJph5qrtFGzjCnR+aR7/HJ3mdpwDnhcLPBRPUcavSN2P/hKby2LQlKpT8qaxowYu/G9q3POMvZPQMmVbm01LdYPu09WNz6jIL4tJyJuZal/3riuteafzqZuYtV4QFYEboYBlMfzQznPVHMEjys8cN1/Z+4dMVI9xAumzjycgvKkfdNLcsQT4AjYToR0zMpI20TBgcdiC+rJCVLjsQNT6C51YKSy42sZHkbpRUG9H18HilJWkRFTZa9wpIq5F+8To+xC46Qtk7rvP2OwdnyBSpqO6jwEbO+DzmcU4ZOy4Dbjk1d/dQWg5ubOgPPMoSBEcIIYWCEMDBCGCEMjBBGCIO7hExMjFtZGPgBjgvhkK37IgsFP+AY6Dov6jb+blBrolUiP1m4QCCQsrD4JjOGbJbiWl32ZwIyXk4khIWFF2gXkUs/Ea6VsU3eZxgjwv31pfUvAQYA7rXA7a5kSF8AAAAASUVORK5CYII=) no-repeat;
+  text-decoration: none;
+  margin-bottom: 27px;
+  margin-left: 10px;
+}
+#guestbooking .gplus-login {
+  display: inline-block;
+  width: 120px;
+  height: 46px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAApCAYAAAD+tu2AAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAABixJREFUeF7tm29sU1UUwPngV+MHv/nRL5qIid0QzRJEMwXb4RQEBpMQEwR0MwqExSDqhhqnZIYAYph/EBUIRCboAlOG4DYSN0SEqYy5rf+7re26bu1K+/rveM99vW9t0/a1ry1vjfcmL3vrve/ee87vnHPPva+dN48XrgGuAa4BrgGuAa6BOaEBZ3XFnQZd2RC5QI3rwuIHVBlXDVkLOaZeV+Y36DStskak12kshRw417444Pwca0ineToj5FyBFLo9B5wfYKOurJEDVmn5KbQzpOxPq2nigDngHMKEVgOGtFcO/cSUzkN07jpL8ORCebB5vRamz5yE0KgFokEBIBqJXVHyN0o+C8J405acM2IOWG3AVeXgOdMGEZ8XzC8sBcMzC8H+3nYKFUvQYgRD9UIwkHZK1hwOWGXAnh+PU5DWTSsSANp3baWfY/G0n1AEFw2CA1YRsGnVYgliKu8M2cdofTQSAePyCkWQOWAVAU9+uTcjYPdX+6V6W91qDliNbD2fJGvmwtmMgI3PPjoLuL7mfw1Yr31I3F3cbsj5AHZ/e1ACiGtuqsmLMToKpucXpa4n4dt95GBawYsaorVl4NizCwKGEQjoh8C5/wPFyaAcOFQD7jLk2hW8Ph/A5tqnJMBhst4mT8608jFa77vcnVYwrHcfbVUFsPdiBzU+/82/wP/PdTrXmd+6igKhJAEj0Knvj0iQvR1tCWFIGL4JQbM+o8LUBIxje3/9WZqfYDJQWZihWjYsB8+5dvB2dYKtYeOsHCTUTn7zKTHcSzDR2pIgs333WzDT2w1j77xO652ffESfSwBMnneR6CfWNxfFoCRny8eDWScTe98l++AZETTxiNCEg/6NeKZTTh6zanaxZ9j/yeG6mCEaxx7dUS/OMWl9tNavEWVxjEPQZqHTHG8kBzVVCyDsdkE0FAJ//xUqh3+gn/Yxun0TbSeQvb9gMydAjQeMS0I0HIJb1y7TNp6LPxUPciEAM9CmmifAvG6p5NHjb76Sfl2WWiXeuI9+lvDM7QIskEjDLpTHP3hD9OZlD9N1Oez1gGDSg62uhn7uaGmk85w6LZ4D4L0wPCjdJ3ttPGC8dx87BJh4+f++DpEZb2kAZqAZMrR+ucyRCqvSGhzvwc4DH4L/3wEJEJOBycTC99gbG2mVtW6N6LUkAjDAIaedRq94PbDEKhlwvFlHbvlKCDAJdRiaWQm7HGAkx5fpskO1Afv6eiQj9HT/IsEKjMS8MXbEGiYyCRYT2F5dS9vYm3dQmdwnxRwE7/FYFsM6C/nJUONhu48fpse6GCFwO1nw7JltxwoRovWYdHx9AHx/9FIh0SLjS8jlBGP1I2nDdXJYjhe2mCF6uuMUnWaAeK7vai9dFxks22vr6H2QQMVkEcs4OWOna/D0FEQDfvD1dtFnAkMDVDb7x01ifzf6QTAM0/tUHixYyfocCdMkK0CWAszg5yRgPKoM6kVL955vF8+j0eLJZap9EsKuCYlzyD6qSIhiAkaljjVtBV/fJWqcrkP7SLSZNUTL5lUw03Oe1o/ujCVjMc+Y+u4wSZJ+p4YdD8e57336Oa7R8YA9Z9vAsXun1HaS5BrYDg3AVLtEkW6yMgqlHoxhNyqQ14Iki7S+vDL1BAlotG5WDMsW5CxIsQFnpaQcTp/cp46B5UUdTP1wgoptb56FWuixsupPKWD/n2KK7+vplIFWLgHGDDSrScUptNQA43tvVjyd7TnLm6t+ZNsrBYz7QCyTn++RFYKtR6bVj8u2TZ5wqQGm81f47lsWVg6RROpLMeBwmAL2X+2ThRYmSRZ+w0OJACUJWAmIYj2jFDCe4rDibHk7LTzrS8/RZmMNGzjgYkHM1K9SwOiNuP1hRTAOg23LerCQ72aZyYmWZfMKcJH3wVGyHUh3opWNR3MPVvGFP2bS0yRrTFd83efAvLZSkecy+BywioATPDC2/2X74Gy8M5s2HPBcAVyk9YUD5oDzWgKyiSIl3UY2ydKWCWoKyD04Pw8e0Wq2Zfxt0uASzRcccH5KVk9/mlBr+b13yf1G+I6uRfOrrlXO36bGdbriflXGVUPWQo55pfLBuob77r5HDi6v5xrgGuAa4BqYMxr4D0jEo6InHCQJAAAAAElFTkSuQmCC) no-repeat;
+  text-decoration: none;
+}
+#guestbooking .ui.login.modal .forgot-password {
+  font-size: 12px;
+  color: #b2b2b2;
+}
+#guestbooking .ui.login.modal p {
+  text-align: left;
+  font-size: 14px;
+  color: #b2b2b2;
+  line-height: 1.3;
+}
+#guestbooking .ui.login.modal p a {
+  color: #3399ff;
+  text-decoration: none;
+}
+.ui.input.fluid {
+  padding-bottom: 4px;
+}
+.ui.segment.flight-itinerary {
+  width: 100%;
+  box-shadow: none !important;
+}
+.ui.segment.flight-itinerary div.title {
+  font-size: 13px;
+  color: #63778c;
+  border-bottom: 1px solid #d9dde2;
+  padding: 5px 0;
+  margin-bottom: 5px;
+}
+.ui.segment.flight-itinerary.compact div.title .city {
+  font-size: 15px;
+  font-weight: 700;
+  color: #39f;
+  margin-right: 10px;
+}
+.ui.segment.flight-itinerary.compact div.title .time {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  background: #ff7b33;
+  padding: 2px 5px;
+  margin: 0 10px;
+  position: relative;
+  top: -1px;
+  border-radius: 3px;
+}
+.ui.segment.flight-itinerary.compact table.segments {
+  width: 100%;
+  border-bottom: none;
+}
+.ui.segment.flight-itinerary.compact table.segments .airport {
+  font-size: 11px;
+  color: #63778c;
+}
+.ui.segment.flight-itinerary.dark {
+  background: #f7f7f7;
+}
+.ui.segment.flight-itinerary table.segments td {
+  padding: 10px;
+}
+.ui.segment.flight-itinerary table.segments td.carrier-logo {
+  width: 36px;
+  vertical-align: middle;
+  text-align: center;
+}
+.ui.segment.flight-itinerary table.segments td.carrier-name {
+  font-size: 14px;
+  color: #9b9393;
+}
+.ui.segment.flight-itinerary table.segments td.from {
+  font-size: 14px;
+  color: #2c3e50;
+}
+.ui.segment.flight-itinerary table.segments td.to {
+  font-size: 14px;
+  color: #2c3e50;
+}
+.ui.segment.flight-itinerary table.segments td.flight {
+  width: 80px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAANCAYAAAErqfV4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjUwMDExQTRDOEE3RTExRTRCMjlCREQ1NDhDQ0EyMzVEIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjUwMDExQTREOEE3RTExRTRCMjlCREQ1NDhDQ0EyMzVEIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTAwMTFBNEE4QTdFMTFFNEIyOUJERDU0OENDQTIzNUQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTAwMTFBNEI4QTdFMTFFNEIyOUJERDU0OENDQTIzNUQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6Fn1vzAAAByklEQVR42mL4//8/g5NjJD+IBmEmZ6eoSwwMDMxAuhFIMwAEECNIFAaYQARQBiwCEEBwGZgAEJQBcRcQ+zNADT4DxJNhhsMwQAChmIkMWGAMqJE1QNwCFgAa0wU18j8Iw4wCCQghC8AwQACh2AE0jgdIfQbiC3v3LTNEthPq0TogPo7hMKCkCpC6jcWtuUCDpoDDARR+QPoSUEAeqAGkWAWqaBZQLB2bTwECCMWtQAMS0N1PyD8wji3QhiNI4iCXPARifhY0C22B+DAIAxV9B9IyUH8JQeVvYvP8TyDFhmbQCyCWB9r6iwWqQBjI+QKVXAbECVA2SEwGKPcROXp/AbE3UCOIXgcV/ws18Sl6IIGdBFQ8GcgOB+J3QBwEVHiNAQcACDCcKQvqnydAihOUToGGzGUgEgD1gQIpEIglQHGK0xKgQmYgdQaIDdCkQOFSCbT0EVqSzAfiUlB0oam/idcnUAPWQV1FCgA5oAmIFwAd8xeUdBcBOR34whRoUTuQqsBjKCheOoB4CtCc79gy9Skgvgo0COYCf6DCC0A+KG3lQHMfehCADJoFci1Q7TtC3oKlFCdQNgZidSCeAMT2WNQuhhp6h8SgYwAAkJ8BPfyO4eMAAAAASUVORK5CYII=) no-repeat 50% 50%;
+  opacity: .4;
+}
+.ui.segment.flight-itinerary table.segments td.time-n-cabin {
+  vertical-align: top;
+}
+.ui.segment.flight-itinerary table.segments td.time-n-cabin div {
+  font-size: 12px;
+  line-height: 1.2;
+  color: #3d4d5d;
+  border-left: 1px solid #ddd;
+  padding: 5px 10px;
+}
+.ui.segment.flight-itinerary table.segments tr.divider td {
+  padding: 0;
+  vertical-align: middle !important;
+}
+.ui.segment.flight-itinerary table.segments tr.divider td span {
+  display: block;
+  height: 1px;
+  border-bottom: 1px dotted #8c8c8c;
+}
+.ui.segment.flight-itinerary table.segments tr.divider td span.layover {
+  height: auto;
+  font-size: 11px;
+  color: #63778c;
+  border: 0;
+  margin: 0 10px;
+  white-space: nowrap;
+  position: relative;
+}
+.my-bookings-details .item table.passenger {
+  width: 100%;
+}
+.my-bookings-details .item table.passenger th {
+  background: #ccc;
+  padding: 7px 12px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #000;
+  text-align: left;
+}
+.my-bookings-details .item table.passenger td {
+  font-size: 13px;
+  color: #000;
+  padding: 7px 12px;
+}
+.my-bookings-details .item table.passenger td span {
+  color: #686767;
+}
+.my-bookings-details .item table.passenger td .status {
+  display: inline-block;
+  font-size: 10px;
+  color: #fff;
+  padding: 2px 3px;
+  text-transform: uppercase;
+  margin: 0 0 0 5px;
+  position: relative;
+  top: -1px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+.my-bookings-details .item table.passenger td .status.confirm {
+  background: #2ecc71;
+}
+.my-bookings-details .item table.passenger td .status.notconfirm {
+  background: #e74c3c;
+}
+.my-bookings-details .total {
+  border-top: 1px solid #ccc;
+  padding: 15px 30px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #202629;
+  vertical-align: middle;
+  text-align: right;
+  line-height: 1;
+}
+.my-bookings-details .total span {
+  font-size: 30px;
+  color: #202629;
+  vertical-align: middle;
+  margin-left: 10px;
+  line-height: 1;
+}
+.content .box {
+  background: #fff;
+  padding: 15px;
+}
+::selection {
+  background: #169eae;
+}
+::-moz-selection {
+  background: #169eae;
+}
+.my-bookings-details {
+  position: relative;
+}
+.my-bookings-details h1 {
+  font-size: 25px;
+  font-weight: normal;
+  color: #5e5e5e;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px dotted #cbcbcb;
+  line-height: 1;
+}
+.my-bookings-details h1 button {
+  vertical-align: top;
+}
+.my-bookings-details .action {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+}
+.my-bookings-details .action a {
+  display: inline-block;
+  font-size: 12px;
+  color: #3399ff;
+  text-decoration: none;
+  margin-left: 30px;
+  padding: 3px 0 3px 25px;
+}
+.my-bookings-details .action a.print {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCQ0IyNjZBMDk2NDAxMUU0QTAyQ0MwOEJFM0NCOUFGRSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCQ0IyNjZBMTk2NDAxMUU0QTAyQ0MwOEJFM0NCOUFGRSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkJDQjI2NjlFOTY0MDExRTRBMDJDQzA4QkUzQ0I5QUZFIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkJDQjI2NjlGOTY0MDExRTRBMDJDQzA4QkUzQ0I5QUZFIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+3UetcAAAARRJREFUeNpi/P//PwMIMDIyKgCpzUB8lgE/MAZiX6C+ByAOC5rkVqBEBT7dQIs6kPlMDBQCig1gBGIbIPYBYh4gVicyDG4C8Rcg3gIKgxogzgTi/2RYPh1kwAtgwN0nSScjYzuQWgDSy0Km12cB8UOUaASaCnISO5EGPAC6+j9IC7IL5IF4PRCfJKDZHIgDQYZgS0g7gbgOiKVwaH4GxE3IAtjCQBiIM3AYMBFdAGQAD9AvnUCaD4j/AjEbECugqfsA9HIGNKxA6aUcSH8C6QUZEA3EkkAsA8T+QPwHFD1Yom4CkOoG4u9AvBGInwDxcxagyT9BAQKJBLALXgJxBw4vvIGqeYIrN3oDsQQRSXkGjAMQYABP6Ea4BRG1AAAAAABJRU5ErkJggg==) no-repeat 0 50%;
+}
+.my-bookings-details .action a.email {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpDMjU4OEYxRDk2NDAxMUU0QTIxRjlGNjExQ0E4MTdFNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpDMjU4OEYxRTk2NDAxMUU0QTIxRjlGNjExQ0E4MTdFNiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkMyNTg4RjFCOTY0MDExRTRBMjFGOUY2MTFDQTgxN0U2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkMyNTg4RjFDOTY0MDExRTRBMjFGOUY2MTFDQTgxN0U2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+9Xa4vgAAAXlJREFUeNqs0zFLw0AUB/D/uxRMoCAoin4EFwfBFhxMdW6cdHEQBDuIOLuqo1N1UhwcXAQHte3g1gZxaP0AfgQ3QVB7gr3n3WlKbaO2xYOQ8N4/P+4uOUrPB5NoqCH8x3DEYwLv2ANhDhDHDH7uxyFQElA5bZUTpsCgNSJe9dhbCMPznlDfX0pKvF6xQI4aWBam6MG7YMaBpHrBBHrFIJz9N5UomJqImrWwdGlRHegGbcWq5UIhqovWkEVJ/In+hHWAFq0UbbDOshSHmprpxWGxoB2Kp5jw0j7T5gfQPZOJe7UDTPvBDhOP3oXFrJlFhLYu0/aAMZ3d/hVMZbK7GhupVUob5m8ySyKmvCR5Yy7z/LVMrobFdQUeb0cpPRtcu+Qu1klu6dxwhH3fN9819zAMZfs/Pe1nDwXoQULkXVZnFoTgey0MxGHdHJRUJjgisN5XmrCgEmqGWJxS7xg+Txr0bqgVocStPnpqE+wMMvrUmqpzAjSePgQYADLfx74VWJ7tAAAAAElFTkSuQmCC) no-repeat 0 50%;
+}
+.my-bookings-details .action a.pdf {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpDN0RFRkEyMzk2NDAxMUU0QTFGM0FGNjExOEEzRTRGRSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpDN0RFRkEyNDk2NDAxMUU0QTFGM0FGNjExOEEzRTRGRSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkM3REVGQTIxOTY0MDExRTRBMUYzQUY2MTE4QTNFNEZFIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkM3REVGQTIyOTY0MDExRTRBMUYzQUY2MTE4QTNFNEZFIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+6e+8NQAAAZZJREFUeNqUUz1vwjAQfQnhY0BVl6IOXdi6MzGzsKAKCUYQG0p/ChIbSgYkhiAmBn5H+QldWQihAwLxkZC4PmOjgGgFT3o623f35LuzNcYYCI7jWNyY+B92s9n8vDghAeJgMGBhGP5LiuG0VA5RV0LH41FYz/OwWCwEXdfFfD4XJFQqFYoz+/2+pfLOAkEQCKtp2gV1XReW4Ps+qtUqxZoWh4j/4VXgDjyHIWazGZLJJFKpFEajkejJQwLX6Ha7MAK5oUuSkpZI4GW7hZfLAavV6YxzuVxCTYxsjvupJMNXiVIoXSxC41f0OVnMl5E9oWTVk8PhAH1HC869ZKbVwno4RKbRwC52ft1c1VSdnDtJo1wGDdPt9fBkmkjXalB+NY24wPkGxCifx5vjIKC6CgWsp1O8djpn8b/Gauxl7e88+bvdhjeZyEdrI5HNIpQ9UElx0A2Mndx8lUpgXJHFp7LZnNe3BOjxGQc1Ad8/jSgmEMctAVHCB2PCU6/X2Xg8RhRF97wr0Qv6P0bsM9n8nZt4DPavAAMAXHvvGcozUdQAAAAASUVORK5CYII=) no-repeat 0 50%;
+}
+.my-bookings-details .group {
+  border: 1px solid #dbdbdb;
+}
+.my-bookings-details .group.progress {
+  border-left: 4px solid #f4ba4a;
+}
+.my-bookings-details .group.booked {
+  border-left: 4px solid #2ecc71;
+}
+.my-bookings-details .group.cancelled {
+  border-left: 4px solid #e74c3c;
+}
+.my-bookings-details .group.previous {
+  border: 1px solid #cbcbcb;
+  border-left: 4px solid #576062;
+  background: #fff;
+}
+.my-bookings-details .title.table > div {
+  padding: 15px 30px 15px;
+}
+.my-bookings-details .title.table > div:last-child {
+  text-align: right;
+}
+.my-bookings-details .title .direction {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  color: #3399ff;
+  margin-bottom: 7px;
+  max-height: 28px;
+  overflow: hidden;
+  margin-right: 10px;
+  vertical-align: top;
+}
+.my-bookings-details .title .direction span {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 0 15px;
+}
+.my-bookings-details .title .direction span.to {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAFCAYAAAECiO2EAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjNDNEJENUZDOEMxNjExRTQ4RDQ3OTU3NkVCMzY5ODMxIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjNDNEJENUZEOEMxNjExRTQ4RDQ3OTU3NkVCMzY5ODMxIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6M0M0QkQ1RkE4QzE2MTFFNDhENDc5NTc2RUIzNjk4MzEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6M0M0QkQ1RkI4QzE2MTFFNDhENDc5NTc2RUIzNjk4MzEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7yADbmAAAAXElEQVR42mI0nvmfAQQAAogRxgAIIDgDBgACCFmgnAlJQgkggEAyaUDGTAYsACCAMMyBGQHEnSxAAqssyFiQJCMWCZBVswACDJex2IAgEJ8B4j1AnM7EQDq4ByIAScsUORmajVsAAAAASUVORK5CYII=) no-repeat 0 50%;
+}
+.my-bookings-details .title .direction span.back {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAAElh7xMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjU5MDY2MzRBOEMxNjExRTQ5OTNDQkMzNTc0NTg1OTQ5IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjU5MDY2MzRCOEMxNjExRTQ5OTNDQkMzNTc0NTg1OTQ5Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTkwNjYzNDg4QzE2MTFFNDk5M0NCQzM1NzQ1ODU5NDkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTkwNjYzNDk4QzE2MTFFNDk5M0NCQzM1NzQ1ODU5NDkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6eXtDcAAAAq0lEQVR42mI0nvmfAQSYGKAAIIAYMUQAAgguAgWhAAGELCDIhCSjBOLApM4CBBBImSBICQMqUAJhFiDxHoqRAYi/B2bmOyySDAABhO4cFMACNR8dnAFiIZDkPVw6mXCIC8Ek04DYGJdOnMYCBBhe16KBVUA8C+R/mE/KodYSqxkU0hWk2AgKlgqYjcgh4ALEu/FoNIFpgjkV5MyZSAqIccIsZKcaQw0wIcbdALdqJ3Hv10Q8AAAAAElFTkSuQmCC) no-repeat 0 50%;
+}
+.my-bookings-details .title .date {
+  display: inline-block;
+  font-size: 14px;
+  color: #8f8f8f;
+  vertical-align: text-top;
+}
+.my-bookings-details .title .booking-id {
+  display: block;
+  font-size: 12px;
+  color: #202629;
+  white-space: nowrap;
+}
+.my-bookings-details .title .booking-date {
+  font-size: 12px;
+  color: #6c6f70;
+  white-space: nowrap;
+}
+.my-bookings-details .title .status {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  margin: 0 0 0 15px;
+  position: relative;
+  top: -3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+.my-bookings-details .title .status.progress {
+  background: #f4ba4a;
+}
+.my-bookings-details .title .status.booked {
+  background: #2ecc71;
+}
+.my-bookings-details .title .status.cancelled {
+  background: #e74c3c;
+}
+.my-bookings-details .item {
+  padding: 15px 0;
+  margin: 0 30px;
+  border-top: 1px dotted #cbcbcb;
+}
+table .w1,
+.table .w1 {
+  width: 11%;
+}
+table .w2,
+.table .w2 {
+  width: 22%;
+}
+table .w3,
+.table .w3 {
+  width: 33%;
+}
+table .w4,
+.table .w4 {
+  width: 44%;
+}
+table .w5,
+.table .w5 {
+  width: 55%;
+}
+table .w6,
+.table .w6 {
+  width: 66%;
+}
+table .w7,
+.table .w7 {
+  width: 77%;
+}
+table .w8,
+.table .w8 {
+  width: 88%;
+}
+table .w9,
+.table .w9 {
+  width: 99%;
+}
+table .w10,
+.table .w10 {
+  width: 100%;
+}
+.table {
+  display: table;
+  width: 100%;
+}
+.table > div {
+  display: table-cell;
+  vertical-align: top;
+}
+.table > div.row {
+  display: table-row;
+}
+.table > div.row > div {
+  display: table-cell;
+  vertical-align: top;
+}
+.table > div.row > div.p-left {
+  padding-left: 5px !important;
+}
+.table > div.row > div.p-right {
+  padding-right: 5px !important;
+}
+.table > div.p-left {
+  padding-left: 5px !important;
+}
+.table > div.p-right {
+  padding-right: 5px !important;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjc3MvZ3Vlc3RmaWx0ZXIuY3NzIiwic291cmNlUm9vdCI6IiJ9*/

@@ -1,0 +1,167 @@
+@import 'search/modify.less';
+
+#flights-search {
+  
+
+  &.segment {
+    max-width: 700px;
+  }
+
+  &.centered {
+    margin: 0 auto;
+  }
+  @media only screen and (min-width: 924px) and (max-width: 1049px) {
+    padding: 20px 30px;
+    margin-top:0px;
+         .tabular.menu {
+    padding: 0 20px;
+  }
+}
+@media only screen and (max-width: 924px) {
+    padding: 20px 30px;
+         .tabular.menu {
+    padding: 0 20px;
+  }
+}
+@media only screen and (min-width: 924px) {
+     padding: 20px 20px;
+     .tabular.menu {
+    padding: 0 10px;
+  }
+}
+ 
+
+  h1 {
+    margin-bottom: 2px !important;
+  }
+
+  .travel-type {
+    .deco {
+      display: inline-block;
+      padding: 10px 15px;
+      font-size: 14px;
+
+      &.active {
+        background-color: #fff0a0;
+      }
+    }
+  }
+
+  .delete {
+    width: 20px;
+    height: 20px;
+    background: url(~img/icons/delete.png) no-repeat;
+    cursor: pointer;
+  /*  position: absolute;
+    margin: -37px 0px 0 185px; */
+  }
+
+  .add-flight {
+    text-align: right;
+  }
+
+  .hint {
+    font-size: 10px;
+    color: #9d9e9e;
+  }
+
+  .active.tab {
+    padding-top: 10px;
+  }
+
+  .fields .field, .field {
+    margin: 0em 0em 10px;
+  }
+@media only screen and (min-width: 1029px) {
+     .fields > .field {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+ @media screen and (max-width:826px) 
+{
+    .fields > .field {
+      width:100%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }  
+}
+@media screen and (max-width:1028px) and (min-width:827px)
+{
+  .fields > .field {
+      width:50%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }  
+}
+ 
+
+  h1 + p {
+    margin-top: 0px;
+  }
+}
+
+.results-filter {
+  .title {
+    .small {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: normal;
+    }
+  }
+
+
+}
+
+.recent-searches {
+  .box {
+    padding: 0;
+    margin-bottom: 20px;
+    .item {
+      border-bottom: 2px solid #f1f1f1;
+      padding: 13px;
+      .clearfix();
+      .date {
+        width: 40px;
+        background: #afc2c9;
+        font-size: 11px;
+        font-weight: bold;
+        color: #fff;
+        padding: 2px 1px 1px;
+        text-align: center;
+        line-height: 1.4;
+        float: left;
+        margin-right: 15px;
+        span {
+          display: block;
+          font-size: 18px;
+          color: #4a4f51;
+          line-height: 1;
+          background: #fff;
+          padding: 4px 0;
+        }
+      }
+      .direction {
+        font-size: 14px;
+        color: #0674a9;
+        border-bottom: 1px dotted #cfd1d0;
+        padding-bottom: 7px;
+        margin-bottom: 7px;
+        overflow: hidden;
+        span {
+          display: inline-block;
+          width: 14px;height: 14px;
+          margin: 0 15px;
+          &.to {background: url(~img/icons/arrow-to.png) no-repeat 0 50%}
+          &.back {background: url(~img/icons/arrow-to-back.png) no-repeat 0 50%}
+        }
+      }
+      .info {
+        overflow: hidden;
+        font-size: 12px;
+        color: #4a4f51;
+      }
+
+    }
+  }
+}

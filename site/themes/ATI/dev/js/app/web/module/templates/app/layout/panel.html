@@ -1,0 +1,86 @@
+<div class="ui basic relaxed segment user">
+{{#if meta.user }}
+<div class="auth-info">
+    <div class="user" on-click="leftMenu()">
+        <div class="img" style="background: none">
+            <span class="chart" data-percent="75"><canvas height="55" width="55"></canvas></span>
+            <img src="/themes/B2C/img/guest.png" alt="">
+        </div>
+        <span>{{meta.user.name}}</span>
+<!--        <span class="complete">80% Profile Complete</span>-->
+    </div>
+
+    <div class="menu-arrow" on-click="leftMenu()">&nbsp;</div>
+
+    <div class="left-menu" style="display:{{#if leftmenu}}block{{else}}none{{/if}}" >
+        <div class="table">
+            <div>
+                <ul>
+                    <li><a href="/b2c/users/myprofile" class="icons profile">My Profile</a></li>
+                    <li><a href="/b2c/airCart/mybookings" class="icons bookings">My Bookings</a></li>
+                    <li><a href="/b2c/traveler/mytravelers" class="icons travellers">Travellers</a></li>
+<!--                    <li><a href="#" class="icons easypay">EasyPay</a></li>
+                    <li><a href="#" class="icons deposits">Deposits</a></li>-->
+                </ul>
+            </div>
+            <div>
+                <span>Quick Tools</span>
+                <ul>
+                    <li><a href="/b2c/airCart/guestbooking" class="icons ticket">Print / View Ticket</a></li>
+                    <li><a href="/b2c/airCart/guestbooking" class="icons cancelations">Cancelations</a></li>
+                    <li><a href="/b2c/airCart/guestbooking" class="icons change">Change/Reschedule</a></li>
+					<li><a class="item" href="/b2c/contactus/"><i class="ticket belair-icon"></i>Contact Us</a></li>
+					<li><a class="item" href="/b2c/faq/"><i class="ticket belair-icon"></i>FAQ</a></li>
+<!--                    <li><a href="/b2c/airCart/guestbooking" class="icons refund">Refund Status</a></li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="bottom">
+            Complete your profile
+            <a class="logout" href="/site/logout">Logout</a>
+        </div>
+    </div>
+</div>
+{{else}}
+
+<!--<div class="guest-info">
+    <div class="img">
+        <img src="/themes/B2C/img/guest.png" alt="">
+    </div>
+    <span>Guest User</span>
+    <span class="complete">New here? <a href="javascript:;" on-click="signup()">Sign-up</a></span>
+</div>-->
+{{/if}}
+</div>
+
+{{#unless minpanel}}
+<!--<div class="ui basic segment with-buttons">
+    {{#if !meta.user }}
+    <button type="button" class="ui blue fluid button" on-click="signin()">Sign In</button><br>
+    {{/if}}
+    <button type="button" class="ui basic fluid button">AirFare Calendar</button>
+</div>-->
+
+<div class="ui basic segment with-menu">
+    {{#if meta.user }}
+<!--     <a class="ui blue fluid button" href="/site/logout">Logout</a>-->
+    <div class="ui secondary vertical menu">
+        <a class="item" href="/b2c/users/myprofile"><i class="profile belair-icon"></i> My Profile</a>
+        <a class="item" href="/b2c/airCart/mybookings"><i class="bookings belair-icon"></i> My Bookings</a>
+        <a class="item" href="/b2c/traveler/mytravelers"><i class="travelers belair-icon"></i> Travelers</a>
+        <!--        <a class="item"><i class="easypay belair-icon"></i> Easypay</a>
+        <a class="item"><i class="deposits belair-icon"></i> Deposits</a>-->
+    </div>
+    
+    {{/if}}
+    <div class="ui blue fluid button" style="cursor: default;">Quick Tools</div>
+    <div class="ui secondary vertical menu with-menu">
+        <a class="item" href="/b2c/airCart/mybookings/"><i class="ticket belair-icon"></i> Print / View Ticket</a>
+        <a class="item" href="/b2c/airCart/mybookings/"><i class="cancellations belair-icon"></i> Cancellations</a>
+        <a class="item" href="/b2c/airCart/mybookings/"><i class="reschedule belair-icon"></i> Change / Reschedule</a>
+        <a class="item" href="/b2c/contactus/"><i class="ticket belair-icon"></i>Contact Us</a>
+		<a class="item" href="/b2c/faq/"><i class="ticket belair-icon"></i>FAQ</a>
+<!--        <a class="item"><i class="refund belair-icon"></i> Refund</a>-->
+    </div>
+</div>
+{{/unless}}

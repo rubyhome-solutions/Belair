@@ -1,0 +1,17 @@
+Timestamp: 2017-01-23 12:03:00 +01:00 CET
+POST / HTTP/1.1
+Host: test.webservices.amadeus.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/5.6.23
+Accept-Encoding: gzip, deflate
+Content-Type: text/xml; charset=utf-8
+SOAPAction: "http://webservices.amadeus.com/1ASIWBELBEL/TAUTCQ_04_1_1A"
+Content-Length: 713
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://xml.amadeus.com/TAUTCQ_04_1_1A" xmlns:ns2="http://xml.amadeus.com/ws/2009/01/WBS_Session-2.0.xsd"><SOAP-ENV:Header><ns2:Session><ns2:SessionId>01O13MMD5I</ns2:SessionId><ns2:SequenceNumber>6</ns2:SequenceNumber><ns2:SecurityToken>SBPDS0BBAY4N38ASO46IJ3IU0</ns2:SecurityToken></ns2:Session></SOAP-ENV:Header><SOAP-ENV:Body><ns1:Ticket_CreateTSTFromPricing><ns1:psaList><ns1:itemReference><ns1:referenceType>TST</ns1:referenceType><ns1:uniqueReference>1</ns1:uniqueReference></ns1:itemReference></ns1:psaList></ns1:Ticket_CreateTSTFromPricing></SOAP-ENV:Body></SOAP-ENV:Envelope>
+HTTP/1.1 200 OK
+Content-Encoding: gzip
+Content-Type: text/xml
+Content-Length: 410
+<?xml version="1.0" encoding="UTF-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Header xmlns="http://xml.amadeus.com/ws/2009/01/WBS_Session-2.0.xsd"><Session><SessionId>01O13MMD5I</SessionId><SequenceNumber>6</SequenceNumber><SecurityToken>SBPDS0BBAY4N38ASO46IJ3IU0</SecurityToken></Session></soap:Header><soap:Body><Ticket_CreateTSTFromPricingReply xmlns="http://xml.amadeus.com/TAUTCR_04_1_1A"><tstList><tstReference><referenceType>TST</referenceType><uniqueReference>1</uniqueReference><iDDescription><iDSequenceNumber>1</iDSequenceNumber></iDDescription></tstReference><paxInformation><refDetails><refQualifier>PA</refQualifier><refNumber>2</refNumber></refDetails></paxInformation></tstList></Ticket_CreateTSTFromPricingReply></soap:Body></soap:Envelope>

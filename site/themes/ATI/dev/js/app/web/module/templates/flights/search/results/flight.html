@@ -1,0 +1,278 @@
+{{#flight}}
+<tbody on-load="sortOn('flight.time')" class="flight [[#if hasGroupings()]]has-grouping[[/if]] [[#if small]]small[[/if]] [[#if summary]]summary clickable[[/if]] {{#if details}}details{{/if}} {{#if id == selected.id}}selected{{/if}}" on-click="click()">
+    {{>main}}
+    {{>info}}
+    {{#if details}}
+    <tr class="details">
+        <td colspan="5">
+<itinerary small="{{small}}" class="compact dark" flight="{{flight}}"></itinerary>
+</td>
+</tr>
+{{/if}}
+</tbody>
+<tr class="spacer">
+    <td colspan="5">
+    </td>
+</tr>
+{{/}}
+
+
+{{#partial main}}
+<tr class="main">
+    <td class="airline">
+        <div class="logos">
+            {{#each carriers}}
+            <img class="ui top aligned avatar image" src="{{logo}}" alt="{{name}}" title="{{name}}">
+            {{/each}}
+        </div>
+
+        [[#unless summary]]
+        {{#if carriers.1}}
+        <div class="multiple">Multiple Carriers</div>
+        {{else}}
+        <div class="name">
+            {{ carriers.0.name }}<br>
+            <span class="flight-no">
+                {{#each segments.0:i }}{{#if 0 != i}}, {{/if}}{{ .flight }}{{/each}}
+            </span>
+        </div>
+        {{/if}}
+        [[/unless]]
+    </td>
+    {{#if flight.segments.length > 1 }}
+    <td colspan="3" style="padding-top: 0; padding-bottom: 0;">
+        <table class="segments">
+            {{#each flight.segments}}
+            <tr>
+                <td class="depart">
+                    {{ first(.).depart.format('HH:mm D MMM') }}
+                    <span class="airport" title="{{ first(.).from.airport }}, {{ first(.).from.city }}">{{ first(.).from.airportCode }}</span></td>
+                <td class="arrow">
+                    <div class="via">
+
+                        {{#if first(.).allViaAirports}}
+                        {{first(.).allViaAirports}}
+                        {{/if}}
+
+                    </div>
+                    [[#unless summary]] 
+                    {{# { airports: via(.) } }}
+                    <!--                        <div class="via">
+                                                {{#each airports:i}}
+                                                {{#if 0 !== i}},{{/if}}
+                                                <span title="{{.airport}}, {{.city}}">{{.airportCode}}</span>
+                                                {{/each}}
+                                                {{#each flight.segments}}
+                                                    {{#if first(.).allViaAirports}}
+                                                        {{first(.).allViaAirports}}
+                                                    {{/if}}
+                                                {{/each}}
+                                            </div>-->
+                    {{/}}
+                    [[/unless]]
+           <!--         <span class="techStop" title="Technical Stop">{{first(.).techStop}}</span>-->
+                </td>
+                <td class="arrive">
+                    {{ last(.).arrive.format('HH:mm D MMM') }}
+                    <span class="airport" title="{{ last(.).to.airport }}, {{ last(.).to.city }}">{{ last(.).to.airportCode }}</span>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+    </td>
+    {{else}}
+
+    <td class="depart">
+        <div class="time">{{ first && first(segments.0).depart.format('HH:mm') }}</div>
+        [[#unless summary]]
+        <div class="airport" title="{{ first && first(segments.0).from.airport }}, {{ first && first(segments.0).from.city }}">{{ first && first(segments.0).from.airportCode }}</div>
+        <div class="date">{{ first && first(segments.0).depart.format('D MMM') }}</div>
+        [[/unless]]
+    </td>
+    <td class="arrow">
+
+        [[#unless summary]]
+        {{# { airports: via && via(segments.0) } }}
+        <div class="via">
+            <!--                {{#each flight.segments}}
+                                {{#if first(.).single_airport_change}}
+                                    {{first(.).single_airport_change}}-
+                                    
+                                    {{#each airports:i}}
+                                        {{#if 0 !== i}},{{/if}}
+                                        <span title="{{.airport}}, {{.city}}">{{.airportCode}}</span>
+                                    {{/each}}
+                                {{/if}}
+                            {{/each}}-->
+            <!--                {{#each airports:i}}
+                            {{#if 0 !== i}},{{/if}}
+                            <span title="{{.airport}}, {{.city}}">{{.airportCode}}</span>
+                            {{/each}}-->
+            {{#each flight.segments}}
+            {{#if first(.).allViaAirports}}
+            {{first(.).allViaAirports}}
+            {{/if}}
+            {{/each}}
+        </div>
+        {{/}}
+        [[/unless]]
+    <!--    <span class="techStop" title="Technical Stop">{{first(segments.0).techStop}}</span>-->
+
+    </td>
+    <td class="arrive">
+        <div class="time">{{ last && last(segments.0).arrive.format('HH:mm') }}</div>
+        [[#unless summary]]
+        <div class="airport" title="{{ last && last(segments.0).to.airport }}, {{ last && last(segments.0).to.city }}">{{ last && last(segments.0).to.airportCode }}</div>
+        <div class="date">{{ last && last(segments.0).arrive.format('D MMM') }}</div>
+        [[/unless]]
+    </td>
+
+    {{/if}}
+
+    <td class="price">
+        <span class="amount">
+            {{#if onward}}
+            {{# { save: discount([onward, flight]) } }}
+            {{#if save}}
+            {{#if save > 100}}
+            <div class="discount">{{{ $(price, meta.display_currency) }}}</div>
+            {{/if}}
+            {{{ $(price - save, meta.display_currency) }}}
+            {{else}}
+            {{{ $(price, meta.display_currency) }}}
+            {{/if}}
+            {{/}}
+            {{else}}
+            {{#if backward && !selected}}
+            {{# { save: discount([flight, backward]) } }}
+            {{#if save}}
+            {{#if save > 100}}
+            <div class="discount">{{{ $(price, meta.display_currency) }}}</div>
+            {{/if}}
+            {{{ $(price - save, meta.display_currency) }}}
+            {{else}}
+            {{{ $(price, meta.display_currency) }}}
+            {{/if}}
+            {{/}}
+            {{else}}
+            {{{ $(price, meta.display_currency) }}}
+            {{/if}}
+            {{/if}}
+        </span><br>
+        [[#unless summary]]
+        {{#if 1 == search.tripType || !search.domestic}}
+        <button class="ui button large orange" on-click="select()">BOOK</button>
+        {{else}}
+        <button class="ui button [[#unless small]]large[[/unless]] blue" on-click="select()">{{#if id == selected.id}}DESELECT{{else}}SELECT{{/if}}</button>
+        {{/if}}
+        [[/unless]]
+
+        <div class="ui fare fluid popup" style="text-align: left;max-width: 500px;">
+            {{#if paxTaxes.1}}{{paxTaxes.1.c}}x adults: {{{ $(paxTaxes.1.basic_fare, meta.display_currency) }}} YQ:{{{ $(paxTaxes.1.yq, meta.display_currency) }}} JN:{{{ $(paxTaxes.1.jn, meta.display_currency) }}} OTHER:{{{ $(paxTaxes.1.other, meta.display_currency) }}} TOTAL:{{{ $(paxTaxes.1.total, meta.display_currency) }}}<br>{{/if}}
+            {{#if paxTaxes.2}}{{paxTaxes.2.c}}x children: {{{ $(paxTaxes.2.basic_fare, meta.display_currency) }}} YQ:{{{ $(paxTaxes.2.yq, meta.display_currency) }}} JN:{{{ $(paxTaxes.2.jn, meta.display_currency) }}} OTHER:{{{ $(paxTaxes.2.other, meta.display_currency) }}} TOTAL:{{{ $(paxTaxes.2.total, meta.display_currency) }}}<br>{{/if}}
+            {{#if paxTaxes.3}}{{paxTaxes.3.c}}x infants: {{{ $(paxTaxes.3.basic_fare, meta.display_currency) }}} YQ:{{{ $(paxTaxes.3.yq, meta.display_currency) }}} JN:{{{ $(paxTaxes.3.jn, meta.display_currency) }}} OTHER:{{{ $(paxTaxes.3.other, meta.display_currency) }}} TOTAL:{{{ $(paxTaxes.3.total, meta.display_currency) }}}<br>{{/if}}
+        </div>
+    </td>
+</tr>
+{{/partial}}
+
+{{#partial info}}
+<tr class="info">
+    [[#if summary]]
+    <td colspan="5">
+        {{carriers.0.name}}, {{ first && first(segments.0).flight }} |
+        {{ duration.format && duration.format(flight.time) }} |
+        {{#if stops && 0 == stops(flight.segments.0) }}non-stop{{else}}{{ stops && stops(flight.segments.0) }} stop(s){{/if}} |
+        {{ [null, 'Non refundable', 'Refundable'][flight.refundable] }}
+    </td>
+    [[else]]
+    <td colspan="4">
+        <div class="ui divided relaxed horizontal list">
+            <div class="item">
+                <div class="content time">
+                    {{ duration.format && duration.format(flight.time) }}
+                </div>
+            </div>
+
+
+            <!--<div class="item refundability">
+                <div class="content {{ [null, 'non-refundable', 'refundable'][flight.refundable] }}" title="{{ [null, 'Non refundable', 'Refundable'][flight.refundable] }}">
+                    {{ [null, 'Non refundable', 'Refundable'][flight.refundable] }}
+                </div>
+            </div>-->
+
+            <div class="item stops">
+                <div class="content">
+                    {{#if stops && 0 == stops(flight.segments.0) }}
+                    NON-STOP
+                    {{else}}
+                    {{ stops && stops(flight.segments.0) }} stop(s) 
+                    {{/if}}
+                    {{#if first(segments.0).techStop!=null}}
+                    <span class="techstop" title="Technical Stop">+ Technical Stop(s)</span>
+                    {{/if}}
+                </div>
+            </div>
+
+            {{#if first(segments.0).airport_change || first(segments.1).airport_change}}
+            <div class="item stops" id="box_height" >
+                <div class="content airport_change_mouse airport_change_css" > &nbsp;</div>
+            </div>
+            {{/if}}
+            {{#if first(segments.0).transitvisa_msg || first(segments.1).transitvisa_msg}}
+            <div class="item stops" id="box_height">
+                <div class="content transit_visa_mouse transit_warning_css"> &nbsp;</div>
+            </div>
+            {{/if}}
+
+
+            <!--Layover-->
+            
+            {{#if first(segments.0).show_layover[0]=='SL' || first(segments.0).show_layover[1]=='SL'}}
+            
+            <div class="item stops" id="box_height">
+                <div class="content short_layover_mouse short_change_css" >&nbsp;</div>
+            </div>
+            {{/if}}
+            {{#if first(segments.0).show_layover[0]=='LL' || first(segments.0).show_layover[1]=='LL'}}
+            
+            <div class="item stops" id="box_height">
+                <div class="content long_layover_mouse long_change_css" >&nbsp;</div>
+            </div>
+            {{/if}}
+            
+            <!-- Layover -->
+			<div class="ui airport_change fluid popup" id="small_popup">
+                {{#each flight.segments}}
+                {{#if first(.).airport_change}}
+                {{first(.).airport_change}}
+                {{/if}}
+                {{/each}} 
+            </div>
+
+
+
+               
+            <div class="ui transit_visa fluid popup" id="long_popup">
+                {{#each flight.segments}}
+                {{#if first(.).transitvisa_msg}}
+                {{first(.).transitvisa_msg}}
+                {{/if}}
+                {{/each}} 
+            </div>
+
+            <!-- Layover Popover -->
+            <div class="ui short_layover fluid popup" id="small_popup">
+                {{#if first(segments.0).num_layover['short']}}{{first(segments.0).num_layover['short']}}{{/if}} Short Layover
+            </div>
+            <div class="ui long_layover fluid popup" id="small_popup">
+                {{#if first(segments.0).num_layover['long']}}{{first(segments.0).num_layover['long']}}{{/if}} Long Layover
+            </div>
+            <!-- Layover Popover -->
+    </td>
+    <td id="flight_detail_link">
+        <a href="javascript:;" on-click="toggleDetails()">Flight Details</a>
+    </td>
+    [[/if]]
+</tr>
+{{/partial}}

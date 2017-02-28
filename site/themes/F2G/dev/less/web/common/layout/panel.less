@@ -1,0 +1,271 @@
+.AirticketIndia 
+{
+    .ui.button  {background:#0674a9;}
+    .wrapper .panel .ui.vertical.menu a:hover{color:#0674a9!important;}
+    #flights-search .travel-type .deco.active   {    background-color: #ececec; border: 1px solid #ddd;}
+    header > .ui.menu > .item.active    {box-shadow: inset 0px -5px 0px 0px #fecd08;}
+    .ui.blue.buttons .button, .ui.blue.button{background-color: #0674a9;}
+}
+.Cheapticket 
+{
+    .ui.button  
+    {
+        background:#0674a9;
+    }
+    @media only screen and (min-width: 1004px)
+    {
+        .wrapper .panel .ui.vertical.menu a
+    {
+       margin-left:-10px;
+    }
+    }
+    @media only screen and (max-width:1003px)
+    {
+            .wrapper .panel .ui.vertical.menu a
+    {
+       margin-left:-30px;
+    }
+    }
+    .wrapper .panel .ui.vertical.menu a:hover
+    {
+        color:#0674a9!important;
+    }
+    #flights-search .travel-type .deco.active   
+    {    
+        background-color: #ececec; border: 1px solid #ddd;
+    }
+    header > .ui.menu > .item.active    
+    {
+        box-shadow: inset 0px -5px 0px 0px #de272e;
+    }
+    .ui.blue.buttons .button, .ui.blue.button
+    {  
+        background-color: #0674a9;
+    }
+}
+.AirticketIndia .panel 
+{
+    .guest-info {
+        border-top: 1px solid #cf2c23;
+        border-bottom: 1px solid #cf2c23;
+        background: #cf2c23;
+    
+        span, span a {
+            color: #fff;
+        }
+    }
+    .auth-info {
+        border-top: 1px solid #cf2c23;
+        border-bottom: 1px solid #cf2c23;
+      
+        background: #cf2c23;
+        
+        span    {
+            
+            color:#fff;
+        }
+    }
+    .button.blue    {background:#3882c4!important;}
+    
+}
+.panel {
+    .guest-info {
+        border-top: 1px solid #d8c45d;
+        border-bottom: 1px solid #adb0b2;
+        padding: 10px 20px;
+        background: #de272e;
+        position: relative;
+        .clearfix();
+        .img {
+            width: 51px;height: 51px;
+            float: left;
+            margin: 0 10px 0 0;
+        }
+        span {
+            display: block;
+            font-size: 12px;
+            font-weight: bold;
+            color: #fff;
+            line-height: 1.3;
+            position: relative; top: 12px;
+        }
+        .complete {
+            font-size: 11px;
+            font-weight: normal;
+            color: #535353;
+        }
+		.complete a {
+            color: #fefefe;
+        }
+    }
+
+    .auth-info {
+        border-top: 1px solid #d8c45d;
+        border-bottom: 1px solid #adb0b2;
+        padding: 10px 20px;
+        background: #de272e;
+        position: relative;
+        .clearfix();
+
+        span {
+            display: block;
+            font-size: 12px;
+            font-weight: bold;
+            color: #fff;
+            line-height: 1.3;
+            position: relative; top: 5px;
+            padding-top:5px;
+        }
+        .complete {
+            font-size: 11px;
+            font-weight: normal;
+            color: #535353;
+        }
+
+        .img {
+            width: 39px;
+            height: 39px;
+            background: #fff;
+            position: relative;
+            float: left;
+            margin: 0 10px 0 0;
+            .corner(50%);
+            .chart {
+                position: absolute; top: -8px; left: -8px;
+            }
+            img {
+                position: absolute; top: 2px; left: 2px;
+                width: 35px;
+                height: 35px;
+                .corner(50%);
+                overflow: hidden;
+            }
+        }
+
+        .menu-arrow {
+            width: 7px; height: 13px;
+            background: url(~img/icons/menu-arrow-r.png) no-repeat;
+            position: absolute; top: 24px; right: 10px;
+            cursor: pointer;
+        }
+
+    }
+
+    .ui.segment + .ui.segment {
+        margin-top: 10px;
+    }
+
+    .left-menu {
+        display: none;
+        border: 1px solid #c0c0c0;
+        background: #fff;
+        position: absolute;
+        top: 6px;
+        left: 228px;
+        z-index: 100;
+        box-shadow: 0 1px 10px 0px #a1a1a1 ;
+    }
+    .left-menu:before {
+        content: "";
+        display: block;
+        background: url(~img/icons/left-menu-arrow.png) no-repeat;
+        width: 11px;
+        height: 17px;
+        position: absolute;
+        top: 15px;
+        left: -11px;
+    }
+    .left-menu .table > div {
+        width: 50%;
+    }
+    .left-menu .table > div:first-child {
+        border-right: 1px solid #c0c0c0;
+    }
+    .left-menu ul {
+        list-style: none;
+        display: block;
+        padding: 10px 0;
+    }
+    .left-menu ul li {
+        display: block;
+        padding: 5px 15px;
+    }
+    .left-menu ul li.active,
+    .left-menu ul li:hover {
+        background: #eeeeee;
+    }
+    .left-menu span {
+        display: block;
+        font-size: 12px;
+        font-weight: bold;
+        color: #262d3d;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 8px 0;
+    }
+    .left-menu .bottom {
+        background: #e8e8e8;
+        padding: 10px 15px 8px;
+        font-size: 12px;
+        color: #494646;
+        position: relative;
+    }
+    .left-menu .bottom .logout {
+        display: block;
+        background: url(~img/icons/logout.png) no-repeat 10px 50%;
+        padding: 10px 15px 8px 30px;
+        font-size: 12px;
+        color: #494646;
+        text-decoration: none;
+        border-left: 1px solid #fff;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+.icons {
+  display: inline-block;
+  font-size: 14px;
+  color: #222222;
+  white-space: nowrap;
+  height: 22px;
+  line-height: 22px;
+  padding-left: 30px;
+  opacity: .6;
+  text-decoration: none;
+}
+.icons.active {
+  opacity: 1;
+}
+.icons.profile {
+  background: url(~img/icons/profile.png) no-repeat 0 50%;
+}
+.icons.bookings {
+  background: url(~img/icons/bookings.png) no-repeat 0 50%;
+}
+.icons.travellers {
+  background: url(~img/icons/travellers.png) no-repeat 0 50%;
+}
+.icons.easypay {
+  background: url(~img/icons/easypay.png) no-repeat 0 50%;
+}
+.icons.deposits {
+  background: url(~img/icons/deposits.png) no-repeat 0 50%;
+}
+.icons.ticket {
+  background: url(~img/icons/ticket.png) no-repeat 0 50%;
+}
+.icons.cancelations {
+  background: url(~img/icons/cancelations.png) no-repeat 0 50%;
+}
+.icons.change {
+  background: url(~img/icons/change.png) no-repeat 0 50%;
+}
+.icons.refund {
+  background: url(~img/icons/refund.png) no-repeat 0 50%;
+}
+.table > div {
+  display: table-cell;
+  vertical-align: top;
+}

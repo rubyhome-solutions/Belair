@@ -1,0 +1,59 @@
+<style>
+    #app > .wrapper > .content { display: block !important; }
+</style>
+
+<div class="content">
+    {{#if booking }}
+    <div id="booking" >
+        {{#if booking.error}}
+        <div class="ui segment center aligned">
+            <h1>{{booking.error}}</h1>
+            <a on-click="back2()" class="ui button">Go Back to Search Results</a>
+        </div>
+        {{else}}
+        <div class="ui segment">
+            <h1>The simplest way to book !</h1>
+            <a on-click="back()" class="ui button middle gray back">Go Back</a>
+            <div class="currencyWrap">
+                {{#if meta.display_currency}}
+                <div class ="curterm" style="display:{{#if meta.display_currency=='INR' }}none{{else}}block{{/if}}">Currency Amount are Indicative Equivalent to INR</div>
+                {{/if}}
+                <span>Currency: </span>
+                <select class="menu transition" on-change="setCurrencyBooking()" style="z-index: 1010;" id="currency1">
+                    <option value='INR' {{#if booking.currency=="INR"}}selected{{/if}}><i class="inr icon currency"></i> Rupee</option>
+                    <option value='USD' {{#if booking.currency=="USD"}}selected{{/if}}><i class="usd icon currency"></i> US Dollar</option>
+                    <option value='EUR' {{#if booking.currency=="EUR"}}selected{{/if}}><i class="eur icon currency"></i> Euro</option>
+                    <option value='GBP' {{#if booking.currency=="GBP"}}selected{{/if}}><i class="gbp icon currency"></i> UK Pound</option>
+                    <option value='AUD' {{#if booking.currency=="AUD"}}selected{{/if}}><i class="usd icon currency"></i> Australian Dollar</option>
+                    <option value='JPY' {{#if booking.currency=="JPY"}}selected{{/if}}><i class="jpy icon currency"></i> Japanese Yen</option>
+                    <option value='RUB' {{#if booking.currency=="RUB"}}selected{{/if}}><i class="rub icon currency"></i> Russian Ruble</option>
+                    <option value='AED' {{#if booking.currency=="AED"}}selected{{/if}}><i class="aed icon currency"></i> Dirham</option>
+                </select>
+            </div>
+            <div class="clear"></div>
+            <step1 booking="{{booking}}" meta="{{meta}}"></step1>
+            <step2 booking="{{booking}}" meta="{{meta}}"></step2>
+            <step3 booking="{{booking}}" meta="{{meta}}"></step3>
+            <step4 booking="{{booking}}" meta="{{meta}}"></step4>
+        </div>
+        {{/if}}
+    </div>
+    {{else}}
+    {{#if error}}
+    <div id="booking">
+        <div class="ui segment">
+            <h1>Booking not found!</h1>
+        </div>
+    </div>
+    {{else}}
+    <div class="payment_loader">
+        <div class="ui active inverted dimmer">
+            <div class="wait_text">Please Wait</div><br><br>
+            <div class="ui text loader loader_position"></div>
+        </div>
+    </div>
+    {{/if}}
+    {{/if}}
+</div>
+
+

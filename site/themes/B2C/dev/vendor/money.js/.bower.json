@@ -1,0 +1,14 @@
+{
+  "name": "money.js",
+  "homepage": "https://github.com/openexchangerates/money.js",
+  "version": "0.1.3",
+  "_release": "0.1.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.3",
+    "commit": "48146d4ef0d0ccee1c6ec1e606ea3acd1744b936"
+  },
+  "_source": "https://github.com/openexchangerates/money.js.git",
+  "_target": "~0.1.3",
+  "_originalSource": "money.js"
+}

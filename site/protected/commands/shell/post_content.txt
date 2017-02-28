@@ -1,0 +1,23 @@
+{
+	"credentials": {
+		"username": "SkyScanner",
+		"password": "skyTest854",
+		"officeid": "SKYSC"
+	},
+	"origin": "BLR",
+	"destination": "DEL",
+	"onwarddate": "2015-10-04",
+	"returndate": "",
+	"numadults": 1,
+	"numchildren": 0,
+	"numinfants": 1,
+	"journeytype": "Oneway",
+	"prefclass": "E",
+	"requestformat": "JSON",
+	"resultformat": "JSON",
+	"searchtype": "Normal",
+	"sortkey": "default",
+	"numresults": 50,
+	"actionname": "FLIGHTSEARCH",
+	"prefcarrier": "All"
+}

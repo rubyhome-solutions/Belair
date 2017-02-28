@@ -1,0 +1,32 @@
+<div class="ui input {{class}} {{#if error}}error{{/if}} {{ classes(state, large, value) }}">
+    {{#if large}}
+    <div class="ui placeholder">{{placeholder}}</div>
+    {{/if}}
+    <input
+            type="{{#if disabled}}text  {{else}}tel{{/if}}"
+            name="{{name}}"
+            value="{{value}}"
+            {{#unless large}}placeholder="{{placeholder}}"{{/unless}}
+            {{#if disabled}}disabled{{/if}}
+    {{#if state.disabled || state.submitting }}disabled="disabled"{{/if}}
+    >
+
+    {{#if cctype}}
+    <ul class="cardList clearFix fLeft">
+        <li class="cardType {{cctype}}">{{cctype}}</li>
+    </ul>
+    {{else}}
+    <ul class="cardList clearFix fLeft">
+        <li class="cardType visa">Visa</li>
+        <li class="cardType master">Mastercard</li>
+        {{#if 1 != cardType && 5 != cardType}}
+        <li class="cardType rupay">Rupay</li>
+        {{/if}}
+        
+        {{#if 1== cardType || 5 == cardType}}
+            <li class="cardType amex">American Express</li>
+            <li class="cardType diners">Diners</li>
+        {{/if}}
+    </ul>
+    {{/if}}
+</div>

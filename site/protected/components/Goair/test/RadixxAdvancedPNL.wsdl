@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://radixx.com/WSRadixx/RadixxAdvancedPNL" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://radixx.com/WSRadixx/RadixxAdvancedPNL" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://radixx.com/WSRadixx/RadixxAdvancedPNL">
+      <s:element name="GetPNLFlightInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FlightNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FlightDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Destination" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPNLFlightInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPNLFlightInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPNLPassengers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FlightNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FlightDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Destination" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPNLPassengersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPNLPassengersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPassengersMovementStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PassengerMovementStatusXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPassengersMovementStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetPassengersMovementStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPassengersFinalInvoice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PassengerFinalInvoiceXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPassengersFinalInvoiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetPassengersFinalInvoiceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetPNLFlightInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPNLFlightInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPNLFlightInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPNLFlightInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPNLPassengersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPNLPassengers" />
+  </wsdl:message>
+  <wsdl:message name="GetPNLPassengersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPNLPassengersResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetPassengersMovementStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:SetPassengersMovementStatus" />
+  </wsdl:message>
+  <wsdl:message name="SetPassengersMovementStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:SetPassengersMovementStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetPassengersFinalInvoiceSoapIn">
+    <wsdl:part name="parameters" element="tns:SetPassengersFinalInvoice" />
+  </wsdl:message>
+  <wsdl:message name="SetPassengersFinalInvoiceSoapOut">
+    <wsdl:part name="parameters" element="tns:SetPassengersFinalInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPNLFlightInfoHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="FlightNumber" type="s:string" />
+    <wsdl:part name="FlightDate" type="s:string" />
+    <wsdl:part name="Origin" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPNLFlightInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPNLPassengersHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="FlightNumber" type="s:string" />
+    <wsdl:part name="FlightDate" type="s:string" />
+    <wsdl:part name="Origin" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPNLPassengersHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetPassengersMovementStatusHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="PassengerMovementStatusXML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetPassengersMovementStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetPassengersFinalInvoiceHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="PassengerFinalInvoiceXML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetPassengersFinalInvoiceHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPNLFlightInfoHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="FlightNumber" type="s:string" />
+    <wsdl:part name="FlightDate" type="s:string" />
+    <wsdl:part name="Origin" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPNLFlightInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPNLPassengersHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="FlightNumber" type="s:string" />
+    <wsdl:part name="FlightDate" type="s:string" />
+    <wsdl:part name="Origin" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPNLPassengersHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetPassengersMovementStatusHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="PassengerMovementStatusXML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetPassengersMovementStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetPassengersFinalInvoiceHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="PassengerFinalInvoiceXML" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetPassengersFinalInvoiceHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="RadixxAdvancedPNLSoap">
+    <wsdl:operation name="GetPNLFlightInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the list of Flights matching the search criteria.</wsdl:documentation>
+      <wsdl:input message="tns:GetPNLFlightInfoSoapIn" />
+      <wsdl:output message="tns:GetPNLFlightInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPNLPassengers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the list of Passengers traveling on the specified flight.</wsdl:documentation>
+      <wsdl:input message="tns:GetPNLPassengersSoapIn" />
+      <wsdl:output message="tns:GetPNLPassengersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPassengersMovementStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets Flight status to Close.</wsdl:documentation>
+      <wsdl:input message="tns:SetPassengersMovementStatusSoapIn" />
+      <wsdl:output message="tns:SetPassengersMovementStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPassengersFinalInvoice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Finalize Reservation Payments.</wsdl:documentation>
+      <wsdl:input message="tns:SetPassengersFinalInvoiceSoapIn" />
+      <wsdl:output message="tns:SetPassengersFinalInvoiceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RadixxAdvancedPNLHttpGet">
+    <wsdl:operation name="GetPNLFlightInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the list of Flights matching the search criteria.</wsdl:documentation>
+      <wsdl:input message="tns:GetPNLFlightInfoHttpGetIn" />
+      <wsdl:output message="tns:GetPNLFlightInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPNLPassengers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the list of Passengers traveling on the specified flight.</wsdl:documentation>
+      <wsdl:input message="tns:GetPNLPassengersHttpGetIn" />
+      <wsdl:output message="tns:GetPNLPassengersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPassengersMovementStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets Flight status to Close.</wsdl:documentation>
+      <wsdl:input message="tns:SetPassengersMovementStatusHttpGetIn" />
+      <wsdl:output message="tns:SetPassengersMovementStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPassengersFinalInvoice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Finalize Reservation Payments.</wsdl:documentation>
+      <wsdl:input message="tns:SetPassengersFinalInvoiceHttpGetIn" />
+      <wsdl:output message="tns:SetPassengersFinalInvoiceHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RadixxAdvancedPNLHttpPost">
+    <wsdl:operation name="GetPNLFlightInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the list of Flights matching the search criteria.</wsdl:documentation>
+      <wsdl:input message="tns:GetPNLFlightInfoHttpPostIn" />
+      <wsdl:output message="tns:GetPNLFlightInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPNLPassengers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the list of Passengers traveling on the specified flight.</wsdl:documentation>
+      <wsdl:input message="tns:GetPNLPassengersHttpPostIn" />
+      <wsdl:output message="tns:GetPNLPassengersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPassengersMovementStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sets Flight status to Close.</wsdl:documentation>
+      <wsdl:input message="tns:SetPassengersMovementStatusHttpPostIn" />
+      <wsdl:output message="tns:SetPassengersMovementStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPassengersFinalInvoice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Finalize Reservation Payments.</wsdl:documentation>
+      <wsdl:input message="tns:SetPassengersFinalInvoiceHttpPostIn" />
+      <wsdl:output message="tns:SetPassengersFinalInvoiceHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RadixxAdvancedPNLSoap" type="tns:RadixxAdvancedPNLSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPNLFlightInfo">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxAdvancedPNL/GetPNLFlightInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPNLPassengers">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxAdvancedPNL/GetPNLPassengers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPassengersMovementStatus">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxAdvancedPNL/SetPassengersMovementStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPassengersFinalInvoice">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxAdvancedPNL/SetPassengersFinalInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxAdvancedPNLSoap12" type="tns:RadixxAdvancedPNLSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPNLFlightInfo">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxAdvancedPNL/GetPNLFlightInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPNLPassengers">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxAdvancedPNL/GetPNLPassengers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPassengersMovementStatus">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxAdvancedPNL/SetPassengersMovementStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPassengersFinalInvoice">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxAdvancedPNL/SetPassengersFinalInvoice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxAdvancedPNLHttpGet" type="tns:RadixxAdvancedPNLHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetPNLFlightInfo">
+      <http:operation location="/GetPNLFlightInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPNLPassengers">
+      <http:operation location="/GetPNLPassengers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPassengersMovementStatus">
+      <http:operation location="/SetPassengersMovementStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPassengersFinalInvoice">
+      <http:operation location="/SetPassengersFinalInvoice" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxAdvancedPNLHttpPost" type="tns:RadixxAdvancedPNLHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetPNLFlightInfo">
+      <http:operation location="/GetPNLFlightInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPNLPassengers">
+      <http:operation location="/GetPNLPassengers" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPassengersMovementStatus">
+      <http:operation location="/SetPassengersMovementStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPassengersFinalInvoice">
+      <http:operation location="/SetPassengersFinalInvoice" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RadixxAdvancedPNL">
+    <wsdl:port name="RadixxAdvancedPNLSoap" binding="tns:RadixxAdvancedPNLSoap">
+      <soap:address location="http://g8.service.radixx.com/RadixxAdvancedPNL.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxAdvancedPNLSoap12" binding="tns:RadixxAdvancedPNLSoap12">
+      <soap12:address location="http://g8.service.radixx.com/RadixxAdvancedPNL.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxAdvancedPNLHttpGet" binding="tns:RadixxAdvancedPNLHttpGet">
+      <http:address location="http://g8.service.radixx.com/RadixxAdvancedPNL.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxAdvancedPNLHttpPost" binding="tns:RadixxAdvancedPNLHttpPost">
+      <http:address location="http://g8.service.radixx.com/RadixxAdvancedPNL.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

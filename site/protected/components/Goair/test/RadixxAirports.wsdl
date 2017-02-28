@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://radixx.com/WSRadixx//RadixxAirports" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://radixx.com/WSRadixx//RadixxAirports" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://radixx.com/WSRadixx//RadixxAirports">
+      <s:import namespace="http://radixx.com/WSRadixx/RAOriginAirportsDS.xsd" />
+      <s:import namespace="http://radixx.com/WSRadixx/RADestAirportsDS.xsd" />
+      <s:import schemaLocation="http://g8.service.radixx.com/RadixxAirports.asmx?schema=RADestAirportsDS" namespace="http://radixx.com/WSRadixx/RADestAirportsDS.xsd" />
+      <s:import schemaLocation="http://g8.service.radixx.com/RadixxAirports.asmx?schema=RAOriginAirportsDS" namespace="http://radixx.com/WSRadixx/RAOriginAirportsDS.xsd" />
+      <s:element name="GetOriginAirports">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOriginAirportsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOriginAirportsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://radixx.com/WSRadixx/RAOriginAirportsDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOriginAirportsXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOriginAirportsXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOriginAirportsXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDestinationAirports">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AirportCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDestinationAirportsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDestinationAirportsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://radixx.com/WSRadixx/RADestAirportsDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDestinationAirportsXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AirportCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDestinationAirportsXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDestinationAirportsXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAirportRoutesXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LanguageCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAirportRoutesXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAirportRoutesXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RAOriginAirportsDS" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any namespace="http://radixx.com/WSRadixx/RAOriginAirportsDS.xsd" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="RADestAirportsDS" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any namespace="http://radixx.com/WSRadixx/RADestAirportsDS.xsd" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetOriginAirportsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOriginAirports" />
+  </wsdl:message>
+  <wsdl:message name="GetOriginAirportsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOriginAirportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOriginAirportsXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOriginAirportsXML" />
+  </wsdl:message>
+  <wsdl:message name="GetOriginAirportsXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOriginAirportsXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDestinationAirportsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDestinationAirports" />
+  </wsdl:message>
+  <wsdl:message name="GetDestinationAirportsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDestinationAirportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDestinationAirportsXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDestinationAirportsXML" />
+  </wsdl:message>
+  <wsdl:message name="GetDestinationAirportsXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDestinationAirportsXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAirportRoutesXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAirportRoutesXML" />
+  </wsdl:message>
+  <wsdl:message name="GetAirportRoutesXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAirportRoutesXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOriginAirportsHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOriginAirportsHttpGetOut">
+    <wsdl:part name="Body" element="tns:RAOriginAirportsDS" />
+  </wsdl:message>
+  <wsdl:message name="GetOriginAirportsXMLHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOriginAirportsXMLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDestinationAirportsHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="AirportCode" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDestinationAirportsHttpGetOut">
+    <wsdl:part name="Body" element="tns:RADestAirportsDS" />
+  </wsdl:message>
+  <wsdl:message name="GetDestinationAirportsXMLHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="AirportCode" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDestinationAirportsXMLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAirportRoutesXMLHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="LanguageCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAirportRoutesXMLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOriginAirportsHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOriginAirportsHttpPostOut">
+    <wsdl:part name="Body" element="tns:RAOriginAirportsDS" />
+  </wsdl:message>
+  <wsdl:message name="GetOriginAirportsXMLHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOriginAirportsXMLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDestinationAirportsHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="AirportCode" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDestinationAirportsHttpPostOut">
+    <wsdl:part name="Body" element="tns:RADestAirportsDS" />
+  </wsdl:message>
+  <wsdl:message name="GetDestinationAirportsXMLHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="AirportCode" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDestinationAirportsXMLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAirportRoutesXMLHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="LanguageCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAirportRoutesXMLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="RadixxAirportsSoap">
+    <wsdl:operation name="GetOriginAirports">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetOriginAirportsDataset.</wsdl:documentation>
+      <wsdl:input message="tns:GetOriginAirportsSoapIn" />
+      <wsdl:output message="tns:GetOriginAirportsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOriginAirportsXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetOriginAirportsXML</wsdl:documentation>
+      <wsdl:input message="tns:GetOriginAirportsXMLSoapIn" />
+      <wsdl:output message="tns:GetOriginAirportsXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDestinationAirports">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetDestinationAirportsDataset.</wsdl:documentation>
+      <wsdl:input message="tns:GetDestinationAirportsSoapIn" />
+      <wsdl:output message="tns:GetDestinationAirportsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDestinationAirportsXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetDestinationAirportsXML</wsdl:documentation>
+      <wsdl:input message="tns:GetDestinationAirportsXMLSoapIn" />
+      <wsdl:output message="tns:GetDestinationAirportsXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirportRoutesXML">
+      <wsdl:input message="tns:GetAirportRoutesXMLSoapIn" />
+      <wsdl:output message="tns:GetAirportRoutesXMLSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RadixxAirportsHttpGet">
+    <wsdl:operation name="GetOriginAirports">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetOriginAirportsDataset.</wsdl:documentation>
+      <wsdl:input message="tns:GetOriginAirportsHttpGetIn" />
+      <wsdl:output message="tns:GetOriginAirportsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOriginAirportsXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetOriginAirportsXML</wsdl:documentation>
+      <wsdl:input message="tns:GetOriginAirportsXMLHttpGetIn" />
+      <wsdl:output message="tns:GetOriginAirportsXMLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDestinationAirports">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetDestinationAirportsDataset.</wsdl:documentation>
+      <wsdl:input message="tns:GetDestinationAirportsHttpGetIn" />
+      <wsdl:output message="tns:GetDestinationAirportsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDestinationAirportsXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetDestinationAirportsXML</wsdl:documentation>
+      <wsdl:input message="tns:GetDestinationAirportsXMLHttpGetIn" />
+      <wsdl:output message="tns:GetDestinationAirportsXMLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirportRoutesXML">
+      <wsdl:input message="tns:GetAirportRoutesXMLHttpGetIn" />
+      <wsdl:output message="tns:GetAirportRoutesXMLHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RadixxAirportsHttpPost">
+    <wsdl:operation name="GetOriginAirports">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetOriginAirportsDataset.</wsdl:documentation>
+      <wsdl:input message="tns:GetOriginAirportsHttpPostIn" />
+      <wsdl:output message="tns:GetOriginAirportsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOriginAirportsXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetOriginAirportsXML</wsdl:documentation>
+      <wsdl:input message="tns:GetOriginAirportsXMLHttpPostIn" />
+      <wsdl:output message="tns:GetOriginAirportsXMLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDestinationAirports">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetDestinationAirportsDataset.</wsdl:documentation>
+      <wsdl:input message="tns:GetDestinationAirportsHttpPostIn" />
+      <wsdl:output message="tns:GetDestinationAirportsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDestinationAirportsXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetDestinationAirportsXML</wsdl:documentation>
+      <wsdl:input message="tns:GetDestinationAirportsXMLHttpPostIn" />
+      <wsdl:output message="tns:GetDestinationAirportsXMLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAirportRoutesXML">
+      <wsdl:input message="tns:GetAirportRoutesXMLHttpPostIn" />
+      <wsdl:output message="tns:GetAirportRoutesXMLHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RadixxAirportsSoap" type="tns:RadixxAirportsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetOriginAirports">
+      <soap:operation soapAction="http://radixx.com/WSRadixx//RadixxAirports/GetOriginAirports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOriginAirportsXML">
+      <soap:operation soapAction="http://radixx.com/WSRadixx//RadixxAirports/GetOriginAirportsXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDestinationAirports">
+      <soap:operation soapAction="http://radixx.com/WSRadixx//RadixxAirports/GetDestinationAirports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDestinationAirportsXML">
+      <soap:operation soapAction="http://radixx.com/WSRadixx//RadixxAirports/GetDestinationAirportsXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirportRoutesXML">
+      <soap:operation soapAction="http://radixx.com/WSRadixx//RadixxAirports/GetAirportRoutesXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxAirportsSoap12" type="tns:RadixxAirportsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetOriginAirports">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx//RadixxAirports/GetOriginAirports" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOriginAirportsXML">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx//RadixxAirports/GetOriginAirportsXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDestinationAirports">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx//RadixxAirports/GetDestinationAirports" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDestinationAirportsXML">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx//RadixxAirports/GetDestinationAirportsXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirportRoutesXML">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx//RadixxAirports/GetAirportRoutesXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxAirportsHttpGet" type="tns:RadixxAirportsHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetOriginAirports">
+      <http:operation location="/GetOriginAirports" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOriginAirportsXML">
+      <http:operation location="/GetOriginAirportsXML" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDestinationAirports">
+      <http:operation location="/GetDestinationAirports" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDestinationAirportsXML">
+      <http:operation location="/GetDestinationAirportsXML" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirportRoutesXML">
+      <http:operation location="/GetAirportRoutesXML" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxAirportsHttpPost" type="tns:RadixxAirportsHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetOriginAirports">
+      <http:operation location="/GetOriginAirports" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOriginAirportsXML">
+      <http:operation location="/GetOriginAirportsXML" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDestinationAirports">
+      <http:operation location="/GetDestinationAirports" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDestinationAirportsXML">
+      <http:operation location="/GetDestinationAirportsXML" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAirportRoutesXML">
+      <http:operation location="/GetAirportRoutesXML" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RadixxAirports">
+    <wsdl:port name="RadixxAirportsSoap" binding="tns:RadixxAirportsSoap">
+      <soap:address location="http://g8.service.radixx.com/RadixxAirports.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxAirportsSoap12" binding="tns:RadixxAirportsSoap12">
+      <soap12:address location="http://g8.service.radixx.com/RadixxAirports.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxAirportsHttpGet" binding="tns:RadixxAirportsHttpGet">
+      <http:address location="http://g8.service.radixx.com/RadixxAirports.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxAirportsHttpPost" binding="tns:RadixxAirportsHttpPost">
+      <http:address location="http://g8.service.radixx.com/RadixxAirports.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

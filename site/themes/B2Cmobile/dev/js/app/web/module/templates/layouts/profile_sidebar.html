@@ -1,0 +1,127 @@
+<div class="left-panel">
+    <a class="mobile-menu" href="#">&nbsp;</a>
+    {{#if user.isGuest}}   
+    <div class="guest-info">
+        <div class="img">
+            <img src="{{user.baseUrl}}/img/guest.png" alt="">
+        </div>
+        <span>Guest User</span>
+        <span class="complete">New here? <a href="#" id="sign-up-btn">Sign-up</a></span>
+    </div>
+    {{else}} 
+    <div class="auth-info">                    
+        <div class="user">
+            <div class="img">
+                <span class="chart"
+                      data-percent="{{user.profileCompleteness}}"></span>
+                <img src="{{user.profileImageUrl}}" alt=""/>
+            </div>
+            <span>{{user.name}}</span>
+            <span
+                class="complete">{{user.profileCompleteness}}% Profile Complete</span>
+        </div>
+
+        <div class="menu-arrow">&nbsp;</div>
+
+        <div class="left-menu">
+            <div class="table">
+                <div>
+                    <ul>
+                        <li><a href="#" class="icons profile">My Profile</a></li>
+                        <li><a href="#" class="icons bookings">My Bookings</a></li>
+                        <li><a href="#" class="icons travellers">Travellers</a></li>
+                        <li><a href="#" class="icons easypay">EasyPay</a></li>
+                        <li><a href="#" class="icons deposits">Deposits</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <span>Quick Tools</span>
+                    <ul>
+                        <li><a href="#" class="icons ticket">Print / View Ticket</a></li>
+                        <li><a href="#" class="icons cancelations">Cancelations</a></li>
+                        <li class="active"><a href="#" class="icons change active">Change/Reschedule</a>
+                        </li>
+                        <li><a href="#" class="icons refund">Refund Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom">
+                Complete your profile
+                <a class="logout" href="/site/logout">Logout</a>
+            </div>
+        </div>
+
+        <!--left-menu-->
+    </div>
+   {{/if}}
+    <div class="box">
+        {{#if user.isGuest}} 
+        <button class="middle blue" id="sign-in-btn">Sign In</button>
+        {{/if}} 
+
+        <button class="middle white">AirFare Calendar</button>
+    </div>
+  <div class="box">
+            <div class="CandC">
+                <div class="easy-select">
+                    <span class="title">Currency</span>
+                    <div class="target"><i>B</i></div>
+                    <div class="body">
+                        <ul>
+                            <li><i>A</i> </li>
+                            <li><i>B</i> </li>
+                            <li><i>C</i> </li>
+                            <li><i>D</i> </li>
+                            <li><i>E</i> </li>
+                            <li><i>F</i> </li>
+                            <li><i>G</i> </li>
+                            <li><i>H</i> </li>
+                            <li><i>I</i> </li>
+                            <li><i>J</i> </li>
+                            <li><i>K</i> </li>
+                            <li><i>L</i> </li>
+                            <li><i>M</i> </li>
+                            <li><i>N</i> </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="easy-select">
+                    <span class="title">Country</span>
+                    <div class="target"><i><img src="{{user.baseUrl}}/img/flags/India.png" alt=""/></i> </div>
+                    <div class="body">
+                        <ul>
+                            <li><i><img src="{{user.baseUrl}}/img/flags/India.png" alt=""/></i></li>
+<!--                            <li><i><img src="{{user.baseUrl}}/img/flags/United_States_of_America.png" alt=""/></i> </li>-->
+                            <li><i><img src="{{user.baseUrl}}/img/flags/China.png" alt=""/></i> </li>
+<!--                            <li><i><img src="{{user.baseUrl}}/img/flags/Russian_Federation.png" alt=""/></i> </li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div><!--CandC-->
+        </div>
+ 
+<div class="box">
+    <div class="left-menu">        
+        {{#if !user.isGuest}}   
+            <ul>
+                <li class="active"><a href="/site/page?view=internal" class="icons profile active">My Profile</a></li>
+                <li><a href="/b2c/airCart/mybookings" class="icons bookings">My Bookings</a></li>
+                <li><a href="/b2c/traveler/mytravelers" class="icons travellers">Travellers</a></li>
+                <li><a href="#" class="icons easypay">EasyPay</a></li>
+                <li><a href="#" class="icons deposits">Deposits</a></li>
+            </ul>
+        {{/if}}
+        <span>Quick Tools</span>
+        <ul>
+            <li><a href="#" class="icons ticket">Print / View Ticket</a></li>
+            <li><a href="#" class="icons cancelations">Cancelations</a></li>
+            <li><a href="#" class="icons change">Change/Reschedule</a></li>
+            <li><a href="#" class="icons refund">Refund Status</a></li>
+           
+        </ul>
+    </div>
+    <!--left-menu-->
+</div>
+</div>
+
+

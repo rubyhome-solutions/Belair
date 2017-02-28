@@ -1,0 +1,53 @@
+{{# { step: booking.steps.2 } }}
+<div class="step header step2 {{#if step.active }}active{{else}}{{#if step.completed }}completed{{/if}}{{/if}}" role="tab">Passengers</div>
+{{#if step.completed && !step.active }}
+<div class="step2-summary segment" on-click="activate(2)">
+    <div class="ui horizontal list">
+        {{#each booking.passengers:i}}
+        <div class="item">
+            <div class="content">
+                <i class="user icon"></i> {{ traveler.firstname }} {{ traveler.lastname}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+{{else}}
+{{#if step.active}}
+<form action="javascript:;" class="ui form segment step2 {{#if step.errors}}error{{/if}} {{#if step.submitting}}<!-- loading -->{{/if}}" on-submit="submit()">
+    {{#if step.submitting}}
+    <div class="payment_loader">
+        <div class="ui active inverted dimmer">
+            <div class="wait_text">Please Wait</div><br><br>
+            <div class="ui text loader loader_position"></div>
+        </div>
+    </div>
+    {{/if}}
+    {{#each booking.passengers:i}}
+    <div class="passenger-header header">
+        {{ meta.travelerTypes[type_id] }}({{no}})* 
+        {{#if type_id==3 ||type_id==2}}
+        <span style="font-size: 12px;font-weight: normal; margin-left: 5px;">({{ meta.travelerTypes[type_id] }} age should be between 
+            {{#if type_id==2}}2 - 12{{/if}} 
+            {{#if type_id==3}}0 - 2{{/if}} years)</span>
+        {{/if}}
+    </div>
+    <passenger class="basic" validation="{{booking.passengerValidaton}}" travelers="{{travelers}}" passenger="{{.}}" errors="{{step.errors[i]}}" meta="{{meta}}"></passenger>
+    {{/each}}
+
+    <div id="dup-error"></div>
+
+    <div class="ui basic segment">
+        <div class="ui one column grid">
+            <div class="column">
+                <button type="submit" class="ui wizard button massive blue">CONTINUE</button>
+                {{#if qa}}
+                <button type="button" class="ui wizard button massive red" on-click="checkAvailability()">CHECK</button>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</form>
+{{/if}}
+{{/if}}
+{{/}}

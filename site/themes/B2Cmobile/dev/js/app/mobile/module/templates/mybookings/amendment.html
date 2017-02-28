@@ -1,0 +1,141 @@
+<div class="ui login modal " >
+    <i class="close icon"></i>
+    <div class="header">
+        {{#if mybookings.cancel}}Ticket Cancellation{{/if}}
+        {{#if mybookings.reschedule}}Ticket Reschedule{{/if}}
+    </div>
+    <div id="confirm"></div>
+    <div class="content {{#if mybookings.pending}}ui segment loading {{/if}}" >
+        {{#mybookings.currentCartDetails }}
+        <div class="my-bookings-details {{#if mybookings.pending}} ui segment loading {{/if}} ">
+
+            <div class="group {{formatBookingStatusClass(booking_status)}}">
+                <div class="table title">
+                    <div>
+                        {{#if isMultiCity=='false'}}
+                        {{#if returndate==null}}
+                        <span class="direction">{{bookings[0].source}}<span class="to">&nbsp;</span>{{bookings[0].destination}}</span>  
+                        {{else}}
+                        <span class="direction">{{bookings[0].source}}<span class="back">&nbsp;</span>{{bookings[0].destination}}</span>
+                        {{/if}}
+                        {{else}}
+                        <span class="direction">
+                            {{#bookings:i}}   
+                            {{source}}&nbsp; | &nbsp; 
+                            {{/}}
+                            {{bookings[bookings.length-1].destination}}
+                        </span>
+                        {{/if}}
+                        <span class="date">{{formatTravelDate(bookings[0].departure)}}</span>
+                        <span class="status {{formatBookingStatusClass(booking_status)}}">{{ formatBookingStatusMessage(booking_status)}}</span>
+                        <br/>
+                        <!--                <span class="date">Total time: <b>2h 10m</b></span>-->
+                    </div>
+                    <div>
+                        <span class="booking-id">Booking Id: {{id}} </span>
+                        <span class="booking-date">{{formatBookingDate(created)}}</span>
+                    </div>
+                </div>
+                {{#bookings:j}}
+                <div class="item">
+                    <div class="passengerWrap">
+                    <div class="passenger">
+
+                                        
+                        {{#bookings[j].traveller:t}}
+                        <ul {{#if selected }} class="negative" {{/if}}>
+                            <li><span>Passenger:</span> {{title}} {{first_name}} {{last_name}} ({{type}}) <span class="status {{travellerBookingStatus(status)}}">{{travellerBookingStatusMessage(status)}}</span></li>
+                            <li><span>CRS PNR:</span> {{crs_pnr}}, <span>Air PNR:</span> {{airline_pnr}}, <span>Ticket No.:</span> {{ticket}}</li>
+                            <li>{{#if (status==2 || status==1 )&& bookings[j].upcoming=='true'}}
+                                <div class="field">
+                                    <div class="ui checkbox " on-click="select(j,t)">
+                                        <input type="checkbox" name="selectedpassenger"  >
+                                        <label>
+                                            {{#if mybookings.cancel}}Cancel{{/if}}
+                                            {{#if mybookings.reschedule}}Reschedule{{/if}}
+                                        </label>
+                                    </div>
+                                </div>
+                                {{/if}}
+                            </li>
+                        </ul>
+                        {{/}}
+
+                    </div>
+                        </div>
+                </div>
+                <div class="item">
+                    <div class="sixteen wide column " style="height: auto !important;">
+                        <div class="ui segment flight-itinerary compact dark">
+
+                            <div class="title" style="text-align:center;">
+                                <span class="city" style="display:block;">{{ source }} → {{ destination }}</span> {{ formatTravelDate2(departure) }}
+                                <span class="time">{{flighttime}}</span>
+                            </div>
+
+                            <div class="segmentWrap">
+                            <div class="segments">
+                                {{#bookings[j].routes:k}}
+                                {{#if k>0}}
+                                
+                                    
+                                    <div>
+                                        <span class="layover">Layover: {{diff(bookings[j].routes[k].departure,bookings[j].routes[k-1].arrival)}}</span>
+                                    </div>
+                                    
+                                
+                                {{/if}}
+
+                                <div>
+                                    
+                                    <div class="carrier-name">
+                                        <span class="carrier-logo">
+                                        <img class="ui top aligned avatar image" src="/img/air_logos/{{carrier}}.png" alt="{{carrierName}}" title="{{carrierName}}">
+                                        </span> {{carrierName}} {{carrier}}-{{flightNumber}}
+                                    </div>
+                                    <div class="from" style="text-align: center;">
+                                        <b>{{origin}}:</b> {{ formatTravelDate3(departure) }}<br>{{ formatTravelDate(departure) }}<br>
+                                        <span style="text-align: right;" class="airport">{{ originDetails}}</span>
+                                    </div>
+                                    <div class="flight">&nbsp;</div>
+                                    <div class="to">
+                                        <b>{{destination}}:</b> {{ formatTravelDate3(arrival) }}<br>{{ formatTravelDate(arrival) }}<br>
+                                        <span class="airport">{{ destinationDetails}}</span>
+                                    </div>
+                                    <div class="time-n-cabin" style="text-align:center;">
+                                        <div>{{flighttime}}<br> {{bookings[j].traveller[0].cabin}}</div>
+                                    </div>
+                                </div>
+
+                                {{/}}
+                            </div>
+                            </div>    
+                        </div>
+                    </div>
+                    
+                </div>
+                {{/}}
+                <div class="item">
+                    <div class="ui form">
+                        <div class="field">
+                            <label>Reason For {{#if mybookings.cancel}}Ticket Cancellation{{/if}}
+                                {{#if mybookings.reschedule}}Ticket Reschedule{{/if}} </label>
+                            <textarea id="amendReason" name="amendReason"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="clear:both;"></div>
+                <div class=""> <!--class = cancel-->   
+                    {{#if mybookings.reschedule}}<button on-click='amendTicket(2)' class="large ui button red">Reschedule</button>{{/if}}
+                    {{#if mybookings.cancel}}<button on-click='amendTicket(1)' class="large ui button red">Cancel</button>{{/if}}
+
+                </div>
+
+            </div>
+
+
+        </div>
+        {{/}}
+    </div>
+</div>

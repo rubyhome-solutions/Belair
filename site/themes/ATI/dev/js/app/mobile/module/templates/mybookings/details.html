@@ -1,0 +1,291 @@
+
+{{#mybookings.currentCartDetails }}
+{{#if !mybookings.print}}
+<div class="ui positive  message" style="display: none" >
+    <i class="close icon" on-click='closemessage'></i>
+    {{#if this.submitting}}
+    Sending Email..
+    {{else}}
+    Email Sent
+    {{/if}}
+</div>
+{{/if}}
+<header>
+	<div class="ui three column grid">
+		<div class="column">
+			<a id="back_btn" class="back_page" href="javascript:;" on-click="back()">
+				<img src="/themes/ATI/img/mobile/arrow_back.png" alt="back">
+			</a>
+		</div> 
+		<div class="column">
+			<a class="logo" href="javascript:;">
+				<img src="/themes/ATI/img/mobile/logo.png" alt="CheapTicket.in">
+			</a>
+		</div> 
+	</div> 
+	<div id="m_menu" class="ui left vertical sidebar menu push scale down overlay">
+	</div>
+</header>
+<div class="box my-bookings-details {{#if mybookings.pending}} ui segment loading {{/if}}  ">
+    <div class="booking_details_header">
+    <h3>My Bookings Details</h3>
+    </div>
+    {{#if !mybookings.print}}   
+    
+        <div class=" noprint ui grid three column">        
+
+            {{#if upcoming=="true"}}
+            <button on-click='reschedule' class="smaller ui button orange">Change</button>
+            <button on-click='cancel' class="smaller ui button red">Cancel</button>
+            {{/if}}
+            <button on-click='back' class="smaller ui button yellow">Back</button>
+
+        </div>
+        <div class=" noprint ui grid three column" style="width:100%">  
+
+
+
+            <div class="action">    <a href="#" class="email"  on-click="toggleemail()" {{#if !submitting}} disabled='disabled' {{/if}}>Email</a>
+               <a href="/b2c/airCart/asPDF/{{mybookings.currentCartDetails.id}}" target="_blank" class="pdf">PDF</a></div>
+            <!--<div class="column"><div class="action">    <a  class="ticket" href="/b2c/airCart/mybookings/{{mybookings.currentCartDetails.id}}#print" target="_blank" >Print</a></div></div>
+                        {{#if meta.user}}
+                        <form method="POST" style="float: right; margin-right:5px;margin-bottom:0px;" action="/site/print" target="_blank">
+                            <input type="hidden" name="url" value="/airCart/print/{{mybookings.currentCartId}}"> 
+                            <input type="hidden" name="filename" value="AirCart_{{mybookings.currentCartId}}.pdf">
+                            <i class="ticket icon" style="margin-left: 15px;"></i> 
+                            <button class="" type="submit" onclick="$(this).blur();" style="background-color: transparent;border: transparent;display: inline-block; font-size: 12px; color: #3399ff;    text-decoration: none;margin-right: 0px;">E-ticket</button></form>
+            
+                        {{/if}}-->
+
+            <div class="ui modal small mailticket" >
+                <i class="close icon"></i>
+                <div class="header">
+                    Email Ticket
+                </div>
+                <div class="ui basic segment"> 
+                    <form class="ui form {{#if this.submitting}}loading{{/if}}" action="javascript:;"   >
+                        <div class="field">
+						<input class="ui input small" type="text" name="email"  id ="email" value=""> 
+                        </div>
+						<div class="">
+                            <button on-click="submit()" class="ui small button fluid yellow">Send</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+
+        {{/if}}
+
+        <div class=" ui  grid group {{formatBookingStatusClass(booking_status)}}">
+
+            <div class="ui grid two column" style="width:100%">  
+                {{#if isMultiCity=='false'}}
+                {{#if returndate==null}}
+
+                <div class=" table title " style="float:left"><span class="direction">{{bookings[0].source}}<span class="to" style="margin-top: 3px;">&nbsp;</span>{{bookings[0].destination}}</span>  </div>
+                {{else}}
+                <div class="table title" style="float:left"><span class="direction" >{{bookings[0].source}}<span class="back" style="margin-top: 3px;">&nbsp;</span>{{bookings[0].destination}}</span></div>
+                {{/if}}
+                {{else}}
+                <div class="column table title" style="float:left">    
+                    <span class="direction" >
+                        {{#bookings:i}}   
+                        {{source}}&nbsp; | &nbsp; 
+                        {{/}}
+                        {{bookings[bookings.length-1].destination}}
+                    </span>
+                </div>
+                {{/if}}
+                 
+                <div class=" table title"  style="float:left">
+                    <span class="date">{{formatTravelDate(bookings[0].departure)}}</span>
+                </div>
+           </div>
+            <div class="ui grid two column" style="width:100%">
+                <div class=" table title" style="float:left">
+                    <span class="status {{formatBookingStatusClass(booking_status)}}">{{ booking_statusmsg}}</span>
+                </div>
+
+
+                <!--                <span class="date">Total time: <b>2h 10m</b></span>-->
+
+                <div class=" table title" style="float:left">
+                    
+                        <span class="booking-id">Booking Id: {{id}} </span>
+                        <span class="booking-date">{{formatBookingDate(created)}}</span>
+                    
+                </div>
+
+            </div>
+            {{#bookings:j}}
+            <div class="item">
+            <div class="passengerWrap">
+                <div class="passenger">
+
+                    {{#bookings[j].traveller:t}}
+                    <ul>
+                        <li><span>Passenger: </span> {{title}} {{first_name}} {{last_name}} ({{type}}) <span class="status {{travellerBookingStatus(status)}}">{{statusmsg}}</span></li>
+                        <li><span>CRS PNR: </span>{{crs_pnr}}, <span>Air PNR: </span>{{airline_pnr}}, <span>Ticket No.: </span> {{ticket}}</li>
+                        
+                    </ul>
+                    {{/}}
+
+                </div>
+                </div>
+                </div>
+            <div class="item">
+                <div class="sixteen wide column " style="height: auto !important;">
+                    <div class="ui segment flight-itinerary compact dark">
+
+                        <div class="title">
+                            <span class="city">{{ source }} → {{ destination }}</span> {{ formatTravelDate2(departure) }}
+                            <span class="time">{{flighttime}}</span>
+                        </div>
+
+                        <div class='segmentWrap'>
+                        <div class="segments">
+                            {{#bookings[j].routes:k}}
+                            {{#if k>0}}
+                            <div class="divider">
+                                    <span class="layover">Layover: {{diff(bookings[j].routes[k].departure,bookings[j].routes[k-1].arrival)}}</span>
+                                </div> 
+                                
+                            {{/if}}
+
+                            
+                               
+                                <div class="carrier-name">
+                                  <span class="carrier-logo"> <img class="ui top aligned avatar image" src="/img/air_logos/{{carrier}}.png" alt="{{carrierName}}" title="{{carrierName}}"></span>  {{carrierName}} {{carrier}}-{{flightNumber}}
+                                </div>
+                                <div class="from">
+                                    <b>{{origin}}:</b> {{ formatTravelDate3(departure) }}<br>{{ formatTravelDate(departure) }}<br>
+                                    <span style="text-align: right;" class="airport">{{ originDetails}}</span>
+                                </div>
+                                <div class="flight">&nbsp;</div>
+                                <div class="to">
+                                    <b>{{destination}}:</b> {{ formatTravelDate3(arrival) }}<br>{{ formatTravelDate(arrival) }}<br>
+                                    <span class="airport">{{ destinationDetails}}</span>
+                                </div>
+                                <div class="time-n-cabin">
+                                    <div>{{flighttime}}<br> {{bookings[j].traveller[0].cabin}}</div>
+                                </div>
+                           
+
+                            {{/}}
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            {{/}}
+
+            <div class="total" >
+                TOTAL PRICE: <span>{{curency}} {{convert(totalAmount)}}</span>
+                <div class="taxes">
+                    Basic Fare : {{baseprice}} , Taxes : {{taxes}} , Fee : {{fee}}
+                </div>
+            </div>
+
+
+           {{#if mybookings.print}}
+            <div class="item">
+                 <div style="clear: both;"></div>
+                <table class="passenger">
+                    <tr>
+                        <th colspan="4">Terms and Conditions</th>                
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul >
+                                <li>All flight timings shown are local times.</li>
+                                <li>Use <b>Ref No.</b> for communication with us.</li>
+                                <li>Use <b>Airline PNR</b> for contacting the Airlines.</li>
+                                <li>Carry a print-out of e-ticket for check-in.</li>
+                                <li>In case of no-show, tickets are non-refundable.</li>
+                                <li>Ensure your passport is valid for more than 6 months.</li>
+                                <li>Please check Transit & Destination Visa Requirement.</li>
+                                <li>For cancellation, airline charges & ser. fee apply.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul >
+                                <li>Carry a photo ID/ Passport for check-in.</li>
+                                <li>Meals, Seat & Special Requests are not guaranteed.</li>
+                                <li>Present Frequent Flier Card at check-in.</li>
+                                <li>Carriage is subject to Airlines Terms & Conditions.</li>
+                                <li>Ensure passenger names are correct, name change is not permitted.</li>
+                                <li>For any change Airline charges, difference of fare & ser. fee apply.</li>
+                                <li>You might be asked to provide card copy & ID proof of card holder.</li>
+                            </ul>
+                        </td>  </tr>
+                </table>
+                <div style="clear: both;"></div>
+                <div class="">
+                    Disclaimer: CheapTicket is not liable for any deficiency in service by Airline or Service providers.
+                </div> 
+
+
+            </div>
+
+           {{/if}}
+        </div>
+{{#if !mybookings.print}} 
+{{#if mybookings.clientSourceId==4 }}
+
+<script type="text/javascript">
+window.ixiTransactionTracker = function(tag) {
+function updateRedirect(tag, transactionID, pnr, saleValue, segmentNights) {
+return "<img style='top:-999999px;left:-999999px;position:absolute' src='https://www.ixigo.com/ixi-api/tracker/updateConversion/" + tag + "?transactionId=" + transactionID + "&pnr=" + pnr + "&saleValue=" + saleValue + "&segmentNights=" + segmentNights + "' />";
+}
+document.body.innerHTML += updateRedirect(tag, "{{mybookings.currentCartDetails.id}}", "{{mybookings.currentCartDetails.bookings.0.traveller.0.airline_pnr}}", {{convertIxigo(mybookings.currentCartDetails.totalAmount)}}, {{mybookings.currentCartDetails.segNights}} );
+};
+</script>
+<script src="https://www.ixigo.com/ixi-api/tracker/track196" id="tracker"></script>
+{{/if}}
+
+{{#if booking_status==8 || booking_status==9 || booking_status==10 || booking_status==11}}
+{{#if mybookings.clientSourceId==5}}
+<script type="text/javascript">
+
+var wego = wego || [];
+
+_wego.push(
+
+[ 'conversionId', 'fca77661-76eb-4ccd-af4c-3b67a300127b' ],
+
+[ 'transactionId', '{{mybookings.currentCartDetails.id}}' ],
+
+[ 'currencyCode', 'INR' ],
+
+[ 'commission', 0],
+
+[ 'totalBookingValue', {{convertIxigo(mybookings.currentCartDetails.totalAmount)}} ]
+
+);
+
+(function () {
+
+var s = document.getElementsByTagName('script')[0];
+
+var wg = document.createElement('script');
+
+wg.type = 'text/javascript';
+
+wg.src = 'https://s.wego.com/conversion.js';
+
+s.parentNode.insertBefore(wg, s);
+
+})();
+
+</script>
+{{/if}}
+{{/if}}
+{{/if}}
+
+
+    {{/}}

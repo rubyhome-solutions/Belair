@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/WSRadixx/RadixxAirRM" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/WSRadixx/RadixxAirRM" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/WSRadixx/RadixxAirRM">
+      <s:element name="UpdateSingleInventoryRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FlightDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="FlightNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Destination" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FareClass" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AUTrigger" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="AU" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSingleInventoryRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateSingleInventoryRecordResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSingleInventoryRecordByFixedLengthString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSingleInventoryRecordByFixedLengthStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateSingleInventoryRecordByFixedLengthStringResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMultipleInventoryRecordsByFixedLengthString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Delimiter" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMultipleInventoryRecordsByFixedLengthStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateMultipleInventoryRecordsByFixedLengthStringResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSingleInventoryRecordByXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XMLDoc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSingleInventoryRecordByXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateSingleInventoryRecordByXMLResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMultipleInventoryRecordsByXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XMLDoc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMultipleInventoryRecordsByXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateMultipleInventoryRecordsByXMLResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFixedLengthFieldRequirements">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetFixedLengthFieldRequirementsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFixedLengthFieldRequirementsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetXMLFieldRequirements">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetXMLFieldRequirementsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetXMLFieldRequirementsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentBookings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FlightDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="FlightNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Destination" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentBookingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCurrentBookingsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentPhysicalBookings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FlightDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="FlightNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Destination" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentPhysicalBookingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCurrentPhysicalBookingsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UpdateSingleInventoryRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSingleInventoryRecord" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSingleInventoryRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSingleInventoryRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSingleInventoryRecordByFixedLengthStringSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSingleInventoryRecordByFixedLengthString" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSingleInventoryRecordByFixedLengthStringSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSingleInventoryRecordByFixedLengthStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMultipleInventoryRecordsByFixedLengthStringSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateMultipleInventoryRecordsByFixedLengthString" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMultipleInventoryRecordsByFixedLengthStringSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateMultipleInventoryRecordsByFixedLengthStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSingleInventoryRecordByXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSingleInventoryRecordByXML" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSingleInventoryRecordByXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSingleInventoryRecordByXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMultipleInventoryRecordsByXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateMultipleInventoryRecordsByXML" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMultipleInventoryRecordsByXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateMultipleInventoryRecordsByXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFixedLengthFieldRequirementsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFixedLengthFieldRequirements" />
+  </wsdl:message>
+  <wsdl:message name="GetFixedLengthFieldRequirementsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFixedLengthFieldRequirementsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLFieldRequirementsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetXMLFieldRequirements" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLFieldRequirementsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetXMLFieldRequirementsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentBookingsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentBookings" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentBookingsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentBookingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentPhysicalBookingsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentPhysicalBookings" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentPhysicalBookingsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentPhysicalBookingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSingleInventoryRecordHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="FlightDate" type="s:string" />
+    <wsdl:part name="FlightNumber" type="s:string" />
+    <wsdl:part name="Origin" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+    <wsdl:part name="FareClass" type="s:string" />
+    <wsdl:part name="AUTrigger" type="s:string" />
+    <wsdl:part name="AU" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSingleInventoryRecordHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSingleInventoryRecordByFixedLengthStringHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="UpdateString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSingleInventoryRecordByFixedLengthStringHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMultipleInventoryRecordsByFixedLengthStringHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="UpdateString" type="s:string" />
+    <wsdl:part name="Delimiter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMultipleInventoryRecordsByFixedLengthStringHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSingleInventoryRecordByXMLHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="XMLDoc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSingleInventoryRecordByXMLHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMultipleInventoryRecordsByXMLHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="XMLDoc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMultipleInventoryRecordsByXMLHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetFixedLengthFieldRequirementsHttpGetIn" />
+  <wsdl:message name="GetFixedLengthFieldRequirementsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLFieldRequirementsHttpGetIn" />
+  <wsdl:message name="GetXMLFieldRequirementsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentBookingsHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="FlightDate" type="s:string" />
+    <wsdl:part name="FlightNumber" type="s:string" />
+    <wsdl:part name="Origin" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentBookingsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentPhysicalBookingsHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="FlightDate" type="s:string" />
+    <wsdl:part name="FlightNumber" type="s:string" />
+    <wsdl:part name="Origin" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentPhysicalBookingsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSingleInventoryRecordHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="FlightDate" type="s:string" />
+    <wsdl:part name="FlightNumber" type="s:string" />
+    <wsdl:part name="Origin" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+    <wsdl:part name="FareClass" type="s:string" />
+    <wsdl:part name="AUTrigger" type="s:string" />
+    <wsdl:part name="AU" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSingleInventoryRecordHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSingleInventoryRecordByFixedLengthStringHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="UpdateString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSingleInventoryRecordByFixedLengthStringHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMultipleInventoryRecordsByFixedLengthStringHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="UpdateString" type="s:string" />
+    <wsdl:part name="Delimiter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMultipleInventoryRecordsByFixedLengthStringHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSingleInventoryRecordByXMLHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="XMLDoc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSingleInventoryRecordByXMLHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMultipleInventoryRecordsByXMLHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="XMLDoc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMultipleInventoryRecordsByXMLHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetFixedLengthFieldRequirementsHttpPostIn" />
+  <wsdl:message name="GetFixedLengthFieldRequirementsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetXMLFieldRequirementsHttpPostIn" />
+  <wsdl:message name="GetXMLFieldRequirementsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentBookingsHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="FlightDate" type="s:string" />
+    <wsdl:part name="FlightNumber" type="s:string" />
+    <wsdl:part name="Origin" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentBookingsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentPhysicalBookingsHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="FlightDate" type="s:string" />
+    <wsdl:part name="FlightNumber" type="s:string" />
+    <wsdl:part name="Origin" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentPhysicalBookingsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:portType name="RadixxAirRMSoap">
+    <wsdl:operation name="UpdateSingleInventoryRecord">
+      <wsdl:input message="tns:UpdateSingleInventoryRecordSoapIn" />
+      <wsdl:output message="tns:UpdateSingleInventoryRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSingleInventoryRecordByFixedLengthString">
+      <wsdl:input message="tns:UpdateSingleInventoryRecordByFixedLengthStringSoapIn" />
+      <wsdl:output message="tns:UpdateSingleInventoryRecordByFixedLengthStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMultipleInventoryRecordsByFixedLengthString">
+      <wsdl:input message="tns:UpdateMultipleInventoryRecordsByFixedLengthStringSoapIn" />
+      <wsdl:output message="tns:UpdateMultipleInventoryRecordsByFixedLengthStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSingleInventoryRecordByXML">
+      <wsdl:input message="tns:UpdateSingleInventoryRecordByXMLSoapIn" />
+      <wsdl:output message="tns:UpdateSingleInventoryRecordByXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMultipleInventoryRecordsByXML">
+      <wsdl:input message="tns:UpdateMultipleInventoryRecordsByXMLSoapIn" />
+      <wsdl:output message="tns:UpdateMultipleInventoryRecordsByXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedLengthFieldRequirements">
+      <wsdl:input message="tns:GetFixedLengthFieldRequirementsSoapIn" />
+      <wsdl:output message="tns:GetFixedLengthFieldRequirementsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLFieldRequirements">
+      <wsdl:input message="tns:GetXMLFieldRequirementsSoapIn" />
+      <wsdl:output message="tns:GetXMLFieldRequirementsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentBookings">
+      <wsdl:input message="tns:GetCurrentBookingsSoapIn" />
+      <wsdl:output message="tns:GetCurrentBookingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentPhysicalBookings">
+      <wsdl:input message="tns:GetCurrentPhysicalBookingsSoapIn" />
+      <wsdl:output message="tns:GetCurrentPhysicalBookingsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RadixxAirRMHttpGet">
+    <wsdl:operation name="UpdateSingleInventoryRecord">
+      <wsdl:input message="tns:UpdateSingleInventoryRecordHttpGetIn" />
+      <wsdl:output message="tns:UpdateSingleInventoryRecordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSingleInventoryRecordByFixedLengthString">
+      <wsdl:input message="tns:UpdateSingleInventoryRecordByFixedLengthStringHttpGetIn" />
+      <wsdl:output message="tns:UpdateSingleInventoryRecordByFixedLengthStringHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMultipleInventoryRecordsByFixedLengthString">
+      <wsdl:input message="tns:UpdateMultipleInventoryRecordsByFixedLengthStringHttpGetIn" />
+      <wsdl:output message="tns:UpdateMultipleInventoryRecordsByFixedLengthStringHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSingleInventoryRecordByXML">
+      <wsdl:input message="tns:UpdateSingleInventoryRecordByXMLHttpGetIn" />
+      <wsdl:output message="tns:UpdateSingleInventoryRecordByXMLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMultipleInventoryRecordsByXML">
+      <wsdl:input message="tns:UpdateMultipleInventoryRecordsByXMLHttpGetIn" />
+      <wsdl:output message="tns:UpdateMultipleInventoryRecordsByXMLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedLengthFieldRequirements">
+      <wsdl:input message="tns:GetFixedLengthFieldRequirementsHttpGetIn" />
+      <wsdl:output message="tns:GetFixedLengthFieldRequirementsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLFieldRequirements">
+      <wsdl:input message="tns:GetXMLFieldRequirementsHttpGetIn" />
+      <wsdl:output message="tns:GetXMLFieldRequirementsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentBookings">
+      <wsdl:input message="tns:GetCurrentBookingsHttpGetIn" />
+      <wsdl:output message="tns:GetCurrentBookingsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentPhysicalBookings">
+      <wsdl:input message="tns:GetCurrentPhysicalBookingsHttpGetIn" />
+      <wsdl:output message="tns:GetCurrentPhysicalBookingsHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RadixxAirRMHttpPost">
+    <wsdl:operation name="UpdateSingleInventoryRecord">
+      <wsdl:input message="tns:UpdateSingleInventoryRecordHttpPostIn" />
+      <wsdl:output message="tns:UpdateSingleInventoryRecordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSingleInventoryRecordByFixedLengthString">
+      <wsdl:input message="tns:UpdateSingleInventoryRecordByFixedLengthStringHttpPostIn" />
+      <wsdl:output message="tns:UpdateSingleInventoryRecordByFixedLengthStringHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMultipleInventoryRecordsByFixedLengthString">
+      <wsdl:input message="tns:UpdateMultipleInventoryRecordsByFixedLengthStringHttpPostIn" />
+      <wsdl:output message="tns:UpdateMultipleInventoryRecordsByFixedLengthStringHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSingleInventoryRecordByXML">
+      <wsdl:input message="tns:UpdateSingleInventoryRecordByXMLHttpPostIn" />
+      <wsdl:output message="tns:UpdateSingleInventoryRecordByXMLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMultipleInventoryRecordsByXML">
+      <wsdl:input message="tns:UpdateMultipleInventoryRecordsByXMLHttpPostIn" />
+      <wsdl:output message="tns:UpdateMultipleInventoryRecordsByXMLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedLengthFieldRequirements">
+      <wsdl:input message="tns:GetFixedLengthFieldRequirementsHttpPostIn" />
+      <wsdl:output message="tns:GetFixedLengthFieldRequirementsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLFieldRequirements">
+      <wsdl:input message="tns:GetXMLFieldRequirementsHttpPostIn" />
+      <wsdl:output message="tns:GetXMLFieldRequirementsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentBookings">
+      <wsdl:input message="tns:GetCurrentBookingsHttpPostIn" />
+      <wsdl:output message="tns:GetCurrentBookingsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentPhysicalBookings">
+      <wsdl:input message="tns:GetCurrentPhysicalBookingsHttpPostIn" />
+      <wsdl:output message="tns:GetCurrentPhysicalBookingsHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RadixxAirRMSoap" type="tns:RadixxAirRMSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateSingleInventoryRecord">
+      <soap:operation soapAction="http://tempuri.org/WSRadixx/RadixxAirRM/UpdateSingleInventoryRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSingleInventoryRecordByFixedLengthString">
+      <soap:operation soapAction="http://tempuri.org/WSRadixx/RadixxAirRM/UpdateSingleInventoryRecordByFixedLengthString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMultipleInventoryRecordsByFixedLengthString">
+      <soap:operation soapAction="http://tempuri.org/WSRadixx/RadixxAirRM/UpdateMultipleInventoryRecordsByFixedLengthString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSingleInventoryRecordByXML">
+      <soap:operation soapAction="http://tempuri.org/WSRadixx/RadixxAirRM/UpdateSingleInventoryRecordByXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMultipleInventoryRecordsByXML">
+      <soap:operation soapAction="http://tempuri.org/WSRadixx/RadixxAirRM/UpdateMultipleInventoryRecordsByXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedLengthFieldRequirements">
+      <soap:operation soapAction="http://tempuri.org/WSRadixx/RadixxAirRM/GetFixedLengthFieldRequirements" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLFieldRequirements">
+      <soap:operation soapAction="http://tempuri.org/WSRadixx/RadixxAirRM/GetXMLFieldRequirements" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentBookings">
+      <soap:operation soapAction="http://tempuri.org/WSRadixx/RadixxAirRM/GetCurrentBookings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentPhysicalBookings">
+      <soap:operation soapAction="http://tempuri.org/WSRadixx/RadixxAirRM/GetCurrentPhysicalBookings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxAirRMSoap12" type="tns:RadixxAirRMSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateSingleInventoryRecord">
+      <soap12:operation soapAction="http://tempuri.org/WSRadixx/RadixxAirRM/UpdateSingleInventoryRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSingleInventoryRecordByFixedLengthString">
+      <soap12:operation soapAction="http://tempuri.org/WSRadixx/RadixxAirRM/UpdateSingleInventoryRecordByFixedLengthString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMultipleInventoryRecordsByFixedLengthString">
+      <soap12:operation soapAction="http://tempuri.org/WSRadixx/RadixxAirRM/UpdateMultipleInventoryRecordsByFixedLengthString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSingleInventoryRecordByXML">
+      <soap12:operation soapAction="http://tempuri.org/WSRadixx/RadixxAirRM/UpdateSingleInventoryRecordByXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMultipleInventoryRecordsByXML">
+      <soap12:operation soapAction="http://tempuri.org/WSRadixx/RadixxAirRM/UpdateMultipleInventoryRecordsByXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedLengthFieldRequirements">
+      <soap12:operation soapAction="http://tempuri.org/WSRadixx/RadixxAirRM/GetFixedLengthFieldRequirements" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLFieldRequirements">
+      <soap12:operation soapAction="http://tempuri.org/WSRadixx/RadixxAirRM/GetXMLFieldRequirements" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentBookings">
+      <soap12:operation soapAction="http://tempuri.org/WSRadixx/RadixxAirRM/GetCurrentBookings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentPhysicalBookings">
+      <soap12:operation soapAction="http://tempuri.org/WSRadixx/RadixxAirRM/GetCurrentPhysicalBookings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxAirRMHttpGet" type="tns:RadixxAirRMHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="UpdateSingleInventoryRecord">
+      <http:operation location="/UpdateSingleInventoryRecord" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSingleInventoryRecordByFixedLengthString">
+      <http:operation location="/UpdateSingleInventoryRecordByFixedLengthString" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMultipleInventoryRecordsByFixedLengthString">
+      <http:operation location="/UpdateMultipleInventoryRecordsByFixedLengthString" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSingleInventoryRecordByXML">
+      <http:operation location="/UpdateSingleInventoryRecordByXML" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMultipleInventoryRecordsByXML">
+      <http:operation location="/UpdateMultipleInventoryRecordsByXML" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedLengthFieldRequirements">
+      <http:operation location="/GetFixedLengthFieldRequirements" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLFieldRequirements">
+      <http:operation location="/GetXMLFieldRequirements" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentBookings">
+      <http:operation location="/GetCurrentBookings" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentPhysicalBookings">
+      <http:operation location="/GetCurrentPhysicalBookings" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxAirRMHttpPost" type="tns:RadixxAirRMHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="UpdateSingleInventoryRecord">
+      <http:operation location="/UpdateSingleInventoryRecord" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSingleInventoryRecordByFixedLengthString">
+      <http:operation location="/UpdateSingleInventoryRecordByFixedLengthString" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMultipleInventoryRecordsByFixedLengthString">
+      <http:operation location="/UpdateMultipleInventoryRecordsByFixedLengthString" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSingleInventoryRecordByXML">
+      <http:operation location="/UpdateSingleInventoryRecordByXML" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMultipleInventoryRecordsByXML">
+      <http:operation location="/UpdateMultipleInventoryRecordsByXML" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFixedLengthFieldRequirements">
+      <http:operation location="/GetFixedLengthFieldRequirements" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetXMLFieldRequirements">
+      <http:operation location="/GetXMLFieldRequirements" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentBookings">
+      <http:operation location="/GetCurrentBookings" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentPhysicalBookings">
+      <http:operation location="/GetCurrentPhysicalBookings" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RadixxAirRM">
+    <wsdl:port name="RadixxAirRMSoap" binding="tns:RadixxAirRMSoap">
+      <soap:address location="http://g8.service.radixx.com/RadixxAirRM.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxAirRMSoap12" binding="tns:RadixxAirRMSoap12">
+      <soap12:address location="http://g8.service.radixx.com/RadixxAirRM.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxAirRMHttpGet" binding="tns:RadixxAirRMHttpGet">
+      <http:address location="http://g8.service.radixx.com/RadixxAirRM.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxAirRMHttpPost" binding="tns:RadixxAirRMHttpPost">
+      <http:address location="http://g8.service.radixx.com/RadixxAirRM.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

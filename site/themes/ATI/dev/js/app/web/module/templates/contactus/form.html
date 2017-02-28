@@ -1,0 +1,863 @@
+<div id="contactus_tabs">
+    <div class="ui container">
+        <div class="ui top  tabular menu">
+            <a class="active item" data-tab="first">Contact Us</a>
+            <a class="item" id="second_tab" data-tab="second">Flight Booking</a>
+            <a class="item" id="third_tab" data-tab="third">Services</a>
+            <a class="item" id="fourth_tab" data-tab="fourth">Feedback</a>
+            <a class="item" id="fifth_tab" data-tab="fifth">Management</a>
+            <a class="item" id="sixth_tab" data-tab="sixth">Careers</a>  
+        </div>
+
+        <div class="ui bottom attached active tab segment padd_incr1" data-tab="first"> 
+            <div class="ui  grid">
+                <div class="row">
+
+                    <div class="six wide column">
+                        <br/>
+                        <div class="ui items address_content">
+
+                            <div class="content_in">
+                                <ul class="content_left">
+								<h2 class="contact_heading">Customer Support: </h2> 
+                                    <!--p> <a onclick="showMap('Noida');" href="#mapsPlace">B2B Division</a></p-->
+                                <!--     <li><h2>Airtickets India P. LTD </h2></li>
+                                    <li>C-101 Sector - 2 Noida 201301 UP</li> -->
+									 <li style="list-style:none;"><i class="mail icon"></i>Email:  <a href="mailto:cs@airticketsindia.com">cs@airticketsindia.com</a></li>
+                                    <li style="list-style:none;"><i class="call icon"></i>Travel Expert:  <a style="color:#484747;" href="tel:+91-120-4887700">+91-120-4887777</a>&nbsp; (24X7)</li>
+                                   
+                                </ul>
+
+
+                            </div>
+                            <h2 class="contact_heading">Support Services:</h2>
+
+                            <ul>
+                                <li class="tab_button" data-value="second_tab" style="cursor:pointer">Flight Booking</li>
+                                <li class="tab_button" data-value="third_tab" style="cursor:pointer">Services</li>
+                                <li class="tab_button" data-value="fourth_tab" style="cursor:pointer">Feedback</li>
+                                <li class="tab_button" data-value="fifth_tab" style="cursor:pointer">Management</li>
+                                <li class="tab_button" data-value="sixth_tab" style="cursor:pointer">Careers</li>
+								<li> <a href="https://cheapticket.in/b2c/faq/" target="_blank" style="cursor:pointer; color:#484747;">FAQ </a> </li>
+                            </ul>
+
+						<!-- <h2 class="contact_heading">Business Center:</h2> -->
+						<h3 class="contact_subhead">Airtickets India Pvt. Ltd.</h3>
+						<p>	C – 101, Sector – 2 <br>
+							Noida – 201301 (U.P)<br>
+							India.
+                          </p>					
+                        </div>
+                    </div>
+                    <div class="nine wide column" id="mapsPlace">
+                        <br><br>
+                        <!--iframe width="100%" height="580" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.co.in/maps/ms?msid=204193885765947401061.0004f81670e2ac29be0c2&amp;msa=0&amp;ie=UTF8&amp;t=m&amp;ll=28.630986,77.220722&amp;spn=0.00452,0.006866&amp;z=17&amp;iwloc=0004f8168592a41f0c778&amp;output=embed"></iframe><br /><small>View <a href="https://www.google.co.in/maps/ms?msid=204193885765947401061.0004f81670e2ac29be0c2&amp;msa=0&amp;ie=UTF8&amp;t=m&amp;ll=28.630986,77.220722&amp;spn=0.00452,0.006866&amp;z=17&amp;iwloc=0004f8168592a41f0c778&amp;source=embed" style="color:#0000FF;text-align:left">Belair Travel &amp; Cargo P. Ltd</a> in a larger map</small-->
+                        <iframe width="100%" height="580" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Airtickets+India,+2nd+Floor,+C-101,+Sector+-+2,+Noida+-+201301,+U.P.&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe><br /><small> <a href="https://www.google.co.in/maps/ms?msid=204193885765947401061.0004f81670e2ac29be0c2&amp;msa=0&amp;ie=UTF8&amp;t=m&amp;ll=28.630986,77.220722&amp;spn=0.00452,0.006866&amp;z=17&amp;iwloc=0004f8168592a41f0c778&amp;source=embed" style="color:#0000FF;text-align:left"></small>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="ui bottom attached tab segment padd_incr1" data-tab="second"> 
+            <form id="flight_booking" action="" method="post" enctype="multipart/form-data">
+                <div class="content_b">Passengers holding our E-tickets & require A Copy of the E-ticket, Change Bookings, Cancellation, Refunds, Schedule change & other Services, please provide the details below, to enable us to assist you.</div>	
+                <input type="hidden" name="flight_booking" value="flight_booking"/>
+                <div class="ui three column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Name <i>*</i></label>
+                                <input type="text" placeholder="Name" name="name_fb" id="name_fb">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="ui form">
+                            <div class="inline field">
+                                <label>E-mail ID <i>*</i></label>
+                                <input placeholder="E-mail" title="E-MAIL ADD. SHOULD BE THE SAME, AS GIVEN IN THE ORIGINAL BOOKING" type="email" name="email_fb" id="email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui form">
+                            <div class="inline field">
+                                <label>Country <i>*</i></label>
+                                <select class="ui dropdown size_drop country_dropdown" name="country_fb" id="country_fb">
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui three column grid p_redu">
+                    <div class="column">
+                        <div class="ui form">
+                            <div class="inline field">
+                                <label>Mob.No <i>*</i></label>
+                                <input placeholder="+91-" title="MOB. NO. SHOULD BE THE SAME, AS GIVEN IN THE ORIGINAL BOOKING" type="text"  name="mobile_fb" id="mob" class="contact_mobile">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui form">
+                            <div class="inline field">
+                                <label>Ref. No. <i>*</i></label>
+                                <input placeholder="Air Cart No. OR Tkt Number" id="ref_no" title="CUSTOMER TO GIVE THE TICKET NO. & OR AIR CART NO." type="text" name="refno_fb" id="refno_fb">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui form">
+                            <div class="inline field">
+                                <label>PNR No.</label>
+                                <input  type="text" name="pnrno_fb">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui three column grid p_redu">
+                    <div class="column">
+                        <div class="ui form">
+                            <div class="inline field">
+                                <label>Journey Type <i>*</i></label>
+                                <select class="ui dropdown size_drop" name="typejourney_fb" id="typejourney_fb" selected>
+                                    <option value="">Select Journey Type</option>
+                                    <option value="Domestic one way">DOMESTIC ONE WAY</option>
+                                    <option value="domestic round trip">DOMESTIC ROUND TRIP</option>
+                                    <option value="international one way">INTERNATIONAL ONE WAY</option>
+                                    <option value="international round trip">INTERNATIONAL ROUND TRIP</option>
+                                    <option value="flight plus hotel">FLIGHT + HOTEL</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui form">
+                            <div class="inline field">
+                                <label>Subject <i>*</i></label>
+                                <select class="ui dropdown size_drop" name="subject_fb" id="subject_fb">
+                                    <option value="">Select Subject</option>
+                                    <option value="e-ticket copy">E-TICKET COPY</option>
+                                    <option value="flight change">FLIGHT CHANGE</option>
+                                    <option value="date change">DATE CHANGE</option>
+                                    <option value="schedule change">SCHEDULE CHANGE</option>
+                                    <option value="cancellation">CANCELLATION</option>
+                                    <option value="refunds">REFUNDS</option>
+                                    <option value="seat request">SEAT REQUEST</option>
+                                    <option value="name correction">NAME CORRECTION</option>
+                                    <option value="unaccompanied minor">UNACCOMPANIED MINOR</option>
+                                    <option value="meal request">MEAL REQUEST</option>
+                                    <option value="child meal">CHILD MEAL</option>
+                                    <option value="baby meal">BABY MEAL</option>
+                                    <option value="baby basinett">BABY BASINETT</option>
+                                    <option value="wheel chair">WHEEL CHAIR</option>
+                                    <option value="frequent flyer">FREQUENT FLYER</option>
+                                    <option value="baggage">BAGGAGE</option>
+                                    <option value="pets request">PETS REQUEST</option>
+                                    <option value="others">OTHERS </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui form">
+                            <div class="inline field">
+                                <label>Mode Of Payment <i>*</i></label>
+                                <select class="ui dropdown size_drop" name="payment_fb" id="payment_fb">
+                                    <option value="">Select Payment Type</option>
+                                    <option value="credit card">CREDIT CARD</option>
+                                    <option value="debit card">DEBIT CARD</option>
+                                    <option value="net banking">NET BANKING</option>
+                                    <option value="cash deposit">CASH DEPOSIT</option>
+                                    <option value="money wallet">MONEY WALLET</option>
+                                    <option value="others">OTHER</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui one column grid p_redu">
+                    <div class="column">
+                        <div class="ui form">
+                            <div class="inline field">
+                                <label>Services</label>
+                                <div class="field services_req">
+                                    <textarea placeholder="Give Details of your existing bookings with names of all Passengers, Airline, PNR, Air Cart No. & the changes required." name="services_fb" id="services_fb"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui one column grid p_redu">
+                    <div class="column">
+                        <div class="ui form">
+                            <div class="inline field">
+                                <label></label>
+                                <div class="field services_req">
+                                    <span>Note*</span>  
+                                    <ol>
+                                        <li>Re-bookings, Changes or Cancellation possible only 24 hours before departure time.</li>
+                                        <li>For Services within 24 hours of departure, send e-mail & follow-up with our Call Center 24X7.</li>
+                                        <li>Airline Fees, & Service charges apply. </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui one column grid p_redu">
+                    <div class="column">	
+                        <div class="ui form">
+                            <div class="inline field">
+                                <label>Upload File</label>
+                                <div class="ui fluid action input size_m fileUpload">
+                                    <input id="uploadFile" placeholder="Choose File" disabled="disabled" />
+                                    <span class="ui button background">Upload</span>
+                                    <input class="upload" type="file" name="uploads_fb" id="uploads_fb">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui three column grid p_redu">
+                    <div id="recaptcha1"></div>
+                    <div id="recap_fb" style="color: red;font-size: 14px;"></div>
+                </div>
+                <div class="ui three column grid p_redu">
+                    <div class="column">
+                        <div class="ui form">
+                            <div class="inline field">
+                                <label> </label>
+                                <input type="submit" class="ui primary button" value="Submit Query" id="submit_fb" name="submit_flight_booking">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+        <div class="ui bottom attached tab segment padd_incr" data-tab="third"> 
+            <form id="services" action="" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="services" value="services"/>
+                <div class="content_b">For any services or information require, please provide details to enable us to assist you.</div>
+
+                <div class="ui three column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Name <i>*</i></label>
+                                <input placeholder="Name" type="text" name="name_ser" id="name_ser">
+                            </div>
+                        </div></div>
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>E-mail ID <i>*</i></label>
+                                <input placeholder="E-mail" id="email_ser" title="E-MAIL ADD. SHOULD BE THE SAME, AS GIVEN IN THE ORIGINAL BOOKING." type="email" name="email_ser">
+                            </div>
+                        </div></div>
+                    <div class="column">
+                        <div class="ui form">
+                            <div class="inline field">
+                                <label>Country <i>*</i></label>
+
+                                <select class="ui dropdown size_drop country_dropdown" name="country_ser" id="country_ser">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui three column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Mob.No <i>*</i></label>
+                                <input placeholder="+91-" id="mobile_ser" class="contact_mobile" title="MOB. NO. SHOULD BE THE SAME, AS GIVEN IN THE ORIGINAL" type="text" name="mobile_ser">
+                            </div>
+                        </div></div>
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Total No. Pax</label>
+                                <input placeholder="Air Cart No. OR Tkt Number" type="text" name="tnp_ser" id="tnp_ser">
+                            </div>
+                        </div></div>
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Journey Type <i>*</i></label>
+
+                                <select class="ui dropdown size_drop" name="journeytype_ser" id="journeytype_ser">
+                                    <option value="">Select Journey Type</option>
+                                    <option value="domestic one way">DOMESTIC ONE WAY</option>
+                                    <option value="domestic round trip">DOMESTIC ROUND TRIP</option>
+                                    <option value="international one way">INTERNATIONAL ONE WAY</option>
+                                    <option value="international round trip">INTERNATIONAL ROUND TRIP</option>
+                                </select>
+
+
+                            </div>
+                        </div></div>
+                </div>
+                <div class="ui three column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Assistance <i>*</i></label>
+
+                                <select class="ui dropdown size_drop" name="assist_ser" id="assist_ser">
+                                    <option value="">Select Assistance</option>
+                                    <option value="Companion Offer">COMPANION OFFER</option>
+                                    <option value="Student Fare">STUDENT FARES</option>
+                                    <option value="Domestic Group Fare">DOMESTIC GROUP FARE</option>
+                                    <option value="International Group">INTERNATIONAL GROUP</option>
+                                    <option value="Promo Code">PROMO CODE</option>
+                                    <option value="Discount Code">DISCOUNT CODE</option>
+                                    <option value="Charter Flight">CHARTER FLIGHTS</option>
+                                    <option value="Hotel Booking">HOTEL BOOKING</option>
+                                    <option value="Car Rental">CAR RENTAL</option>
+                                    <option value="Transfers">TRANSFERS</option>
+                                    <option value="Holidays">HOLIDAYS</option>
+                                    <option value="Corporate Offers">CORPORATE OFFERS</option>
+                                    <option value="Others">OTHERS</option>
+                                </select>
+
+
+                            </div>
+                        </div></div>
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Travel Type</label>
+                                <select class="ui dropdown size_drop" name="traveltype_ser" id="traveltype_ser">
+                                    <option value="">Select Travel Type</option>
+                                    <option value="round trip">Round Trip</option>
+                                    <option value="one way">One Way</option>
+                                    <option value="multi city">Multi City</option>
+                                    <option value="flight + hotel">Flight + Hotel</option>
+                                    <option value="others">Others</option>
+                                </select>
+                            </div>
+                        </div></div>
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Information</label>
+                                <select class="ui dropdown size_drop" name="info_ser" id="info_ser">
+                                    <option value="">Information</option>
+                                    <option value="passport">Passport</option>
+                                    <option value="visa">Visa</option>
+                                    <option value="travel insurance">Travel Insurance</option>
+                                    <option value="airport assistance">Airport Assistance</option>
+                                    <option value="vaccination">Vaccination</option>
+                                    <option value="others">Others </option>
+                                </select>
+                            </div>
+                        </div></div>
+                </div>
+                <div class="ui one column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Services</label>
+                                <div class="field services_req">
+                                    <textarea placeholder="Give Details of your existing bookings with names of all Passengers, Airline, PNR, Air Cart No. & the changes required." name="service_ser" id="service_ser"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                <div class="ui one column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label></label>
+                                <div class="field services_req">
+                                    <span>Note*</span>  
+                                    <ol>
+                                        <li>Re-bookings, Changes or Cancellation possible only 24 hours before departure time.</li>
+                                        <li>For Services within 24 hours of departure, send e-mail & follow-up with our Call Center 24X7.</li>
+                                        <li>Airline Fees, & Service charges apply. </li>
+                                    </ol>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                <div class="ui one column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Upload File</label>
+                                <div class="ui fluid action input size_m fileUpload">
+                                    <input id="uploadFile2" placeholder="Choose File" disabled="disabled" />
+                                    <span class="ui button background">Upload</span>
+                                    <input class="upload" placeholder="Attach file maximum up to 4 or 5 pages" type="file" name="uploads_ser" id="uploads_ser">
+
+                                </div>
+
+
+
+                            </div>
+                        </div></div>
+                </div>
+                <div class="ui three column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <div id="recaptcha2"></div>
+                                <div id="recap_ser" style="color: red;font-size: 14px;"></div>
+                            </div>
+                        </div></div>
+                </div>
+                <div class="ui three column grid p_redu">
+                    <div class="column">
+                        <div class="ui form">
+                            <div class="inline field">
+                                <label> </label>
+                                <input type="submit" name="submit_ser" value="Submit Query" class="ui primary button" id="submit_ser"/>
+                            </div>
+                        </div></div>
+                </div>
+            </form>
+        </div>
+
+
+
+        <div class="ui bottom attached tab segment padd_incr" data-tab="fourth"> 
+            <form action="" id="feedback" enctype="multipart/form-data">
+                <input type="hidden" name="feedback" value="feedback"/>
+                <div class="content_b">Your feedback on our services are precious to us, enable us to improve our services to our clients.</div>
+                <div class="ui three column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Name <i>*</i></label>
+                                <input placeholder="Name" type="text" name="name_feed" id="name_feed">
+                            </div>
+                        </div></div>
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>E-mail ID <i>*</i></label>
+                                <input placeholder="E-mail" id="email_feed" title="E-MAIL ADD. SHOULD BE THE SAME, AS GIVEN IN THE ORIGINAL BOOKING." type="email" name="email_feed">
+                            </div>
+                        </div></div>
+                    <div class="column">
+
+                        <div class="ui form">
+                            <div class="inline field">
+                                <label>Country <i>*</i></label>
+
+                                <select class="ui dropdown size_drop country_dropdown" name="country_feed" id="country_feed">
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="ui three column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Mob.No <i>*</i></label>
+                                <input placeholder="+91-" id="mobile_feed" class="contact_mobile" title="MOB. NO. SHOULD BE THE SAME, AS GIVEN IN THE ORIGINAL" type="text" name="mobile_feed">
+                            </div>
+                        </div></div>
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Ref. No. <i>*</i></label>
+                                <input placeholder="Air Cart No. OR Tkt Number" id="refno_feed" title="CUSTOMER TO GIVE THE TICKET NO. OR AIR CART NO OR PNR NO." type="text" name="refno_feed">
+                            </div>
+                        </div></div>
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>PNR No.</label>
+                                <input  type="text" name="pnrno_feed" id="pnrno_feed">
+                            </div>
+                        </div></div>
+                </div>
+                <div class="ui three column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Feedback <i>*</i></label>
+                                <select class="ui dropdown size_drop" name="select_feedback" id="select_feedback">
+                                    <option value="">Feedback</option>
+                                    <option value="complaints">Complaints</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="suggestions">Sugestions</option>
+                                    <option value="disputes">Disputes</option>
+                                    <option value="others">Others</option>
+                                </select>
+                            </div>
+                        </div></div>
+                </div>
+                <div class="ui one column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Comments <i>*</i></label>
+                                <div class="field services_req">
+                                    <textarea name="comment_feed" id="comment_feed"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                <div class="ui one column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Upload File</label>
+                                <div class="ui fluid action input size_m fileUpload">
+                                    <input id="uploadFile3" placeholder="Choose File" disabled="disabled" />
+                                    <span class="ui button background">Upload</span>
+                                    <input class="upload" placeholder="Attach file maximum up to 4 or 5 pages" type="file" name="uploads_feed" id="uploads_feed">
+
+                                </div>
+
+
+                            </div>
+                        </div></div>
+                </div>
+                <div class="ui three column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div id="recaptcha3"></div>
+                            <div id="recap_feed" style="color: red;font-size: 14px;"></div>
+                        </div></div>
+                </div>
+                <div class="ui three column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label> </label>
+                                <input type="submit" name="submit_feed" value="Submit Query" class="ui primary button" id="submit_feed"/>
+                            </div>
+                        </div></div>
+                </div>
+            </form>
+        </div>
+
+
+
+        <div class="ui bottom attached tab segment padd_incr" data-tab="fifth"> 
+            <form action="" method="post" enctype="multipart/form-data" id="management">
+                <input type="hidden" name="management" value="management"/>
+                <div class="content_b">Cheapticket.in, the fastest growing Online Travel Service provider, seeks co-operation from affiliations, Technology,
+                    providers, suppliers and others partners. We also welcome suggestions, complaints from our customers to enhance our
+                    service commitments. We are always</div>
+                <div class="ui three column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Name <i>*</i></label>
+                                <input placeholder="Name" type="text" name="name_manage" id="name_manage">
+                            </div>
+                        </div></div>
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>E-mail ID <i>*</i></label>
+                                <input placeholder="E-mail" id="email_manage" title="E-MAIL ADD. SHOULD BE THE SAME, AS GIVEN IN THE ORIGINAL BOOKING" type="email" name="email_manage">
+                            </div>
+                        </div></div>
+                    <div class="column">
+                        <div class="ui form">
+                            <div class="inline field">
+                                <label>Country <i>*</i></label>
+                                <select class="ui dropdown size_drop country_dropdown" name="country_manage" id="country_manage">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui three column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Mob.No <i>*</i></label>
+                                <input placeholder="+91-" id="mobile_manage" class="contact_mobile" title="MOB. NO. SHOULD BE THE SAME, AS GIVEN IN THE ORIGINAL" type="text" name="mobile_manage">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Subject <i>*</i></label>
+
+                                <select class="ui dropdown size_drop" name="subject_manage" id="subject_manage">
+                                    <option value="">Subject</option>
+                                    <option value="co-operation">Co-Operation</option>
+                                    <option value="alliances">Alliances</option>
+                                    <option value="technology">Technology</option>
+                                    <option value="suppliers">Supplier</option>
+                                    <option value="buyer">Buyer</option>
+                                    <option value="advertising">Advertising</option>  
+                                    <option value="marketing">Marketing</option>
+                                    <option value="white label">White Label</option>
+                                    <option value="api">API</option>
+                                    <option value="financial service">Financial Services</option>
+                                    <option value="partner with us">Partner with Us</option>
+                                    <option value="others">Others</option>
+                                </select>
+
+
+                            </div>
+                        </div></div>
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Feedback <i>*</i></label>
+
+                                <select class="ui dropdown size_drop" name="feedback_manage" id="feedback_manage">
+                                    <option value="">Feedback</option>
+                                    <option value="complaints">Complaints</option>
+                                    <option value="suggestions">Sugestions</option>
+                                    <option value="disputes">Disputes</option>
+                                    <option value="comments">Comments</option>
+                                    <option value="others">Others</option>
+                                </select>
+                            </div>
+                        </div></div>
+
+                </div>
+                <div class="ui three column grid p_redu"> 
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Phone</label>
+                                <input  id="phone_manage" title="MOB. NO. SHOULD BE THE SAME, AS GIVEN IN THE ORIGINAL" type="text" name="phone_manage">
+                            </div>
+                        </div></div>
+
+                </div>
+                <div class="ui one column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Write to Us <i>*</i></label>
+                                <div class="field services_req">
+                                    <textarea name="write_manage" id="write_manage"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                <div class="ui one column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Upload File</label>
+                                <div class="ui fluid action input size_m fileUpload">
+                                    <input id="uploadFile4" placeholder="Choose File" disabled="disabled" />
+                                    <span class="ui button background">Upload</span>
+                                    <input  class="upload"placeholder="Attach file maximum up to 4 or 5 pages" type="file" name="uploads_manage" id="uploads_manage">
+                                </div>
+
+
+                            </div>
+                        </div></div>
+                </div>
+                <div class="ui three column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div id="recaptcha4"></div>
+                            <div id="recap_manage" style="color: red;font-size: 14px;"></div>
+                        </div></div>
+                </div>
+                <div class="ui three column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label> </label>
+                                <input type="submit" name="submit_manage" value="Submit Query" class="ui primary button" id="submit_manage"/>
+                            </div>
+                        </div></div>
+                </div>
+            </form>
+        </div>
+
+
+
+        <div class="ui bottom attached tab segment padd_incr" data-tab="sixth"> 
+            <form action="" id="careers" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="careers" value="careers"/>
+                <div class="content_b">
+                    We are one of the fastest growing OTA - Online B2C & B2B Travel Company, offering flights, Hotels, Cars & Holidays & Online
+                    Travel services. We are looking for qualified young talent to join our Travel, Hospitality, Call center & IT Development teams,
+                    who are willing to take challenges & grow.
+                </div>
+                <div class="ui three column grid p_redu">
+                    <div class="column">
+                        <div class="ui form">
+                            <div class="inline field">
+                                <label>Name <i>*</i></label>
+                                <input placeholder="Name" type="text" name="name_car" id="name_car">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui form">
+                            <div class="inline field">
+                                <label>E-mail ID <i>*</i></label>
+                                <input placeholder="E-mail" id="email_car" title="E-MAIL ADD. SHOULD BE THE SAME, AS GIVEN IN THE ORIGINAL BOOKING." type="email" name="email_car">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui form">
+                            <div class="inline field">
+                                <label>Country <i>*</i></label>
+                                <select class="ui dropdown size_drop country_dropdown" name="country_car" id="country_car">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui three column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Mob.No <i>*</i></label>
+                                <input placeholder="+91-" id="mobile_car" class="contact_mobile" title="MOB. NO. SHOULD BE THE SAME, AS GIVEN IN THE ORIGINAL" type="text" name="mobile_car">
+                            </div>
+                        </div></div>
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Age <i>*</i></label>
+                                <input placeholder="" type="text" name="age_car" id="age_car">
+                            </div>
+                        </div></div>
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Address <i>*</i></label>
+                                <input  type="text" id="add_car" name="add_car">
+                            </div>
+                        </div></div>
+                </div>
+                <div class="ui three column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Qualifications <i>*</i></label>
+
+                                <select class="ui dropdown size_drop" name="qualification" id="qualification">
+                                    <option value="">Qualifications</option>
+                                    <option value="phd">PhD</option>
+                                    <option value="post graduate">Post Graduate</option>
+                                    <option value="graduate">Graduate</option>
+                                    <option value="high school">High School</option>
+                                    <option value="metric">Metric</option>
+                                    <option value="IT Engineer">IT Engineer</option>
+                                    <option value="programmer">Programmer</option>
+                                    <option value="web designer">Web Designer</option>
+                                    <option value="graphic designer">Graphic Designer</option>
+                                    <option value="content writer">Content Writer</option>
+                                    <option value="CA">Charted Account</option>
+                                    <option value="mba/masters">MBA / Maters</option>
+                                    <option value="secretarial service">Secretarial Services</option>
+                                    <option value="others">Others</option>
+                                </select>
+
+
+                            </div>
+                        </div></div>
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Job Applied <i>*</i></label>
+                                <select class="ui dropdown size_drop" name="applied_car" id="applied_car">
+                                    <option value="">Job Applied</option>
+                                    <option value="reservations">Reservations</option>
+                                    <option value="ticket exchange">Ticket Exchange</option>
+                                    <option value="smart ticketing">Smart Ticketing</option>
+                                    <option value="bsp">BSP</option>
+                                    <option value="maintenance engineer">Maintenance Engineer</option>
+                                    <option value="hardware engineer">Hardware Engineer</option>
+                                    <option value="software engineer">Software Engineer</option>
+                                    <option value="IT">IT</option>
+                                    <option value="PHP Developer">PHP Developers</option>
+                                    <option value="graphic designer">Graphic Designer </option>
+                                </select>
+                            </div>
+                        </div></div>
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Location <i>*</i></label>
+                                <select class="ui dropdown size_drop" name="location_car" id="location_car">
+                                    <option value="">Location</option>
+                                    <option value="new delhi">New Delhi</option>
+                                    <option value="noida">Noida</option>
+                                </select>
+                            </div>
+                        </div></div>
+                </div>
+                <div class="ui one column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Your Skills <i>*</i></label>
+                                <div class="field services_req">
+                                    <textarea name="skills_car" id="skills_car"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div>
+                <div class="ui one column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label>Upload File</label>
+                                <div class="ui fluid action input size_m fileUpload">
+                                    <input id="uploadFile5" placeholder="Choose File" disabled="disabled" />
+                                    <span class="ui button background">Upload</span>
+                                    <input class="upload" placeholder="Resume" type="file" name="uploads_car" id="uploads_car">
+
+                                </div>
+
+
+
+                            </div>
+                        </div></div>
+                </div>
+                <div class="ui three column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div id="recaptcha5"></div>
+                            <div id="recap_car" style="color: red;font-size: 14px;"></div>
+                        </div></div>
+                </div>
+                <div class="ui three column grid p_redu">
+                    <div class="column"><div class="ui form">
+                            <div class="inline field">
+                                <label> </label>
+                                <input type="submit" name="submit_car" value="Submit Query" id="submit_car" class="ui primary button"/>
+                            </div>
+                        </div></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://www.google.com/recaptcha/api.js?onload=captchaCallback&render=explicit" async defer></script>
+<script>
+
+    var key = '6Lc2egcUAAAAAPIfTs0GRCl1RuJ7zfwdyCwhY7EQ';
+    var recaptcha1;
+    var recaptcha2;
+    var recaptcha3;
+    var recaptcha4;
+    var recaptcha5;
+    var captchaCallback = function () {
+        recaptcha1 = grecaptcha.render('recaptcha1', {
+            'sitekey': key,
+            'theme': 'light'
+        });
+        recaptcha2 = grecaptcha.render('recaptcha2', {
+            'sitekey': key,
+            'theme': 'light'
+        });
+        recaptcha3 = grecaptcha.render('recaptcha3', {
+            'sitekey': key,
+            'theme': 'light'
+        });
+        recaptcha4 = grecaptcha.render('recaptcha4', {
+            'sitekey': key,
+            'theme': 'light'
+        });
+        recaptcha5 = grecaptcha.render('recaptcha5', {
+            'sitekey': key,
+            'theme': 'light'
+        });
+    };
+
+    $(document).ready(function () {
+        document.getElementById("uploads_fb").onchange = function () {
+            document.getElementById("uploadFile").value = this.value;
+        };
+
+        document.getElementById("uploads_ser").onchange = function () {
+            document.getElementById("uploadFile2").value = this.value;
+        };
+
+        document.getElementById("uploads_feed").onchange = function () {
+            document.getElementById("uploadFile3").value = this.value;
+        };
+
+        document.getElementById("uploads_manage").onchange = function () {
+            document.getElementById("uploadFile4").value = this.value;
+        };
+
+        document.getElementById("uploads_car").onchange = function () {
+            document.getElementById("uploadFile5").value = this.value;
+        };
+    });
+</script>

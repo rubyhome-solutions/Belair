@@ -1,0 +1,167 @@
+<form class="ui form segment {{#if pending}}loading{{/if}} modify-search single" action="javascript:;" on-submit="submit()">
+    <table class="fluid" cellspacing="5">
+        <tr>
+            <td style="min-width: 200px;">
+                {{#if search.domestic}}
+                <ui-airport
+                        meta="{{meta}}"
+                        value="{{search.flights.0.from}}"
+                        class="fluid transparent"
+                        placeholder="FROM"
+                        search="1"
+                        domestic="1"
+
+                        error="{{errors.flight.0.from}}"
+                        >
+                </ui-airport>
+                {{else}}
+                <ui-airport
+                        meta="{{meta}}"
+                        value="{{search.flights.0.from}}"
+                        class="fluid transparent from"
+                        placeholder="FROM"
+                        search="1"
+                        domestic="0"
+
+                        error="{{errors.flight.0.from}}"
+                        >
+                </ui-airport>
+                {{/if}}
+            </td>
+            <td style="min-width: 200px;">
+                 {{#if search.domestic}}
+                 <ui-airport
+                         meta="{{meta}}"
+                         value="{{search.flights.0.to}}"
+                         class="fluid transparent"
+                         placeholder="TO"
+                         search="1"
+                         domestic="1"
+
+                         error="{{errors.flight.0.to}}"
+                         >
+                 </ui-airport>
+                 {{else}}
+                 <ui-airport
+                         meta="{{meta}}"
+                         value="{{search.flights.0.to}}"
+                         class="fluid transparent"
+                         placeholder="TO"
+                         search="1"
+                         domestic="0"
+
+                         error="{{errors.flight.0.to}}"
+                         >
+                 </ui-airport>
+                 {{/if}}
+            </td>
+            <td style="min-width: 110px;">
+                <ui-date
+                        value="{{search.flights.0.depart_at}}"
+                        class="fluid pointing top left"
+                        simple="1"
+                        placeholder="DEPART ON"
+
+                        min="{{ moment() }}"
+                        max="{{2 == search.tripType && search.flights.0.return_at}}"
+                        calendar="{{ { twomonth: true } }}"
+
+                        twomonth="{{true}}"
+                        range="{{ [search.flights.0.depart_at, search.flights.0.return_at] }}"
+                        >
+                </ui-date>
+            </td>
+            {{#if 2 == search.tripType}}
+            <td style="min-width: 110px;">
+                <ui-date
+                        value="{{search.flights.0.return_at}}"
+                        class="fluid pointing top right"
+                        simple="1"
+                        placeholder="RETURN ON"
+
+                        min="{{search.flights.0.depart_at || moment()}}"
+
+                        twomonth="{{true}}"
+                        range="{{ [search.flights.0.depart_at, search.flights.0.return_at] }}"
+                        >
+                </ui-date>
+            </td>
+            {{/if}}
+            <td>
+                <div class="ui selection extended dropdown fluid active" tabindex="0">
+                    <div class="text" style="white-space: nowrap; text-overflow: ellipsis;">
+                        {{#if search.passengers.0 > 0}}{{ search.passengers.0 }} Adult,{{/if}}
+                        {{#if search.passengers.1 > 0}}{{ search.passengers.1 }} Child,{{/if}}
+                        {{#if search.passengers.2 > 0}}{{ search.passengers.2 }} Infant,{{/if}}
+                        {{ meta.cabinTypes[search.cabinType-1].name }}
+                    </div>
+                    <i class="dropdown icon"></i>
+                </div>
+
+                <div class="ui extended popup" style="width: 150px;">
+                    <div class="field">
+                        <ui-spinner
+                                value="{{search.passengers.0}}"
+                                class="fluid"
+                                large="1"
+                                placeholder="Adults"
+                                min="0"
+                                max="9"
+
+                                error="{{errors.passengers}}"
+                                >
+                        </ui-spinner>
+                    </div>
+                    <div class="field">
+                        <ui-spinner
+                                value="{{search.passengers.1}}"
+                                class="fluid"
+                                large="1"
+                                placeholder="Children"
+                                min="0"
+                                max="9"
+
+                                error="{{errors.passengers}}"
+                                >
+                        </ui-spinner>
+                        <div class="hint">2-12 years</div>
+                    </div>
+                    <div class="field">
+                        <ui-spinner
+                                value="{{search.passengers.2}}"
+                                class="fluid"
+                                large="1"
+                                placeholder="Infants"
+                                min="0"
+                                max="9"
+
+                                error="{{errors.passengers}}"
+                                >
+                        </ui-spinner>
+                        <div class="hint">Below 2 years</div>
+                    </div>
+                    <div class="field">
+                        <ui-select
+                                value="{{search.cabinType}}"
+                                class="fluid"
+                                large="1"
+                                placeholder="Class"
+                                options="{{ meta.select.cabinTypes() }}"
+
+                                error="{{errors.cabinType}}"
+                                >
+                        </ui-select>
+                    </div>
+
+
+                    <div class="pull right">
+                        <a class="small" href="javascript:;" onclick="$('.extended.popup').popup('hide');">Close</a>
+                    </div>
+                </div>
+            </td>
+            <td style="width: auto;">
+                <button type="submit" class="ui button large blue">Search</button>
+            </td>
+        </tr>
+    </table>
+</form>

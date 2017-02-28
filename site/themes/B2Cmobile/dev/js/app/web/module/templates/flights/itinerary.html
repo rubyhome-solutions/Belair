@@ -1,0 +1,66 @@
+{{#flight}}
+{{#each segments}}
+<div class="ui segment flight-itinerary [[#if small]]small[[/if]] [[class]]">
+    <div class="title">
+        <span class="city">{{ first(.).from.city }} → {{ last(.).to.city }}</span> {{ first(.).depart.format('ddd MMM D YYYY') }}
+        <span class="time">{{ duration.format(segtime(.))  }}</span>
+        [[#if small]]{{ [null, 'Non refundable', 'Refundable'][flight.refundable] }}[[/if]]
+    </div>
+
+    <table class="segments">
+        {{#each .}}
+        {{#if layover.asSeconds() }}
+        <tr class="divider">
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td align="center">
+                <span class="layover">Layover: {{ duration.format(layover) }}</span>
+            </td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+        </tr>
+        {{/if}}
+
+        <tr>
+            <td class="airline">
+                <div class="logos">
+                    <img class="ui top aligned avatar image" src="{{carrier.logo}}" alt="{{carrier.name}}" title="{{carrier.name}}">
+
+                </div>
+
+
+                <div class="name">
+                    {{ carrier.name }}<br>
+                    <span class="flight-no">
+                        {{flight}}<br> {{ cabinType }}
+                    </span>
+
+                </div>
+            </td>
+            <td class="from" style="text-align: right;">
+                <b>{{from.airportCode}}:</b>[[#if small]]<br>[[/if]]{{ depart.format('ddd HH:mm') }}<br>
+                {{ small ? depart.format('D MMM') : depart.format('D MMM, YYYY') }}<br>
+                [[#unless small]]
+                <span class="airport">{{ from.airport}},  {{from.city}}&nbsp;({{from.airportCode}}), Terminal&nbsp;{{originTerminal}}</span>
+                [[/unless]]
+            </td>
+            [[#unless small]]
+            <td class="flight">
+                <div class="duration">{{ duration.format(time) }}</div>
+            </td>
+            [[/unless]]
+            <td class="to">
+                <b>{{to.airportCode}}:</b>[[#if small]]<br>[[/if]]{{ arrive.format('ddd HH:mm') }}<br>
+                {{ small ? arrive.format('D MMM') : arrive.format('D MMM, YYYY') }}<br>
+                [[#unless small]]
+                <span class="airport">{{ to.airport}},  {{to.city}}&nbsp;({{to.airportCode}}), Terminal&nbsp;{{destinationTerminal}}</span>
+                [[/unless]]
+            </td>
+        </tr>
+
+        {{/each}}
+
+    </table>
+</div>
+{{/each}}
+{{/flight}}

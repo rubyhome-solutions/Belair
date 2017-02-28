@@ -1,0 +1,31 @@
+{{# { step: booking.steps.2 } }}
+{{#if step.active}}
+
+<section>
+    <div class="title_stripe">Passenger Details</div>
+    <div class="passenger">
+
+        <form class="ui huge form {{#if step.errors}}error{{/if}} {{#if step.errors}}error{{/if}} {{#if step.submitting}}loading{{/if}}">
+            {{#each booking.passengers:i}}
+            <div class="passenger-header header CountStrip">
+                {{ meta.travelerTypes[type_id] }}({{no}})
+                {{#if type_id==3 ||type_id==2}}
+                <span style="font-size: 12px;font-weight: normal; margin-top: -10px; display: block;">({{ meta.travelerTypes[type_id] }} age should be between 
+                    {{#if type_id==2}}2 - 12{{/if}} 
+                    {{#if type_id==3}}0 - 2{{/if}} years)</span>
+                {{/if}}
+            </div>
+            <passenger class="basic" validation="{{booking.passengerValidaton}}" travelers="{{travelers}}" passenger="{{.}}" errors="{{step.errors[i]}}" meta="{{meta}}"></passenger>
+            {{/each}}
+
+            <div id="dup-error"></div>
+
+            <div id="btn_passenger" class="fluid huge ui blue button" on-click="submit()">Continue</div>
+        </form>
+
+
+    </div>
+
+</section>
+{{/if}}
+{{/}}

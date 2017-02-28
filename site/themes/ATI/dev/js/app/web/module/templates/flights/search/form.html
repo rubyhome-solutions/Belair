@@ -1,0 +1,346 @@
+{{#if modify}}
+<div class="ui modify-search small modal">
+    <i class="close icon"></i>
+    <div class="header">
+        Modify Search
+    </div>
+    <div class="content" style="padding: 0px;">
+        {{#if open}}
+            {{> form}}
+        {{/if}}
+    </div>
+</div>
+{{else}}
+    {{> form}}
+{{/if}}
+
+{{#partial form}}
+<form id="flights-search" class="ui form {{class}} {{#if search.pending}}loading{{/if}} {{#if errors}}error{{/if}}" action="javascript:;" on-submit="submit()">
+    <h1>Search, Book & Fly!</h1>
+    <p>Lowest Prices and 100% secure!</p>
+
+    <div class="ui top attached tabular menu">
+        <a class="{{#if search.domestic}}active{{/if}} item uppercase" data-tab="domestic" on-click="set('search.domestic', 1)">Domestic</a>
+        <a class="{{#if !search.domestic}}active{{/if}} item uppercase" data-tab="international" on-click="set('search.domestic', 0)">International</a>
+    </div>
+
+    <div class="ui bottom attached active tab segment basic">
+        {{> checkboxes}}
+
+        {{#if 3 == search.tripType}}
+            <div class="multicity" intro="fade">
+            {{> multicity}}
+            <div class="add-flight">
+                <button type="button" class="ui basic button circular" on-click="addFlight()">+ Add new</button>
+            </div>
+            </div>
+            <br>
+        {{else}}
+            <div class="simple" intro="fade">
+                {{> itinerary}}
+                {{>dates}}
+
+                {{#if errors.flight.0}}
+                    <div class="ui error message">
+                    {{#each errors.flight.0}}
+                        {{#if .}}<p>{{.}}</p>{{/if}}
+                    {{/each}}
+                    </div>
+                {{/if}}
+            </div>
+        {{/if}}
+
+
+        {{> passengers }}
+
+        {{#if errors }}
+        <div class="ui error message">
+            {{#each errors:i}}
+                {{#if 'flight' == i}}
+
+                {{else}}
+                    {{#if .}}<p>{{.}}</p>{{/if}}
+                {{/if}}
+            {{/each}}
+        </div>
+        {{/if}}
+
+        <button type="submit" class="ui button massive fluid uppercase">Search Flights</button>
+    </div>
+</form>
+{{/partial}}
+
+{{#partial dates}}
+<div class="two fields from-to">
+    <div class="field">
+        <ui-date
+                value="{{search.flights.0.depart_at}}"
+                class="fluid depart-0 pointing top left"
+                large="1"
+                placeholder="DEPART ON"
+                min="{{ moment() }}"
+                max="{{2 == search.tripType && search.flights.0.return_at}}"
+
+                twomonth="{{true}}"
+                range="{{ [search.flights.0.depart_at, search.flights.0.return_at] }}"
+
+                error="{{errors.flight.0.depart_at}}"
+
+                on-next="next"
+                next="return-0"
+                >
+        </ui-date>
+    </div>
+    <div class="field" on-click="toggleRoundtrip()">
+        <ui-date
+                value="{{search.flights.0.return_at}}"
+                class="fluid return-0 pointing top right {{#unless 2 == search.tripType}}disabled{{/unless}}"
+                large="1"
+                placeholder="RETURN ON"
+                min="{{search.flights.0.depart_at || moment()}}"
+
+                twomonth="{{true}}"
+                range="{{ [search.flights.0.depart_at, search.flights.0.return_at] }}"
+
+                error="{{errors.flight.0.return_at}}"
+                >
+        </ui-date>
+    </div>
+</div>
+{{/partial}}
+
+
+{{#partial passengers}}
+<div class="four fields passengers">
+    <div class="field">
+        <ui-spinner
+                value="{{search.passengers.0}}"
+                class="fluid"
+                large="1"
+                placeholder="Adults"
+                min="0"
+                max="9"
+
+                error="{{errors.passengers}}"
+                >
+        </ui-spinner>
+    </div>
+    <div class="field">
+        <ui-spinner
+                value="{{search.passengers.1}}"
+                class="fluid"
+                large="1"
+                placeholder="Children"
+                min="0"
+                max="9"
+
+                error="{{errors.passengers}}"
+                >
+        </ui-spinner>
+        <div class="hint">2-12 years</div>
+    </div>
+    <div class="field">
+        <ui-spinner
+                value="{{search.passengers.2}}"
+                class="fluid"
+                large="1"
+                placeholder="Infants"
+                min="0"
+                max="9"
+
+                error="{{errors.passengers}}"
+                >
+        </ui-spinner>
+        <div class="hint">Below 2 years</div>
+    </div>
+    <div class="field">
+        <ui-select
+                value="{{search.cabinType}}"
+                class="fluid"
+                large="1"
+                placeholder="Class"
+                options="{{ meta.select.cabinTypes() }}"
+
+                error="{{errors.cabinType}}"
+                >
+        </ui-select>
+    </div>
+
+</div>
+{{/partial}}
+
+{{#partial itinerary}}
+{{#if search.domestic}}
+<div class="two fields from-to">
+    <div class="field">
+        <ui-airport
+                meta="{{meta}}"
+                value="{{search.flights.0.from}}"
+                class="fluid from-0"
+                placeholder="FROM"
+                search="1"
+                large="1"
+                domestic="1"
+
+                error="{{errors.flight.0.from}}"
+
+                on-next="next"
+                next="to-0"
+                >
+        </ui-airport>
+    </div>
+    <div class="field">
+        <ui-airport
+                meta="{{meta}}"
+                value="{{search.flights.0.to}}"
+                class="fluid to-0"
+                placeholder="TO"
+                search="1"
+                large="1"
+                domestic="1"
+
+                error="{{errors.flight.0.to}}"
+
+                on-next="next"
+                next="depart-0"
+                >
+        </ui-airport>
+    </div>
+</div>
+{{else}}
+<div class="two fields from-to">
+    <div class="field">
+        <ui-airport
+                meta="{{meta}}"
+                value="{{search.flights.0.from}}"
+                class="fluid from-0"
+                placeholder="FROM"
+                search="1"
+                large="1"
+                domestic="0"
+
+                error="{{errors.flight.0.from}}"
+
+                on-next="next"
+                next="to-0"
+                >
+        </ui-airport>
+    </div>
+    <div class="field">
+        <ui-airport
+                meta="{{meta}}"
+                value="{{search.flights.0.to}}"
+                class="fluid to-0"
+                placeholder="TO"
+                search="1"
+                large="1"
+                domestic="0"
+
+                error="{{errors.flight.0.to}}"
+
+                on-next="next"
+                next="depart-0"
+                >
+        </ui-airport>
+    </div>
+</div>
+{{/if}}
+{{/partial}}
+
+{{#partial multicity}}
+{{#each search.flights:i}}
+<div class="three fields">
+    <div class="field">
+        <ui-select
+                value="{{./from}}"
+                class="fluid from-[[i]]"
+                search="1"
+                large="1"
+                placeholder="FROM"
+                options="[[meta.select.domestic()]]"
+
+                error="{{errors.flight[i].from}}"
+
+                on-next="next"
+                next="to-[[i]]"
+                >
+        </ui-select>
+    </div>
+    <div class="field">
+        <ui-select
+                value="{{./to}}"
+                class="fluid to-[[i]]"
+                search="1"
+                large="1"
+                placeholder="TO"
+                options="[[meta.select.domestic()]]"
+
+                error="{{errors.flight[i].to}}"
+
+                on-next="next"
+                next="depart-[[i]]"
+                >
+        </ui-select>
+    </div>
+    <div class="field">
+        <ui-date
+                value="{{search.flights[i].depart_at}}"
+                class="fluid depart-{{i}} pointing top right"
+                large="1"
+                placeholder="DEPART ON"
+                min="{{ moment() }}"
+                calendar="{{ { twomonth: true } }}"
+
+                twomonth="{{true}}"
+
+                error="{{errors.flights[i].depart_at}}"
+
+                on-next="next"
+                next="depart-[[i+1]]"
+                >
+        </ui-date>
+        {{#if i > 1}}
+        <div class="delete" on-click="removeFlight(i)">&nbsp;</div>
+        {{/if}}
+    </div>
+</div>
+{{#if errors.flight[i]}}
+<div class="ui error message">
+    {{#each errors.flight[i]}}
+    {{#if .}}<p>{{.}}</p>{{/if}}
+    {{/each}}
+</div>
+{{/if}}
+{{/each}}
+{{/partial}}
+
+{{#partial checkboxes}}
+<div class="three fields travel-type">
+    <div class="field width_ways">
+        <div class="deco {{#if 1 == search.tripType}}active{{/if}} width_ways_deco">
+            <div class="ui radio checkbox" on-click="set('search.tripType', 1)">
+                <input type="radio" checked="{{ 1 == search.tripType}}">
+                <label>ONE WAY</label>
+            </div>
+        </div>
+    </div>
+    <div class="field width_ways">
+        <div class="deco {{#if 2 == search.tripType}}active{{/if}} width_ways_deco">
+            <div class="ui radio checkbox"  on-click="set('search.tripType', 2)">
+                <input type="radio" checked="{{ 2 == search.tripType}}">
+                <label>ROUND TRIP</label>
+            </div>
+        </div>
+    </div>
+    {{#if search.domestic }}
+    <div class="field width_ways" intro="fade">
+        <div class="deco {{#if 3 == search.tripType}}active{{/if}} width_ways_deco">
+            <div class="ui radio checkbox" on-click="set('search.tripType', 3)">
+                <input type="radio" checked="{{ 3 == search.tripType}}">
+                <label>MULTI CITY</label>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+</div>
+{{/partial}}

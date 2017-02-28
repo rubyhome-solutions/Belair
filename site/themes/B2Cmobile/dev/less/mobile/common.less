@@ -1,0 +1,109 @@
+@import '../web/components/card.less';
+
+@import './semantic.css';
+@import './mobiscroll.css';
+
+
+#app {
+  .ui.segment.passenger {
+    padding: 0 15px;
+  }
+  .ui.segment.passenger input[type="text"],.ui.segment.passenger input[type="date"], .ui.segment.passenger .title.field{border-radius:40px!important;}
+
+  .ui.selection.dropdown {
+    padding: 12px 8px 8px 10px;
+    border: 1px solid #DDDEDE;
+    text-align: left;
+    background-color: #ffffff;
+    height: 42px;
+
+    input.search {
+      text-align: left;
+    }
+  }
+
+  .ui.error.message {
+    //padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .ui.formscreen .delete {
+    width: 20px;
+    height: 20px;
+    background: url(~img/icons/delete.png) no-repeat;
+    cursor: pointer;
+    position: absolute;
+    right: -20px;
+    top: 11px;
+  }
+
+  .fff.selected {
+    border: 3px solid #3399FE;
+    background: #ececec;
+  }
+
+  .hide { display: none; }
+}
+
+a.cabinType.dropdown span.text
+{
+    width: 89px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.passengerclass .title    {
+    background-color: #fff;
+    border: 1px solid #dedede!important;
+    padding: 12px 0;
+    border-radius: 40px;
+    }
+.passengerclass .title .ui.dropdown
+{
+    width: 100%;
+    padding: 0 15px;
+    font-family:arial;
+    font-size:15px;
+}
+.passengerclass .title .ui.dropdown i.dropdown  {
+    float:right;
+}
+.passengerclass  .label { margin-bottom:5px; font-family:arial; font-size:15px; padding:10px 10px 0;}
+.passengerclass input[type="date"]  {font-size:16px!important; padding:12px!important;}
+.infoWrap {
+    
+    background-color: #dedede;
+    margin-bottom: 10px;
+}
+.infoWrap .field    { margin:0!important;}
+.passport-expiry, .passport-number   {
+    padding: 0 10px 10px;
+}
+.passport-country   { margin:0 10px 10px; width:92.5%!important;}
+.infoWrap .passport-country{ font-size:15px; font-family: arial;}
+.popupcontainer .text  {color:#000!important;}
+.ui.dropdown:hover>.default.text, .ui.default.dropdown:hover>.text{ color:#000;}
+.mbsc-mobiscroll .dwwr  { min-width:280px!important;}
+.CountStrip { text-align: center; color: #201f60; background-color: #d6d6d6; font-size: 15px; padding:10px;
+}
+.ui.form input:not([type]), .ui.form input[type="date"], .ui.form input[type="datetime-local"], .ui.form input[type="email"], .ui.form input[type="number"], .ui.form input[type="password"], .ui.form input[type="search"], .ui.form input[type="tel"], .ui.form input[type="time"], .ui.form input[type="text"], .ui.form input[type="url"]{font-size:15px;}
+
+.infoWrap .date input[type="date"]{ background:url("/themes/B2C/img/mobile/calendar.png") no-repeat 96% 8px #ffffff; height:42px; }
+.currencyWrap   { display:table; float:right; margin:5px 0; font-size:12px;}
+.currencyWrap span  { line-height: 2.4; }
+select#currency1{ margin:0 10px; float:right; padding:5px; font-size:12px; border:1px solid #bebebe; background:#f1f1f1;}
+select#currency1 option{ line-height:1.7;}
+.clear  { clear:both;}
+.promoCode input    {border-radius:40px!important;}
+.md-airports .dwww  .dww   {height:100%!important}
+.dw-select.md-airports  {height:100%; overflow:hidden;}
+.md-airports .dw-i  {text-align:left; font-size:14px;}
+.md-airports .dw-li {padding:0!important;}
+.text-center    {text-align:center;}
+.add-flight {margin-bottom:10px;}
+/*.dw-bf .dw-li.dw-v:before  {position:absolute; top:50%; font: normal normal normal 14px/1 FontAwesome; left:10px; content:"\f10c";}*/

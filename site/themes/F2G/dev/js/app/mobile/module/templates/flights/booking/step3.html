@@ -1,0 +1,212 @@
+{{# { step: booking.steps.3, cc: booking.payment.cc, netbanking: booking.payment.netbanking, active: booking.payment.active, wallet: booking.payment.wallet } }}
+{{#if step.active}}
+
+<section>
+    <div class="title_stripe">Payment Details</div>
+    {{#if promovalue!=null}}
+        <div style="font-size:20px;" class="price_det">Payable Amount: {{{ money(booking.price + booking.convenienceFee-promovalue, meta.display_currency) }}}</div>
+    {{else}}
+        <div style="font-size:20px;" class="price_det">Payable Amount: {{{ money(booking.price + booking.convenienceFee, booking.currency) }}}</div>
+   {{/if}}
+    
+    <div class="payment ui form {{#if step.errors}}error{{/if}} {{#if step.submitting}}loading{{/if}}">
+
+
+        <div class="ui accordion">
+            <div id="act_title" class="title {{#if 1 == active}}active{{/if}}" on-click="set('booking.payment.active', 1 != active ? 1 : -1)">
+                Credit Card
+                <i class="angle down icon"></i>
+            </div>
+            <div id="cont_accord" class="content {{#if 1 == active}}active{{/if}}">
+                {{>card}}
+
+            </div>
+            <div id="act_title" class="title {{#if 2 == active}}active{{/if}}" on-click="set('booking.payment.active', 2 != active ? 2 : -1)">
+                Debit Card
+                <i class="angle down icon"></i>
+            </div>
+            <div id="cont_accord" class="content {{#if 2 == active}}active{{/if}}">
+                {{>card}}
+            </div>
+            <div id="act_title" class="title {{#if 3 == active}}active{{/if}}" on-click="set('booking.payment.active', 3 != active ? 3 : -1)">
+                Net Banking
+                <i class="angle down icon"></i>
+            </div>
+            <div id="cont_accord" class="content {{#if 3 == active}}active{{/if}}">
+                {{>convfees}}
+                <div class="ui form">
+                    <div class="bank field step3netbanking">
+                        <label>Select Your Bank</label>
+                        <ui-select
+                                class="bank fluid"value="{{netbanking.net_banking}}"
+                                error="{{step.errors.net_banking}}"
+                                options="{{banks}}"
+                                ></ui-select>
+                    </div>
+
+                </div>
+
+                {{> contact }}
+            </div>
+            <div id="act_title" class="title {{#if 4 == active}}active{{/if}}" on-click="set('booking.payment.active', 4 != active ? 4 : -1)">
+                Wallet
+                <i class="angle down icon"></i>
+            </div>
+            <div id="cont_accord" class="content {{#if 4 == active}}active{{/if}}">
+                {{>convfees}}
+                <div class="ui form">
+                    <div class="wallet field step3wallet">
+                        <label>Select Your Wallet</label>
+                        <ui-select
+                                class="wallet fluid" value="{{wallet.wallet_type}}"
+                                error="{{step.errors.wallet_type}}"
+                                options="{{wallets}}"
+                                ></ui-select>
+                    </div>
+
+                </div>
+
+                {{> contact }}
+            </div>
+        </div>
+
+    </div>
+</section>
+{{/if}}
+{{/}}
+
+{{#partial card}}
+{{>convfees}}
+<form class="ui huge form {{#if step.errors.cc}}error{{/if}}">
+    <div class="credit-card">
+    {{#if cards}}
+    <div class="ui form">
+        <div class="field">
+            {{#if cards}}
+            <label>Use saved card</label>
+
+            <div class="ui list">
+                {{#each cards}}
+                <div class="item"><a href="javascript:;" on-click="setCard(.)">[[number]]</a></div>
+                {{/each}}
+            </div>
+            {{/if}}
+        </div>
+    </div>
+    <br><br>
+    {{/if}}
+
+    <div class="ui form">
+        <div class="field" on-click="resetCC(event)">
+            <label>{{#if 1 == booking.payment.active}}Credit{{else}}Debit{{/if}} Card Number</label>
+            <ui-cc disabled="{{cc.id}}" class="card-number fluid" cardType="{{active}}" cctype="{{cc.type}}" value="{{cc.number}}"  error="{{step.errors.cc.number}}" on-click="reset-cc"></ui-cc>
+        </div>
+    </div>
+    <br>
+
+
+
+ <!--   <div class="field" on-click="resetCC(event)">
+        <label>Expiry Date</label>
+        <ui-select disabled="{{cc.id}}" class="month" placeholder="Month" options="{{ date.select.MMMM }}" value="{{cc.exp_month}}"  error="{{step.errors.cc.exp_month}}" on-click="reset-cc"></ui-select>
+    </div>
+
+    <div class="field" on-click="resetCC(event)">
+        <ui-select disabled="{{cc.id}}" class="year" placeholder="Year" options="{{ date.select.cardYears }}" value="{{cc.exp_year}}"  error="{{step.errors.cc.exp_year}}" on-click="reset-cc"></ui-select>
+    </div>
+    <br>-->
+<!--    <input id="cc-exp" {{#if cc.id}} disabled="disabled"{{/if}} type="tel" class="input-lg form-control cc-exp" autocomplete="cc-exp"  required on-blur="checkExpiry">-->
+              <label>Expiry Date</label>
+              {{#if cc.id}}
+        <ui-expiry class="fluid" id="cc-exp" disabled="{{cc.id}}" booking="{{booking}}"  value="{{#if cc.id}}{{cc.exp_month}} / {{formatYear(cc.exp_year)}} {{/if}}"  error="{{step.errors.cc.exp_month}}" placeholder="MM / YYYY" on-click="reset-cc"></ui-expiry>
+      {{else}}
+        <ui-expiry class="fluid" id="cc-exp"  booking="{{booking}}"  value=""  error="{{step.errors.cc.exp_month}}" placeholder="MM / YY" on-click="reset-cc"></ui-expiry>
+     
+      {{/if}}
+    <br>
+    <div class="ui form">
+        <div class="field">
+            <label>CVV</label><img class="cvv" src="/themes/B2C/img/mobile/cvv.png" alt="cvv">
+            <ui-cvv class="fluid" cctype="{{cc.type}}" value="{{cc.cvv}}"  error="{{step.errors.cc.cvv}}"></ui-cvv>
+        </div>
+    </div>
+
+    <br>
+    <div class="ui form">
+        <div class="field" on-click="resetCC(event)">
+            <label>{{#if 1 == booking.payment.active}}Credit{{else}}Debit{{/if}} Card Holder Name</label>
+            <ui-input disabled="{{cc.id}}" class="card-number fluid" value="{{cc.name}}"  error="{{step.errors.cc.name}}" on-click="reset-cc"></ui-input>
+        </div>
+    </div>
+    </div>
+    <br>
+    <h4 class="validation"></h4>
+    {{#if step.errors }}
+    <div class="ui form error">
+        <div class="ui error message">
+        {{#each step.errors:i}}
+        {{#if .}}<p>{{.}}</p>{{/if}}
+        {{/each}}
+        </div>
+    </div>
+    {{/if}}
+    {{> contact }}
+</form>
+{{/partial}}
+
+{{#partial contact}}
+<br>
+<div class="ui section divider"></div>
+<br>
+<div class="agreement field">
+            <label style="font-size:14px!important;"><input type="checkbox" checked='{{accepted}}'> I have read and accepted the <a href="/b2c/cms/termsofservices/2" target="_blank">Terms Of Service</a>*</label>
+
+</div>
+<br>
+<div class="ui grid">
+    <div class="two column row">
+        <div id="pay_amount" class="column">Total:</div>
+            {{#if promovalue!=null}}
+                <span id="pay_rs" class="column right aligned">{{{ money(booking.price + booking.convenienceFee-promovalue, meta.display_currency) }}}</span>
+            {{else}}
+                <span id="pay_rs" class="column right aligned">{{{ money(booking.price + booking.convenienceFee, meta.display_currency) }}}</span>
+            {{/if}} 
+    </div>
+</div>
+{{#if booking.currency !='INR'}}
+    <div class='cur_cond'>
+        ({{booking.currency}} Price is indicative only.
+        You will be charged equivalent in INR. 
+        {{#if promovalue!=null}}
+            {{{formatPayMoney(booking.price + booking.convenienceFee - promovalue)}}}
+        {{else}}
+            {{{formatPayMoney(booking.price  + booking.convenienceFee)}}}
+        {{/if}}
+        )
+    </div>
+{{/if}}
+
+<br><br><br>
+{{#if accepted}}
+<div id="btn_payment" class="fluid huge ui green button"  on-click="submit()">BOOK FLIGHT</div>
+{{else}}
+<div id="btn_payment" class="fluid huge ui red button"  >BOOK FLIGHT</div>
+{{/if}}
+{{/partial}}
+{{#partial convfees}}
+<div class="one column row">
+    <div class="conv_fee">
+    {{#if booking.convenienceFee > 0 }}
+            A non-refundable Convenience Fee of 
+            {{#if booking.pcf_per_passenger > 0}}
+                {{{money(booking.pcf_per_passenger, meta.display_currency)}}} per passenger 
+            {{else}}
+                {{{money(booking.convenienceFee, meta.display_currency)}}}
+            {{/if}} 
+            is applicable on this booking.
+    {{else}}
+        &nbsp;
+    {{/if}}
+    </div>
+</div>
+{{/partial}}

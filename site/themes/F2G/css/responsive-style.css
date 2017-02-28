@@ -1,0 +1,75 @@
+@media only screen and (max-width: 1199px)and (min-width: 660px){
+.col-lg-4{ width:33.3333%; float:left;}
+.col-lg-4 .col-lg-13{ float:left;}
+.prisse-stu .col-lg-3{ width:25%; float:left;}
+.prist-tab .col-lg-6, .prist-tab .col-lg-5{ width:50%; float:left;}
+.prist-tab:last-child{ float:left; clear:both; width:100%;}
+.prisse-stu .col-lg-12{ float:left; width:100%;}
+.strip1 .col-lg-12 .col-lg-2{ width:16.6667%; float:left; display:inline-block;}
+.inner .col-lg-12{float:left; display:inline-block; width:100%}
+.strip1{ width:100%; float:left;}
+.strip2{ width:100%; float:left;}
+.box_co2 .col-lg-2 .col-lg-6{width:16.6667%;}
+
+.res, .res-1{ display:block;}
+.box_co2, .box_co3{ display:none;}
+.strip2 .col-lg-6, .strip2 .col-lg-2{ width:100%; text-align:center !important; float:left; padding:10px 0px;}
+.breadcrumb1 > li + li{ width:100%;}
+
+
+}
+
+@media only screen and (max-width: 1124px)and (min-width: 320px){
+.table-bordered tbody tr th, .table-bordered tbody tr td{page-break-before:always; width:100%; float:left; text-align:center;}
+#page-wrapper{ padding:0px;}
+.minimalize-styl-2{ padding:5px 5px 5px 0px;}
+.navbar-top-links{ display:block; clear:both; width:88%; margin:0 auto;}
+
+
+.ibox-b .col-lg-4{ width:33.3333%; float:left;}
+.up, .down{ width:50%; float:left; border:0px;}
+.circle, .circle1{ width:35px; height:35px; border-radius:50%; font-size:10px;}
+.circle1{ margin-left:-5px;}
+.circle{ margin-right:-5px;}
+.circle span, .circle1 span{margin-top:5px;}
+
+.breadcrumb1 li:first-child{ width:100%;}
+.date-u{ margin:0px; margin-top:10px; width:100%; text-align:left;}
+.ibox-b-2{ display:none;}
+h2{ font-size:22px; text-align:center;}
+.prize{ font-size:1.3em;}
+
+.col-lg-6{ width:50%; float:left;}
+.prisse-stu .col-lg-12{ float:left; width:100%; clear:both;}
+.remove-data1{ display:block; width:100%; float:left;}
+.chart-p{display:none;}
+.block-2 .col-lg-12 .col-lg-4, 
+.block-3 .col-lg-12 .col-lg-4, 
+.block-4 .col-lg-12 .col-lg-4{width:33.3333%; float:left; padding:0px;}
+
+.rado-h{ display: inline-block; font-size:10px; padding-right:5px; text-align:left;}
+.block-1{ display:none;}
+.f-mob{ display:block; }
+.s-date{ display:none;}
+.sou-ret{ border:none;}
+.ret-b, .sou-ret{ height:auto;}
+.prist-tab .col-lg-6 h3, .prist-tab .col-lg-6 h2{ text-align:right;}
+
+.remove-p .col-lg-3{ width:25%; float:left;}
+.remove-p{ float:left; width:100%;}
+.prisse-stu2 .col-lg-12 img{ clear:both;}
+.prisse-stu .col-lg-12 .col-lg-3{ margin-top:20px; display:inline-block; width:100%;}
+.inner .col-lg-2{ text-align:right;}
+.block-top-box{ display:none;}
+.data{ display:block;}
+.res{ display:block;}
+.box_co2{ display:none;}
+
+.res, .res-1{ display:block;}
+.box_co2, .box_co3{ display:none;}
+.strip2 .col-lg-6, .strip2 .col-lg-2{ width:100%; text-align:center !important; float:left; padding:10px 0px;}
+.breadcrumb1 > li + li{ width:100%;}
+.inner{ float:left;}
+.f-l{ width:100%; float:left; margin:0px; text-align:left;}
+.inner-2{ background:#f2f2f2; float:left;}
+}

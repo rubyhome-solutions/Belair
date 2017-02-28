@@ -1,0 +1,55 @@
+<h1>My Profile</h1>
+<div class="{{#if myprofile.pending}} ui segment loading {{/if}} ">
+
+{{#if !myprofile.pending}}    
+{{#if myprofile}}
+<div class="user-info">
+    <img src="{{myprofile.baseUrl}}/themes/B2C/img/guest.png" alt=""/>
+
+    <div class="name">{{myprofile.name}}</div>
+    <div class="customer-id">User Id: {{myprofile.id}}</div>
+    <div class="phone">Mobile No: {{myprofile.mobile}}</div>
+    <div class="action">
+        <button on-click='edit()' class="small gray">Edit</button>
+<!--        <button on-click='delete' class="small gray">Delete</button>-->
+    </div>
+</div>
+<div class="details">
+    
+    <table>
+        <tr>
+            <td><h4 class="ui header">Email Address</h4></td>
+            <td>{{myprofile.email}}</td>
+        </tr>
+        <tr>
+            <td><h4 class="ui header">Mobile Number</h4></td>
+            <td>{{myprofile.mobile}}</td>
+        </tr>
+        <tr>
+            <td><h4 class="ui header">Address</h4></td>
+            <td>{{myprofile.address}}</td>
+        </tr>
+        <tr>
+            <td><h4 class="ui header">City</h4></td>
+            <td>{{myprofile.city}}</td>
+        </tr>
+        <tr>
+            <td><h4 class="ui header">State</h4></td>
+            <td>{{myprofile.state}}</td>
+        </tr>
+        <tr>
+            <td><h4 class="ui header">Country</h4></td>
+            <td>{{myprofile.country}}</td>
+        </tr>
+        <tr>
+            <td><h4 class="ui header">Pincode</h4></td>
+            <td>{{myprofile.pincode}}</td>
+        </tr>
+    </table>
+</div>
+
+{{else}}
+
+{{/if}}
+{{/if}}
+</div>

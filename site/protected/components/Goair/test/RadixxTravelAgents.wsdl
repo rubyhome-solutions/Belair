@@ -1,0 +1,3665 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://radixx.com/WSRadixx/RadixxTravelAgents" xmlns:s1="http://radixx.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="www.radixx.com" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://radixx.com/WSRadixx/RadixxTravelAgents" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://radixx.com/WSRadixx/RadixxTravelAgents">
+      <s:import namespace="http://radixx.com/" />
+      <s:import namespace="www.radixx.com" />
+      <s:import />
+      <s:import namespace="http://radixx.com/WSRadixx/RATravelAgentsDS.xsd" />
+      <s:import namespace="http://radixx.com/WSRadixx/RASetTravelAgentResponseDS.xsd" />
+      <s:import schemaLocation="http://g8.service.radixx.com/RadixxTravelAgents.asmx?schema=RASetTravelAgentResponseDS" namespace="http://radixx.com/WSRadixx/RASetTravelAgentResponseDS.xsd" />
+      <s:import schemaLocation="http://g8.service.radixx.com/RadixxTravelAgents.asmx?schema=RATravelAgentsDS" namespace="http://radixx.com/WSRadixx/RATravelAgentsDS.xsd" />
+      <s:element name="CreateAgency">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="createAgencyRequest" type="s1:CreateAgencyRequest" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientIPAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAgencyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateAgencyResult" type="s1:CreateAgencyResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateChildAgency">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="createAgencyRequest" type="s1:CreateAgencyRequest" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientIPAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateChildAgencyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateChildAgencyResult" type="s1:CreateAgencyResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyAgency">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="createAgencyRequest" type="s1:ModifyAgencyRequest" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientIPAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyAgencyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModifyAgencyResult" type="s1:ModifyAgencyResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAgent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="createAgentRequest" type="s1:CreateAgentRequest" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientIPAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAgentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateAgentResult" type="s1:CreateAgentResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendForgottenUserPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LanguageCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientIPAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendForgottenUserPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendForgottenUserPasswordResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUserNameAvailability">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientIPAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUserNameAvailabilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckUserNameAvailabilityResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeUserPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="currentPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clientIPAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeUserPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangeUserPasswordResult" type="s1:AuthenticationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgencyDashboardCommission">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dashboardViewRequest" type="s1:DashboardViewInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgencyDashboardCommissionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAgencyDashboardCommissionResult" type="s1:ViewCommissionInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgencyDashboardTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dashboardViewRequest" type="s1:DashboardViewInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgencyDashboardTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAgencyDashboardTransactionResult" type="s1:ViewTransactionInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgencyDashboardBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dashboardViewRequest" type="s1:DashboardViewInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgencyDashboardBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAgencyDashboardBalanceResult" type="s1:ViewBalanceInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateTravelAgencyUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TANumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateTravelAgencyUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidateTravelAgencyUserResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oAuthenticateUser" type="tns:AuthenticateUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AuthenticateUser">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ActionType" type="tns:ActionTypes" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FunctionTypeName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ActionTypes">
+        <s:restriction base="s:string">
+          <s:enumeration value="AuthenticateUser" />
+          <s:enumeration value="AuthenticateUserWithUserDetailRetreival" />
+          <s:enumeration value="AuthenticateAgencyUserWithUserDetailRetreival" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="AuthenticateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticateUserResult" type="s2:AuthenticateUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MoveAgencySessionDataToNewSecurityToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MoveAgencySessionDataToNewSecurityTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MoveAgencySessionDataToNewSecurityTokenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginTravelAgencyUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TANumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginTravelAgencyUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LoginTravelAgencyUserResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgencyInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IataNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgencyInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="Agency" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgencyDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IataNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeChildAgents" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgencyDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="AgencyDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgencyList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IataNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeChildAgents" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgencyListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="AgencyList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IataNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="Agent" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgentList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IataNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeChildAgents" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgentListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="AgentList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyAgencyCreditLimit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loggedOnIataNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IataNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NewCreditLimit" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="OriginalCreditLimit" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginalCurrency" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyAgencyCreditLimitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ModifyAgencyCreditLimitResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgencywithCCInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IataNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgencywithCCInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="AgencywithCCInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTravelAgents">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IataNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AgencyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PersonOrgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IsParentAgency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ParentIataNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UTCOffset" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTravelAgentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTravelAgentsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://radixx.com/WSRadixx/RATravelAgentsDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTravelAgentsXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IataNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AgencyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PersonOrgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IsParentAgency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ParentIataNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UTCOffset" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTravelAgentsXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTravelAgentsXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTravelAgentBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IataNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTravelAgentBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTravelAgentBalanceResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTravelAgencyAvailableCredit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IataNum" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTravelAgencyAvailableCreditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTravelAgencyAvailableCreditResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveTravelAgencyAvailableCredit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveTravelAgencyAvailableCreditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RetrieveTravelAgencyAvailableCreditResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTravelAgent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TravelAgentDS">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://radixx.com/WSRadixx/RATravelAgentsDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UTCOffset" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTravelAgentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetTravelAgentResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://radixx.com/WSRadixx/RASetTravelAgentResponseDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTravelAgentXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TravelAgentXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UTCOffset" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTravelAgentXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetTravelAgentXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTravelAgencyCommissionReportXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IataNum" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTravelAgencyCommissionReportXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTravelAgencyCommissionReportXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTravelAgencyAccountingReportXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IataNum" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTravelAgencyAccountingReportXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTravelAgencyAccountingReportXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTravelAgentInvoicePaymentsXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IataNum" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartTime" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTravelAgentInvoicePaymentsXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTravelAgentInvoicePaymentsXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchTravelAgencyBookings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookingAgent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExternalAppID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FlightNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FlightDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Destination" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaxEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaxPhone" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="TravelAgencyEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TravelAgencyPhone" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IncludeActiveBookings" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IncludePastBookings" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IncludeCancelledBookings" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchTravelAgencyBookingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchTravelAgencyBookingsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchTravelAgentBookings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExternalAppID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FlightNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FlightDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Destination" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaxEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaxPhone" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProfileID" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="TravelAgencyEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TravelAgencyPhone" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IncludeActiveBookings" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IncludePastBookings" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IncludeCancelledBookings" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchTravelAgentBookingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchTravelAgentBookingsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgencyPNR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BookingReferenceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DepartureDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentReferenceNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IncludeChildAgencies" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="actionTypes" type="tns:RetrieveAgencyPNRActionTypes" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="RetrieveAgencyPNRActionTypes">
+        <s:restriction base="s:string">
+          <s:enumeration value="SearchByBookingConfirmationNumber" />
+          <s:enumeration value="SearchByName" />
+          <s:enumeration value="SearchByEmail" />
+          <s:enumeration value="SearchByDepartureDate" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetAgencyPNRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAgencyPNRResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDisruptedAgencyPNRList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IATANumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IncludeChildAgents" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDisruptedAgencyPNRListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDisruptedAgencyPNRListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DepositTravelAgentFunds">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDepositTravelAgentFundsRequest" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DepositTravelAgentFundsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DepositTravelAgentFundsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="int" type="s:int" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="AuthenticationResponse" nillable="true" type="s1:AuthenticationResponse" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="RATravelAgentsDS" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any namespace="http://radixx.com/WSRadixx/RATravelAgentsDS.xsd" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="decimal" type="s:decimal" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://radixx.com/">
+      <s:complexType name="CreateAgencyRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IATANumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyAdress1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyAdress2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyCurrency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LegalName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyPostalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyCountry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountFirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountLastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountUserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyAccountEmail" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumberOfBranches" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyWebSiteUrl" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgencyCreditLimit" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyCreditLimitCurrency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgencyFetExempt" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PreferrEmailReceipt" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PreferrFaxReceipt" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PreferrMailReceipt" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgencyType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgencyRegion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdminUser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdminPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParentIATANumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseParentCreditLimit" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="LanguageCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactInfos" type="s1:ArrayOfTaContactInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTaContactInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TaContactInfo" nillable="true" type="s1:TaContactInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TaContactInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ContactField" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContactType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PreferredContactMethod" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CreateAgencyResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Successful" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ModifyAgencyRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IATANumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyAdress1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyAdress2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyCurrency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LegalName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyPostalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyAccountEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountFirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountLastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyPhoneCountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyPhoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyMobileCountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyMobileNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyFaxCountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyFaxNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyWebSiteUrl" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgencyFetExempt" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PreferrEmailReceipt" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PreferrFaxReceipt" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PreferrMailReceipt" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdminUser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdminPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactInfos" type="s1:ArrayOfTaContactInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ModifyAgencyResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Successful" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CreateAgentRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ActionType" type="s1:CreateAgentActionTypes" />
+          <s:element minOccurs="0" maxOccurs="1" name="IATANumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgentUsername" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgentFirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgentLastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgentAddress1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgentAddress2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgentCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgentState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgentPostalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyCountry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgentEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgentDefaultRole" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdminUser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdminPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LanguageCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactInfos" type="s1:ArrayOfTaContactInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="CreateAgentActionTypes">
+        <s:restriction base="s:string">
+          <s:enumeration value="CreateParentAgency" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="CreateAgentResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Successful" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AuthenticationResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="s1:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="DaysUntilPasswordChange" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Exceptions" type="s1:ArrayOfException" />
+          <s:element minOccurs="1" maxOccurs="1" name="PasswordStrength" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResultCode" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceDatabasePackageVersion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceVersion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExtensionDataObject" />
+      <s:complexType name="ArrayOfException">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Exception" nillable="true" type="s1:Exception" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Exception">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ExceptionCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExceptionDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExceptionSource" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExceptionLevel" type="s1:ExceptionLevels" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ExceptionLevels">
+        <s:restriction base="s:string">
+          <s:enumeration value="Success" />
+          <s:enumeration value="Warning" />
+          <s:enumeration value="Critical" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="DashboardViewInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyIATANumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequestedStartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RequestedEndDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IncludeChildAgentInfo" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ViewCommissionInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyCommissions" type="s1:ArrayOfCommissionInfo" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalFares" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalCommissions" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCommissionInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CommissionInfo" nillable="true" type="s1:CommissionInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CommissionInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BookingUserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OriginatingAirport" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationAirport" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IATANumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentUserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BookingCurrency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BookingAmount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentCurrency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgencyCommission" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PassengerCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ViewTransactionInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyTransactions" type="s1:ArrayOfTransactionInfo" />
+          <s:element minOccurs="1" maxOccurs="1" name="BeginningBalance" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalDeposits" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalCredits" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalDebits" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndingBalance" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTransactionInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TransactionInfo" nillable="true" type="s1:TransactionInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TransactionInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="InvoiceNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BookingUserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IATANumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionIATA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentUserName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransactionDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionCurrency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransactionAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransactionBalance" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ViewBalanceInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyBalances" type="s1:ArrayOfBalanceInfo" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalChargesFromInception" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalPaymentsFromInception" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverallBalanceFromInception" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalChargesForRange" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalPaymentsForRange" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverallBalanceForRange" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBalanceInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BalanceInfo" nillable="true" type="s1:BalanceInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BalanceInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="InvoiceNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConfirmationNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BookingUserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OriginatingAirport" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationAirport" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IATANumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BookingDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="BookingCurrency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BookingAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentUserName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentReference" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentCurrency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PassengerCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SegmentCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrimaryPassengerName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BalanceDue" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DepositDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DepositAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="DepartureDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="www.radixx.com">
+      <s:complexType name="AuthenticateUser">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ResultCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PasswordStrength" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceVersion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceDatabasePackageVersion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DaysUntilPasswordChange" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SystemUser" type="s2:UserInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgencyUser" type="s2:AgencyInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UserInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccessCallCenterFee" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsTrustedClientUser" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReservationChannelIDToAlias" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReservationChannelNameToAlias" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DefaultUserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserGroups" type="s2:ArrayOfUserGroup" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserPrivileges" type="s2:ArrayOfUserPrivilege" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfUserGroup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UserGroup" nillable="true" type="s2:UserGroup" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UserGroup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GroupName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupRights" type="s2:ArrayOfGroupRight" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfGroupRight">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GroupRight" nillable="true" type="s2:GroupRight" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GroupRight">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FunctionName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrivilegeLevel" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfUserPrivilege">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UserPrivilege" nillable="true" type="s2:UserPrivilege" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UserPrivilege">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FunctionName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrivilegeLevel" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AgencyInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IataCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParentIataCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccountExpiration" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditLimit" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="FetExempt" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TravelAgentStatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ConsortTravalAgentId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FareBasisCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FederalId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmailReceipt" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="FaxReceipt" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MailReceipt" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Prepaid" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="TravelAgentTypeId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanViewAllPnrs" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TravelAgentUserName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AvailableCredit" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnlimitedCredit" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccessCallCenterFee" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsTrustedClientUser" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReservationChannelIDToAlias" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReservationChannelNameToAlias" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DefaultUserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Commissions" type="s2:ArrayOfCommission" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactInfos" type="s2:ArrayOfContactInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCommission">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Commission" nillable="true" type="s2:Commission" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Commission">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="FlatRate" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Percentage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MinimumCommission" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaximumCommission" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentMethod" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfContactInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ContactInfo" nillable="true" type="s2:ContactInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ContactInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactField" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContactType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Extension" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AreaCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Display" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PreferredContactMethod" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified">
+      <s:element name="Agency" type="AgencyInfo" />
+      <s:complexType name="AgencyInfo">
+        <s:complexContent mixed="false">
+          <s:extension base="RadixxBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="methodName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="className" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IataCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PersonOrgId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ParentIataCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="AccountExpirationDate" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="Commission" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="CreditLimit" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="FetExempt" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankNum" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TravelAgencyStatus" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ConsortTaId" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="FareBasisCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FederalId" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="EmailReceipt" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="FaxReceipt" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="MailReceipt" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Prepaid" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="TravelAgentTypeId" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CanViewAllPnrs" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ContactFieldPhone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ContactFieldEmail" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ContactFieldFax" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TravelAgentUserName" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="RadixxBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="m_LoggingFilePath" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_GeneralLoggingOn" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_UnhandledExceptionLoggingOn" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_HandledExceptionLoggingOn" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_DatabaseLoggingOn" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReservationChannelID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReservationChannelName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AgencyDetails" type="AgencyDetails" />
+      <s:complexType name="AgencyDetails">
+        <s:complexContent mixed="false">
+          <s:extension base="RadixxBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="methodName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="className" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AgencyDetails" type="ArrayOfAgencyDetail" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfAgencyDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AgencyDetail" nillable="true" type="AgencyDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AgencyDetail">
+        <s:complexContent mixed="false">
+          <s:extension base="RadixxBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="methodName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="className" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IataCode" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Firstname" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AgencyName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LegalName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Mobile" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="AgencyList" type="AgencyList" />
+      <s:complexType name="AgencyList">
+        <s:complexContent mixed="false">
+          <s:extension base="RadixxBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="methodName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="className" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Agencys" type="ArrayOfAgencyListItem" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfAgencyListItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AgencyListItem" nillable="true" type="AgencyListItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AgencyListItem">
+        <s:complexContent mixed="false">
+          <s:extension base="RadixxBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="methodName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="className" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IataCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="CreditLimit" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="TravelAgencyStatus" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ActiveBookings" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Agent" type="Agent" />
+      <s:complexType name="Agent">
+        <s:complexContent mixed="false">
+          <s:extension base="RadixxBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="methodName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="className" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Firstname" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Mobile" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailId" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="AgentList" type="AgentList" />
+      <s:complexType name="AgentList">
+        <s:complexContent mixed="false">
+          <s:extension base="RadixxBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="methodName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="className" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Agencys" type="ArrayOfAgentListItem" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfAgentListItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AgentListItem" nillable="true" type="AgentListItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AgentListItem">
+        <s:complexContent mixed="false">
+          <s:extension base="RadixxBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="methodName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="className" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IataCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PostalCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TelephoneNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MobileNumber" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="AgencywithCCInfo" type="AgencywithCCInfo" />
+      <s:complexType name="AgencywithCCInfo">
+        <s:complexContent mixed="false">
+          <s:extension base="RadixxBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="methodName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="className" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IataCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PersonOrgId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ParentIataCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CreditCardAccounts" type="ArrayOfAgencyCreditCardInfo" />
+              <s:element minOccurs="1" maxOccurs="1" name="Commission" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="CreditLimit" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="FetExempt" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="BankNum" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TravelAgencyStatus" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="ConsortTaId" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="FareBasisCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="FederalId" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="EmailReceipt" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="FaxReceipt" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="MailReceipt" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Prepaid" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="TravelAgentTypeId" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CanViewAllPnrs" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ContactFieldPhone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ContactFieldEmail" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ContactFieldFax" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TravelAgentUserName" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfAgencyCreditCardInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AgencyCreditCardInfo" nillable="true" type="AgencyCreditCardInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AgencyCreditCardInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccountExpirationDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateAgencySoapIn">
+    <wsdl:part name="parameters" element="tns:CreateAgency" />
+  </wsdl:message>
+  <wsdl:message name="CreateAgencySoapOut">
+    <wsdl:part name="parameters" element="tns:CreateAgencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateChildAgencySoapIn">
+    <wsdl:part name="parameters" element="tns:CreateChildAgency" />
+  </wsdl:message>
+  <wsdl:message name="CreateChildAgencySoapOut">
+    <wsdl:part name="parameters" element="tns:CreateChildAgencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyAgencySoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyAgency" />
+  </wsdl:message>
+  <wsdl:message name="ModifyAgencySoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyAgencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateAgentSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateAgent" />
+  </wsdl:message>
+  <wsdl:message name="CreateAgentSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateAgentResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendForgottenUserPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:SendForgottenUserPassword" />
+  </wsdl:message>
+  <wsdl:message name="SendForgottenUserPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:SendForgottenUserPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserNameAvailabilitySoapIn">
+    <wsdl:part name="parameters" element="tns:CheckUserNameAvailability" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserNameAvailabilitySoapOut">
+    <wsdl:part name="parameters" element="tns:CheckUserNameAvailabilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeUserPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeUserPassword" />
+  </wsdl:message>
+  <wsdl:message name="ChangeUserPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeUserPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyDashboardCommissionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAgencyDashboardCommission" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyDashboardCommissionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAgencyDashboardCommissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyDashboardTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAgencyDashboardTransaction" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyDashboardTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAgencyDashboardTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyDashboardBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAgencyDashboardBalance" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyDashboardBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAgencyDashboardBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateTravelAgencyUserSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateTravelAgencyUser" />
+  </wsdl:message>
+  <wsdl:message name="ValidateTravelAgencyUserSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateTravelAgencyUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthenticateUser" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="MoveAgencySessionDataToNewSecurityTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:MoveAgencySessionDataToNewSecurityToken" />
+  </wsdl:message>
+  <wsdl:message name="MoveAgencySessionDataToNewSecurityTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:MoveAgencySessionDataToNewSecurityTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginTravelAgencyUserSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginTravelAgencyUser" />
+  </wsdl:message>
+  <wsdl:message name="LoginTravelAgencyUserSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginTravelAgencyUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAgencyInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAgencyInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAgencyDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAgencyDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAgencyList" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAgencyListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAgent" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAgentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAgentList" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAgentListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyAgencyCreditLimitSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyAgencyCreditLimit" />
+  </wsdl:message>
+  <wsdl:message name="ModifyAgencyCreditLimitSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyAgencyCreditLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgencywithCCInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:AgencywithCCInfo" />
+  </wsdl:message>
+  <wsdl:message name="AgencywithCCInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:AgencywithCCInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTravelAgents" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTravelAgentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentsXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTravelAgentsXML" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentsXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTravelAgentsXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTravelAgentBalance" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTravelAgentBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgencyAvailableCreditSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTravelAgencyAvailableCredit" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgencyAvailableCreditSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTravelAgencyAvailableCreditResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveTravelAgencyAvailableCreditSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveTravelAgencyAvailableCredit" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveTravelAgencyAvailableCreditSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveTravelAgencyAvailableCreditResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetTravelAgentSoapIn">
+    <wsdl:part name="parameters" element="tns:SetTravelAgent" />
+  </wsdl:message>
+  <wsdl:message name="SetTravelAgentSoapOut">
+    <wsdl:part name="parameters" element="tns:SetTravelAgentResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetTravelAgentXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:SetTravelAgentXML" />
+  </wsdl:message>
+  <wsdl:message name="SetTravelAgentXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:SetTravelAgentXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgencyCommissionReportXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTravelAgencyCommissionReportXML" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgencyCommissionReportXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTravelAgencyCommissionReportXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgencyAccountingReportXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTravelAgencyAccountingReportXML" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgencyAccountingReportXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTravelAgencyAccountingReportXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentInvoicePaymentsXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTravelAgentInvoicePaymentsXML" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentInvoicePaymentsXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTravelAgentInvoicePaymentsXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchTravelAgencyBookingsSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchTravelAgencyBookings" />
+  </wsdl:message>
+  <wsdl:message name="SearchTravelAgencyBookingsSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchTravelAgencyBookingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchTravelAgentBookingsSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchTravelAgentBookings" />
+  </wsdl:message>
+  <wsdl:message name="SearchTravelAgentBookingsSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchTravelAgentBookingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyPNRSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAgencyPNR" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyPNRSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAgencyPNRResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDisruptedAgencyPNRListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDisruptedAgencyPNRList" />
+  </wsdl:message>
+  <wsdl:message name="GetDisruptedAgencyPNRListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDisruptedAgencyPNRListResponse" />
+  </wsdl:message>
+  <wsdl:message name="DepositTravelAgentFundsSoapIn">
+    <wsdl:part name="parameters" element="tns:DepositTravelAgentFunds" />
+  </wsdl:message>
+  <wsdl:message name="DepositTravelAgentFundsSoapOut">
+    <wsdl:part name="parameters" element="tns:DepositTravelAgentFundsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendForgottenUserPasswordHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="LanguageCode" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="clientIPAddress" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendForgottenUserPasswordHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserNameAvailabilityHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="clientIPAddress" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserNameAvailabilityHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ChangeUserPasswordHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="currentPassword" type="s:string" />
+    <wsdl:part name="newPassword" type="s:string" />
+    <wsdl:part name="clientIPAddress" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeUserPasswordHttpGetOut">
+    <wsdl:part name="Body" element="tns:AuthenticationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateTravelAgencyUserHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="TANumber" type="s:string" />
+    <wsdl:part name="Username" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateTravelAgencyUserHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="MoveAgencySessionDataToNewSecurityTokenHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MoveAgencySessionDataToNewSecurityTokenHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginTravelAgencyUserHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="TANumber" type="s:string" />
+    <wsdl:part name="Username" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginTravelAgencyUserHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyInfoHttpGetIn">
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="SecurityGUID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyInfoHttpGetOut">
+    <wsdl:part name="Body" element="Agency" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyDetailsHttpGetIn">
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="includeChildAgents" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyDetailsHttpGetOut">
+    <wsdl:part name="Body" element="AgencyDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyListHttpGetIn">
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="includeChildAgents" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyListHttpGetOut">
+    <wsdl:part name="Body" element="AgencyList" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentHttpGetIn">
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="userid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentHttpGetOut">
+    <wsdl:part name="Body" element="Agent" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentListHttpGetIn">
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="includeChildAgents" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentListHttpGetOut">
+    <wsdl:part name="Body" element="AgentList" />
+  </wsdl:message>
+  <wsdl:message name="ModifyAgencyCreditLimitHttpGetIn">
+    <wsdl:part name="loggedOnIataNum" type="s:string" />
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="NewCreditLimit" type="s:string" />
+    <wsdl:part name="OriginalCreditLimit" type="s:string" />
+    <wsdl:part name="OriginalCurrency" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ModifyAgencyCreditLimitHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AgencywithCCInfoHttpGetIn">
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="SecurityGUID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AgencywithCCInfoHttpGetOut">
+    <wsdl:part name="Body" element="AgencywithCCInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentsHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="AccountNum" type="s:string" />
+    <wsdl:part name="AgencyName" type="s:string" />
+    <wsdl:part name="PersonOrgId" type="s:string" />
+    <wsdl:part name="ContactName" type="s:string" />
+    <wsdl:part name="IsParentAgency" type="s:string" />
+    <wsdl:part name="ParentIataNum" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="UTCOffset" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentsHttpGetOut">
+    <wsdl:part name="Body" element="tns:RATravelAgentsDS" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentsXMLHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="AccountNum" type="s:string" />
+    <wsdl:part name="AgencyName" type="s:string" />
+    <wsdl:part name="PersonOrgId" type="s:string" />
+    <wsdl:part name="ContactName" type="s:string" />
+    <wsdl:part name="IsParentAgency" type="s:string" />
+    <wsdl:part name="ParentIataNum" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="UTCOffset" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentsXMLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentBalanceHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="IataNum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentBalanceHttpGetOut">
+    <wsdl:part name="Body" element="tns:decimal" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgencyAvailableCreditHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="IataNum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgencyAvailableCreditHttpGetOut">
+    <wsdl:part name="Body" element="tns:decimal" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveTravelAgencyAvailableCreditHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveTravelAgencyAvailableCreditHttpGetOut">
+    <wsdl:part name="Body" element="tns:decimal" />
+  </wsdl:message>
+  <wsdl:message name="SetTravelAgentXMLHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="TravelAgentXML" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="UTCOffset" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetTravelAgentXMLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgencyCommissionReportXMLHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgencyCommissionReportXMLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgencyAccountingReportXMLHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgencyAccountingReportXMLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentInvoicePaymentsXMLHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="StartTime" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="EndTime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentInvoicePaymentsXMLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchTravelAgencyBookingsHttpGetIn">
+    <wsdl:part name="SessionKey" type="s:string" />
+    <wsdl:part name="BookingAgent" type="s:string" />
+    <wsdl:part name="ExternalAppID" type="s:string" />
+    <wsdl:part name="ConfirmationNumber" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="FlightNumber" type="s:string" />
+    <wsdl:part name="FlightDate" type="s:string" />
+    <wsdl:part name="Origin" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+    <wsdl:part name="PaxEmail" type="s:string" />
+    <wsdl:part name="PaxPhone" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="TravelAgencyEmail" type="s:string" />
+    <wsdl:part name="TravelAgencyPhone" type="s:string" />
+    <wsdl:part name="IncludeActiveBookings" type="s:string" />
+    <wsdl:part name="IncludePastBookings" type="s:string" />
+    <wsdl:part name="IncludeCancelledBookings" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchTravelAgencyBookingsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchTravelAgentBookingsHttpGetIn">
+    <wsdl:part name="SessionKey" type="s:string" />
+    <wsdl:part name="ExternalAppID" type="s:string" />
+    <wsdl:part name="ConfirmationNumber" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="FlightNumber" type="s:string" />
+    <wsdl:part name="FlightDate" type="s:string" />
+    <wsdl:part name="Origin" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+    <wsdl:part name="PaxEmail" type="s:string" />
+    <wsdl:part name="PaxPhone" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="TravelAgencyEmail" type="s:string" />
+    <wsdl:part name="TravelAgencyPhone" type="s:string" />
+    <wsdl:part name="IncludeActiveBookings" type="s:string" />
+    <wsdl:part name="IncludePastBookings" type="s:string" />
+    <wsdl:part name="IncludeCancelledBookings" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchTravelAgentBookingsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyPNRHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="BookingReferenceNumber" type="s:string" />
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="DepartureDate" type="s:string" />
+    <wsdl:part name="PaymentReferenceNumber" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="IncludeChildAgencies" type="s:string" />
+    <wsdl:part name="actionTypes" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyPNRHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDisruptedAgencyPNRListHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="IATANumber" type="s:string" />
+    <wsdl:part name="IncludeChildAgents" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDisruptedAgencyPNRListHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DepositTravelAgentFundsHttpGetIn">
+    <wsdl:part name="sDepositTravelAgentFundsRequest" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DepositTravelAgentFundsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendForgottenUserPasswordHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="LanguageCode" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="clientIPAddress" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendForgottenUserPasswordHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserNameAvailabilityHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="clientIPAddress" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserNameAvailabilityHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ChangeUserPasswordHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="currentPassword" type="s:string" />
+    <wsdl:part name="newPassword" type="s:string" />
+    <wsdl:part name="clientIPAddress" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeUserPasswordHttpPostOut">
+    <wsdl:part name="Body" element="tns:AuthenticationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateTravelAgencyUserHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="TANumber" type="s:string" />
+    <wsdl:part name="Username" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateTravelAgencyUserHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="MoveAgencySessionDataToNewSecurityTokenHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MoveAgencySessionDataToNewSecurityTokenHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginTravelAgencyUserHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="TANumber" type="s:string" />
+    <wsdl:part name="Username" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginTravelAgencyUserHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyInfoHttpPostIn">
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="SecurityGUID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyInfoHttpPostOut">
+    <wsdl:part name="Body" element="Agency" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyDetailsHttpPostIn">
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="includeChildAgents" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyDetailsHttpPostOut">
+    <wsdl:part name="Body" element="AgencyDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyListHttpPostIn">
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="includeChildAgents" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyListHttpPostOut">
+    <wsdl:part name="Body" element="AgencyList" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentHttpPostIn">
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="userid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentHttpPostOut">
+    <wsdl:part name="Body" element="Agent" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentListHttpPostIn">
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="includeChildAgents" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentListHttpPostOut">
+    <wsdl:part name="Body" element="AgentList" />
+  </wsdl:message>
+  <wsdl:message name="ModifyAgencyCreditLimitHttpPostIn">
+    <wsdl:part name="loggedOnIataNum" type="s:string" />
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="NewCreditLimit" type="s:string" />
+    <wsdl:part name="OriginalCreditLimit" type="s:string" />
+    <wsdl:part name="OriginalCurrency" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ModifyAgencyCreditLimitHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AgencywithCCInfoHttpPostIn">
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="SecurityGUID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AgencywithCCInfoHttpPostOut">
+    <wsdl:part name="Body" element="AgencywithCCInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentsHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="AccountNum" type="s:string" />
+    <wsdl:part name="AgencyName" type="s:string" />
+    <wsdl:part name="PersonOrgId" type="s:string" />
+    <wsdl:part name="ContactName" type="s:string" />
+    <wsdl:part name="IsParentAgency" type="s:string" />
+    <wsdl:part name="ParentIataNum" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="UTCOffset" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentsHttpPostOut">
+    <wsdl:part name="Body" element="tns:RATravelAgentsDS" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentsXMLHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="AccountNum" type="s:string" />
+    <wsdl:part name="AgencyName" type="s:string" />
+    <wsdl:part name="PersonOrgId" type="s:string" />
+    <wsdl:part name="ContactName" type="s:string" />
+    <wsdl:part name="IsParentAgency" type="s:string" />
+    <wsdl:part name="ParentIataNum" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="UTCOffset" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentsXMLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentBalanceHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="IataNum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentBalanceHttpPostOut">
+    <wsdl:part name="Body" element="tns:decimal" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgencyAvailableCreditHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="IataNum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgencyAvailableCreditHttpPostOut">
+    <wsdl:part name="Body" element="tns:decimal" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveTravelAgencyAvailableCreditHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveTravelAgencyAvailableCreditHttpPostOut">
+    <wsdl:part name="Body" element="tns:decimal" />
+  </wsdl:message>
+  <wsdl:message name="SetTravelAgentXMLHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="TravelAgentXML" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="UTCOffset" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetTravelAgentXMLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgencyCommissionReportXMLHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgencyCommissionReportXMLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgencyAccountingReportXMLHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgencyAccountingReportXMLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentInvoicePaymentsXMLHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="IataNum" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="StartTime" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="EndTime" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTravelAgentInvoicePaymentsXMLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchTravelAgencyBookingsHttpPostIn">
+    <wsdl:part name="SessionKey" type="s:string" />
+    <wsdl:part name="BookingAgent" type="s:string" />
+    <wsdl:part name="ExternalAppID" type="s:string" />
+    <wsdl:part name="ConfirmationNumber" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="FlightNumber" type="s:string" />
+    <wsdl:part name="FlightDate" type="s:string" />
+    <wsdl:part name="Origin" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+    <wsdl:part name="PaxEmail" type="s:string" />
+    <wsdl:part name="PaxPhone" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="TravelAgencyEmail" type="s:string" />
+    <wsdl:part name="TravelAgencyPhone" type="s:string" />
+    <wsdl:part name="IncludeActiveBookings" type="s:string" />
+    <wsdl:part name="IncludePastBookings" type="s:string" />
+    <wsdl:part name="IncludeCancelledBookings" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchTravelAgencyBookingsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchTravelAgentBookingsHttpPostIn">
+    <wsdl:part name="SessionKey" type="s:string" />
+    <wsdl:part name="ExternalAppID" type="s:string" />
+    <wsdl:part name="ConfirmationNumber" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="FlightNumber" type="s:string" />
+    <wsdl:part name="FlightDate" type="s:string" />
+    <wsdl:part name="Origin" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+    <wsdl:part name="PaxEmail" type="s:string" />
+    <wsdl:part name="PaxPhone" type="s:string" />
+    <wsdl:part name="ProfileID" type="s:string" />
+    <wsdl:part name="TravelAgencyEmail" type="s:string" />
+    <wsdl:part name="TravelAgencyPhone" type="s:string" />
+    <wsdl:part name="IncludeActiveBookings" type="s:string" />
+    <wsdl:part name="IncludePastBookings" type="s:string" />
+    <wsdl:part name="IncludeCancelledBookings" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchTravelAgentBookingsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyPNRHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="BookingReferenceNumber" type="s:string" />
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="DepartureDate" type="s:string" />
+    <wsdl:part name="PaymentReferenceNumber" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="IncludeChildAgencies" type="s:string" />
+    <wsdl:part name="actionTypes" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAgencyPNRHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDisruptedAgencyPNRListHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="IATANumber" type="s:string" />
+    <wsdl:part name="IncludeChildAgents" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDisruptedAgencyPNRListHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DepositTravelAgentFundsHttpPostIn">
+    <wsdl:part name="sDepositTravelAgentFundsRequest" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DepositTravelAgentFundsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="RadixxTravelAgentsSoap">
+    <wsdl:operation name="CreateAgency">
+      <wsdl:input message="tns:CreateAgencySoapIn" />
+      <wsdl:output message="tns:CreateAgencySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateChildAgency">
+      <wsdl:input message="tns:CreateChildAgencySoapIn" />
+      <wsdl:output message="tns:CreateChildAgencySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyAgency">
+      <wsdl:input message="tns:ModifyAgencySoapIn" />
+      <wsdl:output message="tns:ModifyAgencySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAgent">
+      <wsdl:input message="tns:CreateAgentSoapIn" />
+      <wsdl:output message="tns:CreateAgentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendForgottenUserPassword">
+      <wsdl:input message="tns:SendForgottenUserPasswordSoapIn" />
+      <wsdl:output message="tns:SendForgottenUserPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserNameAvailability">
+      <wsdl:input message="tns:CheckUserNameAvailabilitySoapIn" />
+      <wsdl:output message="tns:CheckUserNameAvailabilitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPassword">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows the user to change their password within PCI guidelines.</wsdl:documentation>
+      <wsdl:input message="tns:ChangeUserPasswordSoapIn" />
+      <wsdl:output message="tns:ChangeUserPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyDashboardCommission">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a agency commission dashboard object.</wsdl:documentation>
+      <wsdl:input message="tns:GetAgencyDashboardCommissionSoapIn" />
+      <wsdl:output message="tns:GetAgencyDashboardCommissionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyDashboardTransaction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a agency transaction dashboard object.</wsdl:documentation>
+      <wsdl:input message="tns:GetAgencyDashboardTransactionSoapIn" />
+      <wsdl:output message="tns:GetAgencyDashboardTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyDashboardBalance">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a agency transaction dashboard object.</wsdl:documentation>
+      <wsdl:input message="tns:GetAgencyDashboardBalanceSoapIn" />
+      <wsdl:output message="tns:GetAgencyDashboardBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTravelAgencyUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validates the Travel Agency User.</wsdl:documentation>
+      <wsdl:input message="tns:ValidateTravelAgencyUserSoapIn" />
+      <wsdl:output message="tns:ValidateTravelAgencyUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Logs Travel Agency User into session.</wsdl:documentation>
+      <wsdl:input message="tns:AuthenticateUserSoapIn" />
+      <wsdl:output message="tns:AuthenticateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveAgencySessionDataToNewSecurityToken">
+      <wsdl:input message="tns:MoveAgencySessionDataToNewSecurityTokenSoapIn" />
+      <wsdl:output message="tns:MoveAgencySessionDataToNewSecurityTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginTravelAgencyUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Logs Travel Agency User into session.</wsdl:documentation>
+      <wsdl:input message="tns:LoginTravelAgencyUserSoapIn" />
+      <wsdl:output message="tns:LoginTravelAgencyUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyInfo">
+      <wsdl:input message="tns:GetAgencyInfoSoapIn" />
+      <wsdl:output message="tns:GetAgencyInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyDetails">
+      <wsdl:input message="tns:GetAgencyDetailsSoapIn" />
+      <wsdl:output message="tns:GetAgencyDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyList">
+      <wsdl:input message="tns:GetAgencyListSoapIn" />
+      <wsdl:output message="tns:GetAgencyListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgent">
+      <wsdl:input message="tns:GetAgentSoapIn" />
+      <wsdl:output message="tns:GetAgentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentList">
+      <wsdl:input message="tns:GetAgentListSoapIn" />
+      <wsdl:output message="tns:GetAgentListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyAgencyCreditLimit">
+      <wsdl:input message="tns:ModifyAgencyCreditLimitSoapIn" />
+      <wsdl:output message="tns:ModifyAgencyCreditLimitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencywithCCInfo">
+      <wsdl:input name="AgencywithCCInfo" message="tns:AgencywithCCInfoSoapIn" />
+      <wsdl:output name="AgencywithCCInfo" message="tns:AgencywithCCInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgents">
+      <wsdl:input message="tns:GetTravelAgentsSoapIn" />
+      <wsdl:output message="tns:GetTravelAgentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgentsXML">
+      <wsdl:input message="tns:GetTravelAgentsXMLSoapIn" />
+      <wsdl:output message="tns:GetTravelAgentsXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgentBalance">
+      <wsdl:input message="tns:GetTravelAgentBalanceSoapIn" />
+      <wsdl:output message="tns:GetTravelAgentBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgencyAvailableCredit">
+      <wsdl:input message="tns:GetTravelAgencyAvailableCreditSoapIn" />
+      <wsdl:output message="tns:GetTravelAgencyAvailableCreditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveTravelAgencyAvailableCredit">
+      <wsdl:input message="tns:RetrieveTravelAgencyAvailableCreditSoapIn" />
+      <wsdl:output message="tns:RetrieveTravelAgencyAvailableCreditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTravelAgents">
+      <wsdl:input name="SetTravelAgent" message="tns:SetTravelAgentSoapIn" />
+      <wsdl:output name="SetTravelAgent" message="tns:SetTravelAgentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTravelAgentsXML">
+      <wsdl:input name="SetTravelAgentXML" message="tns:SetTravelAgentXMLSoapIn" />
+      <wsdl:output name="SetTravelAgentXML" message="tns:SetTravelAgentXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgencyCommissionReportXML">
+      <wsdl:input message="tns:GetTravelAgencyCommissionReportXMLSoapIn" />
+      <wsdl:output message="tns:GetTravelAgencyCommissionReportXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgencyAccountingReportXML">
+      <wsdl:input message="tns:GetTravelAgencyAccountingReportXMLSoapIn" />
+      <wsdl:output message="tns:GetTravelAgencyAccountingReportXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgentInvoicePaymentsXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a detailed list of Invoice Payments for the specified Travel Agent and date range.</wsdl:documentation>
+      <wsdl:input message="tns:GetTravelAgentInvoicePaymentsXMLSoapIn" />
+      <wsdl:output message="tns:GetTravelAgentInvoicePaymentsXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchTravelAgencyBookings">
+      <wsdl:input message="tns:SearchTravelAgencyBookingsSoapIn" />
+      <wsdl:output message="tns:SearchTravelAgencyBookingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchTravelAgentBookings">
+      <wsdl:input message="tns:SearchTravelAgentBookingsSoapIn" />
+      <wsdl:output message="tns:SearchTravelAgentBookingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyPNR">
+      <wsdl:input message="tns:GetAgencyPNRSoapIn" />
+      <wsdl:output message="tns:GetAgencyPNRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDisruptedAgencyPNRList">
+      <wsdl:input message="tns:GetDisruptedAgencyPNRListSoapIn" />
+      <wsdl:output message="tns:GetDisruptedAgencyPNRListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DepositTravelAgentFunds">
+      <wsdl:input message="tns:DepositTravelAgentFundsSoapIn" />
+      <wsdl:output message="tns:DepositTravelAgentFundsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RadixxTravelAgentsHttpGet">
+    <wsdl:operation name="SendForgottenUserPassword">
+      <wsdl:input message="tns:SendForgottenUserPasswordHttpGetIn" />
+      <wsdl:output message="tns:SendForgottenUserPasswordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserNameAvailability">
+      <wsdl:input message="tns:CheckUserNameAvailabilityHttpGetIn" />
+      <wsdl:output message="tns:CheckUserNameAvailabilityHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPassword">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows the user to change their password within PCI guidelines.</wsdl:documentation>
+      <wsdl:input message="tns:ChangeUserPasswordHttpGetIn" />
+      <wsdl:output message="tns:ChangeUserPasswordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTravelAgencyUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validates the Travel Agency User.</wsdl:documentation>
+      <wsdl:input message="tns:ValidateTravelAgencyUserHttpGetIn" />
+      <wsdl:output message="tns:ValidateTravelAgencyUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveAgencySessionDataToNewSecurityToken">
+      <wsdl:input message="tns:MoveAgencySessionDataToNewSecurityTokenHttpGetIn" />
+      <wsdl:output message="tns:MoveAgencySessionDataToNewSecurityTokenHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginTravelAgencyUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Logs Travel Agency User into session.</wsdl:documentation>
+      <wsdl:input message="tns:LoginTravelAgencyUserHttpGetIn" />
+      <wsdl:output message="tns:LoginTravelAgencyUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyInfo">
+      <wsdl:input message="tns:GetAgencyInfoHttpGetIn" />
+      <wsdl:output message="tns:GetAgencyInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyDetails">
+      <wsdl:input message="tns:GetAgencyDetailsHttpGetIn" />
+      <wsdl:output message="tns:GetAgencyDetailsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyList">
+      <wsdl:input message="tns:GetAgencyListHttpGetIn" />
+      <wsdl:output message="tns:GetAgencyListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgent">
+      <wsdl:input message="tns:GetAgentHttpGetIn" />
+      <wsdl:output message="tns:GetAgentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentList">
+      <wsdl:input message="tns:GetAgentListHttpGetIn" />
+      <wsdl:output message="tns:GetAgentListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyAgencyCreditLimit">
+      <wsdl:input message="tns:ModifyAgencyCreditLimitHttpGetIn" />
+      <wsdl:output message="tns:ModifyAgencyCreditLimitHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencywithCCInfo">
+      <wsdl:input name="AgencywithCCInfo" message="tns:AgencywithCCInfoHttpGetIn" />
+      <wsdl:output name="AgencywithCCInfo" message="tns:AgencywithCCInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgents">
+      <wsdl:input message="tns:GetTravelAgentsHttpGetIn" />
+      <wsdl:output message="tns:GetTravelAgentsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgentsXML">
+      <wsdl:input message="tns:GetTravelAgentsXMLHttpGetIn" />
+      <wsdl:output message="tns:GetTravelAgentsXMLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgentBalance">
+      <wsdl:input message="tns:GetTravelAgentBalanceHttpGetIn" />
+      <wsdl:output message="tns:GetTravelAgentBalanceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgencyAvailableCredit">
+      <wsdl:input message="tns:GetTravelAgencyAvailableCreditHttpGetIn" />
+      <wsdl:output message="tns:GetTravelAgencyAvailableCreditHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveTravelAgencyAvailableCredit">
+      <wsdl:input message="tns:RetrieveTravelAgencyAvailableCreditHttpGetIn" />
+      <wsdl:output message="tns:RetrieveTravelAgencyAvailableCreditHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTravelAgentsXML">
+      <wsdl:input name="SetTravelAgentXML" message="tns:SetTravelAgentXMLHttpGetIn" />
+      <wsdl:output name="SetTravelAgentXML" message="tns:SetTravelAgentXMLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgencyCommissionReportXML">
+      <wsdl:input message="tns:GetTravelAgencyCommissionReportXMLHttpGetIn" />
+      <wsdl:output message="tns:GetTravelAgencyCommissionReportXMLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgencyAccountingReportXML">
+      <wsdl:input message="tns:GetTravelAgencyAccountingReportXMLHttpGetIn" />
+      <wsdl:output message="tns:GetTravelAgencyAccountingReportXMLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgentInvoicePaymentsXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a detailed list of Invoice Payments for the specified Travel Agent and date range.</wsdl:documentation>
+      <wsdl:input message="tns:GetTravelAgentInvoicePaymentsXMLHttpGetIn" />
+      <wsdl:output message="tns:GetTravelAgentInvoicePaymentsXMLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchTravelAgencyBookings">
+      <wsdl:input message="tns:SearchTravelAgencyBookingsHttpGetIn" />
+      <wsdl:output message="tns:SearchTravelAgencyBookingsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchTravelAgentBookings">
+      <wsdl:input message="tns:SearchTravelAgentBookingsHttpGetIn" />
+      <wsdl:output message="tns:SearchTravelAgentBookingsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyPNR">
+      <wsdl:input message="tns:GetAgencyPNRHttpGetIn" />
+      <wsdl:output message="tns:GetAgencyPNRHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDisruptedAgencyPNRList">
+      <wsdl:input message="tns:GetDisruptedAgencyPNRListHttpGetIn" />
+      <wsdl:output message="tns:GetDisruptedAgencyPNRListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DepositTravelAgentFunds">
+      <wsdl:input message="tns:DepositTravelAgentFundsHttpGetIn" />
+      <wsdl:output message="tns:DepositTravelAgentFundsHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RadixxTravelAgentsHttpPost">
+    <wsdl:operation name="SendForgottenUserPassword">
+      <wsdl:input message="tns:SendForgottenUserPasswordHttpPostIn" />
+      <wsdl:output message="tns:SendForgottenUserPasswordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserNameAvailability">
+      <wsdl:input message="tns:CheckUserNameAvailabilityHttpPostIn" />
+      <wsdl:output message="tns:CheckUserNameAvailabilityHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPassword">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows the user to change their password within PCI guidelines.</wsdl:documentation>
+      <wsdl:input message="tns:ChangeUserPasswordHttpPostIn" />
+      <wsdl:output message="tns:ChangeUserPasswordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTravelAgencyUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validates the Travel Agency User.</wsdl:documentation>
+      <wsdl:input message="tns:ValidateTravelAgencyUserHttpPostIn" />
+      <wsdl:output message="tns:ValidateTravelAgencyUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveAgencySessionDataToNewSecurityToken">
+      <wsdl:input message="tns:MoveAgencySessionDataToNewSecurityTokenHttpPostIn" />
+      <wsdl:output message="tns:MoveAgencySessionDataToNewSecurityTokenHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginTravelAgencyUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Logs Travel Agency User into session.</wsdl:documentation>
+      <wsdl:input message="tns:LoginTravelAgencyUserHttpPostIn" />
+      <wsdl:output message="tns:LoginTravelAgencyUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyInfo">
+      <wsdl:input message="tns:GetAgencyInfoHttpPostIn" />
+      <wsdl:output message="tns:GetAgencyInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyDetails">
+      <wsdl:input message="tns:GetAgencyDetailsHttpPostIn" />
+      <wsdl:output message="tns:GetAgencyDetailsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyList">
+      <wsdl:input message="tns:GetAgencyListHttpPostIn" />
+      <wsdl:output message="tns:GetAgencyListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgent">
+      <wsdl:input message="tns:GetAgentHttpPostIn" />
+      <wsdl:output message="tns:GetAgentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentList">
+      <wsdl:input message="tns:GetAgentListHttpPostIn" />
+      <wsdl:output message="tns:GetAgentListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyAgencyCreditLimit">
+      <wsdl:input message="tns:ModifyAgencyCreditLimitHttpPostIn" />
+      <wsdl:output message="tns:ModifyAgencyCreditLimitHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencywithCCInfo">
+      <wsdl:input name="AgencywithCCInfo" message="tns:AgencywithCCInfoHttpPostIn" />
+      <wsdl:output name="AgencywithCCInfo" message="tns:AgencywithCCInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgents">
+      <wsdl:input message="tns:GetTravelAgentsHttpPostIn" />
+      <wsdl:output message="tns:GetTravelAgentsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgentsXML">
+      <wsdl:input message="tns:GetTravelAgentsXMLHttpPostIn" />
+      <wsdl:output message="tns:GetTravelAgentsXMLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgentBalance">
+      <wsdl:input message="tns:GetTravelAgentBalanceHttpPostIn" />
+      <wsdl:output message="tns:GetTravelAgentBalanceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgencyAvailableCredit">
+      <wsdl:input message="tns:GetTravelAgencyAvailableCreditHttpPostIn" />
+      <wsdl:output message="tns:GetTravelAgencyAvailableCreditHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveTravelAgencyAvailableCredit">
+      <wsdl:input message="tns:RetrieveTravelAgencyAvailableCreditHttpPostIn" />
+      <wsdl:output message="tns:RetrieveTravelAgencyAvailableCreditHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTravelAgentsXML">
+      <wsdl:input name="SetTravelAgentXML" message="tns:SetTravelAgentXMLHttpPostIn" />
+      <wsdl:output name="SetTravelAgentXML" message="tns:SetTravelAgentXMLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgencyCommissionReportXML">
+      <wsdl:input message="tns:GetTravelAgencyCommissionReportXMLHttpPostIn" />
+      <wsdl:output message="tns:GetTravelAgencyCommissionReportXMLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgencyAccountingReportXML">
+      <wsdl:input message="tns:GetTravelAgencyAccountingReportXMLHttpPostIn" />
+      <wsdl:output message="tns:GetTravelAgencyAccountingReportXMLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgentInvoicePaymentsXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a detailed list of Invoice Payments for the specified Travel Agent and date range.</wsdl:documentation>
+      <wsdl:input message="tns:GetTravelAgentInvoicePaymentsXMLHttpPostIn" />
+      <wsdl:output message="tns:GetTravelAgentInvoicePaymentsXMLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchTravelAgencyBookings">
+      <wsdl:input message="tns:SearchTravelAgencyBookingsHttpPostIn" />
+      <wsdl:output message="tns:SearchTravelAgencyBookingsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchTravelAgentBookings">
+      <wsdl:input message="tns:SearchTravelAgentBookingsHttpPostIn" />
+      <wsdl:output message="tns:SearchTravelAgentBookingsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyPNR">
+      <wsdl:input message="tns:GetAgencyPNRHttpPostIn" />
+      <wsdl:output message="tns:GetAgencyPNRHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDisruptedAgencyPNRList">
+      <wsdl:input message="tns:GetDisruptedAgencyPNRListHttpPostIn" />
+      <wsdl:output message="tns:GetDisruptedAgencyPNRListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DepositTravelAgentFunds">
+      <wsdl:input message="tns:DepositTravelAgentFundsHttpPostIn" />
+      <wsdl:output message="tns:DepositTravelAgentFundsHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RadixxTravelAgentsSoap" type="tns:RadixxTravelAgentsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateAgency">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/CreateAgency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateChildAgency">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/CreateChildAgency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyAgency">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/ModifyAgency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAgent">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/CreateAgent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendForgottenUserPassword">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/SendForgottenUserPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserNameAvailability">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/CheckUserNameAvailability" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPassword">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/ChangeUserPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyDashboardCommission">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetAgencyDashboardCommission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyDashboardTransaction">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetAgencyDashboardTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyDashboardBalance">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetAgencyDashboardBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTravelAgencyUser">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/ValidateTravelAgencyUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveAgencySessionDataToNewSecurityToken">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/MoveAgencySessionDataToNewSecurityToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginTravelAgencyUser">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/LoginTravelAgencyUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyInfo">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetAgencyInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyDetails">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetAgencyDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyList">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetAgencyList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgent">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetAgent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentList">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetAgentList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyAgencyCreditLimit">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/ModifyAgencyCreditLimit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencywithCCInfo">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/AgencywithCCInfo" style="document" />
+      <wsdl:input name="AgencywithCCInfo">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AgencywithCCInfo">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgents">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetTravelAgents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgentsXML">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetTravelAgentsXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgentBalance">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetTravelAgentBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgencyAvailableCredit">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetTravelAgencyAvailableCredit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveTravelAgencyAvailableCredit">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/RetrieveTravelAgencyAvailableCredit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTravelAgents">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/SetTravelAgent" style="document" />
+      <wsdl:input name="SetTravelAgent">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetTravelAgent">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTravelAgentsXML">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/SetTravelAgentXML" style="document" />
+      <wsdl:input name="SetTravelAgentXML">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetTravelAgentXML">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgencyCommissionReportXML">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetTravelAgencyCommissionReportXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgencyAccountingReportXML">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetTravelAgencyAccountingReportXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgentInvoicePaymentsXML">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetTravelAgentInvoicePaymentsXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTravelAgencyBookings">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/SearchTravelAgencyBookings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTravelAgentBookings">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/SearchTravelAgentBookings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyPNR">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetAgencyPNR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDisruptedAgencyPNRList">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetDisruptedAgencyPNRList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepositTravelAgentFunds">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/DepositTravelAgentFunds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxTravelAgentsSoap12" type="tns:RadixxTravelAgentsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateAgency">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/CreateAgency" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateChildAgency">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/CreateChildAgency" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyAgency">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/ModifyAgency" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAgent">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/CreateAgent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendForgottenUserPassword">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/SendForgottenUserPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserNameAvailability">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/CheckUserNameAvailability" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPassword">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/ChangeUserPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyDashboardCommission">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetAgencyDashboardCommission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyDashboardTransaction">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetAgencyDashboardTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyDashboardBalance">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetAgencyDashboardBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTravelAgencyUser">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/ValidateTravelAgencyUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveAgencySessionDataToNewSecurityToken">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/MoveAgencySessionDataToNewSecurityToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginTravelAgencyUser">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/LoginTravelAgencyUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyInfo">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetAgencyInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyDetails">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetAgencyDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyList">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetAgencyList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgent">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetAgent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentList">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetAgentList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyAgencyCreditLimit">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/ModifyAgencyCreditLimit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencywithCCInfo">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/AgencywithCCInfo" style="document" />
+      <wsdl:input name="AgencywithCCInfo">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AgencywithCCInfo">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgents">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetTravelAgents" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgentsXML">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetTravelAgentsXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgentBalance">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetTravelAgentBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgencyAvailableCredit">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetTravelAgencyAvailableCredit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveTravelAgencyAvailableCredit">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/RetrieveTravelAgencyAvailableCredit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTravelAgents">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/SetTravelAgent" style="document" />
+      <wsdl:input name="SetTravelAgent">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetTravelAgent">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTravelAgentsXML">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/SetTravelAgentXML" style="document" />
+      <wsdl:input name="SetTravelAgentXML">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SetTravelAgentXML">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgencyCommissionReportXML">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetTravelAgencyCommissionReportXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgencyAccountingReportXML">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetTravelAgencyAccountingReportXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgentInvoicePaymentsXML">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetTravelAgentInvoicePaymentsXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTravelAgencyBookings">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/SearchTravelAgencyBookings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTravelAgentBookings">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/SearchTravelAgentBookings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyPNR">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetAgencyPNR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDisruptedAgencyPNRList">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/GetDisruptedAgencyPNRList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepositTravelAgentFunds">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxTravelAgents/DepositTravelAgentFunds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxTravelAgentsHttpGet" type="tns:RadixxTravelAgentsHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="SendForgottenUserPassword">
+      <http:operation location="/SendForgottenUserPassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserNameAvailability">
+      <http:operation location="/CheckUserNameAvailability" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPassword">
+      <http:operation location="/ChangeUserPassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTravelAgencyUser">
+      <http:operation location="/ValidateTravelAgencyUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveAgencySessionDataToNewSecurityToken">
+      <http:operation location="/MoveAgencySessionDataToNewSecurityToken" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginTravelAgencyUser">
+      <http:operation location="/LoginTravelAgencyUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyInfo">
+      <http:operation location="/GetAgencyInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyDetails">
+      <http:operation location="/GetAgencyDetails" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyList">
+      <http:operation location="/GetAgencyList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgent">
+      <http:operation location="/GetAgent" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentList">
+      <http:operation location="/GetAgentList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyAgencyCreditLimit">
+      <http:operation location="/ModifyAgencyCreditLimit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencywithCCInfo">
+      <http:operation location="/AgencywithCCInfo" />
+      <wsdl:input name="AgencywithCCInfo">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="AgencywithCCInfo">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgents">
+      <http:operation location="/GetTravelAgents" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgentsXML">
+      <http:operation location="/GetTravelAgentsXML" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgentBalance">
+      <http:operation location="/GetTravelAgentBalance" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgencyAvailableCredit">
+      <http:operation location="/GetTravelAgencyAvailableCredit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveTravelAgencyAvailableCredit">
+      <http:operation location="/RetrieveTravelAgencyAvailableCredit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTravelAgentsXML">
+      <http:operation location="/SetTravelAgentXML" />
+      <wsdl:input name="SetTravelAgentXML">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="SetTravelAgentXML">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgencyCommissionReportXML">
+      <http:operation location="/GetTravelAgencyCommissionReportXML" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgencyAccountingReportXML">
+      <http:operation location="/GetTravelAgencyAccountingReportXML" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgentInvoicePaymentsXML">
+      <http:operation location="/GetTravelAgentInvoicePaymentsXML" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTravelAgencyBookings">
+      <http:operation location="/SearchTravelAgencyBookings" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTravelAgentBookings">
+      <http:operation location="/SearchTravelAgentBookings" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyPNR">
+      <http:operation location="/GetAgencyPNR" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDisruptedAgencyPNRList">
+      <http:operation location="/GetDisruptedAgencyPNRList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepositTravelAgentFunds">
+      <http:operation location="/DepositTravelAgentFunds" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxTravelAgentsHttpPost" type="tns:RadixxTravelAgentsHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="SendForgottenUserPassword">
+      <http:operation location="/SendForgottenUserPassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserNameAvailability">
+      <http:operation location="/CheckUserNameAvailability" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPassword">
+      <http:operation location="/ChangeUserPassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateTravelAgencyUser">
+      <http:operation location="/ValidateTravelAgencyUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveAgencySessionDataToNewSecurityToken">
+      <http:operation location="/MoveAgencySessionDataToNewSecurityToken" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginTravelAgencyUser">
+      <http:operation location="/LoginTravelAgencyUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyInfo">
+      <http:operation location="/GetAgencyInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyDetails">
+      <http:operation location="/GetAgencyDetails" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyList">
+      <http:operation location="/GetAgencyList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgent">
+      <http:operation location="/GetAgent" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentList">
+      <http:operation location="/GetAgentList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyAgencyCreditLimit">
+      <http:operation location="/ModifyAgencyCreditLimit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencywithCCInfo">
+      <http:operation location="/AgencywithCCInfo" />
+      <wsdl:input name="AgencywithCCInfo">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="AgencywithCCInfo">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgents">
+      <http:operation location="/GetTravelAgents" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgentsXML">
+      <http:operation location="/GetTravelAgentsXML" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgentBalance">
+      <http:operation location="/GetTravelAgentBalance" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgencyAvailableCredit">
+      <http:operation location="/GetTravelAgencyAvailableCredit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveTravelAgencyAvailableCredit">
+      <http:operation location="/RetrieveTravelAgencyAvailableCredit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTravelAgentsXML">
+      <http:operation location="/SetTravelAgentXML" />
+      <wsdl:input name="SetTravelAgentXML">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="SetTravelAgentXML">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgencyCommissionReportXML">
+      <http:operation location="/GetTravelAgencyCommissionReportXML" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgencyAccountingReportXML">
+      <http:operation location="/GetTravelAgencyAccountingReportXML" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTravelAgentInvoicePaymentsXML">
+      <http:operation location="/GetTravelAgentInvoicePaymentsXML" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTravelAgencyBookings">
+      <http:operation location="/SearchTravelAgencyBookings" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTravelAgentBookings">
+      <http:operation location="/SearchTravelAgentBookings" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgencyPNR">
+      <http:operation location="/GetAgencyPNR" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDisruptedAgencyPNRList">
+      <http:operation location="/GetDisruptedAgencyPNRList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepositTravelAgentFunds">
+      <http:operation location="/DepositTravelAgentFunds" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RadixxTravelAgents">
+    <wsdl:port name="RadixxTravelAgentsSoap" binding="tns:RadixxTravelAgentsSoap">
+      <soap:address location="http://g8.service.radixx.com/RadixxTravelAgents.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxTravelAgentsSoap12" binding="tns:RadixxTravelAgentsSoap12">
+      <soap12:address location="http://g8.service.radixx.com/RadixxTravelAgents.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxTravelAgentsHttpGet" binding="tns:RadixxTravelAgentsHttpGet">
+      <http:address location="http://g8.service.radixx.com/RadixxTravelAgents.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxTravelAgentsHttpPost" binding="tns:RadixxTravelAgentsHttpPost">
+      <http:address location="http://g8.service.radixx.com/RadixxTravelAgents.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

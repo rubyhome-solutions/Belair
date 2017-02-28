@@ -1,0 +1,100 @@
+@import "../variables.less";
+
+.ui.calendar {
+  display: inline-block;
+  margin: 0px;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &.grid {
+    margin: 1rem;
+
+    &.twomonth {
+      margin: 0;
+      padding-bottom: 10px;
+    }
+  }
+
+  a {
+    color: #777;
+  }
+
+  .icon {
+    font-size: 1.5rem;
+  }
+
+  .month {
+    line-height: 2rem;
+    font-size: 1.25rem !important;
+    margin-bottom: 18px;
+
+    a.left { float: left; }
+    a.right { float: right; }
+  }
+
+  .weekdays.grid {
+    padding: 0px;
+
+    > .column {
+      margin: 0px;
+      padding: 2px;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+
+      &:not(.inactive) {
+        cursor: pointer;
+      }
+
+      &:hover:not(.inactive) {
+        a {
+          background-color: lightgray;
+          color: #fff;
+        }
+      }
+
+      &.active, &.range.start, &.range.end {
+        a {
+          background-color: #3399ff;
+          color: white;
+          border: 1px solid #3399ff;
+        }
+
+        &:hover {
+          a { background-color: @blueBorder; }
+        }
+      }
+
+      &.range {
+        a {
+          border: 1px solid #3399ff;
+          color: #3399ff;
+        }
+      }
+
+      &.inactive {
+        a { opacity: 0.5; border: none !important; }
+      }
+
+      &.marked {
+        a { border: 1px dashed @blueBorder; }
+      }
+
+      a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+
+        margin: 1px;
+        padding: 2px 5px;
+        border: 1px solid lightgray;
+      }
+    }
+  }
+}
+
+.menu > .calendar {
+  margin: 1rem;
+}

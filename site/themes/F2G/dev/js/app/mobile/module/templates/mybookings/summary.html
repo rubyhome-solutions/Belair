@@ -1,0 +1,227 @@
+<div class="mybookingsclass">
+<!--<header>
+    <div class="ui three column grid">
+        <div class="column"><a id="back_btn" class="back_page" href="javascript:;" on-click="modifySearch()"><img src="/themes/B2C/img/mobile/arrow_back.png" alt="back"></a></div>
+        <div class="column"><a class="logo" href="javascript:;"><img src="/themes/B2C/img/mobile/logo.png" alt="CheapTicket.in"></a></div>
+        <div class="column right aligned"><a id="filter" class="filter" href="javascript:;"><img src="/themes/B2C/img/mobile/filter.png" alt="Filter"></a></div>
+    </div>
+</header>-->
+<header>
+    <div class="ui three column grid">
+        <div class="column"><a id="m_btn" class="main_mnu" href="#"><img src="/themes/F2G/img/mobile/bars.png" alt="menu"></a></div>
+        <div class="column"><a class="logo" href="/b2c/flights"><img src="/themes/F2G/img/mobile/logo.png" alt="CheapTickets24.com"></a></div>
+        <div class="column header_right_menu"><a href="/b2c/flights"><div class="home_button"></div></a></div>
+    </div>
+    <div id="m_menu" class="ui left vertical sidebar menu push scale down overlay">
+        <div class="avat">
+            <div class="item">
+                <img id="avatar" class="ui avatar liitle image" src="/themes/B2C/img/guest.png">
+                <div class="description">WELCOME
+                    {{#if meta.user!=null}}
+                    <h1 id="name">{{ meta.user.name }}</h1>
+                    {{else}}
+                    <h1 id="name">Guest User</h1>
+                    {{/if}}
+                    
+                    </div>
+            </div>
+        </div>
+        {{#if meta.user }}
+            <a class="ui blue fluid button" href="/site/logout">Logout</a>
+        {{/if}}
+        <a class="item">
+            <div class="home_search"></div>
+            <p><a href="/b2c/flights">Search Flights</a></p>
+        </a>
+        <a class="item">
+            <div class="prof"></div>
+            <p><a href="/b2c/mobile/myprofile/">My Profile</a></p>
+        </a>
+        <a class="item">
+            <div class="book"></div>
+           <p><a href="/b2c/mobile/mybookings/">My Bookings</a></p>
+         </a>
+        <a class="item">
+            <div class="trav"></div>
+            <p><a href="/b2c/mobile/mytraveller/">Travellers</a></p>
+        </a>
+        
+        <span id="devider" class="item">QUICK TOOLS</span>
+        <a class="item">
+            <div class="print"></div>
+            <p><a href="/b2c/mobile/mybookings">Print / View Ticket</a></p>
+        </a>
+        <a class="item">
+            <div class="cancel"></div>
+            <p><a href="/b2c/mobile/mybookings">Cancelations</a></p>
+        </a>
+        <a class="item">
+            <div class="change"></div>
+            <p><a href="/b2c/mobile/mybookings"> Change / Reschedule</a></p>
+        </a>
+        
+    </div>
+</header>
+<div class="box reschedule {{#if mybookings.pending}} ui segment loading {{/if}} " >
+    <div class="ui positive  message" style="display: none" >
+        <i class="close icon" on-click='closemessage'></i>      
+        Email Sent
+    </div>
+    <div class="ui modal small mailticket" >
+        <i class="close icon"></i>
+        <div class="header">
+            Email Ticket
+        </div>
+        <div class="ui basic segment"> 
+            <form class="ui form {{#if this.submitting}}loading{{/if}}" action="javascript:;" on-submit="submit()"  >
+                <div class="field">
+                <input class="ui input small" type="text"  value="{{this.uemail}}"> 
+                </div>
+                <input class="ui input small" type="hidden" id="cid" value="{{this.cid}}"> 
+                <div class="actions">
+                    <button type="submit" class="ui small button fluid yellow">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+     <h3>My Bookings</h3>
+
+    <h4>Upcoming Trips</h4>
+<div class="group ">
+        {{#if mybookings.carts.length==0}}
+        <div class="ui error message">No Trips Found !!</div>
+        {{else}}
+        {{#if !mybookings.flgUpcoming}}
+        <div class="ui error message">No Trips Found !!</div>
+        {{/if}}
+        {{/if}}
+        {{#each mybookings.carts:i}}
+        {{#if upcoming=='true'}}
+        <div class="item  stackable {{formatBookingStatusClass(booking_status)}} " on-click="getdetail:{{id}}">
+            <div class="table">
+                <div>
+                    {{#if isMultiCity=='false'}}
+                    {{#if returndate==null}}
+                    <span class="direction">{{traveler[0].src[0].name}}<span class="to">&nbsp;</span>{{traveler[0].dest[0].name}}</span>  
+                    {{else}}
+                    <span class="direction">{{traveler[0].src[0].name}}<span class="back">&nbsp;</span>{{traveler[0].dest[0].name}}</span>
+                    {{/if}}
+                    {{else}}
+                    <span class="direction">
+                        {{#traveler[0].src:i}}                                         
+                        {{name}}&nbsp; | &nbsp; 
+                        {{/}}
+                        {{traveler[0].dest[traveler[0].dest.length-1].name}}
+                    </span>
+                    {{/if}}
+                    <span class="date">{{formatTravelDate(bookings[0].departure)}}</span>
+                </div>
+                <div class="action" >
+<!--                    <a href="/b2c/airCart/mybookings/{{id}}#print" target="_blank"  class="print" title="Print"></a>-->
+                    <a class="email" on-click="toggleemail:{{id}},{{email}}" title="Email" ></a>
+                    <a href="/b2c/airCart/asPDF/{{id}}" target="_blank" class="pdf" title="Download PDF" ></a>
+
+                </div>
+
+                <div>
+                    <span class="booking-id">Booking Id: {{id}} </span>
+                    <span class="booking-date">{{formatBookingDate(created)}}</span>
+                </div>
+            </div>
+            <div class="hr">&nbsp;</div>
+            <div class="table">
+                <div>
+                    <span class="traveller">
+
+
+                        {{#traveler:i }}
+                        {{#if i==(traveler.length-1)}}
+                        <a href="#"> {{ formatName(traveler[i].name) }} </a> &nbsp; 
+                        {{else}}                                        
+                        <a href="#"> {{ formatName(traveler[i].name) }} </a> &nbsp;|&nbsp; 
+                        {{/if}}
+                        {{/}}
+                         <span class="status booked">Details</span>   
+
+                    </span>
+                </div>
+                <div>
+                    <span class="price"><span class="curr">{{{curency}}}</span> {{money(totalAmount)}}</span>
+                    <span class="status {{formatBookingStatusClass(booking_status)}}">{{ formatBookingStatusMessage(booking_status)}}</span>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+        {{/each}}
+    </div>
+
+ <h4>Previous Trips</h4>
+<div class="group ">
+        {{#if mybookings.carts.length==0}}
+        <div class="ui error message">No Trips Found !!</div>
+        {{else}}
+        {{#if !mybookings.flgPrevious}}
+        <div class="ui error message">No Trips Found !!</div>
+        {{/if}}
+        {{/if}}
+        {{#each mybookings.carts:i}}
+        {{#if upcoming=='false'}}
+        <div class="item previous stackable {{formatBookingStatusClass(booking_status)}} " on-click="getdetail:{{id}}">
+            <div class="table">
+                <div>
+                    {{#if isMultiCity=='false'}}
+                    {{#if returndate==null}}
+                    <span class="direction">{{traveler[0].src[0].name}}<span class="to">&nbsp;</span>{{traveler[0].dest[0].name}}</span>  
+                    {{else}}
+                    <span class="direction">{{traveler[0].src[0].name}}<span class="back">&nbsp;</span>{{traveler[0].dest[0].name}}</span>
+                    {{/if}}
+                    {{else}}
+                    <span class="direction">
+                        {{#traveler[0].src:i}}                                         
+                        {{name}}&nbsp; | &nbsp; 
+                        {{/}}
+                        {{traveler[0].dest[traveler[0].dest.length-1].name}}
+                    </span>
+                    {{/if}}
+                    <span class="date">{{formatTravelDate(bookings[0].departure)}}</span>
+                </div>
+                <div class="action" >
+<!--                    <a href="/b2c/airCart/mybookings/{{id}}#print" target="_blank"  class="print" title="Print"></a>-->
+                    <a class="email" on-click="toggleemail:{{id}},{{email}}" title="Email" ></a>
+                    <a href="/b2c/airCart/asPDF/{{id}}" target="_blank" class="pdf" title="Download PDF" ></a>
+
+                </div>
+
+                <div>
+                    <span class="booking-id">Booking Id: {{id}} </span>
+                    <span class="booking-date">{{formatBookingDate(created)}}</span>
+                </div>
+            </div>
+            <div class="hr">&nbsp;</div>
+            <div class="table">
+                <div>
+                    <span class="traveller">
+
+
+                        {{#traveler:i }}
+                        {{#if i==(traveler.length-1)}}
+                        <a href="#"> {{ formatName(traveler[i].name) }} </a> &nbsp; 
+                        {{else}}                                        
+                        <a href="#"> {{ formatName(traveler[i].name) }} </a> &nbsp;|&nbsp; 
+                        {{/if}}
+                        {{/}}
+
+
+                    </span>
+                </div>
+                <div>
+                    <span class="price"><span class='curr'>{{{curency}}}</span> {{money(totalAmount)}}</span>
+                    <span class="status {{formatBookingStatusClass(booking_status)}}">{{ formatBookingStatusMessage(booking_status)}}</span>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+        {{/each}}
+    </div>
+</div>
+</div>

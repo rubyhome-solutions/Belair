@@ -1,0 +1,83 @@
+#app, .ui {
+  .uppercase {
+    text-transform: uppercase !important;
+  }
+
+  .pull.right {
+    float: right;
+  }
+
+  .pull.left {
+    float: left;
+  }
+
+  .fluid {
+    width: 100%;
+  }
+
+  .ui.segment.relaxed {
+    padding: 0 !important;
+  }
+
+  .ui.error.message {
+    p {
+      color: #d95c5c;
+    }
+  }
+
+  .hide { display: none; }
+
+  .ui.error.message {
+    box-shadow: none;
+    background: none;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .ui.selection.dropdown > .text {
+    margin-right: 0em;
+  }
+}
+
+#app {
+  min-width: 1280px;
+}
+.infoPop    { display:none;}
+.infoPop.show    { display:block; z-index:9999;  position:fixed; width:100%; height:100%; top:0; left:0; background:rgba(0,0,0, 0.7);}
+.modalinfo  { position:relative; min-width:300px; z-index:9999; border:5px solid #dedede; margin:auto; overflow:scroll; padding:10px; box-sizing:border-box; -webkit-box-sizing:border-box; position:absolute; left:0; right:0; top:0; bottom:0; background:#fff; width:80%; height:70%; min-height:100px;}
+p#closeinfo { position:fixed; right:12%;}
+
+.modalinfo h4   {text-align:center; font-size:25px;}
+span.currencytxt    { font-size:13px; display:inline;     margin-right: 15px; color: #f15a29;}
+#currency #curterm   {position:absolute; right: 150px; width:415px;
+    color: #777;
+    line-height: 1.4;}
+select#currency1{ margin:0 0 10px; padding:5px 10px; border:1px solid #cecece;}
+.currencyWrap   { display:table; float:right; margin:10px 0; font-family:arial; font-size:12px;     position: absolute; right: 15px; top: 15px;}
+.currencyWrap span  { line-height: 1.7; margin-right:10px; color:#f15a29;}
+.clear  { clear:both;}
+#curterm    {font-size:13px; color: #000; display:block;}
+.flights-results .flights-selection  {
+        position: fixed!important;
+    margin: 0!important;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top: 3px solid #fee252!important;
+    z-index: 9999;
+    background: #3d3d3d!important;
+}
+.flights-results .flights-selection .item .header   {color:#fff!important; font-size:16px;}
+span.airlinesName {
+    display: block;
+    font-size: 11px;
+}
+span.flightTimings  {display:block; font-weight: bold; color: #dedede; line-height: 1.5;}
+span.flightDuration{display:block; font-size:11px; color: #dedede; line-height:1.5; }
+.flights-results .flights-selection .column.book .price {color:#fff; font-size:25px;}
+@import '../components/datepicker.less';
+@import '../components/calendar.less';
+@import '../components/slider.less';
+@import '../components/spinner.less';
+@import '../components/auth.less';
+@import 'icons.less';

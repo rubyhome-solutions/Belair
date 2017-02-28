@@ -1,0 +1,12 @@
+{{#if results.booking }}
+    <booking booking="{{results.booking}}" meta="{{meta}}"></booking>
+{{else}}
+    {{#if results.flights}}
+        <search-results class="segment centered" results="{{results}}" search="{{search}}" meta="{{meta}}"></search-results>
+    {{else}}
+        {{#if meta.domestic}}
+        <search-form class="segment centered" results="{{results}}" search="{{search}}" meta="{{meta}}"></search-form>
+        {{/if}}
+    {{/if}}
+{{/if}}
+

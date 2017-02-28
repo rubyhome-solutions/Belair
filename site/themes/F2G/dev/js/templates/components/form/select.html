@@ -1,0 +1,17 @@
+{{selection}}
+<div class="ui {{#unless transparent}}selection{{/unless}} dropdown {{ class }} {{#if disabled}}disabled{{/if}} {{#if error}}error{{/if}} {{ classes(state, large, value) }}">
+    <input type="hidden" value="{{value}}">
+    {{#if search && !disabled }}
+    <input class="search" value="{{searchfor}}">
+    {{/if}}
+    {{#if large}}
+    <div class="ui placeholder">{{placeholder}}</div>
+    {{/if}}
+    <div class="default text">{{placeholder}}</div>
+    <i class="dropdown icon"></i>
+    <div class="menu transition">
+        {{#options}}
+        <div class="item {{logo}}" data-value="{{id}}">{{{text}}}</div>
+        {{/options}}
+    </div>
+</div>

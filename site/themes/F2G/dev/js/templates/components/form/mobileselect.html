@@ -1,0 +1,21 @@
+
+
+
+{{#if options.length }}
+    <div class="field" align="center">
+       
+<!--        <a class="ui tiny circular button" href="javascript:;" on-click="titleselect()">Title</a>-->
+        <div class="ui dropdown " on-click="dropdownselect()">
+            <div class="default text tt">{{placeholder}}</div>
+            <i class="dropdown icon"></i>
+
+        </div>
+        <div class="hide">
+            <select class="popup" value="{{value}}"  >
+                {{#options}}
+                <option value="{{id}}">{{name}}</option>
+                 {{/options}}
+            </select>
+        </div>
+    </div>
+    {{/if}}

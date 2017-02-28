@@ -1,0 +1,25 @@
+<!--<div class="panel">
+    <leftpanel user="{{user}}" ></leftpanel>
+</div>-->
+<layout meta="{{meta}}" mybookings="{{mybookings}}">
+<!--<div class="content">
+    <div class="table">
+        <div>-->
+            {{#if mybookings.amend }} 
+            <amendment class="segment centered " mybookings="{{mybookings}}" meta="{{meta}}"></amendment>
+            {{else}}
+            {{#if mybookings.summary }}  
+            <summary class="segment centered" mybookings="{{mybookings}}" meta="{{meta}}"></summary>
+            {{else}}                
+            <details class="segment centered" mybookings="{{mybookings}}" meta="{{meta}}"></details>
+            {{/if}}  
+            {{/if}}
+<!--        </div>
+    </div>
+</div>-->
+      {{#partial panel}}
+        
+            {{> base-panel }}
+        
+    {{/partial}}
+</layout>

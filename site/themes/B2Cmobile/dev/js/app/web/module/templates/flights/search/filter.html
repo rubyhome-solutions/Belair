@@ -1,0 +1,124 @@
+<div class="results-filter" style="width:229px">
+    
+    
+       <!-- <div class="ui basic segment with-buttons">
+    {{#if !meta.user }}
+    <button type="button" class="ui blue fluid button" on-click="signin()">Sign In</button><br>
+    {{/if}}
+
+</div>-->
+      
+    <div class="ui basic segment with-buttons">
+        <button type="button" class="ui blue fluid button" on-click="modifySearch()">Modify Search{{ meta.display_currency}}</button>
+    </div>
+
+    <div class="ui styled fluid accordion">
+        <div class="title {{#if pending }}disabled{{else}}active{{/if}}">
+            <i class="dropdown icon"></i>
+            Price
+        </div>
+        <div class="content {{#if pending }}disabled{{else}}active{{/if}}">
+            <p>
+                <input type="hidden" class="price slider">
+            </p>
+            <p>
+                <label><input type="checkbox" checked="{{filter.filtered.refundable}}"> Show only refundable fares</label>
+            </p>
+        </div>
+        <div class="title {{#if pending }}disabled{{else}}active{{/if}}">
+            <i class="dropdown icon"></i>
+            Stops
+        </div>
+        <div class="content {{#if pending }}disabled{{else}}active{{/if}}">
+            <p>
+                {{#each filter.stops}}
+                <label>
+                    <input type="checkbox" name="{{filter.filtered.stops}}" value="{{.}}">&nbsp;&nbsp;&nbsp;{{#if 0 == .}}Non-stop{{else}}{{.}} stop(s){{/if}}
+                </label><br>
+                {{/each}}
+            </p>
+        </div>
+        <div class="title {{#if pending }}disabled{{else}}active{{/if}}">
+            <i class="dropdown icon"></i>
+            Airlines {{#unless !results.filter }}<div class="small pull right"><a on-click="carriers(event, true)">All</a> | <a on-click="carriers(event, false)">None</a></div>{{/unless}}
+        </div>
+        <div class="content {{#if pending }}disabled{{else}}active{{/if}}">
+            <p>
+                {{#each filter.carriers}}
+                <label>
+                    <input type="checkbox" name="{{filter.filtered.carriers}}" value="{{code}}">&nbsp;&nbsp;&nbsp;{{name}}
+                </label><br>
+                {{/each}}
+            </p>
+        </div>
+
+        {{#if 2 == search.tripType }}
+            <div class="title {{#if pending }}disabled{{else}}active{{/if}}">
+                <i class="dropdown icon"></i>
+                Onward Departure Time
+            </div>
+            <div class="content {{#if pending }}disabled{{else}}active{{/if}}">
+                <p>
+                    <input type="hidden" class="departure slider">
+                </p>
+            </div>
+            <div class="title {{#if pending }}disabled{{else}}active{{/if}}">
+                <i class="dropdown icon"></i>
+                Onward Arrive Time
+            </div>
+            <div class="content {{#if pending }}disabled{{else}}active{{/if}}">
+                <p>
+                    <input type="hidden" class="arrive slider">
+                </p>
+            </div>
+            <div class="title {{#if pending }}disabled{{else}}active{{/if}}">
+                <i class="dropdown icon"></i>
+                Return Departure Time
+            </div>
+            <div class="content {{#if pending }}disabled{{else}}active{{/if}}">
+                <p>
+                    <input type="hidden" class="backward-departure slider">
+                </p>
+            </div>
+            <div class="title {{#if pending }}disabled{{else}}active{{/if}}">
+                <i class="dropdown icon"></i>
+                Return Arrive Time
+            </div>
+            <div class="content {{#if pending }}disabled{{else}}active{{/if}}">
+                <p>
+                    <input type="hidden" class="backward-arrive slider">
+                </p>
+            </div>
+        {{else}}
+        <div class="title {{#if pending }}disabled{{else}}active{{/if}}">
+            <i class="dropdown icon"></i>
+            Departure Time
+        </div>
+            <div class="content {{#if pending }}disabled{{else}}active{{/if}}">
+                <p>
+                    <input type="hidden" class="departure slider">
+                </p>
+            </div>
+            <div class="title {{#if pending }}disabled{{else}}active{{/if}}">
+                <i class="dropdown icon"></i>
+                Arrive Time
+            </div>
+            <div class="content {{#if pending }}disabled{{else}}active{{/if}}">
+                <p>
+                    <input type="hidden" class="arrive slider">
+                </p>
+            </div>
+        {{/if}}
+
+        <div class="title {{#if pending }}disabled{{else}}active{{/if}}">
+            <i class="dropdown icon"></i>
+            Layover Time
+        </div>
+        <div class="content {{#if pending }}disabled{{else}}active{{/if}}">
+            <p>
+                <input type="hidden" class="layover slider">
+            </p>
+        </div>
+
+    </div>
+</div>

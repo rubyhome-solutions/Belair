@@ -1,0 +1,122 @@
+{{#flight}}
+<div class="mult_info_ban fff {{#if selected == .}}selected{{/if}}">
+    <div class="ui four column grid">
+	       <div class="flight_info">
+	        <div class="flight_info_table">
+	            <div class="flight_info_row">
+                        <div class="flight_info_cell flight_logo_cell">
+                            <img src="{{ carriers.0.logo }}" alt="india">
+                        </div>
+                    </div>
+                    
+                    <div class="flight_info_row">
+                        <div class="flight_info_cell flight flight_name_cell ">
+                             <span>
+                            {{ carriers.0.name }} 
+                            <br>
+                            {{ first(segments.0).flight }} 
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flights_times"> 
+                    {{#each flight.segments}}
+                        <div class="flight_info_time">
+                            <div class="flight_info_row">
+                                <div class="flight_info_cell">
+                                    <div class="flight_dep_info">{{ first(.).depart.format('HH:mm') }}</div>
+                                    <div class="mult_dep_date">{{ duration.format(first(.).time) }}</div>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="flight_info_time">
+                            <div class="flight_info_row">
+                                <div class="flight_info_cell">
+                                    <div class="flight_dep_info">{{ last(.).arrive.format('HH:mm') }}</div>
+                                    <div class="mult_dep_date">{{# { n: stops(.) } }}{{#if 0 == n }}non-stop{{else}} {{ n }} stop(s){{/if}}{{/}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                 </div>            
+	<div class="flight_info_table">
+                <div class="flight_info_row">
+                    <div class="flight_info_cell flight_fare_info">
+                        <span style="white-space: nowrap">
+                        {{#if onward}}
+                            {{# { save: discount([onward, flight]) } }}
+                                {{#if save}}
+                                    {{#if save > 100}}
+                                    <div class="discount">{{{ $(price, meta.display_currency) }}}</div>
+                                    {{/if}}
+                                    {{{ $(price - save, meta.display_currency) }}}
+                                {{else}}
+                                    {{{ $(price, meta.display_currency) }}}
+                                {{/if}}
+                            {{/}}
+                   {{else}}
+                            {{#if backward && !selected}}
+                                {{# { save: discount([flight, backward]) } }}
+                                    {{#if save}}
+                                        {{#if save > 100}}
+                                        <div class="discount">{{{ $(price, meta.display_currency) }}}</div>
+                                        {{/if}}
+                                        {{{ $(price - save, meta.display_currency) }}}
+                                    {{else}}
+                                        {{{ $(price, meta.display_currency) }}}
+                                    {{/if}}
+                                {{/}}
+                            {{else}}
+                                {{{ $(price, meta.display_currency) }}}
+                            {{/if}}
+                        {{/if}}
+                        </span>
+                    </div>
+                </div>
+            
+            <div class="flight_info_row">
+                <div class="flight_info_row">
+				    <div class="flight_info_cell" style="text-align: right;">
+				    {{#if !selected}}
+				    	<button class="ui button orange mobile_button" on-click="select()">BOOK</button>
+				    {{/if}}
+					</div>
+				</div>
+            </div>
+        </div>
+                    </div>
+        <div class="flight_details">
+        	<div class="bottom_div">
+        		<div class="left_div">
+        			<div class="my_div_items">
+        				{{ duration.format && duration.format(flight.time) }}
+        			</div>
+        			<div class="my_div_items">
+	        			{{#if 0 == stops(flight.segments.0)}}
+	        				NON-STOP
+	        			{{/if}}
+	        			{{#if stops(flight.segments.0) > 0}}
+	        				{{stops(flight.segments.0) }} stop(s) 
+	        			{{/if}}
+	        			{{#if first(.).techStop!=null}}
+	                    <span class="techstop" title="Technical Stop">+ Technical Stop(s)</span>
+	                    {{/if}}
+        			</div>
+        		</div>
+        		<div class="right_div">
+        			<a href="javascript:" on-click="toggleMobile()" class="style_details">
+        				Details
+        			</a>
+        		</div>
+        	</div>
+        </div>
+        {{#if toggle_flight_details}}
+    	<div class="toggle_flight_details">
+    		<div class="itenary_div">
+    			<itinerary small="{{small}}" class="compact dark" flight="{{flight}}"></itinerary>
+    		</div>
+    	</div>
+    	{{/if}}
+    </div>
+</div>
+{{/flight}}

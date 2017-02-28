@@ -1,0 +1,16 @@
+<div class="right">
+    <h2>My Travellers</h2>
+    {{#if mytraveller.travellers.length==0}}
+         <div class="item">
+            No Traveller Found.
+         </div>
+    {{/if}}
+    {{#each mytraveller.travellers}}
+    <div on-click="test(id)" class="item {{#if mytraveller.currentTraveller.id == id }}  active {{/if}}" id="{{id}}">
+         <img src="{{baseUrl}}/themes/B2C/img/guest.png" alt=""/>
+        {{first_name}} {{last_name}}
+    </div>
+     {{/each}}    
+
+</div>
+

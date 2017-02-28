@@ -1,0 +1,61 @@
+.clearfix () {
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    line-height: 1;
+  }
+
+}
+
+.corner (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.box-sizing () {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.box-shadow(@style) {
+  -webkit-box-shadow: @style;
+  -moz-box-shadow:    @style;
+  box-shadow:         @style;
+}
+.text-shadow(@style) {
+  -webkit-text-shadow: @style;
+  -moz-text-shadow:    @style;
+  text-shadow:         @style;
+}
+
+.easy(@time : 1000ms) {
+  -webkit-transition: all @time ease-in-out;
+  -moz-transition: all @time ease-in-out;
+  -o-transition: all @time ease-in-out;
+  transition: all @time ease-in-out;
+}
+
+.rotate(@rotate: 0deg) {
+  -ms-transform: rotate(@rotate);
+  -moz-transform: rotate(@rotate);
+  -webkit-transform: rotate(@rotate);
+  transform: rotate(@rotate);
+}
+
+
+
+.user-select(@type: none) {
+  -webkit-user-select: @type;
+  -khtml-user-select: @type;
+  -moz-user-select: @type;
+  -ms-user-select: @type;
+  user-select: @type;
+}

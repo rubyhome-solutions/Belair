@@ -1,0 +1,170 @@
+.ui.segment.flight-itinerary {
+  width: 100%;
+  box-shadow: none !important;
+
+  &.relaxed {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  div.title {
+    font-size: 13px;
+    color: #63778c;
+    border-bottom: 1px solid #d9dde2;
+    padding: 5px;
+    margin-bottom: 5px;
+
+    .city {
+      font-size: 18px;
+      font-weight: 700;
+      color: #202629;
+      margin-right: 10px;
+    }
+
+    .time {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: bold;
+      color: #fff;
+      background: #ff7b33;
+      padding: 2px 5px;
+      margin: 0 10px;
+      position: relative;
+      top: -1px;
+      border-radius: 3px;
+    }
+  }
+
+  table.segments {
+    width: 100%;
+    border-bottom: 3px solid #fee252;
+
+    .airport {
+      font-size: 11px;
+      color: #63778c;
+    }
+
+    td {
+      padding: 10px;
+
+      &.airline {
+        .logos {
+          margin-top: 10px;
+        }
+
+        .name, .multi {
+          font-size: 14px;
+          color: #9b9393;
+
+          .flight-no {
+            font-size: 12px;
+          }
+        }
+      }
+
+      &.from, &.to {
+        width: 35%;
+        font-size: 14px;
+        color: #2c3e50;
+      }
+
+      &.flight {
+        width: 80px;
+        background: url(~img/icons/flights.png) no-repeat 50% 50%;
+        opacity: .4;
+
+        padding: 0px;
+        white-space: nowrap;
+        text-align: center;
+
+        .duration {
+          opacity: 1;
+          font-size: 12px;
+          color: #63778c;
+          margin-top: 43px;
+        }
+      }
+
+      &.time-n-cabin {
+        vertical-align: top;
+
+        div {
+          font-size: 12px;
+          line-height: 1.2;
+          color: #3d4d5d;
+          border-left: 1px solid #ddd;
+          padding: 5px 10px;
+        }
+
+      }
+    }
+
+    tr.divider td {
+      padding: 0;
+      span {
+        display: block;
+        height: 1px;
+        border-bottom: 1px dotted #8c8c8c;
+        &.layover {
+          height: auto;
+          font-size: 11px;
+          color: #63778c;
+          border: 0;
+          margin: 0 10px;
+          white-space: nowrap;
+          position: relative;
+        }
+      }
+    }
+  }
+
+  &.compact {
+    &.small {
+      &.from, &.to {
+        font-size: 11px;
+        color: #2c3e50;
+      }
+
+      table.segments td { width: 33%; }
+    }
+
+    div.title {
+      .city {
+        font-size: 15px;
+        font-weight: bold;
+        color: #0674a9;
+        margin-right: 10px;
+      }
+
+      .time {
+        font-size: 12px;
+      }
+    }
+
+    table.segments {
+      border-bottom: none;
+
+      .airport {
+        font-size: 11px;
+        color: #63778c
+      }
+
+      td {
+        &.airline {
+          .name, .multi {
+            font-size: 11px;
+
+            .flight-no {
+              font-size: 11px;
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+  &.dark {
+    background: #f7f7f7;
+  }
+}

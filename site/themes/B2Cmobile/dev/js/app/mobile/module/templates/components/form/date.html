@@ -1,0 +1,23 @@
+[[#if input]]
+<div class="ui input {{class}} {{#if error}}error{{/if}}">
+    {{#if large}}
+    <div class="ui placeholder">{{placeholder}}</div>
+    {{/if}}
+    <input
+            type="{{type}}"
+            name="{{name}}"
+            value="{{value.format('YYYY-MM-DD')}}"
+            readonly="readonly"
+            placeholder="{{placeholder}}"
+            >
+</div>
+[[else]]
+<div class="{{class}} date_info {{#if disabled}}disabled{{/if}}" on-click="show()">
+    <input type="hidden">
+    {{label}}<br><br>
+    {{#if value }}
+    <span>{{ value.format('D') }}</span> {{ value.format('MMM') }} '{{ value.format('YY') }} | {{ value.format('ddd') }}
+    {{/if}}
+</div>
+<img src="/themes/B2C/img/mobile/calendar.png" alt="calend">
+[[/if]]

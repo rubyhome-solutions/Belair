@@ -1,0 +1,96 @@
+{{#if selected}}
+<div class="ui segment equal height grid flights-selection modify_search_show">
+    <div class="twelve wide column">
+        <div class="ui relaxed horizontal list">
+            {{#each selected:i}}
+            {{#if segments}}
+
+            <div class="item">
+                <img class="ui top aligned avatar image" src="{{first(segments.0).carrier.logo}}">
+                <div class="content">
+
+                    <div class="header">{{ itinerary }}</div>
+                    {{ first(segments.0).carrier.name }}<br>
+                    {{ first(segments.0).flight }}<br>
+                    {{ first(segments.0).depart.format('HH:mm') }} - {{ last(segments.0).arrive.format('HH:mm') }}<br>
+                    {{ duration.format(time) }} | {{#if stops(segments.0) }}{{ stops(segments.0) }} stop(s){{else}}non-stop{{/if}}<br>
+                    <span class="date">{{ first(segments.0).depart.format('D MMM, YYYY') }}</span>
+                </div>
+            </div>
+            {{/if}}
+            {{/each}}
+        </div>
+    </div>
+
+    <div class="four wide column center aligned book">
+        <div class="price">
+            {{#if selected}}
+            {{{ money(price(selected), meta.display_currency) }}}
+            {{/if}}
+        </div>
+        <button type="button" class="ui button large orange" {{#unless canbook(selected, flights) }}disabled{{/unless}} on-click="book()">BOOK</button>
+    </div>
+
+</div>
+{{/if}}
+
+<div class="ui divided relaxed horizontal list flights-tabs">
+    {{#each flights:i}}
+        {{#if this.0}}
+        <div intro="fade" class="item {{#if active == i}}active{{/if}}" style="cursor: pointer;" on-click="set('active', i)">
+            <div class="content">
+                {{# this.0 }}
+                <div class="header">{{ itinerary }}</div>
+                {{ first(segments.0).depart.format('ddd, D MMM') }}
+                {{/}}
+            </div>
+        </div>
+        {{/if}}
+    {{/each}}
+
+    {{#unless pending}}
+    <div intro="fade" class="item {{#if active == -1}}active{{/if}}" style="cursor: pointer;" on-click="set('active', -1)">
+        <div class="content">
+            <div class="header">VIEW ALL</div>
+            FLIGHTS
+        </div>
+    </div>
+    {{/unless}}
+</div>
+
+<table class="flights-grid small {{#if -1 == active}}summary{{/if}}">
+    <tbody>
+    <tr>
+        {{#each flights:i}}
+            {{#if -1 == active}}
+                {{#if this.0}}
+                <td valign="top" style="width: {{ percent(flights) }}%;">
+                    <flights
+                            caption="1"
+                            selectFn="{{onSelect}}"
+                            summary="1"
+                            class="tiny"
+                            flights="{{.}}"
+                            search="{{search}}"
+                            selected="{{selected[i]}}"
+                            pending="{{pending}}"
+                            ></flights>
+                </td>
+                {{/if}}
+            {{else}}
+                {{#if i == active}}
+                    <td valign="top" style="width: 100%;">
+                        <flights
+                                selectFn="{{onSelect}}"
+                                flights="{{.}}"
+                                search="{{search}}"
+                                selected="{{selected[i]}}"
+                                pending="{{pending}}"
+                                ></flights>
+                    </td>
+                {{/if}}
+            {{/if}}
+        {{/each}}
+    </tr>
+    </tbody>
+</table>

@@ -1,0 +1,60 @@
+<h1>People you book travel for</h1>
+<button on-click='add' class="middle blue add-new">Add New Traveller</button>
+<div class="{{#if mytraveller.pending}} ui segment loading {{/if}} " style="min-height:50px">
+
+
+{{#if !mytraveller.pending}}    
+{{#if mytraveller.currentTraveller}}
+<div class="user-info">
+    <img src="{{mytraveller.currentTraveller.baseUrl}}/themes/B2C/img/guest.png" alt=""/>
+
+    <div class="name">{{formatTitle(mytraveller.currentTraveller.title)}} {{mytraveller.currentTraveller.first_name}} {{mytraveller.currentTraveller.last_name}}</div>
+    <!--div class="customer-id">Customer Id: {{mytraveller.currentTraveller.id}}</div-->
+    <div class="phone">Mobile No: {{mytraveller.currentTraveller.mobile}}</div>
+    <div class="action">
+        <button on-click='edit' class="small gray">Edit</button>
+        <button on-click='delete' class="small gray" style="background-color:red;color:white">Delete</button>
+<!--        <button on-click='delete' class="small gray">Delete</button>-->
+    </div>
+</div>
+<div class="details">
+    <h2>Contact Details</h2>
+    <table>
+        <tr>
+            <td>Email Address:</td>
+            <td>{{mytraveller.currentTraveller.email}}</td>
+        </tr>
+        <tr>
+            <td>Mobile Number:</td>
+            <td>{{mytraveller.currentTraveller.mobile}}</td>
+        </tr>
+    </table>
+</div>
+<div class="details">
+    <h2>Personal Details</h2>
+    <table>
+        <tr>
+            <td>Date of Birth:</td>
+            <td>{{formatBirthDate(mytraveller.currentTraveller.birthdate)}}</td>
+        </tr>
+        <tr>
+            <td>Passport No:</td>
+            <td>{{mytraveller.currentTraveller.passport_number}}</td>
+        </tr>
+        <tr>
+            <td>Passport Country:</td>
+            <td>{{formatCountry(mytraveller.currentTraveller.passport_country_id)}}</td>
+        </tr>
+        <tr>
+            <td>Issued Place:</td>
+            <td>{{mytraveller.currentTraveller.passport_place}}</td>
+        </tr>
+    </table>
+</div>
+{{else}}
+<div class="details">
+    <h2>No Traveller Added</h2>    
+</div>
+{{/if}}
+{{/if}}
+</div>

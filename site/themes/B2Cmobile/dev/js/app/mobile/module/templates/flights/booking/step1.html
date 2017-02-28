@@ -1,0 +1,172 @@
+
+
+{{# { step: booking.steps.1 } }}
+{{#if step.active}}
+
+<section>
+    
+    
+    <form action="javascript:;" class="ui form confermation {{#if step.errors}}error{{/if}} {{#if step.submitting}}loading{{/if}}" on-submit="submit()" novalidate>
+        <div class="title_stripe">Review Your Itinerary</div>
+        {{#each booking.flights}}
+        <div class="direction">
+            <div class="fromto">{{ first(segments.0).from.city }} &#8594 {{ last(segments.0).to.city }} ({{#if 0 == stops(segments.0) }}Non-stop{{else}}{{ stops(segments.0) }} stop(s){{/if}})</div>
+            <div class="time"><i class="history icon"></i> {{ duration.format(time) }}</div>
+        </div>
+        
+        {{#each segments}}
+        <div class="ItineraryReview">
+            <div class="mult_info_ban fff">
+                <div class="ui four column grid">
+                    <div class="column flightDetail">
+                        <img class="country" src="{{ carriers.0.logo }}">
+                        <div class="flight">{{ carriers.0.name }} <br>{{ first(.).flight }}</div>
+                    </div>
+                    <div class="column departTime">
+                        <div class="mult_dep_time">{{ first(.).from.airportCode }} {{ first(.).depart.format('HH:mm') }}</div>
+                        <div class="mult_dep_date">{{ first(.).depart.format('MMM D') }}<br> {{ first(.).depart.format('YYYY') }}, {{ first(.).depart.format('ddd') }}</div>
+                    </div>
+                    <div class="column">
+                        <div class="via_bom">
+                            {{# { airports: via(segments.0) } }}
+                                {{#if airports}}Via{{/if}} <br>
+
+                                {{#each airports:i}}
+                                {{#if 0 !== i}},{{/if}}
+                                <span title="{{.airport}}, {{.city}}">{{.airportCode}}</span>
+                                {{/each}}
+
+                            {{/}}
+                        </div>
+                    </div>
+                    <div class="column arrivalTime">
+                        <div class="mult_dep_time">{{ last(.).to.airportCode }} {{ last(.).arrive.format('HH:mm') }}</div>
+                        <div class="mult_dep_date">{{ first(.).arrive.format('MMM D') }}<br>{{ first(.).arrive.format('YYYY') }}, {{ first(.).arrive.format('ddd') }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        {{/each}}
+<div class="price_det">Total Price: {{{ money(booking.price, booking.currency) }}}</div>
+       
+        <div class="contact_det">
+            Contact Details
+        </div>
+        <div class="ui basic segment mailid" style="text-align: left;">
+
+            <div class="right aligned column">
+                <label style="font-size:14px!important;">Already have an account?</label> <button type="button" class="ui button small blue" on-click="signin()">Sign in</button>
+            </div>
+            <br><br>
+            <div class="ui form">
+                <div class="field ">
+                    
+                    <ui-email class="full" name="email" placeholder="E-mail" value="{{booking.user.email}}" error="{{step.errors.email}}"></ui-email>
+                    <label><p>(Tickets will be sent to this email id)</p></label>
+                </div>
+            </div>
+            <br>
+            <div class="ui form">
+                <div class="field mobile">
+                    
+                    <ui-input class="code input" type="tel" name="mobile" placeholder="Code" error="{{step.errors.mobile}}" value="{{booking.user.country}}"></ui-input>
+                    <ui-input class="mNumber" type="tel" name="mobile" placeholder="Mobile" value="{{booking.user.mobile}}" error="{{step.errors.mobile}}"></ui-input>
+                    <label><p>(Your PNR will be sent to this number)</p></label>
+                </div>
+            </div>
+            <br>
+            
+
+            {{#if step.errors }}
+            <div class="ui form error">
+                <div class="ui error message">
+                    {{#each step.errors:i}}
+                    {{#if .}}<p>{{.}}</p>{{/if}}
+                    {{/each}}
+                </div>
+            </div>
+            {{/if}}
+
+            <div class="column">
+                {{#if booking.clientSourceId==1}}
+                <div class="two fields">
+                    <div class="field">
+                        
+                        <div class="item promoCode">
+                            {{#if promovalue!=null}}
+                            <ui-input
+                                name="promocode"
+                                value="{{promocode}}"
+                                class="fluid "                    
+                                placeholder="Enter Promo Code"
+                                disabled="disabled"
+                                >
+                            </ui-input> 
+                            {{else}}
+                             <ui-input
+                                name="promocode"
+                                value="{{promocode}}"
+                                class="fluid "                    
+                                placeholder="Enter Promo Code"
+                               
+                                >
+                            </ui-input> 
+                            {{/if}}
+                        </div>
+                        
+                    </div>
+                    <div class="field">
+                         {{#if promovalue!=null}}
+                         <div on-click="removePromoCode()" >Applied<i class="red remove circle outline icon" alt="Remove Promo Code" title="Remove Promo Code" ></i></div>
+                         {{else}}
+                            <div  class="ui basic button small"  on-click="applyPromoCode()">APPLY</div>
+                            
+                         {{/if}}
+                         
+                    </div>
+                    {{#if promoerror!=null}}
+                    <div style="clear:both;">
+                    <div class="ui small field negative message">
+                        <i class="close icon" on-click="removeErrorMsg()"></i>
+                       {{promoerror}}
+                    </div></div>
+                    {{/if}}
+                </div>
+                {{/if}}
+               
+            </div>
+            
+
+            
+        </div>
+
+        <div class="contact_det">Price Details</div>
+        <div class="price_area">
+            <div class="ui two column grid">
+                <div class="column">
+                    <div class="base_price">Base Fare</div>
+                    <div class="taxes_price">Taxes & Fee</div>
+                    <div class="total_price">Price</div>
+                </div>
+                <div class="column">
+                    <div class="base_amount">{{{ money(booking.taxes.basic_fare, booking.currency) }}}</div>
+                    <div class="taxes_amount">{{{ money(booking.taxes.yq + booking.taxes.jn + booking.taxes.other, booking.currency) }}}</div>
+<!--                    <div class="total_amount">{{{ money(booking.price, booking.currency) }}}</div>-->
+
+                {{#if promovalue!=null}}
+                  <span class="total_amount">{{{ money(booking.price, booking.currency) }}} - {{{ money(promovalue, booking.currency) }}} = {{{ money(booking.price-promovalue, booking.currency) }}}</span>
+                 {{else}} 
+                <span class="total_amount">{{{ money(booking.price, booking.currency) }}}</span>
+                {{/if}}
+                
+                
+                
+                 </div>
+            </div>
+            <button id="Totop" type="submit" class="fluid huge ui blue button">CONTINUE</button>
+        </div>
+    </form>
+</section>
+{{/if}}
+{{/}}

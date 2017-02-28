@@ -1,0 +1,133 @@
+@import 'itinerary.less';
+@import '../../components/card.less';
+
+#booking {
+  @import 'booking/step1.less';
+  @import 'booking/step2.less';
+  @import 'booking/step3.less';
+  @import 'booking/step4.less';
+
+  margin: 0 auto;
+
+  max-width: 996px;
+  min-width: 728px;
+  min-height: 400px;
+
+  h1 {
+    font-family: 'gotham_bookregular', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #202629;
+    text-align: center;
+    margin: 5px 0 20px !important;
+  }
+@media only screen and (min-width: 862px) {
+    .wizard.button {
+    width: 170px;
+  }
+}
+@media only screen and (max-width: 861px) {
+    .wizard.button {
+    width: 150px;
+  }
+}
+  
+
+  > .segment {
+    > .header, > .segment {
+      margin: 0;
+      margin-bottom: 1px;
+      box-shadow: none;
+    }
+
+    > .segment {
+      border: 1px solid #d5dbe0;
+    }
+  }
+  .amtNotice{color: #f15a29;}
+  .step.header {
+    background: #7f7f7f;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    padding: 11px 10px 11px 55px;
+    position: relative;
+
+
+    &.active {
+      background-color: #201f60;
+    }
+
+    &.completed {
+      background-color: #15c585
+    }
+
+    &.step1 {
+      background-image: url(~img/icons/flights-w.png);
+    }
+
+    &.step2 {
+      background-image: url(~img/icons/persons.png);
+    }
+
+    &.step3 {
+      background-image: url(~img/icons/card.png);
+    }
+  }
+
+
+  .required {
+    color: #ff6565;
+  }
+
+  .label {
+    font-size: 15px;
+    font-weight: bold;
+    color: #202629;
+    margin-bottom: 10px;
+  }
+
+
+  .price {
+    font-size: 12px;
+    color: #bcbdbe;
+
+    .amount {
+      font-size: 30px;
+      font-weight: bold;
+      color: #202629;
+      margin-right: 30px;
+    }
+  }
+
+  .ui.button.gray.back {
+    background: #f7f7f7 url(~img/icons/back.png) no-repeat 10px 50%;
+    padding-left: 30px;
+
+    position: absolute;
+    top: 22px;
+    left: 15px;
+
+    color: #606060;
+    border: 1px solid #f7f7f7;
+  }
+  .curterm {
+    position: absolute;
+    top: 32px;
+    width: 300px;
+    right: 0;
+    text-align: right;
+    color: #ff0000;
+    }
+  .ui.secondary.pointing.menu > .item.active {
+    color: #0674a9;
+    font-weight: bold;
+    border-color: #0674a9;
+
+  }
+
+
+}
+.AirticketIndia #booking .step.header.completed {background-color: #cf2c23;}

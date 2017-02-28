@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://radixx.com/WSRadixx/WSRadixx/RadixxSecurity" xmlns:s1="http://www.radixx.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://radixx.com/WSRadixx/WSRadixx/RadixxSecurity" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://radixx.com/WSRadixx/WSRadixx/RadixxSecurity">
+      <s:import namespace="http://www.radixx.com" />
+      <s:element name="GetSecurityGUID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogonID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSecurityGUIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSecurityGUIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateGUID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sGUID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateGUIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateGUIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateSecurityToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSecurityToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateSecurityTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidateSecurityTokenResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientIPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HistoricUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticateUserResult" type="s1:AuthenticationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="AuthenticationResponse" nillable="true" type="s1:AuthenticationResponse" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.radixx.com">
+      <s:complexType name="AuthenticationResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="s1:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="DaysUntilPasswordChange" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Exceptions" type="s1:ArrayOfException" />
+          <s:element minOccurs="1" maxOccurs="1" name="PasswordStrength" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResultCode" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceDatabasePackageVersion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceVersion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExtensionDataObject" />
+      <s:complexType name="ArrayOfException">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Exception" nillable="true" type="s1:Exception" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Exception">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ExceptionCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExceptionDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExceptionSource" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExceptionLevel" type="s1:ExceptionLevels" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ExceptionLevels">
+        <s:restriction base="s:string">
+          <s:enumeration value="Success" />
+          <s:enumeration value="Warning" />
+          <s:enumeration value="Critical" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetSecurityGUIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSecurityGUID" />
+  </wsdl:message>
+  <wsdl:message name="GetSecurityGUIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSecurityGUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateGUIDSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateGUID" />
+  </wsdl:message>
+  <wsdl:message name="ValidateGUIDSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateGUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSecurityTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateSecurityToken" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSecurityTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateSecurityTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthenticateUser" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSecurityGUIDHttpGetIn">
+    <wsdl:part name="LogonID" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSecurityGUIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateGUIDHttpGetIn">
+    <wsdl:part name="sGUID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateGUIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSecurityTokenHttpGetIn">
+    <wsdl:part name="sSecurityToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSecurityTokenHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ClientIPAddress" type="s:string" />
+    <wsdl:part name="HistoricUserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserHttpGetOut">
+    <wsdl:part name="Body" element="tns:AuthenticationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSecurityGUIDHttpPostIn">
+    <wsdl:part name="LogonID" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSecurityGUIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateGUIDHttpPostIn">
+    <wsdl:part name="sGUID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateGUIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSecurityTokenHttpPostIn">
+    <wsdl:part name="sSecurityToken" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSecurityTokenHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="ClientIPAddress" type="s:string" />
+    <wsdl:part name="HistoricUserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserHttpPostOut">
+    <wsdl:part name="Body" element="tns:AuthenticationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RadixxSecuritySoap">
+    <wsdl:operation name="GetSecurityGUID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a GUID to use for a all transactions.</wsdl:documentation>
+      <wsdl:input message="tns:GetSecurityGUIDSoapIn" />
+      <wsdl:output message="tns:GetSecurityGUIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGUID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validates the existing GUID.</wsdl:documentation>
+      <wsdl:input message="tns:ValidateGUIDSoapIn" />
+      <wsdl:output message="tns:ValidateGUIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSecurityToken">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validates the existing Security Token.</wsdl:documentation>
+      <wsdl:input message="tns:ValidateSecurityTokenSoapIn" />
+      <wsdl:output message="tns:ValidateSecurityTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Authenticates the system user.</wsdl:documentation>
+      <wsdl:input message="tns:AuthenticateUserSoapIn" />
+      <wsdl:output message="tns:AuthenticateUserSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RadixxSecurityHttpGet">
+    <wsdl:operation name="GetSecurityGUID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a GUID to use for a all transactions.</wsdl:documentation>
+      <wsdl:input message="tns:GetSecurityGUIDHttpGetIn" />
+      <wsdl:output message="tns:GetSecurityGUIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGUID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validates the existing GUID.</wsdl:documentation>
+      <wsdl:input message="tns:ValidateGUIDHttpGetIn" />
+      <wsdl:output message="tns:ValidateGUIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSecurityToken">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validates the existing Security Token.</wsdl:documentation>
+      <wsdl:input message="tns:ValidateSecurityTokenHttpGetIn" />
+      <wsdl:output message="tns:ValidateSecurityTokenHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Authenticates the system user.</wsdl:documentation>
+      <wsdl:input message="tns:AuthenticateUserHttpGetIn" />
+      <wsdl:output message="tns:AuthenticateUserHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RadixxSecurityHttpPost">
+    <wsdl:operation name="GetSecurityGUID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get a GUID to use for a all transactions.</wsdl:documentation>
+      <wsdl:input message="tns:GetSecurityGUIDHttpPostIn" />
+      <wsdl:output message="tns:GetSecurityGUIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGUID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validates the existing GUID.</wsdl:documentation>
+      <wsdl:input message="tns:ValidateGUIDHttpPostIn" />
+      <wsdl:output message="tns:ValidateGUIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSecurityToken">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Validates the existing Security Token.</wsdl:documentation>
+      <wsdl:input message="tns:ValidateSecurityTokenHttpPostIn" />
+      <wsdl:output message="tns:ValidateSecurityTokenHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Authenticates the system user.</wsdl:documentation>
+      <wsdl:input message="tns:AuthenticateUserHttpPostIn" />
+      <wsdl:output message="tns:AuthenticateUserHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RadixxSecuritySoap" type="tns:RadixxSecuritySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSecurityGUID">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/WSRadixx/RadixxSecurity/GetSecurityGUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGUID">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/WSRadixx/RadixxSecurity/ValidateGUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSecurityToken">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/WSRadixx/RadixxSecurity/ValidateSecurityToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/WSRadixx/RadixxSecurity/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxSecuritySoap12" type="tns:RadixxSecuritySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSecurityGUID">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/WSRadixx/RadixxSecurity/GetSecurityGUID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGUID">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/WSRadixx/RadixxSecurity/ValidateGUID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSecurityToken">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/WSRadixx/RadixxSecurity/ValidateSecurityToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/WSRadixx/RadixxSecurity/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxSecurityHttpGet" type="tns:RadixxSecurityHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetSecurityGUID">
+      <http:operation location="/GetSecurityGUID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGUID">
+      <http:operation location="/ValidateGUID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSecurityToken">
+      <http:operation location="/ValidateSecurityToken" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <http:operation location="/AuthenticateUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxSecurityHttpPost" type="tns:RadixxSecurityHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetSecurityGUID">
+      <http:operation location="/GetSecurityGUID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGUID">
+      <http:operation location="/ValidateGUID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSecurityToken">
+      <http:operation location="/ValidateSecurityToken" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <http:operation location="/AuthenticateUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RadixxSecurity">
+    <wsdl:port name="RadixxSecuritySoap" binding="tns:RadixxSecuritySoap">
+      <soap:address location="http://g8.service.radixx.com/RadixxSecurity.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxSecuritySoap12" binding="tns:RadixxSecuritySoap12">
+      <soap12:address location="http://g8.service.radixx.com/RadixxSecurity.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxSecurityHttpGet" binding="tns:RadixxSecurityHttpGet">
+      <http:address location="http://g8.service.radixx.com/RadixxSecurity.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxSecurityHttpPost" binding="tns:RadixxSecurityHttpPost">
+      <http:address location="http://g8.service.radixx.com/RadixxSecurity.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,13 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@borderRadius: 0;
+
+@borderColor: @blueBorder;
+
+@menuMinWidth: ~"calc(101%)";
+@menuInputMinWidth: 100px;
+
+@selectionVerticalPadding: 10px;
+@selectionHorizontalPadding: 10px;

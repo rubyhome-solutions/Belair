@@ -1,0 +1,73 @@
+<layout meta="{{meta}}">
+    <div class="ui form {{#if errors2 || errorMsg2}}error{{/if}}  {{#if pending}}loading{{/if}}" style="float:left;margin-right:50px">
+        {{{content}}}
+
+    </div>
+    {{#if cmsid==1}}
+    <div class=" {{#if submitting}} ui form loading{{/if}}" >
+{{#if errors}}    
+    <div class="ui error message" style="display:block">
+         
+        <p>{{errors}}</p>
+    </div>
+    {{/if}}
+    {{#if submitted}} 
+    <div class="ui positive message">Message Sent.<i class="close icon" on-click='closemessage'></i></div>
+    {{/if}}
+    <form id="contact-form" class="form-horizontal" method="post" style="padding-right: 30px;">        <h2>Contact form:</h2>
+            <p class="note">Fields with <span class="required">*</span> are required.</p>
+            <fieldset>
+
+                <div id="contact-form_es_" class="alert alert-block alert-error" style="display:none">
+                    <p>Please fix the following input errors:</p>
+                    <ul>
+                        <li>dummy</li>
+                    </ul></div>
+                <div class="control-group">
+                    <label class="control-label required" for="ContactForm_name">Name <span class="required">*</span></label>
+                    <div class="controls"><input name="ContactForm[name]" id="ContactForm_name" type="text">
+                        <p id="ContactForm_name_em_" style="display:none" class="help-block"></p></div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label required" for="ContactForm_email">Email <span class="required">*</span></label>
+                    <div class="controls"><input name="ContactForm[email]" id="ContactForm_email" type="text">
+                        <p id="ContactForm_email_em_" style="display:none" class="help-block"></p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label required" for="ContactForm_subject">Subject <span class="required">*</span></label>
+                    <div class="controls"><input maxlength="128" name="ContactForm[subject]" id="ContactForm_subject" class="input-60" type="text">
+                        <p id="ContactForm_subject_em_" style="display:none" class="help-block"></p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label required" for="ContactForm_body">Body <span class="required">*</span></label>
+                    <div class="controls"><textarea rows="6" style="width: 90%;" name="ContactForm[body]" id="ContactForm_body"></textarea>
+                        <p id="ContactForm_body_em_" style="display:none" class="help-block"></p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="ContactForm_verifyCode">Verification Code</label>
+                    <div class="controls"><input name="ContactForm[verifyCode]" id="ContactForm_verifyCode" type="text">
+                        <p id="ContactForm_verifyCode_em_" style="display:none" class="help-block"></p>
+                    </div>
+                </div>
+                <img id="yw0" src="{{captcha}}" alt=""><a id="yw0_button" on-click="refreshCaptcha()">Get a new code</a>            <div class="hint">Please enter the letters as they are shown in the image above.
+                    <br>Letters are not case-sensitive.</div>
+                <div class="form-actions">
+                    <div class="ui button blue" on-click="submitContactForm()" name="yt0">Submit</div>
+                    <button class="ui button blue" type="reset" name="yt1">Reset</button>
+                </div>     
+            </fieldset>
+        </form>
+
+    </div>
+    
+    {{/if}}
+    {{#partial panel}}
+
+    {{> base-panel }}
+
+    {{/partial}}
+</layout>
+

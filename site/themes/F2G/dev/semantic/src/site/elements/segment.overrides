@@ -1,0 +1,9 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.segment.basic.attached {
+  border: none;
+  padding: 0px;
+  padding-top: 15px;
+}

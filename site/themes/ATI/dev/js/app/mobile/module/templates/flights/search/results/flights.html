@@ -1,0 +1,16 @@
+{{#each rendered:i}}
+	{{>flight}}
+{{/each}}
+{{#partial flight}}
+<flight
+        selectFn="{{selectFn}}"
+        small="{{small}}"
+        summary="{{summary}}"
+        flight="{{.}}"
+        search="{{search}}"
+        selected="{{selected}}"
+        onward="{{onward}}"
+        backward="{{backward}}"
+        ></flight>
+
+{{/partial}}

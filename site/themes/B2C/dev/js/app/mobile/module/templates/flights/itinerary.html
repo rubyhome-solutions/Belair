@@ -1,0 +1,103 @@
+{{#flight}}
+{{#each segments}}
+<div class="outer_itinerary {{#if data}}outer_iti{{/if}}">
+    <div class="myrow">
+        {{#if first(.).airport_change}}
+            <div class="airport_change margin_top mycol">
+                {{first(.).airport_change}}
+            </div>
+        {{/if}}
+        {{#if first(.).transitvisa_msg}}
+            <div class="transit_itinerary margin_msg">
+                {{first(.).transitvisa_msg}}
+            </div>
+        {{/if}}
+        {{#if first(.).techStop!=null}}
+            <div class="techstop_itenerary margin_top mycol">Technical Stop: {{first(.).techStop}}</div>
+        {{/if}}
+        <div class="time_journey mycol">
+            {{ duration.format(segtime(.))}}
+        </div>
+        <div class="date_col">
+            {{ first(.).depart.format('ddd MMM D YYYY') }}
+        </div>
+    </div>
+    {{#each .:i}}
+        <div class="myrow">
+        	<div class="mycol font_res">
+        		 <div class="name">
+                     <div class="mobile_logo">
+                        {{#if carriers.1}}
+                           {{#each carriers:j}}
+                              {{#if i == j}}
+                                  <img class="ui top aligned avatar image" src="{{logo}}" alt="{{name}}" title="{{name}}"> 
+                              {{/if}}
+                           {{/each}}
+                        {{else}}
+                           {{#each carriers}}
+                               <img class="ui top aligned avatar image" src="{{logo}}" alt="{{name}}" title="{{name}}">
+                           {{/each}}
+                        {{/if}}
+                     </div>
+                     <div class="mobile_flight">
+                         <span class="flight-no">
+                            {{flight}}
+                        </span>
+                     </div>
+                </div>
+        	</div>
+	    	<div class="mycol font_res
+	    		{{#if from.airportCode==name_airport_change[0] || from.airportCode==name_airport_change[1] || from.airportCode==name_airport_change[2]
+                    || from.airportCode==name_airport_change[3]}}
+                           air_change
+                    {{/if}}
+	    	">
+	    		<div class="airport_code_iti">
+                    <span>{{from.airportCode}}</span><br/>
+                    <span>[[#if small]]<br>[[/if]]{{ depart.format('ddd HH:mm') }}</span><br/>
+                    <span>{{ small ? depart.format('D MMM') : depart.format('D MMM, YYYY') }}</span>
+	    		</div>
+	    		{{#if data}}
+		    		<div class="day_time">
+		    			{{ depart.format('ddd HH:mm') }}
+		    		</div>
+		    		<div class="day_date">
+		    			{{ small ? depart.format('D MMM') : depart.format('D MMM, YYYY') }}
+		    		</div>
+	    		{{/if}}
+	    	</div>
+	    	<div class="mycol single_journey_time font_res">
+	    		<div class="mobile_time">
+	    			{{ duration.format(time) }}
+	    		</div>
+	    	</div>
+	    	<div class="mycol {{#if to.airportCode==name_airport_change[0] || to.airportCode==name_airport_change[1] || to.airportCode==name_airport_change[2]
+                    || to.airportCode==name_airport_change[3]}}
+                           air_change
+                    {{/if}} font_res">
+	    		<div class="airport_code_iti">
+                    <span>{{to.airportCode}}</span><br/>
+                    <span>[[#if small]]<br>[[/if]]{{ arrive.format('ddd HH:mm') }}</span><br/>
+                    <span>{{ small ? arrive.format('D MMM') : arrive.format('D MMM, YYYY') }}</span>
+	    		</div>
+	    		{{#if data}}
+		    		<div class="day_time">
+		    			{{ arrive.format('ddd HH:mm') }}
+		    		</div>
+		    		<div class="day_date">
+		    			{{ small ? arrive.format('D MMM') : arrive.format('D MMM, YYYY') }}
+		    		</div>
+	    		{{/if}}
+	    	</div>
+        </div>
+    {{/each}}
+    {{#if showstep1baggage}}
+        {{#if first(.).product_class=='LITE'}} 
+        <div class="myrow outer_bag_mobile">
+            <div class="item baggage_not_allowed_mobile inner_bag_mobile">Hand Baggage Only No Checked-in Baggage</div>
+        </div>
+        {{/if}}
+    {{/if}}
+</div>
+{{/each}}
+{{/flight}}

@@ -1,0 +1,421 @@
+﻿\?>\n\n\s+<\?php  ==> \n
+(\d+;)"(.*)" 			==> const $2 = $1
+\((\d+), '(.*)'\).* 	==> const $2 = $1;
+\s+(..)\s+(.*)$ 		==> update carrier set name='$2' where code='$1';\n
+(\s+)'(.*)', 			==> $1['name'=>'$2', 'value'=>\$model->$2->name],
+(.*)\s(.*) 			    ==> '$1' => '$2',
+^(.*?)\t(.*)$			==> <option value="$2">$1</option>
+'(*)'						==> 'LOWER($1)'		// case insensitive search
+, (*),						==> , strtolower($1),		// case insensitive search
+
+=================================================================
+belair/api3d/skyscannerlink?RC=[9674]&ts=1423471246
+
+=================================================================
+Air Sources 
+- display results - check mark
+- international/domestic - auto ticket issuing
+- Balance link from other air source
+
+=================================================================
+Commercials:
+iata_rate_total
+iata_rate_base
+iata_rate_YQ
+plb_rate_total
+plb_rate_base
+plb_rate_YQ
+di_rate_total
+di_rate_base
+di_rate_YQ
+book_rate_total
+book_rate_base
+book_rate_YQ
+book_fix_adult
+book_fix_child
+book_fix_infant
+book_fix_per_journey (0)
+cancel_fix_adult
+cancel_fix_child
+cancel_fix_infant
+cancel_fix_per_journey (0)
+reschedule_fix_adult
+reschedule_fix_child
+reschedule_fix_infant
+reschedule_fix_per_journey (0)
+markup_rate_total
+markup_rate_base
+markup_rate_YQ
+markup_fix_adult
+markup_fix_child
+markup_fix_infant
+markup_fix_per_journey (0)
+
+
+Filters:
+book_date		
+onward_date		
+return_dept_date		
+flight		
+booking_class		
+fare_basis		
+cabin_class		
+origin_airport		
+arrival_airport		
+tour_code		
+pf_code
+
+
+
+Commercials cases:
+1. total fare or
+	any combination of (YQ, base_fare or both)
+	
+TDS - deducting on agents 10% from his commission (commission set in the commercials)
+TDS - not deducting 
+
+
+	
+=================================================================
+
+
+Below are the details of Test ID for ‘Belair Travel & Cargo Pvt Ltd’.
+ 
+Sub merchant Id for ‘Belair Travel & Cargo Pvt Ltd’ is T1532 for testing.
+ 
+Encryption IV: 6069653613TQNUWE
+Encryption Key: 6443991977SMSAOT
+
+Scheme Code: Test
+ 
+Please find attached necessary files which you required for configuration.
+
+Test ID Activation Period:
+Test ID will remain active up to 15 days from the date of issue of test ID post which, this ID will be deactivated without any further communication.
+For all transactions the lower amount limit is defined as Rs.1/- and upper amount limit is defined as Rs.2/-  
+
+Request you to please inform us when Integration activity can be completed at your end.
+ 
+Also please pass bank code as 470 in request parameter.
+ 
+Please find below login test bank details:
+ 
+Login id: test
+Password: test
+
+
+=================================================================
+
+
+
+Some PNRs: 6G6DAL , 6G8I2X , 6G8J65 , 6HAFHO , 6HAJRU , 6HAKAN , 6HMYXM, 6HP4IV
+Z9RELE - many SSRs are there
+
+=================================================================
+
+Legend :YQ = Airline Fuel Charge, YR = Service Charge, DU = SkyCafé Meals, IN = User Development Fee,
+JN = Service Tax, OA = Transaction Fee, OB = Convenience Fee, OP = Aviation Levy
+
+=================================================================
+CREATE USER belair_dba WITH PASSWORD 'jhndmj24^%*';
+create database belair_db OWNER belair_dba;
+
+htpasswd -c -b /etc/.htpasswd belair belSUPER157
+
+=================================================================
+ftpuser : ftp123ftp
+=================================================================
+public function objectToArray($obj) 
+{
+    if(!is_array($obj) && !is_object($obj)) 
+    return $obj;
+
+    if(is_object($obj)) 
+    $obj = get_object_vars($obj);
+
+    return array_map(array($this, 'objectToArray'), $obj);
+}
+=================================================================
+AirBooking:
+- booking statuses per passager
+- Fare basis
+
+Air Cart:
+- Time limit (end date) for the cart
+- payment processing method 
+- Customer pass-trough or Root pass-through
+
+
+
+=================================================================
+Payments = How we get paid? What happened with the cart?
+1. CC
+2. Net banking
+3. Cash
+4. Cheque
+5. Bank transfer
+
+Payment processes = How we pay for this cart? 
+1. Root pass-through
+2. Customer Pass-through
+3. ??? any other
+
+PF Acct - Private fare account - this number needs to be passed to the GDS to get access to some special pricing for some airlines	 			(numbers or letters any symbol limitations?) 
+Tour Code - This is a code we need to pass for some airlines (when you do gds API you will know where to pass this!)  			(numbers or letters any symbol limitations?) 
+Endorsement - this comes from the GDS 			(numbers or letters any symbol limitations?) 
+Special Req - this is for baby bassinet or wheel chair request (free text or drop-down)
+Baggage Pref -  ???
+
+
+=================================================================
+
+Questions:
+1. Are you paying monthly rent for this software or how? upfront: -5-6L , 7L upfront, per_booking: rs.5-6,  rs.10
+2. It is complex project and can not be done cheaply!
+
+ - How many queries per day? Now and desired.  35k now, maybe 70k desired
+ - How many queries per hour in a rush hour? Now and desired.  4k/hour now 
+ 
+ - How many paid reservations per day? Now and desired. 1700 + 500
+ - How many paid reservations per hour in a rush hour? Now and desired. Equal spread 12h for B2B. 20-30
+ 
+ Database schema, 
+ 
+ Database backup
+ 
+Meal is for International Booking. List is as follows:
+Vegan Veg Meal
+Hindu Veg Meal
+Indian Veg Meal
+Jain Veg Meal
+Lacto Ovo Veg Meal
+Fruit Platter
+Non Veg meal
+Moslem Meal
+
+Seat Request
+Aisle
+Window
+
+
+-----------------------------------------------------
+
+Modules priorities:
+•	Users system  module &  B2C module
+•	Roles Module
+•	Transaction Module
+	- cart generation
+	- amendments
+	- invoice generation
+	- fund transfers
+	- markup, discounts, balances, fees, taxes, ...
+•	Supplier Module
+	- Airlines
+	- Hotels
+•	Payment Module
+	- payment gateways
+	- minFraud integration
+•	Reports Module
+•	Users B2E sub-Module
+•	Users B2B sub-Module
+•	Commercial Module
+•	Website Module
+
+
+
+Did I understood correctly that the original role management that is on page#9 in the document has to be replaced by your vision of the role managements , that you have given at pages #34-35 ?
+
+In Manual Cart by Air Option
+What is:
+Source: GDS/LCC 
+Plating Carrier options
+Supplier options
+
+PNR types:
+Airlne Pnr / Crs Pnr / Airline Prov. Booking	/ GDS PNR
+
+Full Classes list?
+
+What are: "YQ / YR / PSF / UDF / JN / OB" ?
+What is the logic behind final price creation process ? We need detailed explanation here, so I am sure that we got it right!
+
+Where those parameters are set (insurances context) : "Profile State / Profile City / Reporting State / Reporting City" ?
+
+What are the payment mediums? Detailed description for each.
+Is there some automated payment processing or all the information is entered manually?
+
+PassTrought transactions management fees ?
+
+
+
+Users on upper level can emulate those below them.
+The users on one and the same level can not emulate each other.
+The permissions of the users on lower level are subsets of the permissions of the users on upper level.
+
+
+=================================================================
+SMS should go out when:
+ 
+·          When a user registers in all B2C, B2B and B2E.
+·          When a traveler registers in B2E.
+·          When a user/admin resets his password of user.
+·          Forgot password.
+·          Balance updates (Admin should be able to disable the SMS option for particular updates, by default it is enable).
+·          Does a transaction, but when transaction completes.  (Buy, Cancel or Amend).
+ 
+ 
+E-mail should go out when:
+ 
+·          When a user registers in all B2C, B2B and B2E.
+·          When a traveler registers in B2E.
+·          Account activation/deactivation of B2B and B2E user. (Admin should have option to disable the email auto sending for particular updates, by default it is enable).
+·          Before six month of Visa and Passport expiry for B2E travelers.
+·          When a user/admin resets his password.
+·          Forgot password.
+·          Update in profile (Admin should have option to disable the email auto sending for particular updates, by default it is enable).
+·          Balance updates (Admin should be able to disable the email option for particular updates, by default it is enable).
+·          Does a transaction whether it is completed or not. Pending mail should go to admin and user. (Buy, Cancel or Amend).
+·          When we update in transaction (Pending, Cancelled and Rescheduled).
+·          Before travel date a reminder about his travel.
+·          For agents a daily report for all transactions in the day.
+
+=================================================================
+/dev/vda1: LABEL="DOROOT" UUID="6ccc9680-2706-41e1-896a-b347cab0ba7e" TYPE="ext4"
+
+=================================================================
+Single passenger we can change everything with exception of source & dest and the company
+
+Multiple passengers 
+Always one and the same:
+- PNR
+- fight # (source/dest , timings)
+
+Amendments:
+Flight No
+Departure Time (dd/MM/yyyy'T'HH:mm)
+Arrival Time (dd/MM/yyyy'T'HH:mm)
+Airline PNR
+CRS PNR
+Ticket Number
+Basic Fare
+Fuel Surcharge
+Congestion Charge
+Airport Tax
+UDF Charge
+JN Tax
+Meal Extra Charge
+Seat Extra Charge
+Baggage Extra Charge
+OC Charge
+OB (Passthrough Fee)
+Supplier Amendment Fee
+Booking Fee
+Service Tax
+Service Tax2
+Service Tax3
+Reseller Amendment Fee
+Commission/Discount (Gross)
+TDS
+ 
+=================================================================
+
+new classes:
+corporate_info
+sub_users
+airport
+
+
+================== PERMISIONS ===========================
+Corporation: 
+
+Skip - approval requests
+travel arrangers - skip
+view requests - skip
+view balance - skip
+IP restriction - skip
+emulation - skip
+select users - skip
+
+
+1. Can book, (Search only permission)
+2. Manage users
+3. Manage travelers
+
+Final list:
+- Users
+Can make bookings
+Manage all Carts
+View Accounts
+View all Amendments
+View Sales Reports
+Manage Travellers
+Manage Colleagues
+Manage Company info
+Manage Markups
+- Staff
+Emulate
+Manage commercials
+Manage Sources & booking work-flow
+
+
+
+
+No smart search if user do not have manage collegaues permission
+No emulate button for the users
+
+Agents see only their logo on invoices and Etickets
+Corporate have both logos
+
+Extra settings: 
+- Logo
+- CC email list (except passwords)
+- Sending emails From and To emails.
+
+
+--- Before import User_info: id == 11
+--- Before import Users: id == 15
+
+
+====================================================
+Transactions:
+
+1. Universal company availability. Last searched company should be available as a button
+2. PNR routes: First is (GDS PNR / CRS PNR) , then Air PNR and Etickiet
+3. Cart queries explained - 
+	I need explanation for the new qeues and how to integrate them into existing ones.
+
+4. Domestic Travel Insurance - the price is fixed , should add the price to the total. Need the API details about it.
+
+5. Manual cart creation process can produce totally wrong carts. It is needed for some cases. 
+
+6. There is no passenger search in manual cart creation process. Will fix that
+
+7. What is PAX in Air Filter in Cart search. Pax - short form of passenger
+BookedBy should be the name of the user that did the booking.
+
+8. How we can SMS the Etickiet ? We need box for changing the phone numbers.
+
+9. Send the Eticket as PDF is not available for CheapTicket customers at the moment. 
+	He will send me the format.
+
+10. Download as PDF can make this Milestone to be delayed with day or two.
+
+11. 
+
+
+================-- Suppliers  --============================
+Galileo guy from Bangalore should be the first one.
+Roven Lobo (Galileo) 
+SpiceJet
+GoAir
+IndiGo
+Amadeus 
+
+
+================-- Multi Currency --============================
+Exchange rates are here: https://air.belair.in/xRate
+
+You can choose the transaction currency: https://air.belair.in/payGate/doPay/82
+Rate exchange happens automatically, Once transaction is done - check the details and not the currencies
+
+All air sources also has currency setting.

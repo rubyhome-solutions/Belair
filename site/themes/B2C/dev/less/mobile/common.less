@@ -1,0 +1,757 @@
+@import '../web/components/card.less';
+
+@import './semantic.css';
+@import './mobiscroll.css';
+
+
+#app {
+  .ui.segment.passenger {
+    padding: 0;
+  }
+
+  .ui.selection.dropdown {
+    padding: 12px 8px 8px 10px;
+    border: 1px solid #DDDEDE;
+    text-align: left;
+    background-color: #ffffff;
+    height: 42px;
+
+    input.search {
+      text-align: left;
+    }
+  }
+
+  .ui.error.message {
+    //padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .ui.formscreen .delete {
+    width: 20px;
+    height: 20px;
+    background: url(~img/icons/delete.png) no-repeat;
+    cursor: pointer;
+    position: absolute;
+    right: -20px;
+    top: 11px;
+  }
+
+  .fff.selected {
+    border: 2px solid #201f60;
+  }
+
+  .hide { display: none; }
+}
+
+a.cabinType.dropdown span.text
+{
+    width: 89px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.passengerclass .title    {
+    background-color: #fff;
+    border: 1px solid #dedede!important;
+    padding: 9px 0;
+    border-radius: 3px;
+    }
+.passengerclass .title .ui.dropdown
+{
+    width: 100%;
+    padding: 0 15px;
+    font-family:arial;
+    font-size:15px;
+}
+.passengerclass .title .ui.dropdown i.dropdown  {
+    float:right;
+}
+.passengerclass  .label { margin-bottom:5px; font-family:arial; font-size:15px; padding:10px 10px 0;}
+.passengerclass input[type="date"]  {font-size:16px!important; padding:12px!important;}
+.infoWrap {
+    
+    background-color: #dedede;
+    margin-bottom: 10px;
+}
+.infoWrap .field    { margin:0!important;}
+.passport-expiry, .passport-number   {
+    padding: 0 10px 10px;
+}
+.passport-country   { margin:0 10px 10px; width:92.5%!important;}
+.infoWrap .passport-country{ font-size:15px; font-family: arial;}
+.popupcontainer .text  {color:#000!important;}
+.ui.dropdown:hover>.default.text, .ui.default.dropdown:hover>.text{ color:#000;}
+.mbsc-mobiscroll .dwwr  { min-width:280px!important;}
+.mbsc-w-p.dwc   { width:100%; border:6px solid #201F60;}
+.CountStrip {font-family: arial; line-height: 2; text-align: center; color: #fff; background-color: #201F60; font-size: 17px;
+}
+.ui.form input:not([type]), .ui.form input[type="date"], .ui.form input[type="datetime-local"], .ui.form input[type="email"], .ui.form input[type="number"], .ui.form input[type="password"], .ui.form input[type="search"], .ui.form input[type="tel"], .ui.form input[type="time"], .ui.form input[type="text"], .ui.form input[type="url"]{font-size:15px;}
+
+.infoWrap .date input[type="date"]{ background:url("/themes/B2C/img/mobile/calendar.png") no-repeat 96% 8px #ffffff; height:42px; }
+.currencyWrap   { display:table; float:right; margin:10px 0; font-family:arial; font-size:12px;}
+.currencyWrap span  { line-height: 1.7; color:#f15a29;}
+select#currency1{ margin:0 10px; float:right; padding:1px 5px; font-size:12px; border:1px solid #bebebe; background:#cecece;}
+select#currency1 option{ line-height:1.7;}
+.clear  { clear:both;}
+/*	Faisal	*/
+.mobile_form_error
+{
+	text-align: center;
+    border: 1px solid #d4d4d5;
+    background: #fff;
+    margin-top: 20px;
+}
+
+.mobile_form_error p
+{
+	text-align: center;
+    font-size: 16px;
+    font-family: Arial;
+}
+
+.flight_details
+{
+	width: 100%;
+    float: left;
+    margin-bottom:16px;
+}
+
+.column_css
+{
+	vertical-align: middle!important;
+    padding-bottom: 0px!important;
+}
+.left_div
+{
+	float:left;
+	width:80%;
+}
+.right_div
+{
+	float:right;
+	font-size:16px;
+}
+
+.bottom_div
+{
+    height: 20px;
+    background: #f1f1f1;
+    padding-top: 8px;
+    padding-bottom: 23px;
+}
+
+.my_div_items
+{
+	float: left;
+    border-right: 1px solid #3d4d5d;
+    padding-right: 5px;
+    font-size:16px;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    padding-left: 5px;
+}
+
+.style_details
+{
+	font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    padding-right: 5px;
+    font-size: 17px;
+    margin-right: 15%;
+}
+
+.mobile_button
+{
+	font-size: 10px!important;
+    margin-top: 10px!important;
+}
+
+.my_mult_price
+{
+	margin-top:25px!important;
+}
+
+.toggle_flight_details
+{
+	float: left;
+    width: 100%;
+}
+
+.itenary_div
+{
+	font-size: 16px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: -9px;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    margin-bottom: 22px;
+}
+
+.airport_change
+{
+	font-size: 18px;
+    background: #f2dede;
+    color: #a94442;
+    /* width: 41%; */
+    font-weight: 600;
+    margin-top: 10px;
+    padding: 4px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.transit_visa_background
+{
+	background-image: url('/themes/B2C/img/warning/warning_yellow.png');
+    height: 15px;
+    margin-bottom: -20px;
+    width: 20px;
+}
+
+.outer_itinerary
+{
+	background:#f1f1f1;
+	padding:10px;
+	margin-bottom:25px;
+}
+
+.path_time
+{
+	font-size: 16px;
+    color: #0674a9;
+    font-weight: 600;
+    border-bottom: 1px solid #0674a9;
+    line-height: 14px;
+}
+
+.transit_itinerary
+{
+	font-size: 14px;
+    background: #FCF95B;
+    color: #000;
+    /*font-weight: 600;*/
+    margin-top: 10px;
+    padding: 5;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.techstop_itenerary
+{
+	font-size: 16px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.myrow
+{
+	width:100%;
+}
+
+.mycol
+{
+	width: 24%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.mob_divide
+{
+	border-bottom:1px dotted #000;
+}
+
+.single_journey_time
+{
+	background-image: url('/themes/B2C/img/icons/flights.png');
+    background-repeat: no-repeat;
+    height: 55px;
+    position: relative;
+    background-position-x: 30%;
+    background-position-y: 20px;
+    margin-top:-10px;
+}
+
+.mobile_time
+{
+	position: absolute;
+    margin-top: 40px;
+}
+
+.origin_airport,.origin_time,.destination_airport,.destination_time,.mobile_time
+{
+	text-align:center;
+}
+.center{text-align:center;}
+
+.airport_code_iti
+{
+	text-align: center;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.css_layover
+{
+	background:#c8ddfa;
+}
+
+.time_journey
+{
+	background: #ff7b33;
+    color: #fff;
+    font-size: 16px;
+    width: 25%;
+    padding: 5px;
+    font-weight: 600;
+    border-radius: 6px;
+    text-align:center;
+}
+
+.div_flight_time
+{
+	width:50%;
+}
+
+.left{float:left;}
+
+.carrier_info
+{
+	float: left;
+    width: 23%;
+    margin-top: 25px;
+    margin-left: 10px;
+    text-align:center;
+}
+.flight_info
+{
+	float:left;
+	width:50%;
+}
+.sub_flight_info
+{
+	width: 50%;
+    float: left;
+}
+.flight_price_info
+{
+	width:25%;
+	float:left;
+}
+.padding_top_bottom
+{
+	padding-top:20px;
+	padding-bottom:20px;
+}
+.margin_top
+{
+	margin-top:10px;
+}
+.carrier_top{
+	margin-top:15px;
+}
+.ui.grid{
+	margin-top:inherit;
+}
+/* RESPONSIVE MEDIA QUERIES */
+@media only screen and (max-width : 320px) {
+	.flight_price_info{
+		margin-left:-26px;
+	}
+	.left_div{
+		width:75%;
+	}
+	.itenary_div,.transit_itinerary,.time_journey{
+		font-size:12px;
+	}
+	.font_res{
+		font-size: 12px;
+    	margin-left: -1px!important;
+	}
+}
+@media only screen and (min-device-width : 321px) and (max-device-width : 360px) {
+	.flight_price_info{
+		margin-left:-16px;
+	}
+}
+@media only screen and (min-device-width : 321px) and (max-device-width : 377px){
+	.left_div{
+		width:75%;
+	}
+}
+@media only screen and (min-device-width : 321px) and (max-device-width : 405px){
+	.time_journey,.myrow{
+		font-size:12px;
+	}
+}
+@media only screen and (min-device-width : 448px) and (max-device-width : 543px){
+	
+}
+@media only screen and (min-device-width : 359px) and (max-device-width : 509px){
+	.flight_price_info{
+		margin-left:-10px;
+	}
+}
+@media only screen and (min-device-width : 321px) and (max-device-width : 380px){
+	.flight_price_info{
+		margin-left:-24px;
+	}
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 500px) {
+	.remove_padding{
+		padding-top: inherit!important;
+	}
+	.airport .code{
+		margin:12px 12px 0px 12px!important;
+	}
+}
+/* RESPONSIVE MEDIA QUERIES */
+.half_width{
+	width:50%!important;
+}
+.flight_info_time{
+	float: left;
+    width: 50%;
+}
+.flights_times{
+	float: left;
+    width: 50%;
+    padding-top:2%;
+}
+.flight_times{
+	width: 50%;
+    float: left;
+}
+.outer_iti{
+	background: #fff;
+    font-family: Arial;
+}
+.day_time,.day_date{
+	font-size:11px;
+}
+.air_change{
+	color:#a94442;
+	background:#f2dede;
+}
+.email_sent{
+	background: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 6px;
+}
+.booking_details_header{
+	margin-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.airport_change_msg{
+	color: #a94442;
+    background: #f2dede;
+    border-color: #ebccd1;
+    padding: 4px;
+    margin-top: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+}
+.transit_visa_mobile{
+	color: #8a6d3b;
+    background: #fcf8e3;
+    border-color: #faebcc;
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 5px;
+	}
+div.flight_info {
+    width: 100%;
+    padding-bottom: 5px;
+    
+}
+div.flight_info_table
+{
+	display:table;
+	width:23%;
+	float:left;
+}
+
+div.flight_info_row
+{
+	display:table-row;
+}
+
+div.flight_info_cell
+{
+	display:table-cell;
+	height:50%;
+	
+}
+.flight_logo_cell
+{
+    padding-top:25%; 
+    padding-left:26%;
+   
+}
+.flight_name_cell
+{
+    
+    padding-left:15% !important;
+}
+.flight_fare_info
+{
+    padding-top: 28%;
+    font-family: "Arial";
+    font-size: 16px;
+    font-weight: 600;
+    color: #D95C3B;
+    padding-right: 3px;
+    
+}
+.flight_dep_info
+{
+    margin-top: 26%;
+    text-align: center;
+    font-family: "Arial";
+    font-size: 19px;
+    font-weight: 600;
+    color: #1C2D37;
+}
+
+div.flight_fare_info {
+  .discount {
+    text-decoration: line-through;
+    margin-top: -12px;
+    color: lightgray;
+  }
+}
+
+.conv_fee{
+    float:right;
+    font-size: 13px;
+    color: #bcbdbe;
+    margin-bottom: 2%;
+    /*margin-right: 5%;*/
+    font-family: "Arial";
+}
+.paytm_background,.paytm_background:hover{
+	background: url(~img/wallet/paytm_60.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.ideamoney_background, .ideamoney_background:hover{
+	background: url(~img/wallet/Idea_60.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.freecharge_background, .freecharge_background:hover{
+	background: url(~img/wallet/freecharge_60.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.oxigen_background, .oxigen_background:hover{
+	background: url(~img/wallet/oxigen_60.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.sbi_buddy_background, .sbi_buddy_background:hover{
+	background: url(~img/wallet/sbibuddy_60.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.the_mobile_wallet, .the_mobile_wallet:hover{
+	background: url(~img/wallet/mobile_60.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.jiomoney_background, .jiomoney_background:hover{
+	background: url(~img/wallet/jiomoney_60.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.janacach_background, .janacach_background:hover{
+	background: url(~img/wallet/janacash_60.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.ziggit_background, .ziggit_background:hover{
+	background: url(~img/wallet/ziggit_60.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.icash_background, .icash_background:hover{
+	background: url(~img/wallet/icash_60.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.payment_loader_mobile .loader_position{
+	top: 35%!important;
+}
+.payment_loader_mobile div.wait_text{
+	font-size: 38px;
+    color: #939393;
+    margin-top: 35%;
+    font-family: Arial;
+}
+.payment_loader_mobile .ui.loader:before, .payment_loader_mobile .ui.loader:after {
+    width: 50px!important;
+    height: 50px!important;
+    margin: -16px 0px 0px -25px!important;
+}
+.mobikwik_background, .mobikwik_background:hover{
+	background: url(~img/wallet/mobikwik_60.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.customer_support{
+    font-size: 26px;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.contacts{
+    font-size: 18px;
+    margin-top: 5px;
+    padding-left: 20px;
+}
+
+.address{
+    margin-top: 20px;
+    padding-left: 20px;
+}
+.address p{
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    line-height: 26px;
+}
+.emi_warning{
+    font-size: 11px;
+    padding-bottom: 8px;
+    color: #ff6565;
+}
+.emiTable th,td{
+    padding: 5px!important;
+    border: 1px solid #000!important;
+}
+.padd_list_top{
+    margin-top: 14px;
+}
+.padd_list_top label{
+    font-weight: bold;
+    padding-bottom: 18px;
+}
+.emiTable{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.emiTable td{
+    font-size: 10px;
+}
+.mobile_logo, .mobile_flight{
+    width:100%;
+    text-align: center;
+}
+.mobile_baggage_link{
+    font-size: 14px;
+    width: 100%;
+    text-align: right!important;
+    margin-right: 8px;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+.baggage_not_allowed_mobile{
+    background-image: url(/themes/B2C/img/layovers/baggage_not_allowed.png);
+    height: 20px;
+    margin-bottom: -20px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 14px;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    margin-left: 5px;
+    padding-left: 22px;
+}
+.outer_bag_mobile{
+    float: none;
+    margin-top: 10px;
+}
+.inner_bag_mobile{
+    width: 95%;
+    font-size: 12px;
+    font-weight: bold;
+    padding-top: 5px;
+}
+.baggage_info_list{
+    background-color: #f1f1f1;
+    list-style-type: disc;
+    list-style-position: inside;
+    font-size:12px;
+    list-style: disc outside none;
+    padding: 10px 10px 10px 25px;
+}
+.date_col{
+    width: 25%;
+    display: inline;
+}
+.margin_msg{
+    margin-top:6px;
+    margin-bottom:6px;
+}
+/*	Faisal	*/
+/*.dw-bf .dw-li.dw-v:before  {position:absolute; top:50%; font: normal normal normal 14px/1 FontAwesome; left:10px; content:"\f10c";}*/
+
+
+.loader_x {
+    position: absolute;
+    top: 35%;
+    left: 37%;
+    display: none;
+}
+
+.line_x {
+    animation: expand 1s ease-in-out infinite;
+    border-radius: 10px;
+    display: inline-block;
+    transform-origin: center center;
+    margin: 0 3px;
+    width: 1px;
+    height: 13px;
+}
+
+.line_x:nth-child(1) {
+    background: #AA2F41;
+}
+
+.line_x:nth-child(2) {
+    animation-delay: 100ms;
+    background: #EBC844;
+}
+
+.line_x:nth-child(3) {
+    animation-delay: 250ms;
+    background: #0C4960;
+}
+
+.line_x:nth-child(4) {
+    animation-delay: 350ms;
+    background: #e67e22;
+}
+.line_x:nth-child(5) {
+    animation-delay: 450ms;
+    background: #f1c40f;
+}
+.line_x:nth-child(6) {
+    animation-delay: 550ms;
+    background: #222233;
+}
+.line_x:nth-child(7) {
+    animation-delay: 650ms;
+    background: #BBA036;
+}
+.line_x:nth-child(8) {
+    animation-delay: 750ms;
+    background: #27ae60;
+}
+.line_x:nth-child(9) {
+    animation-delay: 850ms;
+    background:#853962;
+}
+
+@keyframes expand {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(2);
+    }
+}

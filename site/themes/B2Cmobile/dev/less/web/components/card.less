@@ -1,0 +1,51 @@
+.cardList li, .cardIcon {
+  background: url(~img/cardTypes.png) no-repeat;
+  float: left;
+  height: 24px;
+  overflow: hidden;
+  padding: 0;
+  text-indent: -5000px;
+  width: 40px;
+}
+
+.cardList li.visa, .cardIcon.visa {
+  background-position: 0px 0px;
+}
+
+.cardList li.master,.cardType.mastercard, .cardIcon.mastercard {
+  background-position: -41px 0px;
+}
+
+.cardList li.amex, .cardIcon.amex {
+  background-position: -120px 0px;
+}
+
+.cardList li.diners, .cardIcon.diners {
+  background-position: -160px 0px;
+  width: 32px;
+}
+
+ul.cardList {
+  position: absolute;
+  right: 6px;
+  margin: 0;
+  padding: 0;
+  top: 6px;
+}
+
+.cvv3-img {
+  width: 77px; min-height: 46px;
+  background: url(~img/cvv3.png) no-repeat 50% -1px;
+  padding: 0 !important;
+}
+
+.cvv4-img {
+  width: 77px; min-height: 46px;
+  background: url(~img/cvv4.png) no-repeat 50% -1px;
+  padding: 0 !important;
+}
+.doPay a#act_title  {display:block;}
+.note   {font-family:arial; font-size:12px; margin:20px 0; line-height:1.5;}
+form.payment  button.button  {font-size:1.42857143rem!important; margin:0; width:100%;}
+form.payment .ui.header .content    {font-size:17px;}
+form.payment .sub.header    {font-size:13px!important; line-height: 1.5!important;}

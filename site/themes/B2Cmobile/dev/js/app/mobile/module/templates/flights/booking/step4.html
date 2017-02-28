@@ -1,0 +1,32 @@
+{{# { step: booking.steps.4 } }}
+{{#if step.active}}
+
+<form action="javascript:;" class="ui form segment step4" style="height: 400px; text-align: center;">
+{{#if step.completed}}
+    <div class="booking-id">Booking ID: {{booking.aircart_id}}</div>
+    {{#if booking.isNew(booking.aircart_status) }}
+        <div class="message">We have received your Payment and your Booking is in process, our customer support team will contact you shortly. Or Call our customer support team for more detail.
+        </div>
+
+        <br>
+        <a href="/b2c/airCart/mybookings/{{booking.aircart_id}}">View your ticket</a>
+    {{else}}
+        {{#if booking.isBooked(booking.aircart_status) }}
+            <div class="message">Your Booking is Successful!</div>
+        {{else}}
+            <div class="message">Your Booking is in process!</div>
+        {{/if}}
+
+        <br>
+        <a href="/b2c/airCart/mybookings/{{booking.aircart_id}}">View your ticket</a>
+    {{/if}}
+
+
+{{else}}
+<div class="ui active inverted dimmer">
+    <div class="ui text loader">Your booking is in progress.</div>
+</div>
+{{/if}}
+</form>
+{{/if}}
+{{/}}

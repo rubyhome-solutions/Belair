@@ -1,0 +1,68 @@
+<section>
+    <div class="search">
+
+        <div class="select_date">
+            <div class="ui three column grid">
+                <div class="column"><div class="ui blue button" on-click="modifySearch()">Modify</div></div>
+                <div  class="column center aligned">
+                    <!--<a class="arr_left" href="javascript:;"><i class="caret left icon"></i></a>-->
+                    <div class="cur_date">
+                      <div class="day_month">{{search.flights.0.depart_at.format('D MMM YYYY')}}</div>
+                        <div class="day_week">{{search.flights.0.depart_at.format('dddd')}}</div>
+                    </div>
+                    <!--<a class="arr_right" href="javascript:;"><i class="caret right icon"></i></a>-->
+                </div>
+                <div class="column right aligned">
+                    <!--<div class="ui inverted blue button">Price<i id="car_et" class="caret down icon"></i></div>-->
+                    <div class="ui floating sorting dropdown icon top right pointing blue button">
+                            <span class="text">Price</span>
+                            <div class="menu transition hidden" tabindex="-1">
+                                <div class="item active selected" on-click="set('sortOn.0', 'price')">
+                                    Price
+                                </div>
+                                <div class="item" on-click="set('sortOn.0', 'arrive')">
+                                    Arrive
+                                </div>
+                                <div class="item"  on-click="set('sortOn.0', 'depart')">
+                                    Depart
+                                </div>
+                                <div class="item"  on-click="set('sortOn.0', 'airline')">
+                                    Airline
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{# flights.0.0 }}
+        <div class="direction_search">
+            <div class="mult_fromto">{{ first(segments.0).from.city }} &#8594 {{ last(segments.0).to.city }} </div>
+            {{# search}}
+            <div class="age"> {{passengers.0}} Adults, {{passengers.1}} Childs, {{passengers.2}} Infants</div>
+            {{/}}
+        </div>
+        {{/}}
+        
+        <!--<div class="currencyBox">
+           
+           <span class="currencytxt">Currency: </span>
+            <div class="ui dropdown  right item currency" tabindex="0" id="currency">
+             
+                <i class="{{ meta.display_currency.toLowerCase() }} icon currency"></i>
+            <i class="dropdown icon" tabindex="0"></i>
+            <div class="menu transition hidden" tabindex="-1" style="z-index: 1010;">
+                <a class="item" on-click="setCurrency('INR')"><i class="inr icon currency"></i> Rupee</a>
+                <a class="item" on-click="setCurrency('USD')"><i class="usd icon currency"></i> US Dollar</a>
+                <a class="item" on-click="setCurrency('EUR')"><i class="eur icon currency"></i> Euro</a>
+                <a class="item" on-click="setCurrency('GBP')"><i class="gbp icon currency"></i> UK Pound</a>
+            </div>
+        </div>
+        </div>-->
+        <div class="info_area">
+            <flights selectFn="{{onSelect}}" flights="{{flights.0}}" search="{{search}}" sortOn="{{sortOn}}" pending="{{pending}}"></flights>
+
+        </div>
+    </div>
+
+
+</section>

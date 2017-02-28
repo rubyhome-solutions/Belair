@@ -1,0 +1,15 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.tabular.menu .item {
+  border-radius: 0;
+  background-color: #f1f1f1;
+  border-color: @tabularBorderColor;
+  border-bottom: 1px solid @tabularBorderColor;
+  margin-right: 5px;
+
+  &.active {
+    border-bottom: 1px solid white;
+  }
+}

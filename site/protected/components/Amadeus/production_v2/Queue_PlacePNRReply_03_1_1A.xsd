@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xml.amadeus.com/QUQPCR_03_1_1A" xmlns="http://xml.amadeus.com/QUQPCR_03_1_1A" elementFormDefault="qualified">
+  <xs:element name="Queue_PlacePNRReply">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">response to PNR queue placement</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="errorReturn" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">any errors should be returned in this group</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="errorDefinition" type="ApplicationErrorInformationTypeI">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">returns the error code</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="errorText" minOccurs="0" type="FreeTextInformationType">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">contains the text of the error</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="recordLocator" minOccurs="0" type="ReservationControlInformationTypeI">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">record locator</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ApplicationErrorDetailTypeI">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Code assigned by the recipient of a message to indicate a data validation error condition.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="errorCode" type="AlphaNumericString_Length1To3">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">error code</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="errorCategory" minOccurs="0" type="AlphaNumericString_Length1To3">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">error category</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="errorCodeOwner" minOccurs="0" type="AlphaNumericString_Length1To3">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">error code owner</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ApplicationErrorInformationTypeI">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">To identify the type of application error within a message.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="errorDetails" type="ApplicationErrorDetailTypeI">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">error details</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FreeTextDetailsType">
+    <xs:sequence>
+      <xs:element name="textSubjectQualifier" type="AlphaNumericString_Length1To3">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">qualifier of the following text</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="source" minOccurs="0" type="AlphaNumericString_Length1To3">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Source Details</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="encoding" minOccurs="0" type="AlphaNumericString_Length1To3">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Encoding Informations</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FreeTextInformationType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">This segment is used to convey the free text</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="freeTextDetails" minOccurs="0" type="FreeTextDetailsType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">contains only the qualifier.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="freeText" maxOccurs="99" type="AlphaNumericString_Length1To199">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Free text</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReservationControlInformationDetailsTypeI">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">To specify the information required to identify a reservation.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="controlNumber" type="AlphaNumericString_Length1To8">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">contains the record locator to be queue placed</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReservationControlInformationTypeI">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">To specify a reference to a reservation.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="reservation" type="ReservationControlInformationDetailsTypeI">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">contains the record locator</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="AlphaNumericString_Length1To199">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Format limitations: an..199</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="199" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AlphaNumericString_Length1To3">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Format limitations: an..3</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="3" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AlphaNumericString_Length1To8">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Format limitations: an..8</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="8" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+<!-- SchemaRules="2010/01"-->
+<!--Created with SchemaBuilder 5.0.0 by Amadeus S.A.S.-->
+<!--"Amadeus Proprietary and Confidential Information: unauthorized use and disclosure strictly forbidden. 2010 - Amadeus s.a.s - All Rights Reserved."-->
+<!--Build Key:
+1F8B080000000000000095534D6FDB300CBDEB5708BDEC30C471960DDB02E8E0E66B0396344DD25B8040B19844A82C79A25CD42BFADF47D9CEDAEDB2ED629014CD8FF71EE7D3E5749D6DA793FDCD52BC4B07EF7BE9A7DE20E59BCA2A59F3F4C368381C0D3FF3F962FB364D4769CAB24516EA1270A60D585980A0C0FE5AA2CEB7319C3CA2620789B0A4372C650EE21C4239EAF71F0B93C8422AA830C95DD16707EA6160A2BDE82384A0ED09FB4AE7C8F233E4F71BFA1652045F01CB9D024A41619D8D5E518025AF7B2B4A69EBD84ED8CA180A94B5D7A773105759DB8EAFBC2BBD86207DCDA5557CECEC512BAAA1A5E15FEDD1F94206EDEC88575656E1ECBCFE018A57084DBAD2981B8795078EC1EB3C989AD33F07ADA846C209B694F7F8A5192632C1E81BC3D7710EE46B9ADE3F804AAE9882A3AC4C98FB32C2A5C4511A04A65C7530B081EF15D81C5632E4E7EE05ECF53F8109F625E72912F4BC7F7A008FB415591E0C5019B2E4893AD4CFEC48F4AD2B4398B9C864E33774363F47EB2F058CCBA5E92037EEA488C6C968F7659A4D7653A58F320F5BE70CEEA6DBFD446390368C8929E28F98DB2DA4BF87C8789B830DD7B8FBE64E54CB9E9A41B4BAB1A66605F813746034F64C8351B8713EFC828F16479A2BC388E9EFB109B1AE4DA71CFB5F10954EDBB084D0D2D188CD3B175E21D4F851C0096B57888862BCA3B49F0EBA18CE9CCF8CA6DA9D62A316740E382125516F12658B2216D28758F7CEEA5C87BA5B247869D134FA247C04618DFDAEF2365BF49F14184D6B4812D07342AF2C8EA75E9F0F89657CB999B626451AA89A4BD636678F68C24D15CA2ACC9C51E0450C30D6EB2D5A18DF20D72F77D2EBB1162431C8D8ABFE225B65FBDB0A2AD80F52127521B515B77753068F25F1B597B89F4CE762BBA650C70F971EA4187CBCF8947EBB1AAF594907A1F14C14B7C0B7EC8801590F3A524666838C6C40146DD795217257CB35BB50F4477C0D2549AA235DA443F6137E72ACFD00050000
+-->
+

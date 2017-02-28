@@ -1,0 +1,165 @@
+{{#if popup}}
+<div class="ui login small modal">
+    <i class="close icon"></i>
+    <div class="header">
+        {{#unless forgottenpass || signup}}Login{{/unless}}
+        {{#if signup}}Sign-up{{/if}}
+        {{#if forgottenpass}}Reset password{{/if}}
+    </div>
+    <div class="content" >
+        {{> form}}
+    </div>
+</div>
+{{else}}
+{{> form}}
+{{/if}}
+
+{{#partial form}}
+<form action="javascript:;" class="{{#if !popup}} form {{else}} ui basic segment form{{/if}} {{#if errors || errorMsg}}error{{/if}}  {{#if submitting}}loading{{/if}}" style="position: relative;" on-submit="submit()">
+
+
+
+    <div class="ui basic segment {{#if forgottenpass || signup}}hide{{/if}}" style="max-width: 300px; margin: auto; text-align: left;">
+        <ui-input
+                name="login"
+                value="{{user.login}}"
+                class="fluid"                
+                placeholder="Login"
+                >
+        </ui-input>
+
+        <ui-input
+                name="password"
+                type="password"
+                value="{{user.password}}"
+                class="fluid"                
+                placeholder="Password"
+                >
+        </ui-input>
+        <br>
+
+        <button type="submit" class="ui  {{#if !popup}} small {{else}}massive{{/if}} fluid blue button uppercase">LOGIN</button>
+
+        {{#if errors || errorMsg }}
+        <br><br>
+        <div class="ui error message">
+            {{#if errorMsg}}
+            <p>{{errorMsg}}</p>
+            {{/if}}
+
+            {{#each errors:i}}
+            {{#if .}}<p>{{.}}</p>{{/if}}
+            {{/each}}
+        </div>
+        {{/if}}
+
+        <br>
+        <a href="javascript:;" class="forgot-password" on-click="set('forgottenpass', 1)">Forgot Password?</a>
+        <br><br>
+        <p>
+            Don’t have a CheapTicket.in Account?
+            <br>
+            <a href="javascript:;" on-click="set('signup', 1)">Sign up for one »</a>
+        </p>
+    </div>
+
+    <div class="ui basic segment {{#unless signup}}hide{{/unless}}" style="max-width: 300px; margin: auto; text-align: left;">
+        {{#unless signupsuccess}}
+        <ui-input
+                name="email"
+                value="{{user.email}}"
+                class="fluid"
+                placeholder="Email"
+                >
+        </ui-input>
+        <ui-input
+                name="mobile"
+                value="{{user.mobile}}"
+                class="fluid"
+                placeholder="Mobile"
+                >
+        </ui-input>
+        <ui-input
+                name="name"
+                value="{{user.name}}"
+                class="fluid"
+                placeholder="Name"
+                >
+        </ui-input>
+        <ui-input
+                type="password"
+                name="password"
+                value="{{user.password}}"
+                class="fluid"
+                placeholder="Password"
+                >
+        </ui-input>
+        <ui-input
+                type="password"
+                name="password2"
+                value="{{user.password2}}"
+                class="fluid"
+                placeholder="Password again"
+                >
+        </ui-input>
+
+
+        <br>
+
+        <button type="button" class="ui massive fluid blue button uppercase" on-click="signup()">Signup</button>
+
+        {{#if errors || errorMsg }}
+        <br><br>
+        <div class="ui error message">
+            {{#if errorMsg}}
+            <p>{{errorMsg}}</p>
+            {{/if}}
+
+            {{#each errors:i}}
+            {{#if .}}<p>{{.}}</p>{{/if}}
+            {{/each}}
+        </div>
+        {{/if}}
+        {{/unless}}
+    </div>
+
+    {{#if signupsuccess}}
+    Your registration was success.<br>You will receive email with further instructions from us how to proceed.<br>Please check your inbox and if no email from us is found, check also your SPAM folder.
+    {{/if}}
+
+    <div class="ui basic segment {{#unless forgottenpass}}hide{{/unless}}" style="max-width: 300px; margin: auto; text-align: left;">
+        {{#unless resetsuccess}}
+            <ui-input
+                    name="login"
+                    value="{{user.login}}"
+                    class="fluid"
+                    placeholder="Email"
+            >
+            </ui-input>
+
+            <br>
+
+            <button type="button" class="ui massive fluid blue button uppercase" on-click="resetPassword()">RESET</button>
+
+            {{#if errors || errorMsg }}
+            <br><br>
+            <div class="ui error message">
+                {{#if errorMsg}}
+                <p>{{errorMsg}}</p>
+                {{/if}}
+
+                {{#each errors:i}}
+                {{#if .}}<p>{{.}}</p>{{/if}}
+                {{/each}}
+            </div>
+            {{/if}}
+        {{/unless}}
+
+        {{#if resetsuccess}}
+            Instructions how to revive your password has been sent to your email.<br>Please check your email.
+        {{/if}}
+    </div>
+
+
+</form>
+{{/partial}}

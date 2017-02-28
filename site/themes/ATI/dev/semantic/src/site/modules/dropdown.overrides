@@ -1,0 +1,49 @@
+/*******************************
+        User Overrides
+*******************************/
+
+.ui.selection.dropdown {
+  min-width: 100px;
+}
+
+.ui.selection.dropdown.decorated {
+  padding: 5px;
+
+  .placeholder {
+    top: 0 !important;
+    left: 0 !important;
+    line-height: 1.33;
+  }
+
+  .text {
+    padding-top: 12px;
+    line-height: 23px;
+
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  input.search {
+    margin-top: 15px;
+    padding: 5px;
+  }
+
+  > .dropdown.icon {
+    margin: auto;
+    margin-right: -10px;
+  }
+
+  &:not(.in) {
+    .text {
+      visibility: hidden;
+    }
+  }
+//
+//  &:hover:not(:focus)  {
+//    .text {
+//      visibility: visible !important;
+//    }
+//  }
+}

@@ -1,0 +1,5 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+@import "../../../../less/web/variables.less";

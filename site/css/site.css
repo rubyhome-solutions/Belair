@@ -1,0 +1,45 @@
+div.form div.success-check input,
+div.form div.success-check textarea,
+div.form div.success-check select,
+div.form input.success-check,
+div.form textarea.success-check,
+div.form select.success-check
+{
+    background-color: #E6EFC2;
+    border-color: #C6D880;
+    background: url(../img/green_checkmark.jpg) no-repeat right;
+}  
+div.form div.error-check input,
+div.form div.error-check textarea,
+div.form div.error-check select,
+div.form input.error-check,
+div.form textarea.error-check,
+div.form select.error-check
+{
+    background-color: #FEE;
+    border-color: #C00;
+    background: url(../img/redcross.jpg) no-repeat right;
+}
+body.wait *, body.wait
+{
+    cursor: wait !important;
+}
+
+.form-horizontal .control-group {
+    margin-bottom: 10px !important;
+}
+
+ul.breadcrumb {
+    float: left;
+    width: 75%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+@media print {
+    div#mainmenu, ul.breadcrumb, a#activeCompany, .noprint {display: none !important;}
+    body {
+        width: 210mm;
+        font-size: 12px;
+    }
+}

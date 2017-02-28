@@ -1,0 +1,400 @@
+{{#if popup}}
+<div class="ui login small modal">
+    <i class="close icon"></i>
+    <div class="header">
+        {{#unless forgottenpass || signup}}Login{{/unless}}
+        {{#if signup}}Sign-up{{/if}}
+        {{#if forgottenpass}}Reset password{{/if}}
+    </div>
+    <div class="content" >
+        {{> form}}
+    </div>
+</div>
+{{else}}
+{{> form}}
+{{/if}}
+
+{{#partial form}}
+<form id="B2BUserPopup" action="javascript:;" class="{{#if !popup}} form {{else}} ui basic segment form{{/if}} {{#if errors || errorMsg}}error{{/if}}  {{#if submitting}}loading{{/if}}" style="position: relative;" on-submit="submit()">
+
+
+
+    <div class="ui basic segment {{#if forgottenpass || signup}}hide{{/if}}" style="max-width: 300px; margin: auto; text-align: left;">
+        <ui-input
+                name="login"
+                value="{{user.login}}"
+                class="fluid"                
+                placeholder="Login"
+                >
+        </ui-input>
+
+        <ui-input
+                name="password"
+                type="password"
+                value="{{user.password}}"
+                class="fluid"                
+                placeholder="Password"
+                >
+        </ui-input>
+        <br>
+
+        <button type="submit" class="ui  {{#if !popup}} small {{else}}massive{{/if}} fluid blue button uppercase">LOGIN</button>
+
+        {{#if errors || errorMsg }}
+        <br><br>
+        <div class="ui error message">
+            {{#if errorMsg}}
+            <p>{{errorMsg}}</p>
+            {{/if}}
+
+            {{#each errors:i}}
+            {{#if .}}<p>{{.}}</p>{{/if}}
+            {{/each}}
+        </div>
+        {{/if}}
+
+        <br>
+        <a href="javascript:;" class="forgot-password" on-click="set('forgottenpass', 1)">Forgot Password?</a>
+        <br><br>
+        <p>
+            Don’t have a airticketsindia.com Account?
+            <br>
+            <a href="javascript:;" on-click="set('signup', 1)">Sign up for one »</a>
+        </p>
+    </div>
+
+    <div class="ui basic segment {{#unless signup}}hide{{/unless}}" style="max-width: 300px; margin: auto; text-align: left;">
+        {{#unless signupsuccess}}
+        <ui-input
+                name="email"
+                value="{{user.email}}"
+                class="fluid"
+                placeholder="Email"
+                >
+        </ui-input>
+        <ui-input
+                name="mobile"
+                value="{{user.mobile}}"
+                class="fluid"
+                placeholder="Mobile"
+                >
+        </ui-input>
+        <ui-input
+                name="name"
+                value="{{user.name}}"
+                class="fluid"
+                placeholder="Name"
+                >
+        </ui-input>
+        <ui-input
+                type="password"
+                name="password"
+                value="{{user.password}}"
+                class="fluid"
+                placeholder="Password"
+                >
+        </ui-input>
+        <ui-input
+                type="password"
+                name="password2"
+                value="{{user.password2}}"
+                class="fluid"
+                placeholder="Password again"
+                >
+        </ui-input>
+
+
+        <br>
+
+        <button type="button" class="ui massive fluid blue button uppercase" on-click="signup()">Signup</button>
+
+        {{#if errors || errorMsg }}
+        <br><br>
+        <div class="ui error message">
+            {{#if errorMsg}}
+            <p>{{errorMsg}}</p>
+            {{/if}}
+
+            {{#each errors:i}}
+            {{#if .}}<p>{{.}}</p>{{/if}}
+            {{/each}}
+        </div>
+        {{/if}}
+        {{/unless}}
+    </div>
+
+    {{#if signupsuccess}}
+    Your registration was success.<br>You will receive email with further instructions from us how to proceed.<br>Please check your inbox and if no email from us is found, check also your SPAM folder.
+    {{/if}}
+
+    <div class="ui basic segment {{#unless forgottenpass}}hide{{/unless}}" style="max-width: 300px; margin: auto; text-align: left;">
+        {{#unless resetsuccess}}
+            <ui-input
+                    name="login"
+                    value="{{user.login}}"
+                    class="fluid"
+                    placeholder="Email"
+            >
+            </ui-input>
+
+            <br>
+
+            <button type="button" class="ui massive fluid blue button uppercase" on-click="resetPassword()">RESET</button>
+
+            {{#if errors || errorMsg }}
+            <br><br>
+            <div class="ui error message">
+                {{#if errorMsg}}
+                <p>{{errorMsg}}</p>
+                {{/if}}
+
+                {{#each errors:i}}
+                {{#if .}}<p>{{.}}</p>{{/if}}
+                {{/each}}
+            </div>
+            {{/if}}
+        {{/unless}}
+
+        {{#if resetsuccess}}
+            Instructions how to revive your password has been sent to your email.<br>Please check your email.
+        {{/if}}
+    </div>
+
+
+</form>
+	{{#if B2BUserLoginPopupMessage}}
+		You are already registered as our B2B users. So you are requested to login from <a href='https://www.belair.in'>Belair.in</a>
+	{{/if}}
+{{/partial}}
+
+{{#if popup_new}}
+<div class="ui login small modal">
+    <i class="close icon"></i>
+    <div class="header">
+    	{{#if manage}}
+    		Manage Bookings
+    	{{/if}}
+    </div>
+    <div class="content" >
+        {{> form_new}}
+    </div>
+</div>
+{{/if}}
+{{#partial form_new}}
+	<div class="ui top attached tabular menu">
+            <a class="{{#if manage_bookings}}active{{/if}} item uppercase" data-tab="manage_bookings" on-click="handlePopupUI({x:'manage_bookings',y:'resetting_pass'})">Manage Bookings</a>
+        <a class="{{#if sign_up}}active{{/if}} item uppercase" data-tab="sign_up" on-click="handlePopupUI({x:'sign_up'})">Sign Up</a>
+        <a class="{{#if log_in}}active{{/if}} item uppercase" data-tab="login" on-click="handlePopupUI({x:'log_in',y:'resetting_pass1'})">Login</a>
+    </div>
+    {{#if manage_bookings}}
+    	
+<div class="content" >
+    <form action="javascript:;" class="ui form {{#if errors || errorMsg}}error{{/if}}  {{#if submitting}}loading{{/if}}" style="position: relative;" on-submit="getticketbypnr()">
+        <div class="ui two column middle aligned center aligned relaxed fitted stackable ">
+             <br/>
+             <div><p style="text-align:center; color:#131111;">
+            Enter the details below to manage your booking!
+                 </p> </div>
+            <div class="ui basic segment" style="max-width: 300px; margin: auto; text-align: left;">
+                <ui-input
+                    name="mobile"
+                    value="{{mobile}}"
+                    class="fluid "
+                    
+                    placeholder="Mobile / Email"
+                    >
+                </ui-input>
+
+                <ui-input
+                    name="pnr"
+                    value="{{pnr}}"
+                    class="fluid"                    
+                    placeholder="PNR / Booking Id."
+                    >
+                </ui-input>
+          {{#if errors || errorMsg }}
+                        <br><br>
+                        <div class="ui error message">
+                            {{#if errorMsg}}
+                            <p>{{errorMsg}}</p>
+                            {{/if}}
+
+                            {{#each errors:i}}
+                            {{#if .}}<p>{{.}}</p>{{/if}}
+                            {{/each}}
+                        </div>
+                        {{/if}}
+
+                <button type="submit" class="ui small blue button ">SUBMIT</button>
+
+            </div>
+
+        </div>
+    </form>
+    <div class="ui horizontal divider">
+       OR
+    </div>
+    <form action="javascript:;" class="ui form {{#if errors2 || errorMsg2}}error{{/if}}  {{#if submitting2}}loading{{/if}}" style="position: relative;" on-submit="getticketbylastname()">
+        <div class="ui two column middle aligned center aligned relaxed fitted stackable ">
+
+
+            <div class="ui basic segment" style="max-width: 300px; margin: auto; text-align: left;">
+                <ui-input
+                    name="lastname"
+                    value="{{lastname}}"
+                    class="fluid "
+                    placeholder="Last Name"
+                    >
+                </ui-input>
+
+                <ui-input
+                    name="pnr2"
+                    value="{{pnr2}}"
+                    class="fluid"
+                    placeholder="PNR / Booking Id."
+                    >
+                </ui-input>
+                    {{#if errors2 || errorMsg2 }}
+                        <br><br>
+                        <div class="ui error message">
+                            {{#if errorMsg2}}
+                            <p>{{errorMsg2}}</p>
+                            {{/if}}
+
+                            {{#each errors2:i}}
+                            {{#if .}}<p>{{.}}</p>{{/if}}
+                            {{/each}}
+                        </div>
+                        {{/if}}
+
+                <button type="submit" class="ui small blue button ">SUBMIT</button>
+
+            </div>
+
+        </div>
+    </form>
+
+    
+</div>
+    {{/if}}
+    {{#if sign_up}}
+    	<form  id="B2BUserPopup" action="javascript:;" class=" auth_form {{#if !popup}} form {{else}} ui basic segment form{{/if}} {{#if errors || errorMsg}}error{{/if}}  {{#if submitting}}loading{{/if}}" on-submit="submit()">
+    		<div class="ui basic segment inside_form">
+    		<ui-input
+                name="email"
+                value="{{user.email}}"
+                class="fluid"
+                placeholder="Email"
+                >
+        	</ui-input>
+        	<ui-input
+                name="mobile"
+                value="{{user.mobile}}"
+                class="fluid"
+                placeholder="Mobile"
+                >
+        	</ui-input>
+        	<ui-input
+                name="name"
+                value="{{user.name}}"
+                class="fluid"
+                placeholder="Name"
+                >
+        	</ui-input>
+        	<ui-input
+                type="password"
+                name="password"
+                value="{{user.password}}"
+                class="fluid"
+                placeholder="Password"
+                >
+        	</ui-input>
+        	<ui-input
+                type="password"
+                name="password2"
+                value="{{user.password2}}"
+                class="fluid"
+                placeholder="Password again"
+                >
+        	</ui-input>
+        	<br>
+        	<button type="button" class="ui massive fluid blue button uppercase" on-click="signup()">Signup</button>
+	        {{#if errors || errorMsg }}
+	        <br><br>
+	        <div class="ui error message">
+	            {{#if errorMsg}}
+	            <p>{{errorMsg}}</p>
+	            {{/if}}
+	
+	            {{#each errors:i}}
+	            {{#if .}}<p>{{.}}</p>{{/if}}
+	            {{/each}}
+	        </div>
+	        {{/if}}
+    		</div>
+    	</form>
+    	{{#if signupsuccess}}
+    		<p style="text-align:center;">
+    		Your registration was success.<br>You will receive email with further instructions from us how to proceed.<br>Please check your inbox and if no email from us is found, check also your SPAM folder.
+    		</p>
+    	{{/if}}
+    {{/if}}
+    {{#if log_in}}
+    	{{#if resetting_pass1}}
+    	<form  id="B2BUserPopup" action="javascript:;" class="{{#if !popup}} form {{else}} ui basic segment form{{/if}} {{#if errors || errorMsg}}errors{{/if}}  {{#if submitting}}loading{{/if}}" style="position: relative;" on-submit="submit()">
+			<div class="ui basic segment {{#if forgottenpass1}}hide{{/if}}" style="max-width: 300px; margin: auto; text-align: left;">
+		        <ui-input
+		                name="login"
+		                value="{{user.login}}"
+		                class="fluid"                
+		                placeholder="Login"
+		                >
+		        </ui-input>
+		        <ui-input
+		                name="password"
+		                type="password"
+		                value="{{user.password}}"
+		                class="fluid"                
+		                placeholder="Password"
+		                >
+		        </ui-input>
+        		<br>
+        		<button type="submit" class="ui  {{#if !popup}} small {{else}}massive{{/if}} fluid blue button uppercase reset_button">LOGIN</button>
+
+		        {{#if errors || errorMsg }}
+		        <br><br>
+		        <div class="ui error message">
+		            {{#if errorMsg}}
+		            <p>{{errorMsg}}</p>
+		            {{/if}}
+		
+		            {{#each errors:i}}
+		            {{#if .}}<p>{{.}}</p>{{/if}}
+		            {{/each}}
+		        </div>
+		        {{/if}}
+        		<br>
+        		<a href="javascript:;" class="forgot-password" on-click="handlePopupUI('_all_')">Forgot Password?</a>
+        	</div>
+        </form>
+        {{/if}}
+        {{#if reset_pass_manage1}}
+        	<form  id="B2BUserPopup" action="javascript:;" class="{{#if !popup}} form {{else}} ui basic segment form{{/if}} {{#if errors || errorMsg}}error{{/if}}  {{#if submitting}}loading{{/if}}" style="position: relative;" on-submit="submit()">
+        		<div class="ui basic segment inside_form">
+		        	<ui-input
+		                    name="login"
+		                    value="{{user.login}}"
+		                    class="fluid"
+		                    placeholder="Email"
+		            >
+		            </ui-input><br>
+		            <button type="button" class="ui massive fluid blue button uppercase reset_button" on-click="resetPassword()">RESET</button>
+                            
+                            {{#if resetsuccess}}
+                                Instructions how to revive your password has been sent to your email.<br>Please check your email.
+                            {{/if}}   
+            	</div>
+            </form>
+        {{/if}}
+    {{/if}}
+{{/form_new}} 

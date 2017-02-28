@@ -1,0 +1,531 @@
+﻿Regions:
+Users				(users, levels, role, accounting_codes)
+Transactions		(cart, amendment, invoice, transfer)
+Suppliers			(API_in, API_out, )
+Commercial
+Site					(translations, )
+
+==========================
+
+Users:
+
+email
+password
+role_id
+
+STAFF
+ID
+Type
+Name
+Email
+Mobile
+Enabled
+Last Transac. Dt.
+Last Login Dt.
+Creation Dt.
+Activation Dt.
+Deactivation Dt.
+Reporting Country
+Reporting State
+Reporting City
+Street
+City
+State
+Pincode
+Country
+
+=======
+AGENT:
+ID
+Type
+Name
+Email
+Mobile
+Enabled
+Last Transac. Dt.
+Last Login Dt.
+Creation Dt.
+Activation Dt.
+Deactivation Dt.
+Reporting Country
+Reporting State
+Reporting City
+Street
+City
+State
+Pincode
+Country
+Distributor
+Sales Rep.
+PAN Name
+PAN Number
+Rep Name
+Rep Mobile
+Rep Email
+User Deposit
+User Deposit Limit
+Distributor Deposit
+Distributor Credit Limit
+
+=======
+DISTRIBUTOR
+ID
+Type
+Name
+Email
+Mobile
+Enabled
+Last Transac. Dt.
+Last Login Dt.
+Creation Dt.
+Activation Dt.
+Deactivation Dt.
+Reporting Country
+Reporting State
+Reporting City
+Street
+City
+State
+Pincode
+Country
+Sales Rep.
+PAN Name
+PAN Number
+Rep Name
+Rep Mobile
+Rep Email
+User Deposit
+User Deposit Limit
+Distributor Deposit
+Distributor Credit Limit
+
+=======
+CORPORATE
+ID
+Type
+Name
+Email
+Mobile
+Enabled
+Last Transac. Dt.
+Last Login Dt.
+Creation Dt.
+Activation Dt.
+Deactivation Dt.
+Title
+First Name
+Last Name
+Street
+City
+State
+Date of Birth
+Designation
+Emp Code
+Cost Center
+Band
+Department
+Location
+Supervisor 1
+Supervisor 2
+Supervisor 3
+Supervisor 4
+Domestic Eligibility
+International Eligibility
+Frequent Flier
+Passport 1
+Passport 2
+Passport 3
+Passport 4
+Visa 1
+Visa 2
+Visa 3
+Visa 4
+Dom Meal Pref
+Dom Seat Pref
+Dom Spl Request
+Intl Meal Pref
+Intl Seat Pref
+Intl Spl Request
+
+=======
+B2C
+ID
+Type
+Name
+Email
+Mobile
+Enabled
+Last Transac. Dt.
+Last Login Dt.
+Creation Dt.
+Activation Dt.
+Deactivation Dt.
+Title
+First Name
+Last Name
+Street
+City
+State
+Date of Birth
+Frequent Flier
+Passport 1
+Passport 2
+Passport 3
+Passport 4
+Visa 1
+Visa 2
+Visa 3
+Visa 4
+Dom Meal Pref
+Dom Seat Pref
+Dom Spl Request
+Intl Meal Pref
+Intl Seat Pref
+Intl Spl Request
+
+=======
+User types:
+STAFF 
+AGENT - B2B
+DISTRIBUTOR - B2B
+CORPORATE - B2E
+WEB -  B2C
+SUPPLIER - NONE
+
+
+========
+Air Bookings
+
+Reference
+Booking Type
+Amendment Ref
+Booking Status
+Payment Status
+Invoice Status
+Payment Medium
+Amendment Type
+System Invoice Id
+Cart Generation Date
+Amendment Generation Date
+Booking Date
+Reseller Id
+Reseller Name
+Reseller Accounts Code
+Third Party Invoice Id
+3rd Party Invoice Status
+3rd Party Invoice Message
+Personal Booking
+Booking Employee ID
+Booking Employee Code
+Booking Employee Name
+Supplier Id
+Supplier Name
+Supplier Accounts Code
+Profile State
+Profile City
+Reporting State
+Reporting City
+Billing Entity
+Product Type
+Product Name
+Product Code
+Description
+Airline PNR/Prov. Booking
+GDS PNR
+Ticket Num/Final Booking
+Traveller
+Class
+Travel Date
+Passthrough
+Base Fare
+YQ
+YR
+PSF
+UDF
+JN
+OB
+Supplier Amendment Fee
+Reseller Amendment Fee
+Gross Fare
+TDS
+Service Tax
+Transaction Fee
+Convenience Fee
+Management Fee
+Gross Discount
+Net Discount
+Net Fare
+Extra Charges
+GDS IATA
+Base Markup
+Tax Markup
+Fee Markup
+Amendment Markup
+Total Markup
+Payment Recd
+
+
+=====
+CARTS
+
+S.N.
+Book Time
+Dept Time
+Cart ID
+Booking Type
+Booked By
+Reseller
+Type
+Summary
+Approval Status
+Bookign Status
+Payment Status
+
+
+=====
+CC Transaction
+
+Reference
+Reseller Id
+Reseller Name
+Profile City
+Profile State
+Distributor
+Product Name
+Product Type
+Description
+Reseller Accounts Code
+Booking Date
+Net Fare
+Transaction Type
+Payment Medium
+
+=====
+Air Amendment
+
+Reference
+Booking Type
+Amendment Ref
+Booking Status
+Payment Status
+Invoice Status
+Payment Medium
+Amendment Type
+System Invoice Id
+Cart Generation Date
+Amendment Generation Date
+Booking Date
+Reseller Id
+Reseller Name
+Reseller Accounts Code
+Third Party Invoice Id
+3rd Party Invoice Status
+3rd Party Invoice Message
+Personal Booking
+Booking Employee ID
+Booking Employee Code
+Booking Employee Name
+Supplier Id
+Supplier Name
+Supplier Accounts Code
+Profile State
+Profile City
+Reporting State
+Reporting City
+Billing Entity
+Product Type
+Product Name
+Product Code
+Description
+Airline PNR/Prov. Booking
+GDS PNR
+Ticket Num/Final Booking
+Traveller
+Class
+Travel Date
+Passthrough
+Base Fare
+YQ
+YR
+PSF
+UDF
+JN
+OB
+Supplier Amendment Fee
+Reseller Amendment Fee
+Gross Fare
+TDS
+Service Tax
+Transaction Fee
+Convenience Fee
+Management Fee
+Gross Discount
+Net Discount
+Net Fare
+Extra Charges
+GDS IATA
+Base Markup
+Tax Markup
+Fee Markup
+Amendment Markup
+Total Markup
+Payment Recd
+
+=====
+BALANCE update (transaction)
+
+Reference
+Reseller Id
+Reseller Name
+Profile City
+Profile State
+Distributor
+Product Type
+Description
+Booking Date
+Net Fare
+TDS
+Convenience Fee
+Deposit Balance
+Deposit Limit
+Reseller Accounts Code
+Transaction Id
+Product Sub-Type
+Product Name
+Product Code
+Description
+Cheque Number
+Cheque Date
+Referenced By
+Approved By
+Comments
+Payment Made By
+
+
+=======
+Funds Transfer
+
+Payment Id
+Distributor Id
+Reseller Id
+Reseller Name
+Payment Type
+Payment Time
+Payment Amount
+Reseller Balance
+Distributor Balance
+
+=====
+Insurance booking
+
+Reference
+Booking Type
+Booking Status
+Cart Generation Date
+Personal Booking
+Reseller Id
+Reseller Name
+Supplier Id
+Supplier Name
+Source Name
+Airline PNR/Prov. Booking
+Ticket Num/Final Booking
+Profile State
+Profile City
+Reporting State
+Reporting City
+Billing Entity
+Private Fare Code
+Booking Employee ID
+Booking Employee Code
+Booking Employee Name
+Branch Name
+Payment Mode
+Booking Date
+Product Type
+Product Name
+Product Code
+Description
+State/Country
+Traveller
+Total Nights
+Rating
+Check In
+Check Out
+Net Fare
+Base Fare
+Guest Charge
+Other Taxes
+Service Tax
+Transaction Fee
+Convenience Fee
+Management Fee
+Net Discount
+System Markup
+Branch Markup
+System Net
+Branch Net
+Base Markup
+Tax Markup
+Fee Markup
+Amendment Markup
+Total Markup
+
+
+
+=====
+<select name="update_type">
+Fund Allocate
+Fund Recall
+Fund Incentive
+
+
+<select name="supplier_id">
+Default
+Belair_H
+Belair_T
+Belair_A
+Indigo
+SpiceJet
+Belair_G8_T
+G8_BELAIR
+Belair_E_9W
+
+
+<select name="plating_carrier_1" id="plating_carrier_1">
+	"ANY" => 'ANY',
+	"AI" => 'Air India',
+	"G8" => 'Go Air',
+	"6E" => 'Indigo',
+	"9W" => 'Jet Airways',
+	"S2" => 'JetLite',
+	"IT" => 'Kingfisher',
+	"SG" => 'SpiceJet'
+
+
+<select name="source_id_1">
+AmadeusApiIntl
+AmadeusApiDom
+GalileoApi9W
+GalileoApiS2
+GalileoApiAI
+GalileoApiIntl
+GalileoApiDomRet
+GoairApi
+GoairCouponApi
+FlydubaiScraper
+AIExpressScraper
+GoairSpecialScraper
+SpiceApiV2
+SpiceApiDomReturnV2
+SpiceIntlApiV2
+IndigoApiV2
+IndigoApiCorporateV2
+IndigoApiDomReturnV2
+IndigoIntlApiV2
+IndigoScraperV2
+
+
+=====
+=====
+=====

@@ -1,0 +1,160 @@
+<form action="javascript:;" class="ui form segment payment {{#if form.errors}}error{{/if}} {{#if form.submitting}}loading{{/if}}" on-submit="submit()">
+    <div class="ui basic segment">
+        <div class="ui block header">
+
+            <div class="content">
+                {{payment.client}}
+                <div class="sub header">{{payment.reason}}</div>
+            </div>
+        </div>
+ <div class="pay_div_left">
+            <div class="div_left_source">
+                <ul>
+                    <li {{#if 1 == active}}class="payment_highlight"{{/if}} on-click="set('active', 1)">CREDIT CARD</li>
+                    <li {{#if 2 == active}}class="payment_highlight"{{/if}} on-click="set('active', 2)">DEBIT CARD</li>
+                    <li {{#if 3 == active}}class="payment_highlight"{{/if}} on-click="set('active', 3)">NET BANKING</li>
+                    <li {{#if 4 == active}}class="payment_highlight"{{/if}} on-click="set('active', 4)">WALLET</li>
+                </ul>
+            </div>
+	</div>
+        <div class="pay_div_right">
+        {{#if 1 == active || 2 == active }}
+        <div class="credit-card">
+            <div class="ui two column grid">
+                <div class="column" on-click="resetCC(event)">
+                    <div class="number field">
+                        <div class="label">{{#if 1 == active}}Credit{{else}}Debit{{/if}} Card Number <span class="required">*</span></div>
+                        <ui-cc disabled="{{cc.id}}" class="card-number fluid" cardType="{{active}}" cctype="{{cc.type}}" value="{{cc.number}}" on-click="reset-cc"  error="{{form.errors.number}}"></ui-cc>
+                    </div>
+
+                    <div class="three expiry fields">
+                        <div class="field">
+                            <div class="label">Expiry Month <span class="required">*</span></div>
+                            <ui-select disabled="{{cc.id}}" class="month" placeholder="Month" options="{{ date.select.cardMonths }}" value="{{cc.exp_month}}"  error="{{form.errors.exp_month}}" on-click="reset-cc"></ui-select>
+                        </div>
+                        <div class="field">
+                            <div class="label">Expiry Year <span class="required">*</span></div>
+                            <ui-select disabled="{{cc.id}}" class="year" placeholder="Year" options="{{ date.select.cardYears }}" value="{{cc.exp_year}}"  error="{{form.errors.exp_year}}" on-click="reset-cc"></ui-select>
+                        </div>
+                        <div class="field" style="position: relative;">
+                            <div class="label">CVV No <span class="required">*</span></div>
+                            <ui-cvv class="fluid cvv" cctype="{{cc.type}}" value="{{cc.cvv}}"  error="{{form.errors.cvv}}" on-click="reset-cc"></ui-cvv>
+                        </div>
+                    </div>
+
+                    {{#if cc.type}}
+                    <div class="cvv-image">
+                        {{#if 'amex' == cc.type}}
+                        <div>4 digit CVV Number</div>
+                        <div class="cvv4-img">&nbsp;</div>
+                        {{else}}
+                        <div>3 digit CVV Number</div>
+                        <div class="cvv3-img">&nbsp;</div>
+                        {{/if}}
+                    </div>
+                    {{/if}}
+
+
+
+                    <div class="number field">
+                        <div class="label">Card Holder's Name <span class="required">*</span></div>
+                        <ui-input disabled="{{cc.id}}" class="fluid" value="{{cc.name}}"  error="{{form.errors.name}}" on-click="reset-cc"></ui-input>
+                    </div>
+
+                    <div class="store field">
+                        <label><input disabled="{{cc.id}}" type="checkbox" checked='{{cc.store}}'> Store card for future use.</label>
+                    </div>
+                </div>
+
+                <div class="column">
+                    {{#if cards}}
+                    <div class="ui segment field">
+                        <div class="label">Saved cards</div>
+
+                        <div class="ui list">
+                            {{#each cards}}
+                            <div class="item"><a href="javascript:;" on-click="setCard(.)">[[number]]</a></div>
+                            {{/each}}
+                        </div>
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+
+
+        </div>
+         {{elseif active == 3}}
+        <div class="netbanking">
+            <div class="Bank field">
+                <div class="label">Select Your Bank <span class="required">*</span></div>
+                <ui-select
+                        class="bank fluid"value="{{netbanking.net_banking}}"
+                        error="{{form.errors.net_banking}}"
+                        options="{{banks}}"
+                        ></ui-select>
+            </div>
+
+        </div>
+		 {{elseif active == 4}}
+            <div class="netbanking">
+                <div class="mobi_content field step3wallet">
+                    <div class="label">Select Your Wallet <span class="required">*</span></div>
+                    <ui-select
+                         class="wallet fluid" value="{{wallet.wallet_type}}"
+                         error="{{step.errors.wallet_type}}"
+                         options="{{wallets}}"
+                    >
+                   </ui-select>
+                </div>
+            </div>
+
+        {{/if}}
+
+        {{#if form.errors }}
+        <div class="ui error message">
+            {{#each form.errors:i}}
+            {{#if .}}<p>{{.}}</p>{{/if}}
+            {{/each}}
+        </div>
+        {{/if}}
+
+
+        <div class="note">
+            <span>Please Note :</span> The charge will appear on your credit card / Account statement as 'Airtickets India Pvt Ltd'
+        </div>
+
+        <div class="agreement field">
+            <label><input type="checkbox" checked='{{accepted}}'> I have read and accepted the <a href="/b2c/cms/termsofservices/2" target="_blank">Terms Of Service</a>*</label>
+
+        </div>
+
+        <div class="price">
+            {{#if payment.convince_fee > 0 }}
+            <div>
+                Convenience fee  {{{money(payment.convince_fee, meta.display_currency)}}} will be charged
+            </div>
+            {{/if}}
+            {{#if meta.display_currency}}
+            <span class="amount">{{{ money(parseInt(payment.amount) + parseInt(payment.convince_fee),meta.display_currency) }}}</span>
+            <span>(Total Payable Amount)</span>
+            {{/if}}
+        </div>
+      <div style="width:100%">
+			<div style="width:25%; float:left">
+	       		<button type="submit" style="width: 100%;" class="ui wizard button  orange" {{#unless accepted}}disabled="disabled"{{/unless}}>MAKE PAYMENT</button>
+	       	</div>
+	        <div class="verified">
+	            <div>
+	                <img src="/themes/B2C/img/verified/vbv_250.gif">
+	                <img src="/themes/B2C/img/verified/mastercard_securecode.gif">
+	                <img src="/themes/B2C/img/verified/AMEX_SafeKey_180x99px.png">
+	                <img src="/themes/B2C/img/verified/pci-dss-compliant.jpg">
+	                <img src="/themes/B2C/img/verified/SSL-security-seal.png">
+	            </div>
+	        </div>
+	        
+		</div>
+        
+    </div>
+	</div>
+</form>

@@ -1,0 +1,29 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.input.decorated {
+  input {
+    padding: (@verticalPadding + @placeholderFontSize) @horizontalPadding @verticalPadding @horizontalPadding;
+  }
+
+  .placeholder {
+    position: absolute;
+    top: @borderWidth;
+    left: @borderWidth;
+    padding: (@verticalPadding + @placeholderFontSize/2) @horizontalPadding @verticalPadding @horizontalPadding;
+  }
+
+  &.in, &:hover:not(.disabled), &:focus:not(.disabled) {
+    .placeholder {
+      font-size: 9px;
+      padding: 5px;
+    }
+  }
+
+  &.error {
+    .placeholder {
+      color: @errorColor;
+    }
+  }
+}

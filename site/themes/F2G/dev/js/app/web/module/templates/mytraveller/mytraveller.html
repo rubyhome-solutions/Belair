@@ -1,0 +1,27 @@
+<!--<div class="panel">
+    <leftpanel user="{{user}}" ></leftpanel>
+</div>-->
+<layout meta="{{meta}}">
+    <div class="content">
+        
+                <div class="box my-travellers">
+                    <div class="left" >
+
+                        <div id="currentTraveler">
+                            {{#if !mytraveller.add && !mytraveller.edit}}   
+                            <travellerview mytraveller="{{mytraveller}}" meta="{{meta}}"></travellerview>
+                            {{else}}                
+                            <traveller-form mytraveller="{{mytraveller}}" meta="{{meta}}"></traveller-form>
+                            {{/if}}                
+                        </div>
+                    </div>
+                    <travellerlist mytraveller="{{mytraveller}}" meta="{{meta}}"></travellerlist>
+                </div>
+           
+    </div>
+    {{#partial panel}}
+
+    {{> base-panel }}
+
+    {{/partial}}
+</layout>

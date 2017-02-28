@@ -1,0 +1,58 @@
+<layout meta="{{meta}}">
+    {{#if results.flights}}
+        {{#if results.booking}}
+            <booking booking="{{results.booking}}" meta="{{meta}}" embedded="{{true}}"></booking>
+        {{else}}
+            <search-results class="segment centered" results="{{results}}" search="{{search}}" meta="{{meta}}"></search-results>
+        {{/if}}
+    {{else}}
+        <table style="width: 100%">
+            <tr>
+                <td style="padding-right: 10px;">
+                    <div class="ui relaxed segment">
+                        <search-form class="basic segment" results="{{results}}" search="{{search}}" meta="{{meta}}"></search-form>
+                    </div>
+                </td>
+                {{#if recent}}
+                <td style="width: 400px; padding-left: 10px; vertical-align: top;">
+                    <div class="ui header" style="  font-size: 16px; font-weight: normal; color: #202629; margin-bottom: 10px;">Recent Searches</div>
+                    <div class="ui segment recent-searches">
+                        <div class="box">
+                            {{#each recent}}
+                            <div class="item">
+                                <div class="date">{{ moment(./search.flights.0.depart_at).format('MMM') }}<span>{{ moment(./search.flights.0.depart_at).format('DD') }}</span></div>
+                                <div class="direction" style="cursor: pointer;" on-click="swapSearch(search)">
+                                    {{from.city}} <span class="{{#if 2 == ./search.tripType}}back{{else}}to{{/if}}">&nbsp;</span> {{to.city}}
+                                    {{#if 3 == ./search.tripType}}
+                                    (multicity)
+                                    {{/if}}
+                                </div>
+                                <div class="info">
+                                    {{#if ./search.passengers.0 > 0}}{{ ./search.passengers.0 }} Adult{{/if}}{{#if ./search.passengers.1 > 0}}, {{ ./search.passengers.1 }} Child{{/if}}{{#if ./search.passengers.2 > 0}}, {{ ./search.passengers.2 }} Infant{{/if}}
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </td>
+                {{/if}}
+            </tr>
+        </table>
+    {{/if}}
+
+    {{#partial panel}}
+        {{> base-panel }}
+        {{#if results.flights}}
+            {{#unless results.booking}}
+                <filter results="{{results}}" reset="{{results.reset}}" filter="{{results.filter}}" filtered="{{results.filtered}}" search="{{results.search}}" meta="{{meta}}"></filter>
+            {{/unless}}
+        {{/if}}
+    {{/partial}}
+</layout>
+
+
+{{#if modify}}
+<search-form class="basic segment" results="{{results}}" search="{{modify}}" meta="{{meta}}" modify="{{modify}}"></search-form>
+{{/if}}
+
+

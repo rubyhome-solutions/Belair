@@ -1,0 +1,97 @@
+
+<layout meta="{{meta}}">
+    <header>
+    <div class="ui three column grid">
+        <div class="column"><a id="m_btn" class="main_mnu" href="#"><img src="/themes/B2C/img/mobile/bars.png" alt="menu"></a></div>
+        <div class="column"><a class="logo" href="/b2c/flights"><img src="/themes/B2C/img/mobile/logo.png" alt="CheapTicket.in"></a></div>
+        <div class="column header_right_menu"><a href="/b2c/flights"><div class="home_button"></div></a></div>
+    </div>
+    <div id="m_menu" class="ui left vertical sidebar menu push scale down overlay">
+        <div class="avat">
+            <div class="item">
+                <img id="avatar" class="ui avatar liitle image" src="/themes/B2C/img/guest.png">
+                <div class="description">WELCOME
+                    {{#if meta.user!=null}}
+                    <h1 id="name">{{ meta.user.name }}</h1>
+                    {{else}}
+                    <h1 id="name">Guest User</h1>
+                    {{/if}}
+                    
+                    </div>
+            </div>
+        </div>
+        {{#if meta.user }}
+            <a class="ui blue fluid button" href="/site/logout">Logout</a>
+        {{/if}}
+        <a class="item">
+            <div class="prof"></div>
+            <p><a href="/b2c/mobile/myprofile/">My Profile</a></p>
+        </a>
+        <a class="item">
+            <div class="book"></div>
+            <p><a href="/b2c/mobile/mybookings/">My Bookings</a></p>
+        </a>
+        <a class="item">
+            <div class="trav"></div>
+            <p><a href="/b2c/mobile/mytraveller/">Travellers</a></p>
+        </a>
+        <a class="item">
+            <div class="print"></div>
+            <p><a href="/b2c/contactus"> Contact Us</a></p>
+        </a>   
+		<a class="item">
+            <div class="print"></div>
+            <p><a href="/b2c/deals">Great Deals</a></p>
+        </a>    		
+        <span id="devider" class="item">QUICK TOOLS</span>
+        <a class="item">
+            <div class="print"></div>
+            <p><a href="/b2c/mobile/mybookings/">Print / View Ticket</a></p>
+        </a>
+        <a class="item">
+            <div class="cancel"></div>
+            <p><a href="/b2c/mobile/mybookings/">Cancelations</a></p>
+        </a>
+        <a class="item">
+            <div class="change"></div>
+            <p><a href="/b2c/mobile/mybookings/"> Change / Reschedule</a></p>
+        </a>
+        
+    </div>
+</header>
+ <div class="ui container">
+        <div class="ui column grid">
+            <div class="row" style="background-color: #FECD08;">
+                <center><h2>Great Deals</h2></center>
+            </div>
+			
+			<div class="address" style="padding-left:30px;">
+			<p style="font-size: 20px;">Amazing Offers for Online Payments, Credit-Debit Cards & E-Wallets</p>
+			</div>
+		
+			<div class="row">
+			<img src="../../../themes/B2C/img/mobiledeals.png" style="padding-left:80px;" usemap="#image-map"/>
+			<map name="image-map">
+			<area target="_blank" alt="" title="" href="https://cheapticket.in/b2c/cms/offers/28" coords="89,172,139,222" shape="rect">
+			<area target="_blank" alt="" title="" href="https://cheapticket.in/b2c/cms/axis/73" coords="102,370,152,420" shape="rect">
+			<area target="_blank" alt="" title="" href="https://cheapticket.in/b2c/cms/jiomoney/51" coords="96,566,146,616" shape="rect">
+			<area target="_blank" alt="" title="" href="https://cheapticket.in/b2c/cms/paytm/48" coords="91,759,141,809" shape="rect">
+			<area target="_blank" alt="" title="" href="https://cheapticket.in/b2c/cms/mobikwik/43" coords="96,952,146,1002" shape="rect">
+			<area target="_blank" alt="" title="" href="https://cheapticket.in/b2c/cms/payu/44" coords="96,952,146,1002" shape="rect">
+			</map>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

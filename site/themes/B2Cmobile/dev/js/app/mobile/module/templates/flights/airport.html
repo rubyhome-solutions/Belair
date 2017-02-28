@@ -1,0 +1,18 @@
+{{#if big}}
+<div class="airport" on-click="show()">
+    {{#if value}}
+    <div class="code">{{code}}</div>
+    <div class="city">{{city}}</div>
+    {{else}}
+    <div class="placeholder">{{placeholder}}</div>
+    {{/if}}
+</div>
+{{else}}
+<div class="ui input medium" on-click="show()">
+    <input placeholder="{{placeholder}}" type="text" readonly="readonly" value="{{#if value}}{{city}} ({{code}}){{/if}}">
+</div>
+{{/if}}
+
+<div style="display: none;">
+<input id="{{id}}" class="airport" type="hidden" value="{{value}}">
+</div>

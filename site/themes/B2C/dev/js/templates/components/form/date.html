@@ -1,0 +1,39 @@
+<div class="ui selection dropdown datepicker {{ class }} {{#if error}}error{{/if}} {{ classes(state, large, value, disabled) }}">
+    <input type="hidden" value="{{value}}">
+    {{#unless simple}}
+    <i class="calendar outline icon"></i>
+    {{/unless}}
+    {{#if large}}
+    <div class="ui placeholder">{{placeholder}}</div>
+    {{/if}}
+    <div class="{{#unless value}}default{{/unless}} text">
+        <span></span>
+        {{#if value && value.format }}
+            {{#if simple}}
+                {{ value.format('YYYY-MM-DD') }}
+            {{else}}
+            <div class="mm-yy">
+                {{ value.format('MMM, YYYY') }}<br>
+                {{ value.format('dddd') }}
+            </div>
+            <div class="day">{{ value.format('D') }}</div>
+            {{/if}}
+        {{else}}
+            {{placeholder}}
+        {{/if}}
+    </div>
+    [[#if twomonth]]
+        <div class="menu pointing transition">
+            <ui-calendar value="{{value}}" min="{{min}}" max="{{max}}" twomonth="{{twomonth}}" range="{{range}}"></ui-calendar>
+        </div>
+    [[else]]
+        <div class="menu pointing transition" style="width: 350px;">
+        {{#if changeyear=='1'}}            
+                <ui-calendar value="{{value}}" min="{{min}}" max="{{max}}" changeyear="{{changeyear}}"></ui-calendar>
+        {{else}}
+                <ui-calendar value="{{value}}" min="{{min}}" max="{{max}}"></ui-calendar>
+        {{/if}}
+        </div>
+    [[/if]]
+
+</div>

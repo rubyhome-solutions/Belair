@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://radixx.com/WSRadixx/RadixxAdmin" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://radixx.com/WSRadixx/RadixxAdmin" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://radixx.com/WSRadixx/RadixxAdmin">
+      <s:element name="ServiceInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServiceInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EncryptLoginInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StringToEncypt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptionKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EncryptLoginInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptLoginInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSystemOptionValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SystemOptionKeyword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSystemOptionValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSystemOptionValueResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetServiceCache">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetServiceCacheResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ResetServiceCacheResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ServiceInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceInfo" />
+  </wsdl:message>
+  <wsdl:message name="ServiceInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EncryptLoginInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:EncryptLoginInfo" />
+  </wsdl:message>
+  <wsdl:message name="EncryptLoginInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:EncryptLoginInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemOptionValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSystemOptionValue" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemOptionValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSystemOptionValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetServiceCacheSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetServiceCache" />
+  </wsdl:message>
+  <wsdl:message name="ResetServiceCacheSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetServiceCacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceInfoHttpGetIn" />
+  <wsdl:message name="ServiceInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="EncryptLoginInfoHttpGetIn">
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="StringToEncypt" type="s:string" />
+    <wsdl:part name="EncryptionKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EncryptLoginInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemOptionValueHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="SystemOptionKeyword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemOptionValueHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ResetServiceCacheHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ResetServiceCacheHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ServiceInfoHttpPostIn" />
+  <wsdl:message name="ServiceInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="EncryptLoginInfoHttpPostIn">
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="StringToEncypt" type="s:string" />
+    <wsdl:part name="EncryptionKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EncryptLoginInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemOptionValueHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="SystemOptionKeyword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemOptionValueHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ResetServiceCacheHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ResetServiceCacheHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="RadixxAdminSoap">
+    <wsdl:operation name="ServiceInfo">
+      <wsdl:input message="tns:ServiceInfoSoapIn" />
+      <wsdl:output message="tns:ServiceInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EncryptLoginInfo">
+      <wsdl:input message="tns:EncryptLoginInfoSoapIn" />
+      <wsdl:output message="tns:EncryptLoginInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemOptionValue">
+      <wsdl:input message="tns:GetSystemOptionValueSoapIn" />
+      <wsdl:output message="tns:GetSystemOptionValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetServiceCache">
+      <wsdl:input message="tns:ResetServiceCacheSoapIn" />
+      <wsdl:output message="tns:ResetServiceCacheSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RadixxAdminHttpGet">
+    <wsdl:operation name="ServiceInfo">
+      <wsdl:input message="tns:ServiceInfoHttpGetIn" />
+      <wsdl:output message="tns:ServiceInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EncryptLoginInfo">
+      <wsdl:input message="tns:EncryptLoginInfoHttpGetIn" />
+      <wsdl:output message="tns:EncryptLoginInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemOptionValue">
+      <wsdl:input message="tns:GetSystemOptionValueHttpGetIn" />
+      <wsdl:output message="tns:GetSystemOptionValueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetServiceCache">
+      <wsdl:input message="tns:ResetServiceCacheHttpGetIn" />
+      <wsdl:output message="tns:ResetServiceCacheHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RadixxAdminHttpPost">
+    <wsdl:operation name="ServiceInfo">
+      <wsdl:input message="tns:ServiceInfoHttpPostIn" />
+      <wsdl:output message="tns:ServiceInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EncryptLoginInfo">
+      <wsdl:input message="tns:EncryptLoginInfoHttpPostIn" />
+      <wsdl:output message="tns:EncryptLoginInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemOptionValue">
+      <wsdl:input message="tns:GetSystemOptionValueHttpPostIn" />
+      <wsdl:output message="tns:GetSystemOptionValueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetServiceCache">
+      <wsdl:input message="tns:ResetServiceCacheHttpPostIn" />
+      <wsdl:output message="tns:ResetServiceCacheHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RadixxAdminSoap" type="tns:RadixxAdminSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServiceInfo">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxAdmin/ServiceInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EncryptLoginInfo">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxAdmin/EncryptLoginInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemOptionValue">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxAdmin/GetSystemOptionValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetServiceCache">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxAdmin/ResetServiceCache" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxAdminSoap12" type="tns:RadixxAdminSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServiceInfo">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxAdmin/ServiceInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EncryptLoginInfo">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxAdmin/EncryptLoginInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemOptionValue">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxAdmin/GetSystemOptionValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetServiceCache">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxAdmin/ResetServiceCache" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxAdminHttpGet" type="tns:RadixxAdminHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ServiceInfo">
+      <http:operation location="/ServiceInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EncryptLoginInfo">
+      <http:operation location="/EncryptLoginInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemOptionValue">
+      <http:operation location="/GetSystemOptionValue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetServiceCache">
+      <http:operation location="/ResetServiceCache" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxAdminHttpPost" type="tns:RadixxAdminHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ServiceInfo">
+      <http:operation location="/ServiceInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EncryptLoginInfo">
+      <http:operation location="/EncryptLoginInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemOptionValue">
+      <http:operation location="/GetSystemOptionValue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetServiceCache">
+      <http:operation location="/ResetServiceCache" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RadixxAdmin">
+    <wsdl:port name="RadixxAdminSoap" binding="tns:RadixxAdminSoap">
+      <soap:address location="http://g8.service.radixx.com/RadixxAdmin.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxAdminSoap12" binding="tns:RadixxAdminSoap12">
+      <soap12:address location="http://g8.service.radixx.com/RadixxAdmin.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxAdminHttpGet" binding="tns:RadixxAdminHttpGet">
+      <http:address location="http://g8.service.radixx.com/RadixxAdmin.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxAdminHttpPost" binding="tns:RadixxAdminHttpPost">
+      <http:address location="http://g8.service.radixx.com/RadixxAdmin.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

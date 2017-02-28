@@ -1,0 +1,36 @@
+<layout meta="{{meta}}">
+    {{#if !mybookings.loggedin}}
+    <div id="guestbooking" class="content">
+        <div class="step header step1 active">Get Booking</div>
+        <div class="ui segment">
+            <div class="ui two column middle aligned center aligned relaxed fitted stackable grid">
+                <div class="column">          
+                    <!--                    Have a CheapTicket.in Account? Sign in here!<br>
+                                        <button type="button" class="ui button small blue" on-click="signin()">Sign in</button>-->
+                    
+                    
+                        <auth meta="{{meta}}"></auth>
+                    
+                </div>  
+
+
+                <div class="ui vertical divider">
+                    Or
+                </div> 
+                <div class="center aligned column">
+                    <guestbooking mybookings="{{mybookings}}" meta="{{meta}}"></guestbooking> 
+                </div>
+            </div>
+        </div>
+    </div> 
+    {{else}}
+
+    <details mybookings="{{mybookings}}" meta="{{meta}}"></details>
+    {{/if}}
+
+    {{#partial panel}}
+
+    {{> base-panel }}
+
+    {{/partial}}
+</layout>

@@ -1,0 +1,151 @@
+{{# { step: booking.steps.1 } }}
+<div class="step header step1 {{#if step.active }}active{{else}}{{#if step.completed }}completed{{/if}}{{/if}}" role="tab">Itinerary</div>
+{{#if !step.active && step.completed}}
+<table class="step1-summary segment" on-click="activate(1)">
+    {{#each booking.flights:i}}
+    {{#each segments:j}}
+    <tr>
+        <td class="logo">
+            <img src="{{first(.).carrier.logo}}" alt="">
+        </td>
+        <td class="carrier">
+            {{first(.).carrier.name}}<br>
+            <span class="small">{{first(.).flight}}</span>
+        </td>
+        <td class="itinerary">
+            {{first(.).from.city}} → {{last(.).to.city}}<br>
+            <span class="small">{{first(.).depart.format('D MMM, YYYY')}}</span>
+        </td>
+        <td class="duration">
+            {{first(.).depart.format('HH:mm')}} — {{last(.).arrive.format('HH:mm')}}<br>
+            <span class="small">{{ duration.format(segtime(.))}}</span>
+        </td>
+        {{#if i == 0 && j == 0 }}
+        {{#if booking.promo_value!=null}}
+        <td rowspan="{{ seg_length(booking.flights) }}" class="price">
+            {{{ money(booking.price, booking.currency) }}}- {{{ money(booking.promo_value, booking.currency) }}}= {{{ money(booking.price-booking.promo_value, booking.currency) }}}
+        </td>
+        {{else}}
+        <td rowspan="{{ seg_length(booking.flights) }}" class="price">
+            {{{ money(booking.price, booking.currency) }}}
+        </td>
+        {{/if}}
+        {{/if}}
+    </tr>
+    {{/each}}
+    {{/each}}
+</table>
+{{else}}
+{{#if step.active}}
+<form action="javascript:;" class="ui form segment step1 {{#if step.errors}}error{{/if}} {{#if step.submitting}}loading{{/if}}" on-submit="submit()">
+    {{#each booking.flights}}
+    <itinerary flight="{{.}}"></itinerary>
+    {{/each}}
+
+    <div class="ui basic segment booking-contacts">
+        <div class="ui header">Contact Details</div>
+
+        <div class="ui two column middle top aligned relaxed fitted grid" style="position: relative">
+            <div class="column" style="width: 65%;">
+                <div class="two fields">
+                    <div class="field">
+                        <label>E-Mail</label>
+                        <ui-email class="{{#if booking.user.email}}bold{{/if}}" name="email" placeholder="E-Mail" error="{{step.errors.email}}" value="{{booking.user.email}}"></ui-email>
+                    </div>
+                    <div class="field phone">
+                        <label>Mobile</label>
+                        <ui-input class="code input" name="mobile" placeholder="Code" error="{{step.errors.mobile}}" value="{{booking.user.country}}"></ui-input>
+                        <ui-input class="number {{#if booking.user.mobile}}bold{{/if}}" name="mobile" placeholder="Mobile" error="{{step.errors.mobile}}" value="{{booking.user.mobile}}"></ui-input>
+
+                    </div>
+                </div>
+
+                {{#if step.errors }}
+                <div class="ui error message">
+                    {{#each step.errors:i}}
+                    {{#if .}}<p>{{.}}</p>{{/if}}
+                    {{/each}}
+                </div>
+                {{/if}}
+            </div>
+            <div class="column top center aligned" style="width: 35%;">
+                {{#unless meta.user.email}}
+                Have a CheapTicket.in Account? Sign in here!<br>
+                <button type="button" class="ui button small blue" on-click="signin()">Sign in</button>
+                {{/unless}}
+            </div>
+
+            <div class="column">
+                {{#if booking.clientSourceId==1}}
+                <div class="two fields">
+                    <div class="field">
+                        
+                        <div class="item">
+                            {{#if promovalue!=null}}
+                            <ui-input
+                                name="promocode"
+                                value="{{promocode}}"
+                                class="fluid "                    
+                                placeholder="Enter Promo Code"
+                                disabled="disabled"
+                                >
+                            </ui-input> 
+                            {{else}}
+                             <ui-input
+                                name="promocode"
+                                value="{{promocode}}"
+                                class="fluid "                    
+                                placeholder="Enter Promo Code"
+                               
+                                >
+                            </ui-input> 
+                            {{/if}}
+                        </div>
+                        
+                    </div>
+                    <div class="field">
+                         {{#if promovalue!=null}}
+                         <div on-click="removePromoCode()" ><i class="red remove circle outline icon" alt="Remove Promo Code" title="Remove Promo Code" ></i></div>
+                         {{else}}
+                            <div  class="ui basic button"  on-click="applyPromoCode()">APPLY</div>
+                            
+                         {{/if}}
+                         
+                    </div>
+                    {{#if promoerror!=null}}
+                    <div style="clear:both;">
+                    <div class="ui small field negative message">
+                        <i class="close icon" on-click="removeErrorMsg()"></i>
+                       {{promoerror}}
+                    </div></div>
+                    {{/if}}
+                </div>
+                {{/if}}
+                <button type="submit" class="ui wizard button massive blue">CONTINUE</button>
+            </div>
+            <div class="right aligned column">
+                TOTAL:<br>
+                 {{#if promovalue!=null}}
+                  <span class="price">{{{ money(booking.price, booking.currency) }}} - {{{ money(promovalue, booking.currency) }}} = {{{ money(booking.price-promovalue, booking.currency) }}}</span>
+                 {{else}} 
+                <span class="price">{{{ money(booking.price, booking.currency) }}}</span>
+                {{/if}}
+                <div class="taxes">
+                    Basic Fare: {{{ money(booking.taxes.basic_fare, booking.currency) }}} , YQ: {{{ money(booking.taxes.yq, booking.currency) }}}, Service Tax: {{{ money(booking.taxes.jn, booking.currency) }}}, Other: {{{ money(booking.taxes.other, booking.currency) }}}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>
+{{/if}}
+{{/if}}
+{{/}}
+
+{{#booking}}
+<div class="ui fare fluid popup" style="text-align: left; max-width: 280px;">
+    {{#if paxTaxes.1}}{{paxTaxes.1.c}}x adults: {{{ money(paxTaxes.1.basic_fare, meta.display_currency) }}} YQ:{{{ money(paxTaxes.1.yq, meta.display_currency) }}} JN:{{{ money(paxTaxes.1.jn, meta.display_currency) }}} OTHER:{{{ money(paxTaxes.1.other, meta.display_currency) }}} <br>{{/if}}
+            {{#if paxTaxes.2}}{{paxTaxes.2.c}}x children: {{{ money(paxTaxes.2.basic_fare, meta.display_currency) }}} YQ:{{{ money(paxTaxes.2.yq, meta.display_currency) }}} JN:{{{ money(paxTaxes.2.jn, meta.display_currency) }}} OTHER:{{{ money(paxTaxes.2.other, meta.display_currency) }}} <br>{{/if}}
+            {{#if paxTaxes.3}}{{paxTaxes.3.c}}x infants: {{{ money(paxTaxes.3.basic_fare, meta.display_currency) }}} YQ:{{{ money(paxTaxes.3.yq, meta.display_currency) }}} JN:{{{ money(paxTaxes.3.jn, meta.display_currency) }}} OTHER:{{{ money(paxTaxes.3.other, meta.display_currency) }}} <br>{{/if}}
+</div>
+{{/booking}}

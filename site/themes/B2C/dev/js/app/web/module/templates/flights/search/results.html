@@ -1,0 +1,18 @@
+{{#if 1 == search.tripType}}
+    <results-oneway pending="{{pending}}" meta="{{meta}}" search="{{search}}" flights="{{flights}}"></results-oneway>
+{{/if}}
+
+{{#if 2 == search.tripType}}
+    {{#if search.domestic}}
+        <results-roundtrip pending="{{pending}}" meta="{{meta}}" search="{{search}}" flights="{{flights}}" prices="{{prices}}" filter="{{filter}}"></results-roundtrip>
+    {{else}}
+        <results-oneway pending="{{pending}}" meta="{{meta}}" search="{{search}}" flights="{{flights}}"></results-oneway>
+    {{/if}}
+{{/if}}
+
+{{#if 3 == search.tripType}}
+    <results-multicity pending="{{pending}}" meta="{{meta}}" search="{{search}}" flights="{{flights}}"></results-multicity>
+{{/if}}
+
+
+

@@ -1,0 +1,6 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@checkboxBorder: 1px solid black;
+@checkboxHoverBorder: 1px solid rgba(0, 0, 0, 0.9);

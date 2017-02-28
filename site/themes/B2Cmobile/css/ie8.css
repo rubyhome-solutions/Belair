@@ -1,0 +1,32 @@
+header .top-menu li a {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";}
+header .top-menu li a.active {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";}
+
+.icons {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";}
+.icons.active {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";}
+
+.input.date input {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";}
+.input.disabled {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";}
+.select select {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";}
+.select-light select {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";}
+
+.search-form .radio-box label input {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";}
+
+.rs-roundtrip .user-info .period:nth-child(2n):after {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";}
+
+.booking-item .details table td.flight {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";}
+.payment .itinerary .details-body tr td.flight {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";}
+.my-bookings-details .item TABLE.travel TR TD.flight {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";}
+
+.ui-datepicker-disabled {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";}
+
+.popup-container {
+    background: #fff;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
+.popup-container .popup {
+    top: 25%;
+    left: 30%;
+}
+
+.select select { height: 45px;}
+.select-light select {height: 38px;}

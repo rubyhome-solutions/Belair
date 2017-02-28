@@ -1,0 +1,101 @@
+{{#passenger}}
+<div class="ui segment passenger {{class}}">
+    <div class="name tree fields">
+        <div class="title field">
+            <ui-select class="title" placeholder="Title" options="{{ meta.select.titles() }}" value="{{traveler.title_id}}" error="{{errors.title_id}}"></ui-select>
+        </div>
+        <div class="first name field">
+            <ui-input name="firstname" class="firstname" placeholder="First & Middle Name" value="{{traveler.firstname}}" error="{{errors.firstname}}"></ui-input>
+
+            <div class="ui travelers popup vertical menu">
+                {{# { travelers: search(traveler.firstname, travelers) } }}
+                    {{#if travelers.length}}
+                        <div class="header">Pick a traveler</div><br>
+                        {{#each travelers}}
+                        <a class="item" on-click="pickTraveler(.)">
+                            <i class="user icon"></i> {{firstname}} {{lastname}}
+                        </a>
+                        {{/each}}
+                    {{else}}
+                        <div class="header">New traveler?</div><br>
+                        <p>We will register traveler in the system for faster access.</p>
+                    {{/if}}
+                {{/}}
+            </div>
+
+        </div>
+        <div class="last name field">
+            <ui-input name="lastname" class="lastname" placeholder="Lastname" value="{{traveler.lastname}}" error="{{errors.lastname}}"></ui-input>
+        </div>
+    </div>
+
+    {{#if all || 'domestic' != validation || type_id == 3  }}
+
+    <div class="label">Date of Birth{{#if 'domestic' != validation || type_id ==3}}*{{/if}}<span style="color: #3399ff; margin-left: 10px!important ;font-size: 13px;">(The date of birth can be changed later)</span></div>
+    <div class="passport-expiry date three fields">
+        <div class="field">
+            <ui-select class="day" placeholder="Day" options="{{ date.select.D }}" value="{{traveler.birth.2}}"  error="{{errors.birth}}"></ui-select>
+        </div>
+        <div class="field">
+            <ui-select class="month" placeholder="Month" options="{{ date.select.MMMM }}" value="{{traveler.birth.1}}"  error="{{errors.birth}}"></ui-select>
+        </div>
+        <div class="field">
+            <ui-select class="year" placeholder="Year" options="{{ date.select.birthYears(~/type_id) }}" value="{{traveler.birth.0}}"  error="{{errors.birth}}"></ui-select>
+        </div>
+    </div><br>
+
+    {{/if}}
+
+    {{#if all }}
+    <div class="label">Passport</div>
+    <div class="passport two fields">
+        <div class="field">
+            <ui-input class="passport-number" placeholder="Passport Number" value="{{traveler.passport_number}}"  error="{{errors.passport_number}}"></ui-input>
+        </div>
+
+        <div class="field">
+            <ui-select
+                value="{{traveler.passport_country_id}}"
+                class="passport-country"
+                search="1"
+                placeholder="Passport Country"
+                options="{{ meta.select.countries() }}"
+                error="{{errors.passport_country_id}}"
+                >
+            </ui-select>
+        </div>
+    </div>
+
+    <div class="label">Passport expiry date</div>
+    <div class="passport-expiry date three fields">
+        <div class="field">
+            <ui-select class="day" placeholder="Day" options="{{ date.select.D }}" value="{{traveler.passport_expiry.2}}" error="{{errors.passport_expiry}}"></ui-select>
+        </div>
+        <div class="field">
+            <ui-select class="month" placeholder="Month" options="{{ date.select.MMMM }}" value="{{traveler.passport_expiry.1}}" error="{{errors.passport_expiry}}"></ui-select>
+        </div>
+        <div class="field">
+            <ui-select class="year" placeholder="Year" options="{{ date.select.passportYears }}" value="{{traveler.passport_expiry.0}}" error="{{errors.passport_expiry}}"></ui-select>
+        </div>
+
+    </div>
+    {{/if}}
+
+    <div align="center" class="more">
+        <a class="ui basic tiny circular button" href="javascript:;" on-click="toggle('all')">{{#if all}}Less Info{{else}}More Info{{/if}}</a>
+    </div>
+
+
+    {{#if errors }}
+    <div class="ui error message">
+        {{#if _.isArray(errors) || _.isObject(errors) }}
+         {{#each errors:i}}
+        {{#if .}}<p>{{.}}</p>{{/if}}
+        {{/each}}
+        {{else}}
+        <p>{{errors}}</p>
+        {{/if}}
+    </div>
+    {{/if}}
+</div>
+{{/passenger}}

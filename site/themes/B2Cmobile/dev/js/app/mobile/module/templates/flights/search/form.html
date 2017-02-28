@@ -1,0 +1,363 @@
+<style>
+    #app .ui.dropdown.search .menu {
+        margin-top: 10px;
+    }
+
+    #app .ui.dropdown.search input.search {
+        text-align: left;
+    }
+
+    .infodateban > div {
+        cursor: pointer;
+    }
+
+    .date_info {
+        position: absolute;
+        top: 12px;
+        bottom: 12px;
+        left: 12px;
+        right: 12px;
+    }
+
+    .date_info.disabled {
+        cursor: default;
+        color: gray !important;
+    }
+</style>
+<header>
+    <div class="ui three column grid">
+        <div class="column"><a id="m_btn" class="main_mnu" href="#"><img src="/themes/B2C/img/mobile/bars.png" alt="menu"></a></div>
+        <div class="column"><a class="logo" href="javascript:;"><img src="/themes/B2C/img/mobile/logo.png" alt="CheapTicket.in"></a></div>
+        
+    </div>
+    <div id="m_menu" class="ui left vertical sidebar menu push scale down overlay">
+        <div class="avat">
+            <div class="item">
+                <img id="avatar" class="ui avatar liitle image" src="/themes/B2C/img/mobile/avat.png">
+                <div class="description">WELCOME <br>
+                    {{#if meta.user!=null}}
+                    <h1 id="name">{{ meta.user.name }}</h1>
+                    {{else}}
+                    <h1 id="name">Guest User</h1>
+                    {{/if}}
+                    
+                    </div>
+            </div>
+        </div>
+        <a class="item">
+            <div class="prof"></div>
+            <p><a href="/b2c/mobile/myprofile/">My Profile</a></p>
+        </a>
+        <a class="item">
+            <div class="book"></div>
+            <p><a href="/b2c/mobile/mybookings/">My Bookings</a></p>
+        </a>
+        <a class="item">
+            <div class="trav"></div>
+            <p><a href="/b2c/mobile/mytraveller/">Travellers</a></p>
+        </a>
+        
+        <span id="devider" class="item">QUICK TOOLS</span>
+        <a class="item">
+            <div class="print"></div>
+            <p><a href="/b2c/mobile/mybookings/">Print / View Ticket</a></p>
+        </a>
+        <a class="item">
+            <div class="cancel"></div>
+            <p><a href="/b2c/mobile/mybookings/">Cancelations</a></p>
+        </a>
+        <a class="item">
+            <div class="change"></div>
+            <p><a href="/b2c/mobile/mybookings/"> Change / Reschedule</a></p>
+        </a>
+          
+        {{#if meta.user }}
+            <a class="ui blue fluid button" href="/site/logout">Logout</a>
+        {{/if}}
+    </div>
+</header>
+<section>
+    <div class="ui secondary pointing three item demo menu tripType">
+            <a class="item {{#if 1 == search.tripType }}active{{/if}}" on-click="set('search.tripType', 1)">One Way</a>
+            <a class="item {{#if 2 == search.tripType }}active{{/if}}" on-click="set('search.tripType', 2)">Round Trip</a>
+            <a class="item {{#if 3 == search.tripType }}active{{/if}}" on-click="set('search.tripType', 3)">Multi-City</a>
+        </div>
+    <div class="ui form {{#if search.pending}}loading{{/if}}">
+        
+        {{#if 3 == search.tripType}}
+        {{>multicity}}
+        {{else}}
+        {{>signle}}
+
+        {{#if errors.flight.0}}
+        <div class="ui form error">
+            <div class="ui error message">
+                {{#each errors.flight.0}}
+                {{#if .}}<p>{{.}}</p>{{/if}}
+                {{/each}}
+            </div>
+        </div>
+        {{/if}}
+        {{/if}}
+  <!--Modal Starts-->
+  
+  <div class="infodateban">
+      <div class="infodateban_left">
+          <div class="traveller">
+              
+              <p>{{search.passengers.0 + search.passengers.1 + search.passengers.2}}
+                  <span>Traveller</span></p>
+              <div class="thumbleft traveller"><img src="/themes/B2C/img/mobile/traveller.png" ></div>
+          </div>
+      </div>
+      <div class="infodateban_right">
+          <div class="travelClass">
+              <div class="thumbright trClass"><img src="/themes/B2C/img/mobile/class.png" ></div>
+              <p>
+              {{#if 1 == search.cabinType}}Economic{{/if}}
+              {{#if 2 == search.cabinType}}Premium Economic{{/if}}
+              {{#if 3 == search.cabinType}}Business{{/if}}
+              {{#if 4 == search.cabinType}}First{{/if}}
+                  <span>Class</span>
+              </p>
+          </div>
+      </div>
+  </div>
+        
+        <!--<div class="ui secondary pointing three item demo menu">
+            <a class="item {{#if 1 == search.cabinType}}active{{/if}}" on-click="set('search.cabinType', 1)">Economy</a>
+            <a class="item {{#if 3 == search.cabinType}}active{{/if}}" on-click="set('search.cabinType', 3)">Business</a>
+            <a class="ui pointing top right cabinType dropdown link item {{#if 2 == search.cabinType || 4 == search.cabinType}}active{{/if}}">
+                <span class="text">{{#if 2 == search.cabinType || 4 == search.cabinType}}{{#if 2 == search.cabinType}}Premium Economy{{else}}First{{/if}}{{else}}More{{/if}}</span>
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                    <div class="item {{#if 2 == search.cabinType}}active{{/if}}" on-click="set('search.cabinType', 2)">Premium Economy</div>
+                    <div class="item {{#if 4 == search.cabinType}}active{{/if}}" on-click="set('search.cabinType', 4)">First</div>
+                </div>
+            </a>
+        </div>-->
+
+        {{#if errors }}
+        <div class="ui form error">
+            <div class="ui error message">
+                {{#each errors:i}}
+                {{#if 'flight' == i}}
+
+                {{else}}
+                {{#if .}}<p>{{.}}</p>{{/if}}
+                {{/if}}
+                {{/each}}
+            </div>
+        </div>
+        {{/if}}
+
+        <div id="btn_passenger" class="fluid huge ui blue button" on-click="submit()">SEARCH FLIGHTS</div>
+    </div>
+</section>
+
+{{#partial multicity}}
+
+{{#each search.flights:i}}
+<div class="formscreen multiCity">
+<div class="three fields">
+    <h3 class="text-center">Journey {{i+1}}</h3><br>
+    <div class="field">
+        <ui-airport
+                value="{{./from}}"
+                class="fluid transparent"
+                placeholder="FROM"
+                meta="{{meta}}"
+                domestic="1"
+                placeholder="FROM"
+                >
+        </ui-airport>
+    </div>
+    <div class="field">
+        <ui-airport
+                value="{{./to}}"
+                class="fluid transparent"
+                placeholder="TO"
+                domestic="1"
+                meta="{{meta}}"
+                placeholder="TO"
+                >
+        </ui-airport>
+    </div>
+    <div class="field" style="position: relative;">
+        <ui-date
+                input="1"
+                value="{{./depart_at}}"
+                class="fluid"
+                placeholder="DEPART ON"
+                min="{{ moment() }}"
+                >
+        </ui-date>
+        {{#if i > 1}}
+        <div class="delete" on-click="removeFlight(i)">&nbsp;</div>
+        {{/if}}
+    </div>
+</div>
+</div>
+{{#if errors.flight[i]}}
+<div class="ui form error">
+    <div class="ui error message">
+        {{#each errors.flight[i]}}
+        {{#if .}}<p>{{.}}</p>{{/if}}
+        {{/each}}
+</div>
+</div>
+{{/if}}
+
+<hr/>
+
+{{/each}}
+
+<div class="add-flight" style="text-align: center;">
+    <button type="button" class="ui basic button circular" on-click="addFlight()">+ Add new</button>
+</div>
+
+{{/partial}}
+
+{{#partial signle}}
+<div class="formscreen">
+<div class="dir_change">
+    <div class="ui two column grid">
+        {{#if search.domestic}}
+        <div class="column full-column fromAirport">
+            <ui-airport
+                    big="1"
+                    class="fluid left"
+                    transparent="1"
+                    placeholder="FROM"
+                    meta="{{meta}}"
+                    value="{{search.flights.0.from}}"
+
+                    domestic="1"
+                    >
+            </ui-airport>
+         </div>
+         <div id="fsd_r" class="column full-column toAirport">
+            <ui-airport
+                    big="1"
+                    class="fluid left"
+                    transparent="1"
+                    placeholder="TO"
+                    meta="{{meta}}"
+                    value="{{search.flights.0.to}}"
+
+                    domestic="1"
+                    >
+            </ui-airport>
+        </div>
+        {{else}}
+        <div class="column">
+            <ui-airport
+                    big="1"
+                    class="fluid left"
+                    transparent="1"
+                    placeholder="FROM"
+                    meta="{{meta}}"
+                    value="{{search.flights.0.from}}"
+
+                    domestic="0"
+                    >
+            </ui-airport>
+        </div>
+        <div id="fsd_r" class="column">
+            <ui-airport
+                    big="1"
+                    class="fluid left"
+                    transparent="1"
+                    placeholder="TO"
+                    meta="{{meta}}"
+                    value="{{search.flights.0.to}}"
+
+                    domestic="0"
+                    >
+            </ui-airport>
+        </div>
+        {{/if}}
+    </div>
+</div>
+    </div>
+<div class="infodateban">
+    <div class="infodateban_left" style="position: relative;">
+        <ui-date
+                class="date_depart_info"
+                value="{{search.flights.0.depart_at}}"
+                label="DEPARTURE"
+
+                min="{{ moment() }}"
+                max="{{2 == search.tripType && search.flights.0.return_at}}"
+
+                ></ui-date>
+    </div>
+    <div class="infodateban_right" style="position: relative;" on-click="set('search.tripType', 2)">
+        <ui-date
+                class="date_return_info"
+                value="{{search.flights.0.return_at}}"
+                label="RETURN"
+
+                min="{{search.flights.0.depart_at || moment()}}"
+                ></ui-date>
+    </div>
+</div>
+{{/partial}}
+
+<div class="travellersInfo">
+  <i class="close icon closebtn"></i>
+    <div class="header">
+      Travellers
+    </div>
+    <div class="content">
+      <div class="description">
+        <div class="pink_age">
+            <div class="ui three column grid">
+                <div id="yrs_col_1" class="column">
+                    ADULT (12+ YRS)
+                    <div class="yrs">
+                        <a class="minus" href="javascript:;"  on-click="removeTraveler(0)"><img src="/themes/B2C/img/mobile/minus.png" alt="min"></a>
+                        <input type="text" name="a" value="{{search.passengers.0}}" id="c1"/>
+                        <a class="plus" href="javascript:;"  on-click="addTraveler(0)"><img src="/themes/B2C/img/mobile/pluse.png" alt="pluse"></a>
+                    </div>
+                </div>
+                <div id="yrs_col_2" class="column">
+                    CHILD (2-12 YRS)
+                    <div class="yrs">
+                        <a class="minus" href="javascript:;"  on-click="removeTraveler(1)"><img src="/themes/B2C/img/mobile/minus.png" alt="min"></a>
+                        <input type="text" name="a" value="{{search.passengers.1}}" id="c1"/>
+                        <a class="plus" href="javascript:;"  on-click="addTraveler(1)"><img src="/themes/B2C/img/mobile/pluse.png" alt="pluse"></a>
+                    </div>
+                </div>
+                <div id="yrs_col_3" class="column">
+                    INFANT (0-2 YRS)
+                    <div class="yrs">
+                        <a class="minus" href="javascript:;"  on-click="removeTraveler(2)"><img src="/themes/B2C/img/mobile/minus.png" alt="min"></a>
+                        <input type="text" name="a" value="{{search.passengers.2}}" id="c1"/>
+                        <a class="plus" href="javascript:;"  on-click="addTraveler(2)"><img src="/themes/B2C/img/mobile/pluse.png" alt="pluse"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <div class="ui blue button closebtn">Done</div>
+    </div>
+</div>
+
+<div class="ClassInfo">
+  <i class="close icon closeclass"></i>
+    <div class="header">
+      Travel Class
+    </div>
+    <div class="content">
+      <div class="description">
+            <a class="item {{#if 1 == search.cabinType}}active{{/if}}" on-click="set('search.cabinType', 1)">Economy</a>
+            <a class="item {{#if 3 == search.cabinType}}active{{/if}}" on-click="set('search.cabinType', 3)">Business</a>
+            <a class="item {{#if 2 == search.cabinType}}active{{/if}}" on-click="set('search.cabinType', 2)">Premium Economy</a>
+            <a class="item {{#if 4 == search.cabinType}}active{{/if}}" on-click="set('search.cabinType', 4)">First</a>
+            
+      </div>
+    </div>
+</div>

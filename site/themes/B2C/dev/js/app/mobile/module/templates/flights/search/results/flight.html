@@ -1,0 +1,188 @@
+{{#flight}}
+<div class="mult_info_ban fff {{#if selected == .}}selected{{/if}}">
+    <div class="ui four column grid">
+        <div class="flight_info">
+            <div class="flight_info_table">
+                <div class="flight_info_row">
+                    <div class="flight_info_cell flight_logo_cell">
+                        <img src="{{ carriers.0.logo }}" alt="india">
+                    </div>
+                </div>
+
+                <div class="flight_info_row">
+                    <div class="flight_info_cell flight flight_name_cell ">
+                        <span>
+                            {{ carriers.0.name }} 
+                            <br>
+                            {{ first(segments.0).flight }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="flights_times"> 
+                {{#each flight.segments}}
+                <div class="flight_info_time">
+                    <div class="flight_info_row">
+                        <div class="flight_info_cell">
+                            <div class="flight_dep_info">{{ first(.).depart.format('HH:mm') }}</div>
+<!--                            <div class="mult_dep_date">{{ duration.format(first(.).time) }}</div>-->
+                            <div class="mult_dep_date">{{ duration.format(segtime(.))}}</div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="flight_info_time">
+                    <div class="flight_info_row">
+                        <div class="flight_info_cell">
+                            <div class="flight_dep_info">{{ last(.).arrive.format('HH:mm') }}</div>
+                            <div class="mult_dep_date">{{# { n: stops(.) } }}{{#if 0 == n }}non-stop{{else}} {{ n }} stop(s){{/if}}{{/}}</div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>            
+            <div class="flight_info_table">
+                <div class="flight_info_row">
+                    <div class="flight_info_cell flight_fare_info">
+                        <span style="white-space: nowrap">
+                            {{#if onward}}
+                            {{# { save: discount([onward, flight]) } }}
+                            {{#if save}}
+                            {{#if save > 100}}
+                            <div class="discount">{{{ $(price, meta.display_currency) }}}</div>
+                            {{/if}}
+                            {{{ $(price - save, meta.display_currency) }}}
+                            {{else}}
+                            {{{ $(price, meta.display_currency) }}}
+                            {{/if}}
+                            {{/}}
+                            {{else}}
+                            {{#if backward && !selected}}
+                            {{# { save: discount([flight, backward]) } }}
+                            {{#if save}}
+                            {{#if save > 100}}
+                            <div class="discount">{{{ $(price, meta.display_currency) }}}</div>
+                            {{/if}}
+                            {{{ $(price - save, meta.display_currency) }}}
+                            {{else}}
+                            {{{ $(price, meta.display_currency) }}}
+                            {{/if}}
+                            {{/}}
+                            {{else}}
+                            {{{ $(price, meta.display_currency) }}}
+                            {{/if}}
+                            {{/if}}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="flight_info_row">
+                    <div class="flight_info_row">
+                        <div class="flight_info_cell" style="text-align: right;">
+                            {{#if !selected}}
+                            <button class="ui button orange mobile_button" on-click="select()">BOOK</button>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flight_details">
+            <div class="bottom_div">
+                <div class="left_div">
+                    <div class="my_div_items">
+<!--                        {{ duration.format && duration.format(flight.time) }}-->
+                    </div>
+                    <div class="my_div_items">
+<!--                        {{#if 0 == stops(flight.segments.0)}}
+                        NON-STOP
+                        {{/if}}
+                        {{#if stops(flight.segments.0) > 0}}
+                        {{stops(flight.segments.0) }} stop(s) 
+                        {{/if}}
+                        {{#if first(.).techStop!=null}}
+                        <span class="techstop" title="Technical Stop">+ Technical Stop(s)</span>
+                        {{/if}}-->
+                    </div>
+                </div>
+                <div class="right_div">
+                    <a href="javascript:" on-click="toggleMobile()" class="style_details">
+                        Details
+                    </a>
+                </div>
+            </div>
+        {{#if first(segments.0).product_class != null && first(segments.0).product_class=='LITE' || first(segments.0).product_class != null}}
+            <div class="bottom_div">
+                <div class="left_div">
+                    {{#if first(segments.0).product_class != null && first(segments.0).product_class=='LITE'}}
+                        <div class="item baggage_not_allowed_mobile">Hand Baggage Only</div>
+                    {{/if}}
+                </div>
+                <div class="right_div">
+                    {{#if first(segments.0).product_class != null}}
+                        <a href="javascript:" on-click="toggleBaggageInfo()" class="mobile_baggage_link">
+                            Baggage Information
+                        </a>
+                    {{/if}}
+                </div>
+            </div>
+        {{/if}}
+        {{#if toggle_flight_details}}
+        <div class="toggle_flight_details">
+            <div class="itenary_div">
+                <itinerary small="{{small}}" class="compact dark" flight="{{flight}}" carriers="{{carriers}}"></itinerary>
+            </div>
+        </div>
+        {{/if}}
+        {{#if toggle_baggage_info}}
+        <div class="toggle_flight_details">
+            <div class="itenary_div">
+                {{#if(first(segments.0).product_class =='LITE')}}                
+                <ul class="baggage_info_list" >
+                    {{#each flight.segments}}
+                    {{#if first(.).carrier.code=='SG'}}
+                    <li>For Hand Baggage Only Fare no free check-in baggage allowance shall be permissible.Passengers who purchase this fare but have check-in baggage will be charged Fare Type Change Fee of Rs. 400.</li>
+                    <li> Passengers are allowed to check-in seven (07) kg. of check-in baggage, free of cost; beyond which such weight, the above mentioned Fare Type Change Fee of INR 400/- (Rupees four hundred only) shall be chargeable to the passenger.</li>
+                    {{/if}}
+                    {{#if first(.).carrier.code=='6E'}}
+                    <li>Traveling passenger may carry maximum 7 Kgs per person per flight</li>
+                    <li>Checked-in baggage is chargeable</li>
+                    <li>Customer carrying more than the allowed baggage limits will be charged a flat rate of INR 300 per kg as excess baggage fee for domestic travel and INR 525 (or it will be charged as per base currency of reservation) for International travel at the time of check-in.</li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+                {{else}}
+                <ul class="baggage_info_list">   
+                    {{#each flight.segments}}
+                        {{#if first(.).carrier.code=='6E'}}
+                            {{#if first(.).from.airportCode=='DXB' || first(.).from.airportCode=='MCT' || last(.).to.airportCode=='DXB' || last(.).to.airportCode=='MCT'}}
+                                <li>For travel to and from Dubai and Muscat - checked Baggage allowance is up to 30 Kgs.</li>
+                            {{else}}
+                                [[#unless summary]]
+                                    <li>Free Checked Baggage Allowance {{#if search.domestic==1}} 15 Kgs (Domestic). {{else}} 20 Kgs (International expect Dubai and Muscat).{{/if}}</li>                        
+                                [[/unless]]
+                            {{/if}}
+                        {{/if}}
+                        
+                        {{#if first(.).carrier.code=='SG'}}
+                            <li>Free checked baggage allowance of 15 kgs per passenger.</li>
+                        {{/if}}
+                    {{/each}}
+                    <li>7 Kgs Hand Baggage (One Piece Only).</li>
+                    <li>Additional Baggage will be chargeable.</li>
+                    {{#each flight.segments}}
+                        {{#if first(.).carrier.code=='6E'}}                                                            
+                            <li>Passenger(s) carrying more than the baggage limits will be charged a flat rate of INR 300 per kg as excess baggage fee for domestic travel and INR 525 (or it will be charged as per base currency of reservation) for International travel at the time of check-in.</li>
+                        {{/if}}
+                    
+                        {{#if first(.).carrier.code=='SG'}}                            
+                            <li>Passenger(s) carrying more than the baggage allowance i.e 15 kgs. will be charged at rate of INR 100 per kg (inclusive of service tax and cess, if applicable) for first 5 kgs. and INR 300/kg for baggage over and above 5 kgs. for domestic travel only</li>
+                        {{/if}}
+                    {{/each}}
+                </ul>
+                {{/if}}
+            </div>
+        </div>
+        {{/if}}
+    </div>
+</div>
+{{/flight}}

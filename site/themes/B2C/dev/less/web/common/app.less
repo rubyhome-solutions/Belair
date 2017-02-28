@@ -1,0 +1,832 @@
+#app, .ui {
+.uppercase {
+text-transform: initial !important;
+}
+
+.pull.right {
+float: right;
+}
+
+.pull.left {
+float: left;
+}
+.fluid {
+width: 100%;
+margin: auto;
+}
+.ui.segment.relaxed {
+padding: 0 !important;
+}
+
+.ui.error.message {
+p {
+color: #d95c5c;
+}
+}
+
+.hide { display: none; }
+
+.ui.error.message {
+box-shadow: none;
+background: none;
+padding: 0px;
+margin: 0px;
+}
+@media only screen and (min-width: 641px) and (max-width: 800px)
+{
+.ui.selection.dropdown
+{
+min-width: 70px;
+}
+.ui.selection.dropdown.decorated .text
+{
+font-size: 12px;
+}
+.ui.selection.dropdown.disabled
+{
+font-size: 12px;
+}
+}
+@media only screen and (min-width: 801px) and (max-width: 1024px)
+{
+.ui.selection.dropdown
+{
+min-width: 70px;
+}
+.ui.selection.dropdown.decorated .text
+{
+font-size: 12px;
+}
+.ui.selection.dropdown.disabled
+{
+font-size: 12px;
+}
+}
+.ui.selection.dropdown > .text {
+margin-right: 0em;
+}
+}
+
+#app {
+/*min-width: 1280px;*/
+min-width:100%;
+}
+.infoPop    { display:none;}
+.infoPop.show    { display:block; z-index:9999;  position:fixed; width:100%; height:100%; top:0; left:0; background:rgba(0,0,0, 0.7);}
+.modalinfo  { position:relative; min-width:300px; z-index:9999; border:5px solid #dedede; margin:auto; overflow:scroll; padding:10px; box-sizing:border-box; -webkit-box-sizing:border-box; position:absolute; left:0; right:0; top:0; bottom:0; background:#fff; width:80%; height:70%; min-height:100px;}
+p#closeinfo { position:fixed; right:12%;}
+
+.modalinfo h4   {text-align:center; font-size:25px;}
+span.currencytxt    { font-size:13px; display:inline;     margin-right: 5px; color: #f15a29;}
+#currency #curterm   {position:absolute; right: 0px; width:415px; top:46px; background: #fee252;
+padding: 10px; color: #777; line-height: 1.4; border:1px solid #d8c45d;}
+select#currency1{ margin:0 0 10px; padding:5px 10px; border:1px solid #cecece;}
+.currencyWrap   { display:table; float:right; margin:10px 0; font-family:arial; font-size:12px;     position: absolute; right: 15px; top: 15px;}
+.currencyWrap span  { line-height: 1.7; margin-right:10px; color:#f15a29;}
+.ui.dropdown.currency    {padding:0 19px;}
+.clear  { clear:both;}
+#curterm    {font-size:13px; color: #000; display:block;}
+footer.ui[class*="center aligned"].grid
+{
+	display: block !important;
+    width: auto;
+    margin:0 auto;
+    padding: 0em;
+}
+.footerBottom{display:none; }
+.footerBottom ul   {text-align:center; padding:0;}
+.footerBottom ul li   {display:inline;}
+.footerBottom ul li a   {display:inline-block; padding:0 10px; color:rgba(0, 0, 0, 0.4);     border-right: 1px solid #bbb;
+line-height: 15px; box-shadow:1px 0px 0px 0px #fff; }
+footer.footer.segment {margin-bottom:0; margin-top:0;}
+.flights-results .flights-selection  {
+position: fixed!important;
+margin: 0!important;
+bottom: 0;
+left: 0;
+width: 100%;
+border-top: 3px solid #fee252!important;
+z-index: 9999;
+/*background: #3d3d3d!important;*/
+background: #e0e0e0 !important;
+}
+.flights-results .flights-selection .item .header   {color:#fff!important; font-size:16px;}
+span.airlinesName {
+display: block;
+font-size: 11px;
+}
+span.flightTimings  {display:block; font-weight: bold; color: #dedede; line-height: 1.5;}
+span.flightDuration{display:block; font-size:11px; color: #dedede; line-height:1.5; }
+.flights-results .flights-selection .column.book .price {color:#fff; font-size:25px;}
+.ui.large.menu .headerLinks{width: 42%; min-width:430px; padding:0px;}
+@media only screen and (min-width: 801px) and (max-width: 1024px)
+{
+	.ui.large.menu .headerLinks{width: 42%; min-width:430px; padding:0px; margin-right:-50px}
+}
+@media only screen and (min-width: 1024px) and (max-width: 1206px)
+{
+	.ui.large.menu .headerLinks{width: 42%; min-width:430px; padding:0px; margin-right:-109px}
+}
+@media only screen and (min-width: 641px) and (max-width: 800px)
+{
+	.ui.large.menu .headerLinks{width: 42%; min-width:430px; padding:0px; margin-right:-30px}
+}
+@media only screen and (max-width: 640px) 
+{
+h1
+{
+	font-size:30px;
+}
+	.ui.large.menu .headerLinks{width: 42%; min-width:430px; padding:0px; margin-right:-60px}
+        .ui.segment.ads span:before{position:absolute; content:""; left:50%; margin: 0 0 0 -1000px; top:-10px; width:132px; height:71px; background:url(~img/lowestairfair.png) no-repeat left top; }
+}
+@media only screen and (min-width: 640px) and (max-width: 1000px)
+{
+	.ui.large.menu .headerLinks{width: 42%; min-width:430px; padding:0px; margin-right:-20px}
+        .ui.segment.ads span:before{position:absolute; content:""; left:50%; margin: 0 0 0 -1000px; top:-10px; width:132px; height:71px; background:url(~img/lowestairfair.png) no-repeat left top; }
+}
+@media only screen and (min-width: 1167px) and (max-width: 1262px)
+{
+    .ui.segment.ads span:before{position:absolute; content:""; left:50%; margin: 0 0 0 -545px; top:-10px; width:132px; height:71px; background:url(~img/lowestairfair.png) no-repeat left top; }
+	.ui.large.menu .headerLinks{width: 42%; min-width:430px; padding:0px; margin-right:-150px}
+}
+@media only screen and (min-width: 1263px) 
+{
+    .ui.segment.ads span:before{position:absolute; content:""; left:50%; margin: 0 0 0 -545px; top:-10px; width:132px; height:71px; background:url(~img/lowestairfair.png) no-repeat left top; }
+	.ui.large.menu .headerLinks{width: 42%; min-width:430px; padding:0px; margin-right:-235px}
+}
+.headerElements {padding:0; display:inline; margin:0;}
+.headerElements li  {display:inline-block; font-size:12px; list-style:none; padding: 0 14px; line-height: 57px!important; border-right:1px solid #e6e6e6;}
+.headerElements li i    {font-size:20px;position:relative; /*top:4px;*/}
+i.call  {font-size:12px!important; top:0!important;}
+.greyBox    {padding:5px; background:#f2f2f2; margin-right:5px;}
+.orangetxt{color:#f15a29;}
+.ui.segment.ads{ font-size: 30px; text-align: center; margin: 0px; color:#ff0000;}
+.ui.segment.ads span{ font-weight:bold; position:relative; color: #151657; padding-top: 10px; display: block; font-size:25px;}
+
+.ui.segment.nav-f{ margin: 0px; text-align: center; line-height: 25px; font-size:13px;}
+.ui.segment.nav-f a{color: #1a1663;}
+.ui.segment.nav-f a:hover{ color: #000000; text-decoration: none;}
+.ui.segment.nav-f span{font-size:13px; color: #8c8c8c;}
+.ui.segment.nav-f span a{ color: #8c8c8c;}
+
+.cmsTitle   {color:#1f1c53;    padding: 0 0 15px; border-bottom: 3px solid #1f1c53; background:url(~img/iatasmall.png) no-repeat right top;}
+.cmsContent p,
+.cmsContent ul,
+.cmsContent li{font-size: 16px!important; color:#6e6f79; line-height:1.7!important; text-align: justify;}
+
+.cmsContent h2, 
+.cmsContent h3,
+.cmsContent h4,
+.cmsContent h5,
+.cmsContent h6{color:#1f1c53;}
+.cmsContent h2{font-size:17px;}
+
+#app > .wrapper > .content .cmsContent p{color:#6e6f79;}
+
+.cmsContent iframe{ width:100%;}
+
+.sitemap ul li a {color:#91929f;}
+.spacer {margin-top:65px;}
+.indexLink li, .indexLink li a{list-style:circle; color:#1f1c53; font-weight:bold;}
+.spacer-large   {padding:20px 70px 70px 105px ;} 
+.cmsContent center  {font-size:20px; margin: 30px 0 0;}
+.cmsContent ul{margin:0; padding:0;}
+.cmsContent ul li   {list-style:disc; padding-left:5px; margin:0 0 0 18px; position:relative;}
+.cmsContent ul li:before    {display:none; position:absolute;    margin-right: 5px; left:0; top:0px; content: "\f105"; height: 10px; width:10px; font-family: 'Icons';}
+.cmsContent ul li a {color:#6e6f79}
+#contact-form input[type="text"], #contact-form input[type="email"], #contact-form textarea  {border:1px solid #ececec; width:100%!important; height:35px; padding:0 10px; margin-bottom:10px;}
+#contact-form label{display:block; margin-bottom: 5px;}
+.ContBlock ul   {padding:0; margin:0;}
+.ContBlock  {margin:0 0 20px;}
+.ContBlock ul li    {list-style:none;}
+#contact-form textarea{height:80px;padding:10px;}
+#contact-form h2{margin-top:20px;}
+
+.bg-img {padding-left:75px; margin-bottom:30px!important; min-height:70px;}
+.iata{ background:url(~img/iata.png) no-repeat left top;}
+.tourism{ background:url(~img/Ministry-Tourism.png) no-repeat left top;}
+.iato{ background:url(~img/iato.png) no-repeat left top;}
+.tafi{ background:url(~img/tafi.png) no-repeat left top;}
+.asta{ background:url(~img/asta.png) no-repeat left top;}
+.pata{ background:url(~img/pata.png) no-repeat left top;}
+.uftaa{ background:url(~img/uftaa.png) no-repeat left top;}
+.taai{ background:url(~img/taai.png) no-repeat left top;}
+.airport_change_css{ background-image:url('/themes/B2C/img/warning/warning_red.png');height: 20px; margin-bottom: -20px; width: 20px;}
+.transit_warning_css{ background-image:url('/themes/B2C/img/warning/warning_yellow.png');height: 20px; margin-bottom: -20px; width: 20px;}
+.short_change_css{ background-image:url('/themes/B2C/img/layovers/short.png');height: 20px; margin-bottom: -20px; width: 20px; }
+.long_change_css{ background-image:url('/themes/B2C/img/layovers/long.png');height: 20px; margin-bottom: -20px; width: 20px; }
+.css_layover{background: #c8ddfa!important;width: 80px;}
+#box_height{ height:26px; }
+#small_popup{ text-align: left; max-width: 115px; }
+#long_popup{ text-align: left; max-width: 240px; }
+#flight_detail_link{ text-align: center; white-space: nowrap; font-size: 12px; }
+#airport_change_style{background: #f2dede;color: #a94442;padding-top: 2px;padding-bottom: 2px;border-radius: 4px;padding-right: 6px;padding-left: 6px;font-weight:600;}
+#transitvisa_msg_style{background: #FCF95B;color: #000;padding-top: 2px;padding-bottom: 2px;border-radius: 4px;padding-right: 6px;padding-left: 6px;font-weight:600;border-color: #ebccd1;}
+#background_airport_change{ background: #f2dede;color: #a94442;}
+
+.manage{
+
+}
+
+.manage .manage_link{
+cursor:pointer;
+}
+.headerElements li{
+padding:0 9px !important;
+}
+
+.reset_button{
+height: 50px;
+font-size: 14px!important;
+}
+
+.inside_form{
+max-width: 300px; margin: auto!important; text-align: left;
+}
+
+.auth_form{
+position: relative;
+}
+.ul_filter{
+list-style: none;
+padding-left: 0px;
+display: inline-flex;
+width: 100%;
+margin: 0px 0px 0px 0px;
+}
+.ul_filter li.filter_cb{
+width: 5%;
+float: none;
+}
+.ul_filter li.filter_cb_name{
+width: 50%;
+float: none;
+}
+.ul_filter li.filter_cb_name > span{
+white-space: nowrap;
+overflow: hidden;
+width: 95%;
+display: inline-block;
+}
+.ul_filter li.carrier_only{
+width: 15%;
+float: left;
+
+}
+.ul_filter li.carrier_only a{
+cursor:pointer;
+position: absolute;
+}
+.ul_filter li.carrier_price{
+width: 30%;
+float: right;
+text-align: right;
+}
+
+.recent_searches{
+padding-left: 10px; 
+vertical-align: top;
+}
+@media only screen and (min-width: 1024px)
+{
+.headerWidth{
+width:50%!important;
+}
+
+.recent_searches{
+width: 310px; 
+padding-left: 10px; 
+vertical-align: top;
+}
+.width_ways{
+width: 33%!important;
+}
+.width_ways_deco{
+padding: 8px!important;
+}
+.width_ways_deco label{
+font-size:12px!important;
+}
+.recent_searches .item{
+padding:8px!important;
+}
+}
+@media only screen and (max-width: 1024px) {
+.headerWidth{
+width:50%!important;
+}
+
+.recent_searches{
+width: 263px; 
+padding-left: 10px; 
+vertical-align: top;
+}
+.width_ways{
+width: 33%!important;
+}
+.width_ways_deco{
+padding: 8px!important;
+}
+.width_ways_deco label{
+font-size:12px!important;
+}
+.recent_searches .item{
+padding:8px!important;
+}
+}
+@media only screen and (max-width: 640px)
+{
+.headerWidth{
+width:30%!important;
+}
+
+.recent_searches{
+width:160px; 
+padding-left: 5px; 
+vertical-align: top;
+}
+.width_ways{
+width: 28%!important;
+}
+.width_ways_deco{
+padding: 8px!important;
+}
+.width_ways_deco label{
+font-size:12px!important;
+}
+.recent_searches .item{
+padding:8px!important;
+}
+.headerElements {padding:0; display:inline; margin-right:-40px;}
+.headerElements li  {display:inline-block; font-size:14px; list-style:none; padding: 0 5px; line-height: 50px!important; border-right:1px solid #e6e6e6;}
+.headerElements li i    {font-size:14px;position:relative; /*top:4px;*/}
+.headerElements li{
+padding:0 5px !important;
+}
+.headerElements li .manage a
+{
+font-size:14px;
+}
+}
+@media only screen and (min-width: 641px) and (max-width: 800px) {
+.headerWidth{
+width:30%!important;
+}
+
+.recent_searches{
+width: 189px; 
+padding-left: 5px; 
+vertical-align: top;
+}
+.width_ways{
+width: 30%!important;
+}
+.width_ways_deco{
+padding: 4px!important;
+}
+.width_ways_deco label{
+font-size:10px!important;
+}
+.recent_searches .item{
+padding:8px!important;
+}
+.headerElements {padding:0; display:inline; margin:0;}
+.headerElements li  {display:inline-block; font-size:14px; list-style:none; padding: 0 5px; line-height: 57px!important; border-right:1px solid #e6e6e6;}
+.headerElements li i    {font-size:14px;position:relative; /*top:4px;*/}
+.headerElements li{
+padding:0 5px !important;
+}
+.headerElements li .manage a
+{
+font-size:14px;
+}
+
+}
+.modify_search_show {
+z-index:1000 !important;
+}
+/*
+.label_carrier > ul > li:hover + li.carrier_only > a {
+visibility: visible;
+opacity: 1;
+}
+*/
+.pay_div_left{
+width:20%;
+float:left;
+}
+.div_left_source{
+float:none;
+}
+.div_left_source ul{
+float: none;
+list-style: none;
+padding-left: 0px;
+margin-top:0px;
+}
+.div_left_source ul li{
+border: 1px solid #d5dbe0;
+text-align: center;
+padding-top: 10px;
+padding-bottom: 10px;
+cursor: pointer;
+color: #0674a9;
+border-right: none;
+border-bottom: none;
+}
+
+.div_left_source ul li:last-child{
+border-bottom:1px solid #d5dbe0;
+}
+
+.div_left_source ul li:hover,.wallet_tabs ul li:hover{
+background:#cce2ff;
+}
+
+.pay_div_right{
+float: left;
+border: 1px solid #d5dbe0;
+width: 80%;
+padding: 15px;
+}
+.payment_highlight,.wallet_abc{
+font-weight: 600;
+background: #cce2ff;
+}
+.wallet_tabs ul{
+list-style: none;
+display: inline-flex;
+width: 100%;
+padding-left: 0px;
+border-bottom: 1px solid #d5dbe0;
+margin: 0px;
+}
+
+.wallet_tabs ul li{
+float: none;
+border: 1px solid #d5dbe0;
+color: #0674a9;
+padding: 12px;
+border-top-right-radius: 8px;
+border-top-left-radius: 8px;
+border-bottom: none;
+cursor:pointer;
+}
+.wallet_content{
+padding: 10px;
+}
+.pay_bottom{
+    width:100%;
+    float:left;
+    margin-top: 5%;
+}
+.pay_bottom img{
+    width: 100px;
+    vertical-align: top;
+    height: 85px;
+}
+.mobi_content{
+width:380px;
+}
+.scrollable{
+overflow: auto;
+width: 100%;
+height: 60px;
+overflow-y: hidden;
+
+}
+.makeScrollable{
+height:50px;
+min-width:100%;
+}
+.scrollable::-webkit-scrollbar{
+height:10px;
+}
+.scrollable::-webkit-scrollbar-thumb
+{
+background-color: #3399ff;
+}
+.scrollable::-webkit-scrollbar-button{
+background-size: 100%;
+width: 8px;
+height:8px;
+
+}
+.scrollable::-webkit-scrollbar-button{
+
+}
+.scrollable::-webkit-scrollbar-button:horizontal:increment {
+background-image: url('/themes/B2C/img/right_arrow.png');
+}
+.scrollable::-webkit-scrollbar-button:horizontal:decrement {
+background-image: url('/themes/B2C/img/left_arrow.png');
+}
+.resize_book_bottun{
+width: 100px;
+height: 40px;
+font-size: 16px!important;
+}
+.price_booking,.black_font{
+color:#000!important;
+}
+.disabled_button{
+float:none;
+background:#000!important;
+}
+.remove_icon{
+float: right;
+margin-top: 12px;
+}
+.airport_field_width{
+width: 32%!important;
+}
+.paytm_background,.paytm_background:hover{
+	background: url(~img/wallet/paytm_60.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.ideamoney_background, .ideamoney_background:hover{
+	background: url(~img/wallet/Idea_60.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.freecharge_background, .freecharge_background:hover{
+	background: url(~img/wallet/freecharge_60.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.oxigen_background, .oxigen_background:hover{
+	background: url(~img/wallet/oxigen_60.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.sbi_buddy_background, .sbi_buddy_background:hover{
+	background: url(~img/wallet/sbibuddy_60.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.the_mobile_wallet, .the_mobile_wallet:hover{
+	background: url(~img/wallet/mobile_60.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.jiomoney_background, .jiomoney_background:hover{
+	background: url(~img/wallet/jiomoney_60.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.janacach_background, .janacach_background:hover{
+	background: url(~img/wallet/janacash_60.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.ziggit_background, .ziggit_background:hover{
+	background: url(~img/wallet/ziggit_60.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.icash_background, .icash_background:hover{
+	background: url(~img/wallet/icash_60.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.axis_bank, .axis_bank:hover{
+	background: url(~img/bank/axisbank.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.bank_of_baroda, .bank_of_baroda:hover{
+	background: url(~img/bank/bankofbaroda.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.bank_of_maharashtra, .bank_of_maharashtra:hover{
+	background: url(~img/bank/bom.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.canara_bank, .canara_bank:hover{
+	background: url(~img/bank/cb.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.catholic_syrian_bank, .catholic_syrian_bank:hover{
+	background: url(~img/bank/catholicsyrianbank.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.central_bank_of_india, .central_bank_of_india:hover {
+	background: url(~img/bank/centralbankofindia.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.city_union_bank, .city_union_bank:hover {
+	background: url(~img/bank/citiunionbank.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.citi_bank_netbanking, .citi_bank_netbanking:hover{
+	background: url(~img/bank/citibank.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.corporation_bank, .corporation_bank:hover{
+	background: url(~img/bank/corporationbank.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.dsb_bank, .dsb_bank:hover{
+	background: url(~img/bank/dsb.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.dcb_bank, .dcb_bank:hover{
+	background: url(~img/bank/dcbbank.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.deutsche_bank, .deutsche_bank:hover{ 
+	background: url(~img/bank/duetchebank.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.dhanlakshmi_bank, .dhanlakshmi_bank:hover{
+	background: url(~img/bank/dhanlakshmi.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.federal_bank, .federal_bank:hover{
+	background: url(~img/bank/federalbank.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.hdfc_bank, .hdfc_bank:hover{
+	background: url(~img/bank/hdfc.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.icici_bank, .icici_bank:hover{
+	background: url(~img/bank/icici.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.idbi_bank, .idbi_bank:hover{
+	background: url(~img/bank/idbibank.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.indian_bank, .indian_bank:hover{
+	background: url(~img/bank/indianbank.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.indusind_bank, .indusind_bank:hover{
+	background: url(~img/bank/indusindbank.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.indian_overseas_bank, .indian_overseas_bank:hover{
+	background: url(~img/bank/indianoverseasbank.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.j_k_bank, .j_k_bank:hover{
+	background: url(~img/bank/j_k_bank.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.karnataka_bank, .karnataka_bank:hover{
+	background: url(~img/bank/karnatakabank.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.karur_vysya, .karur_vysya:hover{
+	background: url(~img/bank/kvb.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.kotak_mahindra_bank, .kotak_mahindra_bank:hover{
+	background: url(~img/bank/kotakmahindrabank.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.lakshmi_vilas, .lakshmi_vilas:hover{
+	background: url(~img/bank/lakshmivilasbank.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.obc, .obc:hover{
+	background: url(~img/bank/obc.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.punjab_sindh_bank, .punjab_sindh_bank:hover{
+	background: url(~img/bank/panjabandsindhbank.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.pnb_retail, .pnb_retail:hover{
+	background: url(~img/bank/pnb.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.royal_bank_scotland, .royal_bank_scotland:hover{
+	background: url(~img/bank/royalbankofscotland.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.saraswat_bank, .saraswat_bank:hover{
+	background: url(~img/bank/saraswatbank.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.standard_chartered, .standard_chartered:hover{
+	background: url(~img/bank/standardchartered.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.sbbj, .sbbj:hover{
+	background: url(~img/bank/sbbj.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.sbhb, .sbhb:hover{
+	background: url(~img/bank/sbh.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.sbib, .sbib:hover{
+	background: url(~img/bank/sbi.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.sbmb, .sbmb:hover{
+	background: url(~img/bank/sbm.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.sbpb, .sbpb:hover{
+	background: url(~img/bank/sbp.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.sbtb, .sbtb:hover{
+	background: url(~img/bank/sbt.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.south_indian_bank, .south_indian_bank:hover{
+	background: url(~img/bank/southindianbank.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.union_bank_of_india, .union_bank_of_india:hover{
+	background: url(~img/bank/unionbankofindia.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.united_bank, .united_bank:hover{
+	background: url(~img/bank/unitedbankofindia.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.vijya_bank, .vijya_bank:hover{
+	background: url(~img/bank/vijyabank.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.yes_bank, .yes_bank:hover{
+	background: url(~img/bank/yesbank.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.t_m_bank, .t_m_bank:hover{
+	background: url(~img/bank/tamilnadbank.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.union_bank, .union_bank:hover{
+	background: url(~img/bank/unionbankofindia.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.bank_of_india, .bank_of_india:hover{
+	background: url(~img/bank/bankofindia.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.payment_loader .loader_position{
+	top: 32%!important;
+}
+.payment_loader div.wait_text{
+	font-size: 38px;
+    color: #939393;
+    margin-top: 4.5%;
+    font-family: Arial;
+}
+.payment_loader .ui.loader:before, .payment_loader .ui.loader:after {
+    width: 50px!important;
+    height: 50px!important;
+    margin: 40px 0px 0px -25px!important;
+}
+.tot_text_search{
+	font-weight:bold;
+}
+.mobikwik_background, .mobikwik_background:hover{
+	background: url(~img/wallet/mobikwik_60.png) no-repeat!important;
+	background-position: right 20px top 7px !important;
+}
+.emiTable th,td{
+    padding:5px!important;
+}
+.emi_warning{
+    font-size: 10px;
+}
+.pick-list{
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.baggage_allowed_image{
+    background-image: url("/themes/B2C/img/layovers/baggage_allowed.png");
+    height: 20px;
+    margin-bottom: -20px;
+    width: 20px;
+    }
+.baggage_not_allowed_image{
+    background-image: url("/themes/B2C/img/layovers/baggage_not_allowed.png");
+    height: 20px;
+    margin-bottom: -20px;
+    width: 20px;
+}
+.baggage_info_style a{
+    line-height: 2 !important;
+    font-size: 12px;
+}
+.hand_baggage_styling{
+    margin-left: 28px;
+    margin-top: 7px;
+    color: #3d4d5d;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.remove_item_padding{
+    padding-right: 10px!important;
+    padding-left: 6px!important;
+    border-right: 1px solid rgba(39, 41, 43, 0.15) !important;
+    border-left: 0px!important;
+}
+.flight_detail_link a{ text-align: center; white-space: nowrap; font-size: 12px; }
+@import '../components/datepicker.less';
+@import '../components/calendar.less';
+@import '../components/slider.less';
+@import '../components/spinner.less';
+@import '../components/auth.less';
+@import 'icons.less';

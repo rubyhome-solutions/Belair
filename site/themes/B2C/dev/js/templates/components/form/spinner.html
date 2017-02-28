@@ -1,0 +1,11 @@
+<div class="ui selection input spinner dropdown in {{class}} {{#if error}}error{{/if}} {{ classes(state, large, value) }}">
+    <input type="hidden" value="{{value}}">
+    {{#if large}}
+    <div class="ui placeholder">{{placeholder}}</div>
+    {{/if}}
+    <div class="text">{{value}}</div>
+
+    <div class="ui spinner button inc" on-click="inc()">+</div>
+    <div class="ui spinner button dec" on-click="dec()">-</div>
+
+</div>

@@ -1,0 +1,113 @@
+{{#flight}}
+{{#each segments}}
+<!--<div class="faisal">{{first(.).transitvisa_msg}}</div>-->
+<div class="ui segment flight-itinerary [[#if small]]small[[/if]] [[class]]">
+    <div class="title">
+        <span class="city">{{ first(.).from.city }} → {{ last(.).to.city }}</span> {{ first(.).depart.format('ddd MMM D YYYY') }}
+        <span class="time">{{ duration.format(segtime(.))  }}</span>
+<!--        {{#each flight.segments}}-->
+            {{#if first(.).airport_change}}
+                <span id="airport_change_style">
+                {{first(.).airport_change}}
+                    </span>
+            {{/if}}
+<!--        {{/each}}-->
+<!--        {{#each flight.segments}}
+            {{#if first(.).transitvisa_msg}}
+                <span style="background: #f2dede;color: #a94442;padding-top: 2px;padding-bottom: 2px;border-radius: 4px;padding-right: 6px;padding-left: 6px;font-weight:600;border-color: #ebccd1;">
+                    {{first(.).transitvisa_msg}}
+                </span>
+            {{/if}}
+        {{/each}}-->
+        {{#if first(.).transitvisa_msg}}
+               <span id="transitvisa_msg_style">
+                    {{first(.).transitvisa_msg}}
+                </span>
+            {{/if}}
+        {{#if first(.).techStop!=null}}
+            <span class="techStop">Technical Stop: {{first(.).techStop}}</span>
+        {{/if}}
+        [[#if small]]{{ [null, 'Non refundable', 'Refundable'][flight.refundable] }}[[/if]]
+    </div>
+
+    <table class="segments">
+        
+        {{#each .}}
+        {{#if layover.asSeconds() }}
+        <tr class="divider">
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+            <td align="center">
+                <span class="layover">Layover: {{ duration.format(layover) }}</span>
+                    {{#if layover.asSeconds()<=7200}}
+                        <span class="layover css_layover">Short Layover<!--:{{layover.asSeconds()}}--></span>
+                    {{/if}}
+                    {{#if layover.asSeconds()>=18000}}
+                        <span class="layover css_layover">Long Layover<!--:{{layover.asSeconds()}}--></span>
+                    {{/if}}
+<!--                    {{#if layover.asSeconds()<18000 && layover.asSeconds()>7200}}
+                        <span class="layover">Layover: {{ duration.format(layover) }}</span>
+                    {{/if}}-->
+            </td>
+            <td><span>&nbsp;</span></td>
+            <td><span>&nbsp;</span></td>
+        </tr>
+        {{/if}}
+
+        <tr>
+            <td class="airline">
+                <div class="logos">
+                    <img class="ui top aligned avatar image" src="{{carrier.logo}}" alt="{{carrier.name}}" title="{{carrier.name}}">
+
+                </div>
+
+
+                <div class="name">
+                    {{ carrier.name }}<br>
+                    <span class="flight-no">
+                        {{flight}}<br> {{ cabinType }}
+                    </span>
+
+                </div>
+            </td>
+            <td class="from" style="text-align: right;">
+                <b  
+                    {{#if from.airportCode==name_airport_change[0] || from.airportCode==name_airport_change[1] || from.airportCode==name_airport_change[2]
+                    || from.airportCode==name_airport_change[3]}}
+                           id="background_airport_change"
+                    {{/if}}
+                   
+                    
+                    >{{from.airportCode}}:</b>[[#if small]]<br>[[/if]]{{ depart.format('ddd HH:mm') }}<br>
+                {{ small ? depart.format('D MMM') : depart.format('D MMM, YYYY') }}<br>
+                [[#unless small]]
+                <span class="airport">{{ from.airport}},  {{from.city}}&nbsp;({{from.airportCode}}), Terminal&nbsp;{{originTerminal}}</span>
+                [[/unless]]
+            </td>
+            [[#unless small]]
+            <td class="flight">
+                <div class="duration">{{ duration.format(time) }}</div>
+            </td>
+            [[/unless]]
+            <td class="to">
+                <b 
+                    {{#if to.airportCode==name_airport_change[0] || to.airportCode==name_airport_change[1] || to.airportCode==name_airport_change[2]
+                    || to.airportCode==name_airport_change[3]}}
+                           id="background_airport_change"
+                    {{/if}}
+                    
+                    
+                    >{{to.airportCode}}:</b>[[#if small]]<br>[[/if]]{{ arrive.format('ddd HH:mm') }}<br>
+                {{ small ? arrive.format('D MMM') : arrive.format('D MMM, YYYY') }}<br>
+                [[#unless small]]
+                <span class="airport">{{ to.airport}},  {{to.city}}&nbsp;({{to.airportCode}}), Terminal&nbsp;{{destinationTerminal}}</span>
+                [[/unless]]
+            </td>
+        </tr>
+
+        {{/each}}
+
+    </table>
+</div>
+{{/each}}
+{{/flight}}

@@ -1,0 +1,1 @@
+php yiic.php queue worker %1

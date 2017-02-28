@@ -1,0 +1,18 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@borderRadius: 0;
+@verticalPadding: 10px;
+@horizontalPadding: 10px;
+@padding: 10px;
+
+@border: @borderWidth solid @blueBorder;
+
+@placeholderFontSize: 11px;
+@placeholderBigFontSize: 14px;
+
+@iconWidth: (2*0.78571em) + @glyphWidth;
+
+@medium: 12px;
+@large: 20px;

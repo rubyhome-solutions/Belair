@@ -1,0 +1,29 @@
+<header>
+    <div class="ui three column grid">
+        <div class="column"><a id="back_btn" class="back_page" href="javascript:;" on-click="modifySearch()"><img src="/themes/B2C/img/mobile/arrow_back.png" alt="back"></a></div>
+        <div class="column"><a class="logo" href="javascript:;"><img src="/themes/B2C/img/mobile/logo.png" alt="CheapTicket.in"></a></div>
+        <!--<div class="column right aligned"><a id="filter" class="filter" href="javascript:;"><img src="/themes/B2C/img/mobile/filter.png" alt="Filter"></a></div>-->
+    </div>
+
+    <div id="m_menu" class="ui left vertical sidebar menu push scale down overlay">
+
+    </div>
+
+</header>
+
+
+{{#if pending}}
+    <section>
+        <div class="loading" style="height: 100px; position: relative; margin: 20px;">
+            <div class="ui indicating progress active">
+                <div class="bar" style="background-color: #fee252; -webkit-transition-duration: 300ms; transition-duration: 300ms; width: {{pending}}%;"></div>
+                <div class="label">Searching for flights</div>
+            </div>
+        </div>
+    </section>
+{{else}}
+    <results pending="{{pending}}" search="{{search}}" flights="{{flights}}" prices="{{prices}}" filter="{{filter}}"></results>
+{{/if}}
+
+
+

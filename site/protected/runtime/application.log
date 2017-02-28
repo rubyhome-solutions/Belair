@@ -1,0 +1,176 @@
+2017/02/22 10:35:31 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42703]: Undefined column: 7 ERROR:  column "server_id" does not exist
+LINE 1: ... WHERE result IS NULL AND started IS NOT NULL AND server_id=...
+                                                             ^. The SQL statement executed was: SELECT COUNT(*) FROM process WHERE result IS NULL AND started IS NOT NULL AND server_id=0;.
+in C:\xampp\htdocs\belair\site\protected\views\site\pages\googleCharts.php (12)
+in C:\xampp\htdocs\belair\site\protected\views\site\pages\internal.php (43)
+in C:\xampp\htdocs\belair\site\index.php (26)
+2017/02/22 10:35:31 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42703]: Undefined column: 7 ERROR:  column "server_id" does not exist
+LINE 1: ... WHERE result IS NULL AND started IS NOT NULL AND server_id=...
+                                                             ^. The SQL statement executed was: SELECT COUNT(*) FROM process WHERE result IS NULL AND started IS NOT NULL AND server_id=0; in C:\xampp\htdocs\yii-1.1.17.467ff50\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\belair\site\protected\views\site\pages\googleCharts.php(12): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#4 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#5 C:\xampp\htdocs\belair\site\protected\views\site\pages\internal.php(43): CController->renderPartial('pages/googleCha...')
+#6 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#8 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#9 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CController.php(782): CController->renderPartial('pages/internal', NULL, true)
+#10 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\actions\CViewAction.php(140): CController->render('pages/internal')
+#11 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\actions\CAction.php(76): CViewAction->run()
+#12 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CController.php(308): CAction->runWithParams(Array)
+#13 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CController.php(286): CController->runAction(Object(CViewAction))
+#14 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#15 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CWebApplication.php(282): CController->run('page')
+#16 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CWebApplication.php(141): CWebApplication->runController('site/page')
+#17 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\belair\site\index.php(26): CApplication->run()
+#19 {main}
+REQUEST_URI=/site/page?view=internal
+---
+2017/02/22 10:36:26 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42703]: Undefined column: 7 ERROR:  column "server_id" does not exist
+LINE 1: ... WHERE result IS NULL AND started IS NOT NULL AND server_id=...
+                                                             ^. The SQL statement executed was: SELECT COUNT(*) FROM process WHERE result IS NULL AND started IS NOT NULL AND server_id=0;.
+in C:\xampp\htdocs\belair\site\protected\views\site\pages\googleCharts.php (12)
+in C:\xampp\htdocs\belair\site\protected\views\site\pages\internal.php (43)
+in C:\xampp\htdocs\belair\site\index.php (26)
+2017/02/22 10:36:26 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42703]: Undefined column: 7 ERROR:  column "server_id" does not exist
+LINE 1: ... WHERE result IS NULL AND started IS NOT NULL AND server_id=...
+                                                             ^. The SQL statement executed was: SELECT COUNT(*) FROM process WHERE result IS NULL AND started IS NOT NULL AND server_id=0; in C:\xampp\htdocs\yii-1.1.17.467ff50\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\belair\site\protected\views\site\pages\googleCharts.php(12): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#4 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#5 C:\xampp\htdocs\belair\site\protected\views\site\pages\internal.php(43): CController->renderPartial('pages/googleCha...')
+#6 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#8 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#9 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CController.php(782): CController->renderPartial('pages/internal', NULL, true)
+#10 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\actions\CViewAction.php(140): CController->render('pages/internal')
+#11 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\actions\CAction.php(76): CViewAction->run()
+#12 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CController.php(308): CAction->runWithParams(Array)
+#13 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CController.php(286): CController->runAction(Object(CViewAction))
+#14 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#15 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CWebApplication.php(282): CController->run('page')
+#16 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CWebApplication.php(141): CWebApplication->runController('site/page')
+#17 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\belair\site\index.php(26): CApplication->run()
+#19 {main}
+REQUEST_URI=/site/page?view=internal
+---
+2017/02/23 08:02:48 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "design/views/index.html". in C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CWebApplication.php(141): CWebApplication->runController('design/views/in...')
+#1 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\belair\site\index.php(26): CApplication->run()
+#3 {main}
+REQUEST_URI=/design/views/index.html
+---
+2017/02/23 15:52:12 [info] [application] POST / HTTP/1.1
+Host: test.webservices.amadeus.com
+Connection: Keep-Alive
+User-Agent: PHP-SOAP/7.0.15
+Accept-Encoding: gzip, deflate
+Content-Type: text/xml; charset=utf-8
+SOAPAction: "http://webservices.amadeus.com/1ASIWBELBEL/FMPTBQ_14_2_1A"
+Content-Length: 1917
+
+
+in C:\xampp\htdocs\belair\site\protected\components\Utils.php (409)
+in C:\xampp\htdocs\belair\site\protected\components\Utils.php (617)
+in C:\xampp\htdocs\belair\site\protected\components\Amadeus\test_v2\AmadeusWebServices.php (134)
+2017/02/23 15:52:12 [info] [application] <?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://xml.amadeus.com/FMPTBQ_14_2_1A" xmlns:ns2="http://xml.amadeus.com/ws/2009/01/WBS_Session-2.0.xsd"><SOAP-ENV:Header><ns2:Session><ns2:SessionId>01MYVEHKVL</ns2:SessionId><ns2:SequenceNumber>2</ns2:SequenceNumber><ns2:SecurityToken>R0QEAKSZTF8WQRSXVWNYJ3BN</ns2:SecurityToken></ns2:Session></SOAP-ENV:Header><SOAP-ENV:Body><ns1:Fare_MasterPricerTravelBoardSearch><ns1:numberOfUnit><ns1:unitNumberDetail><ns1:numberOfUnits>1</ns1:numberOfUnits><ns1:typeOfUnit>PX</ns1:typeOfUnit></ns1:unitNumberDetail><ns1:unitNumberDetail><ns1:numberOfUnits>50</ns1:numberOfUnits><ns1:typeOfUnit>RC</ns1:typeOfUnit></ns1:unitNumberDetail></ns1:numberOfUnit><ns1:paxReference><ns1:ptc>ADT</ns1:ptc><ns1:traveller><ns1:ref>1</ns1:ref></ns1:traveller></ns1:paxReference><ns1:fareOptions><ns1:pricingTickInfo><ns1:pricingTicketing><ns1:priceType>TAC</ns1:priceType><ns1:priceType>RU</ns1:priceType><ns1:priceType>RP</ns1:priceType><ns1:priceType>ET</ns1:priceType></ns1:pricingTicketing></ns1:pricingTickInfo></ns1:fareOptions><ns1:travelFlightInfo><ns1:cabinId><ns1:cabin>Y</ns1:cabin></ns1:cabinId><ns1:companyIdentity><ns1:carrierQualifier>X</ns1:carrierQualifier><ns1:carrierId>H1</ns1:carrierId></ns1:companyIdentity></ns1:travelFlightInfo><ns1:itinerary><ns1:requestedSegmentRef><ns1:segRef>1</ns1:segRef></ns1:requestedSegmentRef><ns1:departureLocalization><ns1:depMultiCity><ns1:locationId>DEL</ns1:locationId></ns1:depMultiCity></ns1:departureLocalization><ns1:arrivalLocalization><ns1:arrivalMultiCity><ns1:locationId>BOM</ns1:locationId></ns1:arrivalMultiCity></ns1:arrivalLocalization><ns1:timeDetails><ns1:firstDateTimeDetail><ns1:date>240217</ns1:date></ns1:firstDateTimeDetail></ns1:timeDetails></ns1:itinerary></ns1:Fare_MasterPricerTravelBoardSearch></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+in C:\xampp\htdocs\belair\site\protected\components\Utils.php (409)
+in C:\xampp\htdocs\belair\site\protected\components\Utils.php (618)
+in C:\xampp\htdocs\belair\site\protected\components\Amadeus\test_v2\AmadeusWebServices.php (134)
+2017/02/23 15:52:12 [info] [application] HTTP/1.1 500 Other Error
+Content-Encoding: gzip
+Content-Type: text/xml
+Content-Length: 343
+
+in C:\xampp\htdocs\belair\site\protected\components\Utils.php (409)
+in C:\xampp\htdocs\belair\site\protected\components\Utils.php (619)
+in C:\xampp\htdocs\belair\site\protected\components\Amadeus\test_v2\AmadeusWebServices.php (134)
+2017/02/23 15:52:12 [info] [application] <?xml version="1.0" encoding="UTF-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Header xmlns="http://xml.amadeus.com/ws/2009/01/WBS_Session-2.0.xsd"><Session><SessionId>01MYVEHKVL</SessionId><SequenceNumber>2</SequenceNumber><SecurityToken>R0QEAKSZTF8WQRSXVWNYJ3BN</SecurityToken></Session></soap:Header><soap:Body><soap:Fault><faultcode>soap:Server</faultcode><faultstring> 42|Transport|Temporary network error:unable to reach targeted application</faultstring></soap:Fault></soap:Body></soap:Envelope>
+in C:\xampp\htdocs\belair\site\protected\components\Utils.php (409)
+in C:\xampp\htdocs\belair\site\protected\components\Utils.php (620)
+in C:\xampp\htdocs\belair\site\protected\components\Amadeus\test_v2\AmadeusWebServices.php (134)
+2017/02/23 15:52:12 [info] [application]  42|Transport|Temporary network error:unable to reach targeted application
+in C:\xampp\htdocs\belair\site\protected\components\Amadeus\test_v2\AmadeusWebServices.php (135)
+in C:\xampp\htdocs\belair\site\protected\components\Amadeus\Utils.php (1644)
+in C:\xampp\htdocs\belair\site\protected\commands\QueueCommand.php (55)
+2017/02/24 08:02:23 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "b2c". in C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CWebApplication.php(141): CWebApplication->runController('b2c')
+#1 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\belair\site\index.php(26): CApplication->run()
+#3 {main}
+REQUEST_URI=/b2c/
+---
+2017/02/24 16:58:04 [error] [php] Undefined variable: meta_store_path (C:\xampp\htdocs\belair\site\themes\B2C\views\common\js.php:9)
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CController.php(869): b2c\controllers\FlightsController->renderFile()
+#1 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CController.php(782): b2c\controllers\FlightsController->renderPartial()
+#2 C:\xampp\htdocs\belair\site\protected\modules\b2c\controllers\FlightsController.php(54): b2c\controllers\FlightsController->render()
+#3 C:\xampp\htdocs\belair\site\protected\modules\b2c\controllers\FlightsController.php(16): b2c\controllers\FlightsController->actionSearch()
+#4 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\actions\CInlineAction.php(49): b2c\controllers\FlightsController->actionIndex()
+#5 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CController.php(286): b2c\controllers\FlightsController->runAction()
+#7 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CController.php(265): b2c\controllers\FlightsController->runActionWithFilters()
+#8 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CWebApplication.php(282): b2c\controllers\FlightsController->run()
+#9 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\belair\site\index.php(26): CWebApplication->run()
+REQUEST_URI=/b2c/flights
+in C:\xampp\htdocs\belair\site\themes\B2C\views\common\js.php (9)
+in C:\xampp\htdocs\belair\site\protected\modules\b2c\controllers\FlightsController.php (54)
+in C:\xampp\htdocs\belair\site\protected\modules\b2c\controllers\FlightsController.php (16)
+2017/02/24 16:59:44 [error] [exception.ParseError] ParseError: syntax error, unexpected end of file in C:\xampp\htdocs\belair\site\themes\B2C\views\common\js.php:35
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#1 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#2 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CController.php(782): CController->renderPartial('//common/js', Array, true)
+#3 C:\xampp\htdocs\belair\site\protected\modules\b2c\controllers\FlightsController.php(54): CController->render('//common/js', Array)
+#4 C:\xampp\htdocs\belair\site\protected\modules\b2c\controllers\FlightsController.php(16): b2c\controllers\FlightsController->actionSearch()
+#5 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\actions\CInlineAction.php(49): b2c\controllers\FlightsController->actionIndex()
+#6 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CWebApplication.php(282): CController->run('')
+#10 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CWebApplication.php(141): CWebApplication->runController('b2c/flights')
+#11 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\belair\site\index.php(26): CApplication->run()
+#13 {main}
+REQUEST_URI=/b2c/flights
+---
+2017/02/24 23:30:45 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "b2c/airCart/mybookings". in C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CWebApplication.php(141): CWebApplication->runController('b2c/airCart/myb...')
+#1 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\belair\site\index.php(26): CApplication->run()
+#3 {main}
+REQUEST_URI=/b2c/airCart/mybookings/
+HTTP_REFERER=http://local.cheapticket/b2c/flights/search
+---
+2017/02/25 01:13:16 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "b2c/flights1". in C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CWebApplication.php(141): CWebApplication->runController('b2c/flights1')
+#1 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\belair\site\index.php(26): CApplication->run()
+#3 {main}
+REQUEST_URI=/b2c/flights1/
+---
+2017/02/25 01:13:26 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "b2c/flights1". in C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\web\CWebApplication.php(141): CWebApplication->runController('b2c/flights1')
+#1 C:\xampp\htdocs\yii-1.1.17.467ff50\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\belair\site\index.php(26): CApplication->run()
+#3 {main}
+REQUEST_URI=/b2c/flights1/
+---

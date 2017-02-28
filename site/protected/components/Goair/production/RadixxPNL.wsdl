@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://radixx.com/WSRadixx/RadixxPNL" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://radixx.com/WSRadixx/RadixxPNL" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://radixx.com/WSRadixx/RadixxPNL">
+      <s:element name="GetFlightList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FlightDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlightListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFlightListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlightManifest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FlightNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FlightDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Destination" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlightManifestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFlightManifestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlightLoadSheet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FlightNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FlightDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Destination" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlightLoadSheetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFlightLoadSheetResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetFlightListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFlightList" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFlightListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightManifestSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFlightManifest" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightManifestSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFlightManifestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightLoadSheetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFlightLoadSheet" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightLoadSheetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFlightLoadSheetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightListHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="FlightDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightListHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightManifestHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="FlightNumber" type="s:string" />
+    <wsdl:part name="FlightDate" type="s:string" />
+    <wsdl:part name="Origin" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightManifestHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightLoadSheetHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="FlightNumber" type="s:string" />
+    <wsdl:part name="FlightDate" type="s:string" />
+    <wsdl:part name="Origin" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightLoadSheetHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightListHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="FlightDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightListHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightManifestHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="FlightNumber" type="s:string" />
+    <wsdl:part name="FlightDate" type="s:string" />
+    <wsdl:part name="Origin" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightManifestHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightLoadSheetHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="FlightNumber" type="s:string" />
+    <wsdl:part name="FlightDate" type="s:string" />
+    <wsdl:part name="Origin" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightLoadSheetHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="RadixxPNLSoap">
+    <wsdl:operation name="GetFlightList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the list of Flight Legs, passenger breakdown (adult, child, infant) baggage info for all flights for the given date.</wsdl:documentation>
+      <wsdl:input message="tns:GetFlightListSoapIn" />
+      <wsdl:output message="tns:GetFlightListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightManifest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Flight Manifest for the specified flight.</wsdl:documentation>
+      <wsdl:input message="tns:GetFlightManifestSoapIn" />
+      <wsdl:output message="tns:GetFlightManifestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightLoadSheet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Load Sheet information for the specified flight. i.e. Passenger breakdown (adult, child, infant), WBZone, and Baggage info.</wsdl:documentation>
+      <wsdl:input message="tns:GetFlightLoadSheetSoapIn" />
+      <wsdl:output message="tns:GetFlightLoadSheetSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RadixxPNLHttpGet">
+    <wsdl:operation name="GetFlightList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the list of Flight Legs, passenger breakdown (adult, child, infant) baggage info for all flights for the given date.</wsdl:documentation>
+      <wsdl:input message="tns:GetFlightListHttpGetIn" />
+      <wsdl:output message="tns:GetFlightListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightManifest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Flight Manifest for the specified flight.</wsdl:documentation>
+      <wsdl:input message="tns:GetFlightManifestHttpGetIn" />
+      <wsdl:output message="tns:GetFlightManifestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightLoadSheet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Load Sheet information for the specified flight. i.e. Passenger breakdown (adult, child, infant), WBZone, and Baggage info.</wsdl:documentation>
+      <wsdl:input message="tns:GetFlightLoadSheetHttpGetIn" />
+      <wsdl:output message="tns:GetFlightLoadSheetHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RadixxPNLHttpPost">
+    <wsdl:operation name="GetFlightList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the list of Flight Legs, passenger breakdown (adult, child, infant) baggage info for all flights for the given date.</wsdl:documentation>
+      <wsdl:input message="tns:GetFlightListHttpPostIn" />
+      <wsdl:output message="tns:GetFlightListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightManifest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Flight Manifest for the specified flight.</wsdl:documentation>
+      <wsdl:input message="tns:GetFlightManifestHttpPostIn" />
+      <wsdl:output message="tns:GetFlightManifestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightLoadSheet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Load Sheet information for the specified flight. i.e. Passenger breakdown (adult, child, infant), WBZone, and Baggage info.</wsdl:documentation>
+      <wsdl:input message="tns:GetFlightLoadSheetHttpPostIn" />
+      <wsdl:output message="tns:GetFlightLoadSheetHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RadixxPNLSoap" type="tns:RadixxPNLSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetFlightList">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxPNL/GetFlightList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightManifest">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxPNL/GetFlightManifest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightLoadSheet">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxPNL/GetFlightLoadSheet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxPNLSoap12" type="tns:RadixxPNLSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetFlightList">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxPNL/GetFlightList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightManifest">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxPNL/GetFlightManifest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightLoadSheet">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxPNL/GetFlightLoadSheet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxPNLHttpGet" type="tns:RadixxPNLHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetFlightList">
+      <http:operation location="/GetFlightList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightManifest">
+      <http:operation location="/GetFlightManifest" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightLoadSheet">
+      <http:operation location="/GetFlightLoadSheet" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxPNLHttpPost" type="tns:RadixxPNLHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetFlightList">
+      <http:operation location="/GetFlightList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightManifest">
+      <http:operation location="/GetFlightManifest" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightLoadSheet">
+      <http:operation location="/GetFlightLoadSheet" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RadixxPNL">
+    <wsdl:port name="RadixxPNLSoap" binding="tns:RadixxPNLSoap">
+      <soap:address location="http://g8.service.radixx.com/RadixxPNL.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxPNLSoap12" binding="tns:RadixxPNLSoap12">
+      <soap12:address location="http://g8.service.radixx.com/RadixxPNL.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxPNLHttpGet" binding="tns:RadixxPNLHttpGet">
+      <http:address location="http://g8.service.radixx.com/RadixxPNL.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxPNLHttpPost" binding="tns:RadixxPNLHttpPost">
+      <http:address location="http://g8.service.radixx.com/RadixxPNL.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

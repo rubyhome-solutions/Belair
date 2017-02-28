@@ -1,0 +1,87 @@
+
+<div class="content" >
+    <form action="javascript:;" class="ui form {{#if errors || errorMsg}}error{{/if}}  {{#if submitting}}loading{{/if}}" style="position: relative;" on-submit="getticketbypnr()">
+        <div class="ui two column middle aligned center aligned relaxed fitted stackable ">
+
+
+            <div class="ui basic segment" style="max-width: 300px; margin: auto; text-align: left;">
+                <ui-input
+                    name="mobile"
+                    value="{{mobile}}"
+                    class="fluid "
+                    
+                    placeholder="Mobile / Email"
+                    >
+                </ui-input>
+
+                <ui-input
+                    name="pnr"
+                    value="{{pnr}}"
+                    class="fluid"                    
+                    placeholder="PNR / Booking Id."
+                    >
+                </ui-input>
+          {{#if errors || errorMsg }}
+                        <br><br>
+                        <div class="ui error message">
+                            {{#if errorMsg}}
+                            <p>{{errorMsg}}</p>
+                            {{/if}}
+
+                            {{#each errors:i}}
+                            {{#if .}}<p>{{.}}</p>{{/if}}
+                            {{/each}}
+                        </div>
+                        {{/if}}
+
+                <button type="submit" class="ui small blue button ">SUBMIT</button>
+
+            </div>
+
+        </div>
+    </form>
+    <div class="ui horizontal divider">
+        OR
+    </div>
+    <form action="javascript:;" class="ui form {{#if errors2 || errorMsg2}}error{{/if}}  {{#if submitting2}}loading{{/if}}" style="position: relative;" on-submit="getticketbylastname()">
+        <div class="ui two column middle aligned center aligned relaxed fitted stackable ">
+
+
+            <div class="ui basic segment" style="max-width: 300px; margin: auto; text-align: left;">
+                <ui-input
+                    name="lastname"
+                    value="{{lastname}}"
+                    class="fluid "
+                    placeholder="Last Name"
+                    >
+                </ui-input>
+
+                <ui-input
+                    name="pnr2"
+                    value="{{pnr2}}"
+                    class="fluid"
+                    placeholder="PNR / Booking Id."
+                    >
+                </ui-input>
+                    {{#if errors2 || errorMsg2 }}
+                        <br><br>
+                        <div class="ui error message">
+                            {{#if errorMsg2}}
+                            <p>{{errorMsg2}}</p>
+                            {{/if}}
+
+                            {{#each errors2:i}}
+                            {{#if .}}<p>{{.}}</p>{{/if}}
+                            {{/each}}
+                        </div>
+                        {{/if}}
+
+                <button type="submit" class="ui small blue button ">SUBMIT</button>
+
+            </div>
+
+        </div>
+    </form>
+
+    
+</div>

@@ -1,0 +1,84 @@
+<div class="ui calendar [[#if twomonth]]twomonth relaxed[[/if]] grid">
+    {{#if twomonth }}
+    <div class="eight wide column">
+        {{# formatCalendar(worker, value, min, max, false) }}
+        <div class="sixteen wide column center aligned month">
+            <a class="left" on-click="prev(~/worker)"><i class="triangle left icon"></i></a>
+
+            {{ ./worker.format('MMMM YYYY') }}
+        </div>
+
+        {{>month}}
+        {{/}}
+    </div>
+    <div class="eight wide column">
+        {{# formatCalendar(worker, value, min, max, true) }}
+        <div class="sixteen wide column center aligned month">
+            <a class="right" on-click="next(~/worker)"><i class="triangle right icon"></i></a>
+
+            {{ ./worker.format('MMMM YYYY') }}
+        </div>
+
+        {{>month}}
+        {{/}}
+    </div>
+    {{else}}
+    <div class="sixteen wide column">
+        {{# formatCalendar(worker, value, min, max, false) }}
+        <div class="sixteen wide column center aligned month">
+            {{#if changeyear!='1'}}
+            <a class="left" on-click="prev(~/worker)"><i class="triangle left icon"></i></a>
+            <a class="right" on-click="next(~/worker)"><i class="triangle right icon"></i></a>
+
+            {{ ./worker.format('MMMM YYYY') }}
+            {{else}}
+
+            <div class="ui input select small" style="width:30%">
+                <select id="selectedmonth"  on-change="selectmonth(~/worker)">
+                    {{#each moment.monthsShort():i }}
+                    <option {{#if selectedmonth==i}} selected {{/if}} value={{i}}>{{.}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="ui input select small" style="width:30%">
+                <select id="selectedyear"  on-change="selectyear(~/worker)">
+                    {{#each yearlist:i }}
+                    <option  {{#if selectedyear==yearlist[i]}} selected {{/if}}  value={{.}}>{{.}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            {{/if}}
+        </div>
+
+
+        {{>month}}
+        {{/}}
+    </div>
+    {{/if}}
+</div>
+
+{{#partial month}}
+    <div class="ui seven column grid weekdays center aligned">
+        {{#each moment.weekdaysShort() }}
+        <div class="column inactive">
+            {{ . }}
+        </div>
+        {{/each}}
+    </div>
+
+
+    {{#each weeks }}
+    <div class="ui seven column grid weekdays center aligned">
+        {{#each days }}
+        <div
+                class="column {{class}} {{#if selected}}active{{/if}} {{#if !date }}inactive{{/if}}"
+                on-click="setValue([year, month, date])"
+                >
+            {{#if ./date}}
+            <a class="day">{{ ./date }}</a>
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+    {{/each}}
+{{/partial}}

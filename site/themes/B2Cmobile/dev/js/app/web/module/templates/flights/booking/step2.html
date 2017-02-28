@@ -1,0 +1,36 @@
+{{# { step: booking.steps.2 } }}
+<div class="step header step2 {{#if step.active }}active{{else}}{{#if step.completed }}completed{{/if}}{{/if}}" role="tab">Passengers</div>
+{{#if step.completed && !step.active }}
+<div class="step2-summary segment" on-click="activate(2)">
+    <div class="ui horizontal list">
+        {{#each booking.passengers:i}}
+        <div class="item">
+            <div class="content">
+                <i class="user icon"></i> {{ traveler.firstname }} {{ traveler.lastname}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+{{else}}
+{{#if step.active}}
+<form action="javascript:;" class="ui form segment step2 {{#if step.errors}}error{{/if}} {{#if step.submitting}}loading{{/if}}" on-submit="submit()">
+    {{#each booking.passengers:i}}
+    <div class="passenger-header header">{{ meta.travelerTypes[type_id] }}({{no}})*</div>
+    <passenger class="basic" validation="{{booking.passengerValidaton}}" travelers="{{travelers}}" passenger="{{.}}" errors="{{step.errors[i]}}" meta="{{meta}}"></passenger>
+    {{/each}}
+
+    <div class="ui basic segment">
+        <div class="ui one column grid">
+            <div class="column">
+                <button type="submit" class="ui wizard button massive blue">CONTINUE</button>
+                {{#if qa}}
+                <button type="button" class="ui wizard button massive red" on-click="checkAvailability()">CHECK</button>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</form>
+{{/if}}
+{{/if}}
+{{/}}

@@ -1,0 +1,7 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+//@verticalPadding: 20px;
+@tabularBorderRadius: 0;
+@tabularBorderColor: #92abb6;

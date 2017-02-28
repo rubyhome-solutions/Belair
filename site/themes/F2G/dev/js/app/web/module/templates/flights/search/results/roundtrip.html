@@ -1,0 +1,87 @@
+{{#if selected}}
+<div class="ui segment equal height grid flights-selection modify_search_show">
+    <div class="one wide column">
+	</div>
+    <div class="ten wide column">
+        <div class="ui relaxed horizontal list">
+            {{#each selected:i}}
+
+
+            <div class="item">
+                {{#if segments}}
+                <img class="ui top aligned avatar image" src="{{first(segments.0).carrier.logo}}">
+                <div class="content">
+
+                    <div class="header black_font" style="color:#000!important;">{{ itinerary }}{{#if stops(segments.0) }}({{ stops(segments.0) }} stop(s)){{else}}(non-stop){{/if}}</div>
+                    <span class="airlinesName black_font">{{ first(segments.0).carrier.name }}
+                        {{ first(segments.0).flight }} | 
+                        {{ first(segments.0).depart.format('HH:mm') }} - {{ last(segments.0).arrive.format('HH:mm') }} |
+                        {{ duration.format(time) }}<br/>
+                        {{ first(segments.0).depart.format('D MMM, YYYY') }}
+                    </span>
+                    
+                  </div>
+                {{else}}
+               <div style="text-align: center;" class="black_font">PLEASE SELECT YOUR FLIGHT</div>
+                {{/if}}
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <div class="two wide column center aligned book">
+		{{#if canbook(selected, flights)}}
+	        <div class="price price_booking">
+	            {{#if selected}}
+	                {{# { save: discount(selected), price: price(selected) } }}
+	                    {{#if save > 0 }}
+	                        {{#if save > 10 }}
+	                        <div class="discount">{{{ money(price, meta.display_currency) }}}</div>
+	                        {{/if}}
+	                        {{{ money(price - save, meta.display_currency) }}}
+	                    {{else}}
+	                        {{{ money(price, meta.display_currency) }}}
+	                    {{/if}}
+	                {{/}}
+	            {{/if}}
+	        </div>
+		{{/if}}
+   </div>
+    <div class="two wide column center aligned book">
+        <button type="button" class="ui button large orange resize_book_bottun" {{#unless canbook(selected, flights) }}disabled style="background:#2a2a2a!important;color:#fff!important"{{/unless}} on-click="book()">BOOK</button>
+    </div>
+
+</div>
+{{/if}}
+{{#if count(flights) > 0 }}
+<div class="scrollable">
+<div class="ui divided relaxed horizontal list flights-tabs makeScrollable">
+    <div class="item {{#if carrier == -1}}active{{/if}}" style="cursor: pointer;" on-click="showCarrier(-1)">
+        <div class="content">
+            <img src="/themes/B2C/img/icons/aeroplan2.png" align="absmiddle" width="23" height="23"> All Airlines
+        </div>
+    </div>
+    {{#each carriers(allcarriers, prices) }}
+    <div class="item {{#if carrier == code}}active{{/if}}" style="cursor: pointer;" on-click="showCarrier(code)">
+        <img src="{{logo}}" class="ui top aligned image">
+        <div class="content">
+            <div>{{name}}</div>
+            {{#if price}}{{{ money(price, meta.display_currency) }}}{{else}}&nbsp;{{/if}}
+        </div>
+    </div>
+    {{/each}}
+</div>
+</div>
+<table class="flights-grid small">
+    <tbody>
+        <tr>
+            <td style="width: 50%;">
+                <flights caption="1" selectFn="{{onSelect}}" small="1" flights="{{flights.0}}" search="{{search}}" selected="{{selected[0]}}" backward="{{selected[1]}}" pending="{{pending}}"></flights>
+            </td>
+            <td style="width: 50%;">
+                <flights caption="1" selectFn="{{onSelect}}" small="1" flights="{{flights.1}}" search="{{search}}" selected="{{selected[1]}}" onward="{{selected[0]}}" pending="{{pending}}"></flights>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+{{/if}}

@@ -1,0 +1,1 @@
+<?php $this->renderPartial('//common/js', [ 'module' => 'air-search' ]); ?>

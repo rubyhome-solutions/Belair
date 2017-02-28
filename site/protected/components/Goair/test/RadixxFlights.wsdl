@@ -1,0 +1,1328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://radixx.com/WSRadixx/RadixxFlights" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://radixx.com/WSRadixx/RadixxFlights" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://radixx.com/WSRadixx/RadixxFlights">
+      <s:import namespace="http://radixx.com/WSRadixx/RAAvailabilityRequestDS.xsd" />
+      <s:import namespace="http://radixx.com/WSRadixx/RAAvailabilityDS.xsd" />
+      <s:import namespace="http://radixx.com/WSRadixx/RAFareInformationIDs.xsd" />
+      <s:import namespace="http://radixx.com/WSRadixx/RATaxDS.xsd" />
+      <s:import schemaLocation="http://g8.service.radixx.com/RadixxFlights.asmx?schema=WebShopper" namespace="http://radixx.com/WSRadixx/WebShopper.xsd" />
+      <s:import schemaLocation="http://g8.service.radixx.com/RadixxFlights.asmx?schema=RATaxDS" namespace="http://radixx.com/WSRadixx/RATaxDS.xsd" />
+      <s:import schemaLocation="http://g8.service.radixx.com/RadixxFlights.asmx?schema=RAAvailabilityResponseDS" namespace="http://radixx.com/WSRadixx/RAAvailabilityDS.xsd" />
+      <s:import schemaLocation="http://g8.service.radixx.com/RadixxFlights.asmx?schema=RAFareInformationIDs" namespace="http://radixx.com/WSRadixx/RAFareInformationIDs.xsd" />
+      <s:import schemaLocation="http://g8.service.radixx.com/RadixxFlights.asmx?schema=RAAvailabilityRequestDS" namespace="http://radixx.com/WSRadixx/RAAvailabilityRequestDS.xsd" />
+      <s:element name="GetFlightScheduleInformation_v2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SearchType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SearchCriteria" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartSearchDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndSearchDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlightScheduleInformation_v2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFlightScheduleInformation_v2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlightScheduleInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SearchType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SearchCriteria" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlightScheduleInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFlightScheduleInformationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlightInventory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AvailabilityRequest">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://radixx.com/WSRadixx/RAAvailabilityRequestDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlightInventoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFlightInventoryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://radixx.com/WSRadixx/RAAvailabilityDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlightInventoryXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XMLReq" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlightInventoryXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFlightInventoryXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPromoCodesXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="XMLReq" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPromoCodesXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPromoCodesXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlightTaxInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AdultTax" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="FareInformationIDs">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://radixx.com/WSRadixx/RAFareInformationIDs.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlightTaxInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFlightTaxInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://radixx.com/WSRadixx/RATaxDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlightTaxInfoXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AdultTax" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="XMLReq" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlightTaxInfoXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFlightTaxInfoXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFareBasisInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FareBasisCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFareBasisInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFareBasisInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExchangeRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromCurrency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToCurrency" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExchangeRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExchangeRateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConvertCurrencies">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CurrencyListToBeConverted" type="tns:CurrencyConversionList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CurrencyConversionList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CurrencyConversions" type="tns:ArrayOfCurrencyConversion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCurrencyConversion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CurrencyConversion" nillable="true" type="tns:CurrencyConversion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CurrencyConversion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CurrencyToConvertFrom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrencyToConvertTo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmountToConvert" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConvertCurrenciesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConvertCurrenciesResult" type="tns:ViewConvertedCurrencyInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ViewConvertedCurrencyInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ConvertedCurrencies" type="tns:ArrayOfConvertedCurrency" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfConvertedCurrency">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConvertedCurrency" nillable="true" type="tns:ConvertedCurrency" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConvertedCurrency">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CurrencyToConvertFrom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrencyToConvertTo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmountPriorToConversion" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ConvertedAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExchangeRate" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExchangeRateDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConvertCurrency">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromCurrency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToCurrency" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConvertCurrencyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConvertCurrencyResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebShopper">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Destination" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="NumPassengers" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Iata" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UTCOffset" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebShopperResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWebShopperResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://radixx.com/WSRadixx/WebShopper.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebShopperXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Origin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Destination" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="NumPassengers" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Iata" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UTCOffset" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebShopperXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWebShopperXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFareQuote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RadixxFareQuoteRequest" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_ClientIP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFareQuoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFareQuoteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFareQuoteDateRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RadixxFareQuoteRequestDateRange" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_ClientIP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFareQuoteDateRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFareQuoteDateRangeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="decimal" type="s:decimal" />
+      <s:element name="WebShopper" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any namespace="http://radixx.com/WSRadixx/WebShopper.xsd" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetFlightScheduleInformation_v2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetFlightScheduleInformation_v2" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightScheduleInformation_v2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetFlightScheduleInformation_v2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightScheduleInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFlightScheduleInformation" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightScheduleInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFlightScheduleInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightInventorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetFlightInventory" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightInventorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetFlightInventoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightInventoryXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFlightInventoryXML" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightInventoryXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFlightInventoryXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPromoCodesXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPromoCodesXML" />
+  </wsdl:message>
+  <wsdl:message name="GetPromoCodesXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPromoCodesXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightTaxInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFlightTaxInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightTaxInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFlightTaxInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightTaxInfoXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFlightTaxInfoXML" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightTaxInfoXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFlightTaxInfoXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFareBasisInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFareBasisInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetFareBasisInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFareBasisInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExchangeRateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExchangeRate" />
+  </wsdl:message>
+  <wsdl:message name="GetExchangeRateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExchangeRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConvertCurrenciesSoapIn">
+    <wsdl:part name="parameters" element="tns:ConvertCurrencies" />
+  </wsdl:message>
+  <wsdl:message name="ConvertCurrenciesSoapOut">
+    <wsdl:part name="parameters" element="tns:ConvertCurrenciesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConvertCurrencySoapIn">
+    <wsdl:part name="parameters" element="tns:ConvertCurrency" />
+  </wsdl:message>
+  <wsdl:message name="ConvertCurrencySoapOut">
+    <wsdl:part name="parameters" element="tns:ConvertCurrencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWebShopperSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWebShopper" />
+  </wsdl:message>
+  <wsdl:message name="GetWebShopperSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWebShopperResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWebShopperXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWebShopperXML" />
+  </wsdl:message>
+  <wsdl:message name="GetWebShopperXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWebShopperXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFareQuoteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFareQuote" />
+  </wsdl:message>
+  <wsdl:message name="GetFareQuoteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFareQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFareQuoteDateRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFareQuoteDateRange" />
+  </wsdl:message>
+  <wsdl:message name="GetFareQuoteDateRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFareQuoteDateRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightScheduleInformation_v2HttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="SearchType" type="s:string" />
+    <wsdl:part name="SearchCriteria" type="s:string" />
+    <wsdl:part name="StartSearchDate" type="s:string" />
+    <wsdl:part name="EndSearchDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightScheduleInformation_v2HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightScheduleInformationHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="SearchType" type="s:string" />
+    <wsdl:part name="SearchCriteria" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightScheduleInformationHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightInventoryXMLHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="XMLReq" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightInventoryXMLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPromoCodesXMLHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="XMLReq" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPromoCodesXMLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightTaxInfoXMLHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="AdultTax" type="s:string" />
+    <wsdl:part name="XMLReq" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightTaxInfoXMLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFareBasisInfoHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="FareBasisCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFareBasisInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetExchangeRateHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="FromCurrency" type="s:string" />
+    <wsdl:part name="ToCurrency" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetExchangeRateHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConvertCurrencyHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="FromCurrency" type="s:string" />
+    <wsdl:part name="ToCurrency" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConvertCurrencyHttpGetOut">
+    <wsdl:part name="Body" element="tns:decimal" />
+  </wsdl:message>
+  <wsdl:message name="GetWebShopperHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="Origin" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="NumPassengers" type="s:string" />
+    <wsdl:part name="Currency" type="s:string" />
+    <wsdl:part name="Iata" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="UTCOffset" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebShopperHttpGetOut">
+    <wsdl:part name="Body" element="tns:WebShopper" />
+  </wsdl:message>
+  <wsdl:message name="GetWebShopperXMLHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="Origin" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="NumPassengers" type="s:string" />
+    <wsdl:part name="Currency" type="s:string" />
+    <wsdl:part name="Iata" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="UTCOffset" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebShopperXMLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFareQuoteHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="RadixxFareQuoteRequest" type="s:string" />
+    <wsdl:part name="p_ClientIP" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFareQuoteHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFareQuoteDateRangeHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="RadixxFareQuoteRequestDateRange" type="s:string" />
+    <wsdl:part name="p_ClientIP" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFareQuoteDateRangeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightScheduleInformation_v2HttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="SearchType" type="s:string" />
+    <wsdl:part name="SearchCriteria" type="s:string" />
+    <wsdl:part name="StartSearchDate" type="s:string" />
+    <wsdl:part name="EndSearchDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightScheduleInformation_v2HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightScheduleInformationHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="SearchType" type="s:string" />
+    <wsdl:part name="SearchCriteria" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightScheduleInformationHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightInventoryXMLHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="XMLReq" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightInventoryXMLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPromoCodesXMLHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="XMLReq" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPromoCodesXMLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightTaxInfoXMLHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="AdultTax" type="s:string" />
+    <wsdl:part name="XMLReq" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFlightTaxInfoXMLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFareBasisInfoHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="FareBasisCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFareBasisInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetExchangeRateHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="FromCurrency" type="s:string" />
+    <wsdl:part name="ToCurrency" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetExchangeRateHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConvertCurrencyHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="FromCurrency" type="s:string" />
+    <wsdl:part name="ToCurrency" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConvertCurrencyHttpPostOut">
+    <wsdl:part name="Body" element="tns:decimal" />
+  </wsdl:message>
+  <wsdl:message name="GetWebShopperHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="Origin" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="NumPassengers" type="s:string" />
+    <wsdl:part name="Currency" type="s:string" />
+    <wsdl:part name="Iata" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="UTCOffset" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebShopperHttpPostOut">
+    <wsdl:part name="Body" element="tns:WebShopper" />
+  </wsdl:message>
+  <wsdl:message name="GetWebShopperXMLHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="Origin" type="s:string" />
+    <wsdl:part name="Destination" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="NumPassengers" type="s:string" />
+    <wsdl:part name="Currency" type="s:string" />
+    <wsdl:part name="Iata" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="UTCOffset" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebShopperXMLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFareQuoteHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="RadixxFareQuoteRequest" type="s:string" />
+    <wsdl:part name="p_ClientIP" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFareQuoteHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFareQuoteDateRangeHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="RadixxFareQuoteRequestDateRange" type="s:string" />
+    <wsdl:part name="p_ClientIP" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFareQuoteDateRangeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="RadixxFlightsSoap">
+    <wsdl:operation name="GetFlightScheduleInformation_v2">
+      <wsdl:input message="tns:GetFlightScheduleInformation_v2SoapIn" />
+      <wsdl:output message="tns:GetFlightScheduleInformation_v2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightScheduleInformation">
+      <wsdl:input message="tns:GetFlightScheduleInformationSoapIn" />
+      <wsdl:output message="tns:GetFlightScheduleInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightInventory">
+      <wsdl:input message="tns:GetFlightInventorySoapIn" />
+      <wsdl:output message="tns:GetFlightInventorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightInventoryXML">
+      <wsdl:input message="tns:GetFlightInventoryXMLSoapIn" />
+      <wsdl:output message="tns:GetFlightInventoryXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPromoCodesXML">
+      <wsdl:input message="tns:GetPromoCodesXMLSoapIn" />
+      <wsdl:output message="tns:GetPromoCodesXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightTaxInfo">
+      <wsdl:input message="tns:GetFlightTaxInfoSoapIn" />
+      <wsdl:output message="tns:GetFlightTaxInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightTaxInfoXML">
+      <wsdl:input message="tns:GetFlightTaxInfoXMLSoapIn" />
+      <wsdl:output message="tns:GetFlightTaxInfoXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFareBasisInfo">
+      <wsdl:input message="tns:GetFareBasisInfoSoapIn" />
+      <wsdl:output message="tns:GetFareBasisInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeRate">
+      <wsdl:input message="tns:GetExchangeRateSoapIn" />
+      <wsdl:output message="tns:GetExchangeRateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertCurrencies">
+      <wsdl:input message="tns:ConvertCurrenciesSoapIn" />
+      <wsdl:output message="tns:ConvertCurrenciesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertCurrency">
+      <wsdl:input message="tns:ConvertCurrencySoapIn" />
+      <wsdl:output message="tns:ConvertCurrencySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebShopper">
+      <wsdl:input message="tns:GetWebShopperSoapIn" />
+      <wsdl:output message="tns:GetWebShopperSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebShopperXML">
+      <wsdl:input message="tns:GetWebShopperXMLSoapIn" />
+      <wsdl:output message="tns:GetWebShopperXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFareQuote">
+      <wsdl:input message="tns:GetFareQuoteSoapIn" />
+      <wsdl:output message="tns:GetFareQuoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFareQuoteDateRange">
+      <wsdl:input message="tns:GetFareQuoteDateRangeSoapIn" />
+      <wsdl:output message="tns:GetFareQuoteDateRangeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RadixxFlightsHttpGet">
+    <wsdl:operation name="GetFlightScheduleInformation_v2">
+      <wsdl:input message="tns:GetFlightScheduleInformation_v2HttpGetIn" />
+      <wsdl:output message="tns:GetFlightScheduleInformation_v2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightScheduleInformation">
+      <wsdl:input message="tns:GetFlightScheduleInformationHttpGetIn" />
+      <wsdl:output message="tns:GetFlightScheduleInformationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightInventoryXML">
+      <wsdl:input message="tns:GetFlightInventoryXMLHttpGetIn" />
+      <wsdl:output message="tns:GetFlightInventoryXMLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPromoCodesXML">
+      <wsdl:input message="tns:GetPromoCodesXMLHttpGetIn" />
+      <wsdl:output message="tns:GetPromoCodesXMLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightTaxInfoXML">
+      <wsdl:input message="tns:GetFlightTaxInfoXMLHttpGetIn" />
+      <wsdl:output message="tns:GetFlightTaxInfoXMLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFareBasisInfo">
+      <wsdl:input message="tns:GetFareBasisInfoHttpGetIn" />
+      <wsdl:output message="tns:GetFareBasisInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeRate">
+      <wsdl:input message="tns:GetExchangeRateHttpGetIn" />
+      <wsdl:output message="tns:GetExchangeRateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertCurrency">
+      <wsdl:input message="tns:ConvertCurrencyHttpGetIn" />
+      <wsdl:output message="tns:ConvertCurrencyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebShopper">
+      <wsdl:input message="tns:GetWebShopperHttpGetIn" />
+      <wsdl:output message="tns:GetWebShopperHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebShopperXML">
+      <wsdl:input message="tns:GetWebShopperXMLHttpGetIn" />
+      <wsdl:output message="tns:GetWebShopperXMLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFareQuote">
+      <wsdl:input message="tns:GetFareQuoteHttpGetIn" />
+      <wsdl:output message="tns:GetFareQuoteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFareQuoteDateRange">
+      <wsdl:input message="tns:GetFareQuoteDateRangeHttpGetIn" />
+      <wsdl:output message="tns:GetFareQuoteDateRangeHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RadixxFlightsHttpPost">
+    <wsdl:operation name="GetFlightScheduleInformation_v2">
+      <wsdl:input message="tns:GetFlightScheduleInformation_v2HttpPostIn" />
+      <wsdl:output message="tns:GetFlightScheduleInformation_v2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightScheduleInformation">
+      <wsdl:input message="tns:GetFlightScheduleInformationHttpPostIn" />
+      <wsdl:output message="tns:GetFlightScheduleInformationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightInventoryXML">
+      <wsdl:input message="tns:GetFlightInventoryXMLHttpPostIn" />
+      <wsdl:output message="tns:GetFlightInventoryXMLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPromoCodesXML">
+      <wsdl:input message="tns:GetPromoCodesXMLHttpPostIn" />
+      <wsdl:output message="tns:GetPromoCodesXMLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightTaxInfoXML">
+      <wsdl:input message="tns:GetFlightTaxInfoXMLHttpPostIn" />
+      <wsdl:output message="tns:GetFlightTaxInfoXMLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFareBasisInfo">
+      <wsdl:input message="tns:GetFareBasisInfoHttpPostIn" />
+      <wsdl:output message="tns:GetFareBasisInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeRate">
+      <wsdl:input message="tns:GetExchangeRateHttpPostIn" />
+      <wsdl:output message="tns:GetExchangeRateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertCurrency">
+      <wsdl:input message="tns:ConvertCurrencyHttpPostIn" />
+      <wsdl:output message="tns:ConvertCurrencyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebShopper">
+      <wsdl:input message="tns:GetWebShopperHttpPostIn" />
+      <wsdl:output message="tns:GetWebShopperHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebShopperXML">
+      <wsdl:input message="tns:GetWebShopperXMLHttpPostIn" />
+      <wsdl:output message="tns:GetWebShopperXMLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFareQuote">
+      <wsdl:input message="tns:GetFareQuoteHttpPostIn" />
+      <wsdl:output message="tns:GetFareQuoteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFareQuoteDateRange">
+      <wsdl:input message="tns:GetFareQuoteDateRangeHttpPostIn" />
+      <wsdl:output message="tns:GetFareQuoteDateRangeHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RadixxFlightsSoap" type="tns:RadixxFlightsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetFlightScheduleInformation_v2">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetFlightScheduleInformation_v2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightScheduleInformation">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetFlightScheduleInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightInventory">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetFlightInventory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightInventoryXML">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetFlightInventoryXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPromoCodesXML">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetPromoCodesXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightTaxInfo">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetFlightTaxInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightTaxInfoXML">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetFlightTaxInfoXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFareBasisInfo">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetFareBasisInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeRate">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetExchangeRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertCurrencies">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/ConvertCurrencies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertCurrency">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/ConvertCurrency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebShopper">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetWebShopper" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebShopperXML">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetWebShopperXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFareQuote">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetFareQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFareQuoteDateRange">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetFareQuoteDateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxFlightsSoap12" type="tns:RadixxFlightsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetFlightScheduleInformation_v2">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetFlightScheduleInformation_v2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightScheduleInformation">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetFlightScheduleInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightInventory">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetFlightInventory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightInventoryXML">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetFlightInventoryXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPromoCodesXML">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetPromoCodesXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightTaxInfo">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetFlightTaxInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightTaxInfoXML">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetFlightTaxInfoXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFareBasisInfo">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetFareBasisInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeRate">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetExchangeRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertCurrencies">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/ConvertCurrencies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertCurrency">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/ConvertCurrency" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebShopper">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetWebShopper" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebShopperXML">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetWebShopperXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFareQuote">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetFareQuote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFareQuoteDateRange">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxFlights/GetFareQuoteDateRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxFlightsHttpGet" type="tns:RadixxFlightsHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetFlightScheduleInformation_v2">
+      <http:operation location="/GetFlightScheduleInformation_v2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightScheduleInformation">
+      <http:operation location="/GetFlightScheduleInformation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightInventoryXML">
+      <http:operation location="/GetFlightInventoryXML" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPromoCodesXML">
+      <http:operation location="/GetPromoCodesXML" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightTaxInfoXML">
+      <http:operation location="/GetFlightTaxInfoXML" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFareBasisInfo">
+      <http:operation location="/GetFareBasisInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeRate">
+      <http:operation location="/GetExchangeRate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertCurrency">
+      <http:operation location="/ConvertCurrency" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebShopper">
+      <http:operation location="/GetWebShopper" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebShopperXML">
+      <http:operation location="/GetWebShopperXML" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFareQuote">
+      <http:operation location="/GetFareQuote" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFareQuoteDateRange">
+      <http:operation location="/GetFareQuoteDateRange" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxFlightsHttpPost" type="tns:RadixxFlightsHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetFlightScheduleInformation_v2">
+      <http:operation location="/GetFlightScheduleInformation_v2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightScheduleInformation">
+      <http:operation location="/GetFlightScheduleInformation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightInventoryXML">
+      <http:operation location="/GetFlightInventoryXML" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPromoCodesXML">
+      <http:operation location="/GetPromoCodesXML" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlightTaxInfoXML">
+      <http:operation location="/GetFlightTaxInfoXML" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFareBasisInfo">
+      <http:operation location="/GetFareBasisInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeRate">
+      <http:operation location="/GetExchangeRate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertCurrency">
+      <http:operation location="/ConvertCurrency" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebShopper">
+      <http:operation location="/GetWebShopper" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebShopperXML">
+      <http:operation location="/GetWebShopperXML" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFareQuote">
+      <http:operation location="/GetFareQuote" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFareQuoteDateRange">
+      <http:operation location="/GetFareQuoteDateRange" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RadixxFlights">
+    <wsdl:port name="RadixxFlightsSoap" binding="tns:RadixxFlightsSoap">
+      <soap:address location="http://g8.service.radixx.com/RadixxFlights.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxFlightsSoap12" binding="tns:RadixxFlightsSoap12">
+      <soap12:address location="http://g8.service.radixx.com/RadixxFlights.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxFlightsHttpGet" binding="tns:RadixxFlightsHttpGet">
+      <http:address location="http://g8.service.radixx.com/RadixxFlights.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxFlightsHttpPost" binding="tns:RadixxFlightsHttpPost">
+      <http:address location="http://g8.service.radixx.com/RadixxFlights.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

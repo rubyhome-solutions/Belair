@@ -1,0 +1,37 @@
+<layout>
+    {{#if modify}}
+        <search-form class="basic segment" search="{{modify}}" modify="{{modify}}"></search-form>
+    {{/if}}
+
+    <div class="ui segment flights-results">
+        {{#if pending}}
+            <div class="loading" style="position: relative;">
+                <div class="ui indicating progress active">
+                    <div class="bar" style="background-color: #0674a9; -webkit-transition-duration: 300ms; transition-duration: 300ms; width: {{pending}}%;"></div>
+                    <div class="label">Searching for flights</div>
+                </div>
+            </div>
+
+            <br><br>
+        {{else}}
+            {{#if 3 == search.tripType}}
+                <modify-multicity search="{{search}}" flights="{{flights}}" meta="{{meta}}"></modify-multicity>
+            {{else}}
+                <modify-single modify="{{search}}" meta="{{meta}}"></modify-single>
+            {{/if}}
+        {{/if}}
+
+        {{#if flights}}
+            <results pending="{{pending}}" search="{{search}}" flights="{{flights}}" prices="{{prices}}" filter="{{filter}}"></results>
+        {{/if}}
+
+
+    </div>
+
+    {{#partial panel}}
+        {{>base-panel}}
+        <filter search="{{search}}" filter="{{filter}}" pending="{{pending}}"></filter>
+    {{/partial}}
+</layout>
+
+

@@ -1,0 +1,94 @@
+<table class="ui segment basic flights {{class}} {{#if summary}}summary{{/if}} {{#if small}}small{{/if}}" style="width: 100%;">
+    [[#if caption]]
+    <caption>
+        {{# flights.0 }}
+        <div class="pull left">{{ itinerary }}</div>
+        <div class="pull right">{{ first(segments.0).depart.format('ddd D, MMM') }}</div>
+        {{/}}
+    </caption>
+    [[/if]]
+    <thead>
+        <tr>
+            <td class="airline" on-click="sortOn('airline')">
+                Airline
+                {{#if 'airline' == sortOn.0}}
+                <i class="caret {{#if 1 == sortOn.1}}down{{else}}up{{/if}} icon"></i>
+                {{/if}}
+            </td>
+            <td class="depart" on-click="sortOn('depart')">
+                Depart
+                {{#if 'depart' == sortOn.0}}
+                <i class="caret {{#if 1 == sortOn.1}}down{{else}}up{{/if}} icon"></i>
+                {{/if}}
+            </td>
+            <td class="arrow"></td>
+            <td class="arrive" on-click="sortOn('arrive')">
+                Arrive
+                {{#if 'arrive' == sortOn.0}}
+                <i class="caret {{#if 1 == sortOn.1}}down{{else}}up{{/if}} icon"></i>
+                {{/if}}
+            </td>
+            <td class="price" on-click="sortOn('price')">
+                Price
+                {{#if 'price' == sortOn.0}}
+                <i class="caret {{#if 1 == sortOn.1}}down{{else}}up{{/if}} icon"></i>
+                {{/if}}
+            </td>
+        </tr>
+    </thead>
+
+    <tr class="spacer">
+        <td colspan="5">
+        </td>
+    </tr>
+
+
+    {{#unless pending || flights.length}}
+    <tr class="spacer">
+        <td colspan="5" style="text-align: center;">
+            Sorry! We could not find any flight for this search. Please search Again.<br><br> <a on-click="back()" class="ui button middle gray back">Back</a>
+        </td>
+    </tr>
+    {{/unless}}
+
+    {{#each rendered:i}}
+        {{#if this.length}}
+            {{#if open[i]}}
+                {{#each this}}
+                    {{>flight}}
+                {{/each}}
+            {{else}}
+                {{# this[0] }}
+                    {{>flight}}
+                {{/}}
+            {{/if}}
+
+            {{#if this.length > 1}}
+                <tr class="buddies">
+                    <td colspan="5" style="text-align: center; padding: 4px; border: none;">
+                        <a class="ui basic tiny circular button" href="javascript:;" on-click="toggle('open.'+i, 1)">{{#if open[i]}}&ndash;{{else}}+{{/if}} {{ this.length - 1 }} more options at same price</a>
+                    </td>
+                </tr>
+                <tr class="spacer">
+                    <td colspan="5">
+                    </td>
+                </tr>
+            {{/if}}
+        {{else}}
+            {{>flight}}
+        {{/if}}
+    {{/each}}
+</table>
+
+{{#partial flight}}
+<flight
+        selectFn="{{selectFn}}"
+        small="{{small}}"
+        summary="{{summary}}"
+        flight="{{.}}"
+        search="{{search}}"
+        selected="{{selected}}"
+        onward="{{onward}}"
+        backward="{{backward}}"
+        ></flight>
+{{/partial}}

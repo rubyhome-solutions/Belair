@@ -1,0 +1,7 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@inputBorderRadius: 0;
+@inputBorder: 1 solid @blueBorder;
+@inputPadding: 10px;

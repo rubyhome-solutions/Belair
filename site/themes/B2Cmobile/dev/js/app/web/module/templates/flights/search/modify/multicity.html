@@ -1,0 +1,44 @@
+<div class="ui segment modify-search multicity">
+    <div class="ui relaxed divided horizontal list">
+        <div class="item">
+            <div class="content">
+                <div class="header">MULTICITY TRIP</div>
+                {{#each flights:i}}
+                {{ itinerary(this.0) }}&nbsp;&nbsp;
+                {{/each}}
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="content">
+                <div class="header">TIME</div>
+                {{ times(search.flights) }}
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="content passengers">
+                <div class="header">ADULT</div>
+                {{ search.passengers.0 }}
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="content passengers">
+                <div class="header">CHILD</div>
+                {{ search.passengers.1 }}
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="content passengers">
+                <div class="header">INFANT</div>
+                {{ search.passengers.2 }}
+            </div>
+        </div>
+    </div>
+
+    <div style="float: right">
+        <button class="ui button large blue" on-click="modifySearch()">Modify Search</button>
+    </div>
+</div>

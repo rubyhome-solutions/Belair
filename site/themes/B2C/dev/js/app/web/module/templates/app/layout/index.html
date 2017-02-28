@@ -1,0 +1,167 @@
+<style>
+    map {
+        display: inline;
+    }
+</style>
+{{#if !mybookings.print}}
+<header style="display: table-caption;">
+
+    <div class="ui large fixed top menu">
+        <div class="header item" style="float:left; cursor: pointer;" onclick="window.location.href = '/b2c/flights/search'"></div>
+
+        <a class="active item flights" style="float:left;" href="/b2c/flights/search">Flights</a>
+
+        <!-- <center><div style="float:left; margin-top: 1.5%; margin-left: -1.7%; position:absolute; width: 100%;"><img src= "../../../themes/B2C/img/wish.png " /></div></center> -->
+        <div class="right item headerLinks headerWidth" style="float:right;">
+
+            <ul class="headerElements">
+                <li>
+                    <a href="/b2c/contactus/" target="blank">
+
+                        <i class="call icon"></i><strong>24x7</strong>
+
+                    </a>
+                </li>
+                <li>
+                    <div class="ui dropdown currency" tabindex="0" id="currency">
+                        {{#if meta.display_currency}}
+                        <div id ="curterm" style="display:{{#if meta.display_currency=='INR' }}none{{else}}block{{/if}}">Currency (<i class='{{{ util.camelCase( meta.display_currency) }}} icon currency'></i>) Amount are Indicative Equivalent to INR (<i class="inr icon currency"></i>)</div>
+                        {{/if}}
+                        <!--  <span class="currencytxt">Currency:</span> -->
+                        <i class="{{ meta.display_currency.toLowerCase() }} icon currency"></i>
+                        <i class="dropdown icon" style="font-size: 0.88em;" tabindex="0"></i>
+                        <div class="menu transition hidden" tabindex="-1" style="z-index: 1010;">
+                            <a class="item" on-click="setCurrency('INR')"><i class="inr icon currency"></i> Rupee</a>
+                            <a class="item" on-click="setCurrency('USD')"><i class="usd icon currency"></i> US Dollar</a>
+                            <a class="item" on-click="setCurrency('EUR')"><i class="eur icon currency"></i> Euro</a>
+                            <a class="item" on-click="setCurrency('GBP')"><i class="gbp icon currency"></i> UK Pound</a>
+                            <a class="item" on-click="setCurrency('AUD')"><i class="usd icon currency"></i> Australian Dollar</a>
+                            <a class="item" on-click="setCurrency('JPY')"><i class="jpy icon currency"></i> Japanese Yen</a>
+                            <a class="item" on-click="setCurrency('RUB')"><i class="rub icon currency"></i> Russian Ruble</a>
+                            <a class="item" on-click="setCurrency('AED')"><i class="aed icon currency"></i> Dirham</a>
+                        </div>
+                    </div>
+                </li>
+                {{#if !meta.user}}
+                <li>
+                    <div class="manage" style="font-size:14px;">
+                        <a class="manage_link" on-click="manageBooking({x:'manage_bookings',y:'resetting_pass'})">Manage  Bookings </a> |
+                        <a class="manage_link" id="signup" on-click="manageBooking({x:'sign_up'})">Sign Up </a> | 
+                        <a class="manage_link" id="login" on-click="manageBooking({x:'log_in',y:'resetting_pass1'})"> Login </a>
+                    </div>
+                </li>
+                {{else}}
+                <li>
+                    <div class="manage" style="font-size:14px;"><a class="manage_link" href="/b2c/airCart/mybookings">Manage Bookings </a> | <a href="/site/logout">Logout</a></div>
+                </li>
+                {{/if}}
+
+            </ul>
+
+
+        </div>
+</header>
+{{/if}}
+<div class="wrapper">
+    {{#if panel}}
+    {{#if !mybookings.print}}
+    <div class="panel" >
+        {{yield panel}}
+    </div>
+    {{/if}}
+    {{/if}}
+    <div class="content"  >
+        {{yield}}
+    </div>
+</div>
+
+{{#if !mybookings.print}}
+
+
+<div  class="ui bootom aligned vertical footer segment ads" style=" background:#eeeeee;  ">
+
+    SEARCH<img src="/themes/B2C/dev/img/dot.jpg" alt="">
+    BOOK<img src="/themes/B2C/dev/img/dot.jpg" alt=""> FLY<BR>
+    <span>BOOK CHEAPEST INTERNATIONAL & DOMESTIC AIRLINE TICKETS</span>
+
+</div>
+
+<div  class="ui bootom aligned vertical footer segment nav-f" style=" background:#eeeeee;  ">
+    <a class="item" href="https://cheapticket.in/">Home</a> |
+    <a class="item" href="/b2c/contactus/" >Contact Us</a> |
+    <a class="item" href="/b2c/cms/aboutUs/5" >About Us</a> | 
+    <a class="item" href="/b2c/cms/bookingguidelines/20" >Booking Guidelines</a> |
+    <a class="item" href="/b2c/cms/payment/19" >Payment</a> |
+    <a class="item" href="/b2c/cms/flightchanges/21" >Flight Changes</a> |
+    <a class="item" href="/b2c/cms/termsofservices/2" >Terms of Services</a> |
+    <a class="item" href="/b2c/cms/traveladvisory/18" >Travel Advisory</a>  | 
+    <a class="item" href="/b2c/cms/visa/14"> Visa</a> |
+    <a class="item" href="/b2c/faq/"> FAQ</a> |
+    <a class="item" href="/b2c/cms/affiliations/23" > Affiliations</a> |
+    <a class="item" href="/b2c/cms/privacypolicy/4" > Privacy Policy</a> |
+    <a class="item" href="/b2c/cms/greatdeals/72" > Great Deals</a> |
+    <a class="item" href="/b2c/cms/activities/141" > Activities</a> 
+    <br><span>Other Information :<a class="item" href="/b2c/cms/iataaccreditedagent/15" >IATA Agent</a> |
+    <a class="item" href="/b2c/cms/team/17" >Our Team</a> |
+    <a class="item" href="/b2c/cms/airtravelcompany/10" >Flight Booking</a> |
+    <a class="item" href="/b2c/cms/cheapairlinestickets/9" >Cheapticket</a> |
+    <a class="item" href="/b2c/cms/international/12" >International Airlines</a> | 
+    <a class="item" href="/b2c/cms/domesticflights/13" >Domestic Airlines</a> |
+    <a class="item" href="/b2c/cms/ourpartner/27" >Online Partners</a> | 
+    <a class="item" href="/b2c/cms/sitemap/22">Sitemap</a>  
+
+        <!-- <a class="item" href="/b2c/cms/privacyPolicy/4" target="_blank">Privacy Policy</a>-->
+    </span>
+</div>
+
+<footer class="ui bootom aligned vertical footer segment" style="display:none; ">
+    <div class="ui three column center aligned stackable grid">
+
+        <div class="top aligned column" style="padding-left:0px; padding-right:0px;">
+            <img src="/themes/B2C/dev/img/footer-logo.png" alt="">
+        </div>
+
+
+
+        <div class="top aligned column" style="padding-left:0px; padding-right:0px;">
+            <img src="/themes/B2C/dev/img/secure.jpg" alt=""><br>
+            &copy; 2017 Cheapticket.in - All Rights Reserved
+        </div>
+
+        <div class="top aligned column" style="padding-left:0px; padding-right:0px; text-align: left;">
+            <img src="/themes/B2C/dev/img/card-payment.jpg" alt="">
+        </div>
+
+    </div>
+    <div class="footerBottom">
+        <ul>
+            <li></li>
+            <li><a class="item" href="/b2c/cms/airtravelcompany/10" >Air Travel Company</a></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li><a class="item" href="/b2c/cms/lowcostairlines/16" >Low Cost Airlines</a></li>
+
+
+        </ul>
+    </div>
+</footer>
+
+{{/if}}
+
+<div id="popup-container" >
+
+
+</div> 
+
+<div class="infoPop">
+
+    <div class="modalinfo" id="minfo">
+        <p id="closeinfo"><button class="ui grey  button">Close</button></p>
+        <h4>Terms And Conditions</h4>
+        <div class="modalContent">
+            {{{meta.terms}}}
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,357 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://webservices.galileo.com" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" targetNamespace="http://webservices.galileo.com">
+    <types>
+        <s:schema elementFormDefault="qualified" targetNamespace="http://webservices.galileo.com">
+            <s:element name="SubmitXml">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="0" name="Profile" type="s:string"/>
+                        <s:element maxOccurs="1" minOccurs="0" name="Request" type="apachesoap:Element"/>
+                        <s:element maxOccurs="1" minOccurs="0" name="Filter">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SubmitXmlResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="0" name="SubmitXmlResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="MultiSubmitXml">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="0" name="Profile" type="s:string"/>
+                        <s:element maxOccurs="1" minOccurs="0" name="Requests">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="MultiSubmitXmlResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="0" name="Responses">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="BeginSession">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="0" name="Profile" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="BeginSessionResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="0" name="BeginSessionResult" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="EndSession">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="0" name="Token" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="EndSessionResponse">
+                <s:complexType/>
+            </s:element>
+            <s:element name="SubmitXmlOnSession">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="0" name="Token" type="s:string"/>
+                        <s:element maxOccurs="1" minOccurs="0" name="Request">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                        <s:element maxOccurs="1" minOccurs="0" name="Filter">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SubmitXmlOnSessionResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="0" name="SubmitXmlOnSessionResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SubmitTerminalTransaction">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="0" name="Token" type="s:string"/>
+                        <s:element maxOccurs="1" minOccurs="0" name="Request" type="s:string"/>
+                        <s:element maxOccurs="1" minOccurs="0" name="IntermediateResponse" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SubmitTerminalTransactionResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="0" name="SubmitTerminalTransactionResult" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetIdentityInfo">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="0" name="Profile" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetIdentityInfoResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="0" name="GetIdentityInfoResult">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SubmitCruiseTransaction">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="0" name="Profile" type="s:string"/>
+                        <s:element maxOccurs="1" minOccurs="0" name="CorrelationToken" type="s:string"/>
+                        <s:element maxOccurs="1" minOccurs="0" name="Transactions">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="SubmitCruiseTransactionResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element maxOccurs="1" minOccurs="0" name="Response">
+                            <s:complexType>
+                                <s:sequence>
+                                    <s:any/>
+                                </s:sequence>
+                            </s:complexType>
+                        </s:element>
+                        <s:element maxOccurs="1" minOccurs="0" name="CorrelationToken" type="s:string"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="string" nillable="true" type="s:string"/>
+        </s:schema>
+    </types>
+    <message name="SubmitXmlSoapIn">
+        <part name="parameters" element="s0:SubmitXml"/>
+    </message>
+    <message name="SubmitXmlSoapOut">
+        <part name="parameters" element="s0:SubmitXmlResponse"/>
+    </message>
+    <message name="MultiSubmitXmlSoapIn">
+        <part name="parameters" element="s0:MultiSubmitXml"/>
+    </message>
+    <message name="MultiSubmitXmlSoapOut">
+        <part name="parameters" element="s0:MultiSubmitXmlResponse"/>
+    </message>
+    <message name="BeginSessionSoapIn">
+        <part name="parameters" element="s0:BeginSession"/>
+    </message>
+    <message name="BeginSessionSoapOut">
+        <part name="parameters" element="s0:BeginSessionResponse"/>
+    </message>
+    <message name="EndSessionSoapIn">
+        <part name="parameters" element="s0:EndSession"/>
+    </message>
+    <message name="EndSessionSoapOut">
+        <part name="parameters" element="s0:EndSessionResponse"/>
+    </message>
+    <message name="SubmitXmlOnSessionSoapIn">
+        <part name="parameters" element="s0:SubmitXmlOnSession"/>
+    </message>
+    <message name="SubmitXmlOnSessionSoapOut">
+        <part name="parameters" element="s0:SubmitXmlOnSessionResponse"/>
+    </message>
+    <message name="SubmitTerminalTransactionSoapIn">
+        <part name="parameters" element="s0:SubmitTerminalTransaction"/>
+    </message>
+    <message name="SubmitTerminalTransactionSoapOut">
+        <part name="parameters" element="s0:SubmitTerminalTransactionResponse"/>
+    </message>
+    <message name="GetIdentityInfoSoapIn">
+        <part name="parameters" element="s0:GetIdentityInfo"/>
+    </message>
+    <message name="GetIdentityInfoSoapOut">
+        <part name="parameters" element="s0:GetIdentityInfoResponse"/>
+    </message>
+    <message name="SubmitCruiseTransactionSoapIn">
+        <part name="parameters" element="s0:SubmitCruiseTransaction"/>
+    </message>
+    <message name="SubmitCruiseTransactionSoapOut">
+        <part name="parameters" element="s0:SubmitCruiseTransactionResponse"/>
+    </message>
+    <portType name="XmlSelectSoap">
+        <operation name="SubmitXml">
+            <documentation>Submits an XML request in a sessionless environment.</documentation>
+            <input message="s0:SubmitXmlSoapIn"/>
+            <output message="s0:SubmitXmlSoapOut"/>
+        </operation>
+        <operation name="MultiSubmitXml">
+            <documentation>Allows users to send multiple sessionless Structured Data transactions within a single web service call.  The following restrictions apply:&lt;ul&gt;&lt;li&gt;It will not respond until all of the transactions respond.  This means the caller must wait for the slowest transaction to return before getting results to any of the transactions.&lt;/li&gt;&lt;li&gt;It can only be used for unrelated transactions.  All transactions may (or may not) be sent simultaneously, and there is no particular order expressed nor implied.&lt;/li&gt;&lt;li&gt;Terminal transactions are not supported.&lt;/li&gt;&lt;li&gt;Sessioned transactions are not supported.&lt;/li&gt;&lt;/ul&gt;</documentation>
+            <input message="s0:MultiSubmitXmlSoapIn"/>
+            <output message="s0:MultiSubmitXmlSoapOut"/>
+        </operation>
+        <operation name="BeginSession">
+            <documentation>Begins an XML Select session.
+                If this method returns a valid (non-empty) session token, the session must be released with EndSession.</documentation>
+            <input message="s0:BeginSessionSoapIn"/>
+            <output message="s0:BeginSessionSoapOut"/>
+        </operation>
+        <operation name="EndSession">
+            <documentation>Ends an XML Select session.</documentation>
+            <input message="s0:EndSessionSoapIn"/>
+            <output message="s0:EndSessionSoapOut"/>
+        </operation>
+        <operation name="SubmitXmlOnSession">
+            <documentation>Submits an XML Request on the specified session.</documentation>
+            <input message="s0:SubmitXmlOnSessionSoapIn"/>
+            <output message="s0:SubmitXmlOnSessionSoapOut"/>
+        </operation>
+        <operation name="SubmitTerminalTransaction">
+            <documentation>Submits a terminal transaction on a session and returns the result.</documentation>
+            <input message="s0:SubmitTerminalTransactionSoapIn"/>
+            <output message="s0:SubmitTerminalTransactionSoapOut"/>
+        </operation>
+        <operation name="GetIdentityInfo">
+            <documentation>Retrieves the Identity information for the specified profile</documentation>
+            <input message="s0:GetIdentityInfoSoapIn"/>
+            <output message="s0:GetIdentityInfoSoapOut"/>
+        </operation>
+        <operation name="SubmitCruiseTransaction">
+            <documentation>Allows callers to submit Cruise transactions to the service</documentation>
+            <input message="s0:SubmitCruiseTransactionSoapIn"/>
+            <output message="s0:SubmitCruiseTransactionSoapOut"/>
+        </operation>
+    </portType>
+    <binding name="XmlSelectSoap" type="s0:XmlSelectSoap">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="SubmitXml">
+            <soap:operation soapAction="https://webservices.galileo.com/SubmitXml" style="document"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="MultiSubmitXml">
+            <soap:operation soapAction="https://webservices.galileo.com/MultiSubmitXml" style="document"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="BeginSession">
+            <soap:operation soapAction="https://webservices.galileo.com/BeginSession" style="document"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="EndSession">
+            <soap:operation soapAction="https://webservices.galileo.com/EndSession" style="document"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="SubmitXmlOnSession">
+            <soap:operation soapAction="https://webservices.galileo.com/SubmitXmlOnSession" style="document"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="SubmitTerminalTransaction">
+            <soap:operation soapAction="https://webservices.galileo.com/SubmitTerminalTransaction" style="document"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="GetIdentityInfo">
+            <soap:operation soapAction="https://webservices.galileo.com/GetIdentityInfo" style="document"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="SubmitCruiseTransaction">
+            <soap:operation soapAction="https://webservices.galileo.com/SubmitCruiseTransaction" style="document"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="XmlSelect">
+        <documentation>Allows access to XML Select services over SOAP.</documentation>
+        <port name="XmlSelectSoap" binding="s0:XmlSelectSoap">
+            <soap:address location="https://apac.copy-webservices.travelport.com/B2BGateway/service/XMLSelect"/>
+        </port>
+    </service>
+</definitions>

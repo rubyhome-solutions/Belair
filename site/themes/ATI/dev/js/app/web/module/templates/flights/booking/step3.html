@@ -1,0 +1,206 @@
+{{# { step: booking.steps.3, cc: booking.payment.cc, netbanking: booking.payment.netbanking, active: booking.payment.active } }}
+{{#unless step.completed}}
+<div class="step header step3 {{#if step.active }}active{{/if}} {{#if step.completed }}completed{{/if}}" role="tab">Payment Details</div>
+{{#if !step.active && step.completed}}
+
+{{else}}
+{{#if step.active}}
+<form action="javascript:;" class="ui form segment step3 {{#if step.errors}}error{{/if}} {{#if step.submitting}}loading{{/if}}" on-submit="submit()">
+    <div class="ui basic segment">
+        <div class="ui pointing secondary menu">
+            <a class="item {{#if 1 == active}}active{{/if}}" data-tab="dummy" on-click="set('booking.payment.active', 1)">CREDIT CARD</a>
+            <a class="item {{#if 2 == active}}active{{/if}}" data-tab="dummy" on-click="set('booking.payment.active', 2)">DEBIT CARD</a>
+            <a class="item {{#if 3 == active}}active{{/if}}" data-tab="dummy" on-click="set('booking.payment.active', 3)">NET BANKING</a>
+        </div>
+
+        {{#if 1 == active || 2 == active }}
+        <div class="credit-card">
+            <div class="ui two column grid">
+                <div class="column" on-click="resetCC(event)">
+                    <div class="number field">
+                        <div class="label">{{#if 1 == booking.payment.active}}Credit{{else}}Debit{{/if}} Card Number <span class="required">*</span></div>
+                          <ui-cc disabled="{{cc.id}}" class="card-number fluid" cardType="{{active}}" cctype="{{cc.type}}" value="{{cc.number}}" on-click="reset-cc"  error="{{step.errors.number}}"></ui-cc>
+                    </div>
+
+                    <div class="three expiry fields">
+                        <div class="field">
+                            <div class="label">Expiry Month <span class="required">*</span></div>
+                            <ui-select disabled="{{cc.id}}" class="month" placeholder="Month" options="{{ date.select.cardMonths }}" value="{{cc.exp_month}}"  error="{{step.errors.exp_month}}" on-click="reset-cc"></ui-select>
+                        </div>
+                        <div class="field">
+                            <div class="label">Expiry Year <span class="required">*</span></div>
+                            <ui-select disabled="{{cc.id}}" class="year" placeholder="Year" options="{{ date.select.cardYears }}" value="{{cc.exp_year}}"  error="{{step.errors.exp_year}}" on-click="reset-cc"></ui-select>
+                        </div>
+                        <div class="field" style="position: relative;">
+                            <div class="label">CVV No <span class="required">*</span></div>
+                            <ui-cvv class="fluid cvv" cctype="{{cc.type}}" value="{{cc.cvv}}"  error="{{step.errors.cvv}}" on-click="reset-cc"></ui-cvv>
+                        </div>
+                    </div>
+
+                    {{#if cc.type}}
+                    <div class="cvv-image">
+                        {{#if 'amex' == cc.type}}
+                        <div>4 digit CVV Number</div>
+                        <div class="cvv4-img">&nbsp;</div>
+                        {{else}}
+                        <div>3 digit CVV Number</div>
+                        <div class="cvv3-img">&nbsp;</div>
+                        {{/if}}
+                    </div>
+                    {{/if}}
+
+
+
+                    <div class="number field">
+                        <div class="label">Card Holder's Name <span class="required">*</span></div>
+                        <ui-input disabled="{{cc.id}}" class="fluid" value="{{cc.name}}"  error="{{step.errors.name}}" on-click="reset-cc"></ui-input>
+                    </div>
+
+                    <div class="store field">
+                        <label><input disabled="{{cc.id}}" type="checkbox" checked='{{cc.store}}'> Store card for future use.</label>
+                    </div>
+                </div>
+
+                <div class="column">
+                    {{#if cards}}
+                    <div class="ui segment field">
+                        <div class="label">Saved cards</div>
+
+                        <div class="ui list">
+                            {{#each cards}}
+                                <div class="item"><a href="javascript:;" on-click="setCard(.)">[[number]]</a></div>
+                            {{/each}}
+                        </div>
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+
+
+        </div>
+        {{else}}
+        <div class="netbanking">
+            <div class="Bank field">
+                <div class="label">Select Your Bank <span class="required">*</span></div>
+                <ui-select
+                        class="bank fluid" value="{{netbanking.net_banking}}"
+                        error="{{step.errors.net_banking}}"
+                        options="{{banks}}"
+                        ></ui-select>
+            </div>
+
+        </div>
+
+        {{/if}}
+
+        {{#if step.errors }}
+        <div class="ui error message">
+            {{#each step.errors:i}}
+            {{#if .}}<p>{{.}}</p>{{/if}}
+            {{/each}}
+        </div>
+        {{/if}}
+        <div class="ui two column grid">
+            <div class="column">
+                 {{#if booking.clientSourceId==1}}
+                <div class="two fields">
+                    <div class="label">Apply Promo Codes</div>
+                    <div class="field">
+                        
+                        <div class="item">
+                            {{#if promovalue!=null}}
+                            <ui-input
+                                name="promocode"
+                                value="{{promocode}}"
+                                class="fluid "                    
+                                placeholder="Enter Promo Code"
+                                disabled="disabled"
+                                >
+                            </ui-input> 
+                            {{else}}
+                             <ui-input
+                                name="promocode"
+                                value="{{promocode}}"
+                                class="fluid "                    
+                                placeholder="Enter Promo Code"
+                               
+                                >
+                            </ui-input> 
+                            {{/if}}
+                        </div>
+                        
+                    </div>
+                    <div class="field">
+                         {{#if promovalue!=null}}
+                         <div on-click="removePromoCode()" ><i class="red remove circle outline icon" alt="Remove Promo Code" title="Remove Promo Code" ></i></div>
+                         {{else}}
+                            <div  class="ui basic button"  on-click="applyPromoCode()">APPLY</div>
+                            
+                         {{/if}}
+                         
+                    </div>
+                    {{#if promoerror!=null}}
+                    <div style="clear:both;">
+                    <div class="ui small field negative message">
+                        <i class="close icon" on-click="removeErrorMsg()"></i>
+                       {{promoerror}}
+                    </div></div>
+                    {{/if}}
+                </div>
+                 {{/if}}
+            </div>
+        </div>
+        <div class="note">
+            <span>Please Note :</span> The charge will appear on your credit card / Account statement as 'Airtickets India Pvt Ltd'
+        </div>
+
+        <div class="agreement field">
+            <label><input type="checkbox" checked='{{accepted}}'> I have read and accepted the <a href="/b2c/cms/termsofservices/2" target="_blank">Terms Of Service</a>*</label>
+
+        </div>
+
+
+        <div class="price">
+            {{#if booking.convenienceFee > 0 }}
+            <div>
+            Convenience fee  {{{money(booking.convenienceFee, meta.display_currency)}}} will be charged
+            </div>
+            {{/if}}
+            {{#if promovalue!=null}}
+            {{#if booking.currency !='INR'}}
+            <span class="amount">{{{ money(booking.price + booking.convenienceFee, meta.display_currency) }}} - {{{money(promovalue, meta.display_currency)}}} = {{{ money(booking.price + booking.convenienceFee-promovalue, meta.display_currency) }}}</span>
+            <span>({{meta.display_currency}} Price is indicative only.
+                    You will be charged equivalent in INR. {{{ formatPayMoney(booking.price + booking.convenienceFee-promovalue) }}}</span>
+            {{else}}
+            <span class="amount">{{{ money(booking.price + booking.convenienceFee, meta.display_currency) }}} - {{{money(promovalue, meta.display_currency)}}} = {{{ money(booking.price + booking.convenienceFee-promovalue, meta.display_currency) }}}</span>
+            <span>(Total Payable Amount)</span>
+            {{/if}}
+            {{else}}
+             {{#if booking.currency !='INR'}}
+            <span class="amount">{{{ money(booking.price + booking.convenienceFee, meta.display_currency) }}}</span>
+            <span class="amtNotice">({{meta.display_currency}} Price is indicative only.
+                    You will be charged equivalent in INR. {{{formatPayMoney(booking.price + booking.convenienceFee)}}})</span>
+            {{else}}
+             <span class="amount">{{{ money(booking.price + booking.convenienceFee, meta.display_currency) }}}</span>
+            <span>(Total Payable Amount)</span>
+            {{/if}}
+            {{/if}}
+        </div>
+
+        <div class="verified">
+            <div>
+                <img src="/themes/B2C/img/verified/vbv_250.gif">
+                <img src="/themes/B2C/img/verified/mastercard_securecode.gif">
+                <img src="/themes/B2C/img/verified/AMEX_SafeKey_180x99px.png">
+                <img src="/themes/B2C/img/verified/pci-dss-compliant.jpg">
+                <img src="/themes/B2C/img/verified/SSL-security-seal.png">
+            </div>
+        </div>
+
+        <button type="submit" class="ui wizard button massive {{#if accepted}}green {{else}}red{{/if}}" {{#unless accepted}}disabled="disabled"{{/unless}}>BOOK FLIGHT</button>
+    </div>
+</form>
+{{/if}}
+{{/if}}
+{{/unless}}
+{{/}}

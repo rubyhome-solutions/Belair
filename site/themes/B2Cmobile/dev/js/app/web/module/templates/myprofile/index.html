@@ -1,0 +1,23 @@
+<layout meta="{{meta}}">
+    <div class="content">
+        
+                <div class="box my-travellers">
+                    <div class="left" >
+
+                        <div id="myprofile">
+                            {{#if  !myprofile.edit}}   
+                            <myprofileview myprofile="{{myprofile}}" meta="{{meta}}"></myprofileview>
+                            {{else}}                
+                            <myprofile-form myprofile="{{myprofile}}" meta="{{meta}}"></myprofile-form>
+                            {{/if}}                
+                        </div>
+                    </div>
+                </div>
+           
+    </div>
+    {{#partial panel}}
+
+    {{> base-panel }}
+
+    {{/partial}}
+</layout>

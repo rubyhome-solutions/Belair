@@ -1,0 +1,925 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://radixx.com/WSRadixx/RadixxServices" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://radixx.com/WSRadixx/RadixxServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://radixx.com/WSRadixx/RadixxServices">
+      <s:import namespace="http://radixx.com/WSRadixx/RAServicesDS.xsd" />
+      <s:import namespace="http://radixx.com/WSRadixx/RAServiceCategoriesDS.xsd" />
+      <s:import schemaLocation="http://g8.service.radixx.com/RadixxServices.asmx?schema=RAServicesDS" namespace="http://radixx.com/WSRadixx/RAServicesDS.xsd" />
+      <s:import schemaLocation="http://g8.service.radixx.com/RadixxServices.asmx?schema=RAServiceCategoriesDS" namespace="http://radixx.com/WSRadixx/RAServiceCategoriesDS.xsd" />
+      <s:element name="GetServicesVersion2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LogicalFlightID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DepartureDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="AirportCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cabin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FareClassCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UTCOffset" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServicesVersion2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServicesVersion2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://radixx.com/WSRadixx/RAServicesDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServices">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LogicalFlightID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DepartureDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="AirportCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cabin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UTCOffset" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServicesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServicesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://radixx.com/WSRadixx/RAServicesDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServicesXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LogicalFlightID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DepartureDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="AirportCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cabin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UTCOffset" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServicesXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServicesXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServicesXML_v2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LogicalFlightID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DepartureDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="AirportCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cabin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FareClassCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UTCOffset" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServicesXML_v2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServicesXML_v2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServicesQuote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ResChannelID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatingCarrier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MarketingCarrier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LogicalFlightID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DepartureDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodeType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AirportCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cabin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FareClass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServicesQuoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServicesQuoteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServicesQuotes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OperatingCarrier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serviceQuotesRequest" type="tns:RetrieveServiceQuotes" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RetrieveServiceQuotes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RetrieveServiceQuotes" type="tns:ArrayOfServiceQuote" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfServiceQuote">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ServiceQuote" nillable="true" type="tns:ServiceQuote" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ServiceQuote">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LogicalFlightID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DepartureDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="AirportCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DestinationAirportCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cabin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UTCOffset" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="OperatingCarrierCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MarketingCarrierCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FareClass" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FareBasisCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReservationChannel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PointOfOrigin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PointOfPurchase" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetServicesQuotesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServicesQuotesResult" type="tns:ViewServiceQuotes" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ViewServiceQuotes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceQuotes" type="tns:ArrayOfViewServiceQuote" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfViewServiceQuote">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ViewServiceQuote" nillable="true" type="tns:ViewServiceQuote" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ViewServiceQuote">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OperatingCarrier" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MarketingCarrier" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodeType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrencyCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmountActive" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="AmountType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SSRCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Display" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxCountServiceLevel" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Refundable" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PNLActive" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CutoffHours" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartSalesDays" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Commissionable" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DisplayOrder" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RevenueCategoryID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IATAStandardCodeType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceActive" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxCountFlightLevel" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuantityAvailable" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LogicalFlightID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DepartureDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApplicableTaxes" type="tns:ArrayOfApplicableTax" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfApplicableTax">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ApplicableTax" nillable="true" type="tns:ApplicableTax" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ApplicableTax">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TaxID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodeType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaxAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="OriginalAmount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxCurrenyCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmountToApply" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxAmountType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDefault" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaxActive" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MinAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaxIncludedInfare" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetServiceCategories">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceCategoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServiceCategoriesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://radixx.com/WSRadixx/RAServiceCategoriesDS.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceCategoriesXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SecurityGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CarrierCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceCategoriesXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServiceCategoriesXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RAServicesDS" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any namespace="http://radixx.com/WSRadixx/RAServicesDS.xsd" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="RAServiceCategoriesDS" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any namespace="http://radixx.com/WSRadixx/RAServiceCategoriesDS.xsd" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetServicesVersion2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetServicesVersion2" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesVersion2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetServicesVersion2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServices" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServicesXML" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServicesXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesXML_v2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetServicesXML_v2" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesXML_v2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetServicesXML_v2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesQuoteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServicesQuote" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesQuoteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServicesQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesQuotesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServicesQuotes" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesQuotesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServicesQuotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceCategoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServiceCategories" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceCategoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServiceCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceCategoriesXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServiceCategoriesXML" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceCategoriesXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServiceCategoriesXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesVersion2HttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="LogicalFlightID" type="s:string" />
+    <wsdl:part name="DepartureDate" type="s:string" />
+    <wsdl:part name="AirportCode" type="s:string" />
+    <wsdl:part name="ServiceCode" type="s:string" />
+    <wsdl:part name="Cabin" type="s:string" />
+    <wsdl:part name="Category" type="s:string" />
+    <wsdl:part name="Currency" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="FareClassCode" type="s:string" />
+    <wsdl:part name="UTCOffset" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesVersion2HttpGetOut">
+    <wsdl:part name="Body" element="tns:RAServicesDS" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="LogicalFlightID" type="s:string" />
+    <wsdl:part name="DepartureDate" type="s:string" />
+    <wsdl:part name="AirportCode" type="s:string" />
+    <wsdl:part name="ServiceCode" type="s:string" />
+    <wsdl:part name="Cabin" type="s:string" />
+    <wsdl:part name="Category" type="s:string" />
+    <wsdl:part name="Currency" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="UTCOffset" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesHttpGetOut">
+    <wsdl:part name="Body" element="tns:RAServicesDS" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesXMLHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="LogicalFlightID" type="s:string" />
+    <wsdl:part name="DepartureDate" type="s:string" />
+    <wsdl:part name="AirportCode" type="s:string" />
+    <wsdl:part name="ServiceCode" type="s:string" />
+    <wsdl:part name="Cabin" type="s:string" />
+    <wsdl:part name="Category" type="s:string" />
+    <wsdl:part name="Currency" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="UTCOffset" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesXMLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesXML_v2HttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="LogicalFlightID" type="s:string" />
+    <wsdl:part name="DepartureDate" type="s:string" />
+    <wsdl:part name="AirportCode" type="s:string" />
+    <wsdl:part name="ServiceCode" type="s:string" />
+    <wsdl:part name="Cabin" type="s:string" />
+    <wsdl:part name="Category" type="s:string" />
+    <wsdl:part name="Currency" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="FareClassCode" type="s:string" />
+    <wsdl:part name="UTCOffset" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesXML_v2HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesQuoteHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ResChannelID" type="s:string" />
+    <wsdl:part name="OperatingCarrier" type="s:string" />
+    <wsdl:part name="MarketingCarrier" type="s:string" />
+    <wsdl:part name="Currency" type="s:string" />
+    <wsdl:part name="LogicalFlightID" type="s:string" />
+    <wsdl:part name="DepartureDate" type="s:string" />
+    <wsdl:part name="CodeType" type="s:string" />
+    <wsdl:part name="AirportCode" type="s:string" />
+    <wsdl:part name="Cabin" type="s:string" />
+    <wsdl:part name="FareClass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesQuoteHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceCategoriesHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceCategoriesHttpGetOut">
+    <wsdl:part name="Body" element="tns:RAServiceCategoriesDS" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceCategoriesXMLHttpGetIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceCategoriesXMLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesVersion2HttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="LogicalFlightID" type="s:string" />
+    <wsdl:part name="DepartureDate" type="s:string" />
+    <wsdl:part name="AirportCode" type="s:string" />
+    <wsdl:part name="ServiceCode" type="s:string" />
+    <wsdl:part name="Cabin" type="s:string" />
+    <wsdl:part name="Category" type="s:string" />
+    <wsdl:part name="Currency" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="FareClassCode" type="s:string" />
+    <wsdl:part name="UTCOffset" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesVersion2HttpPostOut">
+    <wsdl:part name="Body" element="tns:RAServicesDS" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="LogicalFlightID" type="s:string" />
+    <wsdl:part name="DepartureDate" type="s:string" />
+    <wsdl:part name="AirportCode" type="s:string" />
+    <wsdl:part name="ServiceCode" type="s:string" />
+    <wsdl:part name="Cabin" type="s:string" />
+    <wsdl:part name="Category" type="s:string" />
+    <wsdl:part name="Currency" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="UTCOffset" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesHttpPostOut">
+    <wsdl:part name="Body" element="tns:RAServicesDS" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesXMLHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="LogicalFlightID" type="s:string" />
+    <wsdl:part name="DepartureDate" type="s:string" />
+    <wsdl:part name="AirportCode" type="s:string" />
+    <wsdl:part name="ServiceCode" type="s:string" />
+    <wsdl:part name="Cabin" type="s:string" />
+    <wsdl:part name="Category" type="s:string" />
+    <wsdl:part name="Currency" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="UTCOffset" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesXMLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesXML_v2HttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="LogicalFlightID" type="s:string" />
+    <wsdl:part name="DepartureDate" type="s:string" />
+    <wsdl:part name="AirportCode" type="s:string" />
+    <wsdl:part name="ServiceCode" type="s:string" />
+    <wsdl:part name="Cabin" type="s:string" />
+    <wsdl:part name="Category" type="s:string" />
+    <wsdl:part name="Currency" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+    <wsdl:part name="FareClassCode" type="s:string" />
+    <wsdl:part name="UTCOffset" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesXML_v2HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesQuoteHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="ResChannelID" type="s:string" />
+    <wsdl:part name="OperatingCarrier" type="s:string" />
+    <wsdl:part name="MarketingCarrier" type="s:string" />
+    <wsdl:part name="Currency" type="s:string" />
+    <wsdl:part name="LogicalFlightID" type="s:string" />
+    <wsdl:part name="DepartureDate" type="s:string" />
+    <wsdl:part name="CodeType" type="s:string" />
+    <wsdl:part name="AirportCode" type="s:string" />
+    <wsdl:part name="Cabin" type="s:string" />
+    <wsdl:part name="FareClass" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServicesQuoteHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceCategoriesHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceCategoriesHttpPostOut">
+    <wsdl:part name="Body" element="tns:RAServiceCategoriesDS" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceCategoriesXMLHttpPostIn">
+    <wsdl:part name="SecurityGUID" type="s:string" />
+    <wsdl:part name="CarrierCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceCategoriesXMLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="RadixxServicesSoap">
+    <wsdl:operation name="GetServices">
+      <wsdl:input name="GetServicesVersion2" message="tns:GetServicesVersion2SoapIn" />
+      <wsdl:output name="GetServicesVersion2" message="tns:GetServicesVersion2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServices">
+      <wsdl:input message="tns:GetServicesSoapIn" />
+      <wsdl:output message="tns:GetServicesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesXML">
+      <wsdl:input message="tns:GetServicesXMLSoapIn" />
+      <wsdl:output message="tns:GetServicesXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesXML_v2">
+      <wsdl:input message="tns:GetServicesXML_v2SoapIn" />
+      <wsdl:output message="tns:GetServicesXML_v2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesQuote">
+      <wsdl:input message="tns:GetServicesQuoteSoapIn" />
+      <wsdl:output message="tns:GetServicesQuoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesQuotes">
+      <wsdl:input message="tns:GetServicesQuotesSoapIn" />
+      <wsdl:output message="tns:GetServicesQuotesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCategories">
+      <wsdl:input message="tns:GetServiceCategoriesSoapIn" />
+      <wsdl:output message="tns:GetServiceCategoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCategoriesXML">
+      <wsdl:input message="tns:GetServiceCategoriesXMLSoapIn" />
+      <wsdl:output message="tns:GetServiceCategoriesXMLSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RadixxServicesHttpGet">
+    <wsdl:operation name="GetServices">
+      <wsdl:input name="GetServicesVersion2" message="tns:GetServicesVersion2HttpGetIn" />
+      <wsdl:output name="GetServicesVersion2" message="tns:GetServicesVersion2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServices">
+      <wsdl:input message="tns:GetServicesHttpGetIn" />
+      <wsdl:output message="tns:GetServicesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesXML">
+      <wsdl:input message="tns:GetServicesXMLHttpGetIn" />
+      <wsdl:output message="tns:GetServicesXMLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesXML_v2">
+      <wsdl:input message="tns:GetServicesXML_v2HttpGetIn" />
+      <wsdl:output message="tns:GetServicesXML_v2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesQuote">
+      <wsdl:input message="tns:GetServicesQuoteHttpGetIn" />
+      <wsdl:output message="tns:GetServicesQuoteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCategories">
+      <wsdl:input message="tns:GetServiceCategoriesHttpGetIn" />
+      <wsdl:output message="tns:GetServiceCategoriesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCategoriesXML">
+      <wsdl:input message="tns:GetServiceCategoriesXMLHttpGetIn" />
+      <wsdl:output message="tns:GetServiceCategoriesXMLHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="RadixxServicesHttpPost">
+    <wsdl:operation name="GetServices">
+      <wsdl:input name="GetServicesVersion2" message="tns:GetServicesVersion2HttpPostIn" />
+      <wsdl:output name="GetServicesVersion2" message="tns:GetServicesVersion2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServices">
+      <wsdl:input message="tns:GetServicesHttpPostIn" />
+      <wsdl:output message="tns:GetServicesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesXML">
+      <wsdl:input message="tns:GetServicesXMLHttpPostIn" />
+      <wsdl:output message="tns:GetServicesXMLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesXML_v2">
+      <wsdl:input message="tns:GetServicesXML_v2HttpPostIn" />
+      <wsdl:output message="tns:GetServicesXML_v2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesQuote">
+      <wsdl:input message="tns:GetServicesQuoteHttpPostIn" />
+      <wsdl:output message="tns:GetServicesQuoteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCategories">
+      <wsdl:input message="tns:GetServiceCategoriesHttpPostIn" />
+      <wsdl:output message="tns:GetServiceCategoriesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCategoriesXML">
+      <wsdl:input message="tns:GetServiceCategoriesXMLHttpPostIn" />
+      <wsdl:output message="tns:GetServiceCategoriesXMLHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RadixxServicesSoap" type="tns:RadixxServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetServices">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxServices/GetServicesVersion2" style="document" />
+      <wsdl:input name="GetServicesVersion2">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetServicesVersion2">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServices">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxServices/GetServices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesXML">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxServices/GetServicesXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesXML_v2">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxServices/GetServicesXML_v2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesQuote">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxServices/GetServicesQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesQuotes">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxServices/GetServicesQuotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCategories">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxServices/GetServiceCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCategoriesXML">
+      <soap:operation soapAction="http://radixx.com/WSRadixx/RadixxServices/GetServiceCategoriesXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxServicesSoap12" type="tns:RadixxServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetServices">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxServices/GetServicesVersion2" style="document" />
+      <wsdl:input name="GetServicesVersion2">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetServicesVersion2">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServices">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxServices/GetServices" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesXML">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxServices/GetServicesXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesXML_v2">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxServices/GetServicesXML_v2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesQuote">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxServices/GetServicesQuote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesQuotes">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxServices/GetServicesQuotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCategories">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxServices/GetServiceCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCategoriesXML">
+      <soap12:operation soapAction="http://radixx.com/WSRadixx/RadixxServices/GetServiceCategoriesXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxServicesHttpGet" type="tns:RadixxServicesHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetServices">
+      <http:operation location="/GetServicesVersion2" />
+      <wsdl:input name="GetServicesVersion2">
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output name="GetServicesVersion2">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServices">
+      <http:operation location="/GetServices" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesXML">
+      <http:operation location="/GetServicesXML" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesXML_v2">
+      <http:operation location="/GetServicesXML_v2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesQuote">
+      <http:operation location="/GetServicesQuote" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCategories">
+      <http:operation location="/GetServiceCategories" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCategoriesXML">
+      <http:operation location="/GetServiceCategoriesXML" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadixxServicesHttpPost" type="tns:RadixxServicesHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetServices">
+      <http:operation location="/GetServicesVersion2" />
+      <wsdl:input name="GetServicesVersion2">
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output name="GetServicesVersion2">
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServices">
+      <http:operation location="/GetServices" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesXML">
+      <http:operation location="/GetServicesXML" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesXML_v2">
+      <http:operation location="/GetServicesXML_v2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesQuote">
+      <http:operation location="/GetServicesQuote" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCategories">
+      <http:operation location="/GetServiceCategories" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCategoriesXML">
+      <http:operation location="/GetServiceCategoriesXML" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RadixxServices">
+    <wsdl:port name="RadixxServicesSoap" binding="tns:RadixxServicesSoap">
+      <soap:address location="http://g8.service.radixx.com/RadixxServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxServicesSoap12" binding="tns:RadixxServicesSoap12">
+      <soap12:address location="http://g8.service.radixx.com/RadixxServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxServicesHttpGet" binding="tns:RadixxServicesHttpGet">
+      <http:address location="http://g8.service.radixx.com/RadixxServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadixxServicesHttpPost" binding="tns:RadixxServicesHttpPost">
+      <http:address location="http://g8.service.radixx.com/RadixxServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

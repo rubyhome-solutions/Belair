@@ -1,0 +1,24 @@
+<div class="ui input {{class}} {{#if error}}error{{/if}} {{ classes(state, large, value) }}">
+    {{#if large}}
+    <div class="ui placeholder">{{placeholder}}</div>
+    {{/if}}
+    <input
+            autocomplete="{{name}}"
+            class="{{class}}"
+            type="{{type}}"
+            name="{{name}}"
+            value="{{value}}"
+             {{#unless id}} id="{{id}}" {{/unless}}
+            {{#unless large}}placeholder="{{placeholder}}"{{/unless}}
+            {{#if readonly}}readonly{{/if}}
+            {{#if disabled}}disabled{{/if}}
+            {{#if state.disabled || state.submitting }}disabled="disabled"{{/if}}
+            >
+    {{#if state.loading}}
+    <i class="search icon"></i>
+    {{/if}}
+</div>
+
+{{#if suggestion }}
+<div class="email-suggestion">Did you mean <a href="javascript:;" on-click="correct()">{{ suggestion.full }}</a>?</div>
+{{/if}}

@@ -1,0 +1,121 @@
+<form action="javascript:;" class="ui form basic segment flight search" on-submit="submit()">
+    <!-- {{#if error}} -->
+                <!-- <div class="ui error message" style="display:block"> -->
+                    <!-- <p>{{error}}</p> -->
+                <!-- </div> -->
+    <!-- {{/if}} -->
+    <div class="ui grid">
+        
+        <div class="details">
+            <h2>Personal Details</h2>
+            <table>
+			 {{#if mytraveller.add||mytraveller.edit}}
+                <tr>
+                    <td>Title</td>
+                    <td><ui-select
+                        value="{{mytraveller.currentTraveller.title}}"
+                        class="fluid transparent"                        
+                        placeholder="Title"
+                        options="{{ formatTitles(meta.titles) }}"
+						error="{{error.title}}"
+                        >
+                </ui-select>
+				</td>
+                <td><div class="ui error message" style="display:block">{{#if error.title}}{{error.title}}{{/if}}</div></td>
+                </tr>
+
+                <tr>
+                    <td>First Name</td>
+                    <td>
+<!--                        <input type="text"  value='{{mytraveller.currentTraveller.first_name}}' >-->
+                        <ui-input  name="first_name" placeholder="First Name"  value="{{mytraveller.currentTraveller.first_name}}" error="{{error.first_name}}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td>
+<!--                        <input type="text"  value='{{mytraveller.currentTraveller.last_name}}' >-->
+                    <ui-input  name="last_name" placeholder="Last Name"  value="{{mytraveller.currentTraveller.last_name}}" error="{{error.last_name}}">
+                    </td>
+                 <td><div class="ui error message" style="display:block">{{#if error.last_name}}{{error.last_name}}{{/if}}</div></td>
+                        </tr>
+                        {{/if}}
+                        <tr>
+                            <td>Date of Birth:</td>
+                            <td><ui-date
+                            value="{{mytraveller.currentTraveller.birthdate}}"
+                            class="fluid"
+                            large="0"
+                            placeholder="Date of Birth"
+                            changeyear="1"
+                            error="{{error.birthdate}}">
+                        </ui-date></td>
+                        <td><div class="ui error message" style="display:block">{{#if error.birthdate}}{{error.birthdate}}{{/if}}</div></td>
+                        </tr>
+                        <tr>
+                            <td>Passport Country:</td>
+                            <td>
+                        <ui-select
+                            value="{{mytraveller.currentTraveller.passport_country_id}}"
+                            class="fluid transparent"                        
+                            placeholder="Country"
+                            options="{{ formatCountries(meta.countries) }}"
+                            error="{{error.passport_country_id}}">
+                        </ui-select>
+                        </td>
+                        <td><div class="ui error message" style="display:block">{{#if error.passport_country_id}}{{error.passport_country_id}}{{/if}}</div></td>
+                        </tr>
+                        <tr>
+                            <td>Passport No:</td>
+                            <td>
+                                <!--                        <input type="text"  value='{{mytraveller.currentTraveller.passport_number}}' >-->
+                        <ui-input  name="passport_number" placeholder="Passport No"  value="{{mytraveller.currentTraveller.passport_number}}" error="{{error.passport_number}}">
+                            </td>
+                            <td><div class="ui error message" style="display:block">{{#if error.passport_number}}{{error.passport_number}}{{/if}}</div></td>
+                            </tr>
+                            <tr>
+                                <td>Issued Place:</td>
+                                <td>
+                            <ui-input  name="passport_place" placeholder="Issued Place"  value="{{mytraveller.currentTraveller.passport_place}}" error="{{error.passport_place}}">
+                                <!--                        <input type="text"  value='{{mytraveller.currentTraveller.passport_place}}' >-->
+                                </td> 
+                                <td><div class="ui error message" style="display:block">{{#if error.passport_place}}{{error.passport_place}}{{/if}}</div></td>
+                                </tr>
+                                </table>
+                                </div>
+                                <div class="details">
+                                    <h2>Contact Details</h2>
+                                    <table>
+                                        <tr>
+                                            <td>Email Address:</td>
+                                            <td><ui-email name="email" placeholder="E-Mail"  value="{{mytraveller.currentTraveller.email}}" error="{{error.email}}"></ui-email>
+                                        <!--                 <input type="text"  value='{{mytraveller.currentTraveller.email}}' >-->
+                                        </td>
+                                        <td><div class="ui error message" style="display:block">{{#if error.email}}{{error.email}}{{/if}}</div></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mobile Number:</td>
+                                            <td>
+                                                <!--                        <input type="text"  value='{{mytraveller.currentTraveller.mobile}}' >-->
+                                        <ui-tel  name="mobile" placeholder="Mobile"  value="{{mytraveller.currentTraveller.mobile}}" error="{{error.mobile}}"></ui-tel>
+                                        </td>
+                                        <td><div class="ui error message" style="display:block">{{#if error.mobile}}{{error.mobile}}{{/if}}</div></td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+
+                                <div class="one column row">
+                                    <div class="column">
+                                        {{#if mytraveller.add}}
+                                        <div on-click="add" class="ui button massive fluid">Add Traveller</div>
+                                        {{/if}}
+                                        {{#if mytraveller.edit}}
+                                        <div on-click="edit" class="ui button massive fluid">Edit Traveller</div>
+                                        <!--                 <ui-button type="submit" class="massive fluid">Edit Traveller</ui-button>-->
+                                        {{/if}}
+                                    </div>
+                                </div>
+                                </div>
+
+                                </form>

@@ -1,0 +1,123 @@
+@import '../components/card.less';
+
+
+#app .ui.payment {
+  max-width: 996px !important;
+  margin: auto;
+
+  > .ui.segment {
+    margin-top: 0px;
+  }
+
+  .note {
+    font-size: 12px;
+    color: #767575;
+
+    span {
+      color: #2d2727;
+    }
+
+    margin-bottom: 10px;
+  }
+
+  .store.field {
+    label {
+      input {
+        vertical-align: text-bottom;
+      }
+
+      font-weight: normal;
+      font-size: 12px;
+    }
+  }
+
+  .agreement.field {
+    label {
+      input {
+        vertical-align: text-bottom;
+      }
+
+      font-weight: normal;
+      font-size: 12px;
+      color: #767575;
+      margin-bottom: 40px
+    }
+  }
+}
+
+
+
+.credit-card {
+  margin-bottom: 10px;
+
+  > div {
+    padding: 5px 0;
+
+    &.field, &.fields {
+      width: 380px;
+    }
+  }
+
+  .expiry.fields {
+    .field {
+      //width: 120px;
+    }
+  }
+
+  .cvv-image {
+    width: 100%;
+    text-align: right;
+
+    > div {
+      display: inline-block;
+      line-height: 46px;
+    }
+  }
+}
+
+.netbanking {
+  margin-bottom: 10px;
+
+  > div {
+   /* padding: 5px 0; */
+
+    &.field, &.fields {
+      width: 380px;
+    }
+  }
+}
+
+.verified {
+  float:right;
+  position: relative;
+	width:75%;
+
+  > div {
+    /*position: absolute;
+    top: -27px;*/
+    right: -15px;
+    text-align: right;
+
+  }
+
+  img {
+    width: 75px;
+    vertical-align: middle;
+  }
+}
+
+
+.price .amount {
+  font-size: 30px;
+  font-weight: bold;
+  color: #202629;
+  margin-right: 30px;
+}
+
+
+#app .ui.secondary.pointing.menu > .item.active {
+  color: #3399ff;
+  font-weight: bold;
+  border-color: #3399ff;
+
+}

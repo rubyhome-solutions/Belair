@@ -1,0 +1,148 @@
+<h1>My Profile</h1>
+
+<form action="javascript:;" class="ui form basic segment flight search" >
+    {{#if errors}}    
+    <div class="ui error message" style="display:block">
+        <p>{{errors}}</p>
+    </div>
+    {{/if}}
+    
+	<div class="ui two column grid ">
+
+        
+        
+		<div class="details myprofileEdit">
+            <!--            <h2>Contact Details</h2>-->
+            <div class="row">
+			<div calss="column two">
+			<ul>
+				<li><span>Name</span> <ui-input  name="name" placeholder="Name"  value="{{profileform.name}}"></li>
+				<li><span>Email Address</span> <ui-email name="email" placeholder="E-Mail"  value="{{profileform.email}}"></ui-email></li>
+				<li><span>Mobile Number</span> <ui-tel  name="mobile" placeholder="Mobile"  value="{{profileform.mobile}}"></ui-tel></li>
+				<li><span>Address</span> <ui-input  name="address" placeholder="Address"  value="{{profileform.address}}"></li>
+				<li><span>Country</span> <ui-select
+                            value="{{profileform.countrycode}}"
+                            class="fluid transparent"                        
+                            placeholder="Country"
+                            small='1'
+                            search='1'
+                            options="{{ formatCountryList(meta.countrylist) }}"
+                            >
+                        </ui-select></li>
+						
+				<li><span>State</span><ui-select
+                            value="{{profileform.statecode}}"
+                            class="fluid transparent"                        
+                            placeholder="State"
+                            search='1'
+                            small='1'
+                            options="{{ formatStateList(statelist) }}"
+                            >
+                        </ui-select></li>
+						
+				<li><span>Pincode </span> <ui-input  name="pincode" placeholder="Pin Code"  value="{{profileform.pincode}}"></ui-input></li>
+				
+			</ul>
+			
+			</div>
+			<div class="column">&nbsp;</div>
+			</div>
+			<table style="display:none;">
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <ui-input  name="name" placeholder="Name"  value="{{profileform.name}}">
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>Email Address</td>
+                        <td><ui-email name="email" placeholder="E-Mail"  value="{{profileform.email}}"></ui-email></td>
+                    </tr>
+
+
+                    <tr>
+                        <td>Mobile Number</td>
+                        <td>
+                    <ui-tel  name="mobile" placeholder="Mobile"  value="{{profileform.mobile}}"></ui-tel>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td>           <ui-input  name="address" placeholder="Address"  value="{{profileform.address}}">
+                        </td>                    
+                        </tr>
+                        <tr>
+                            <td>Country</td>
+                            <td>
+
+                        <ui-select
+                            value="{{profileform.countrycode}}"
+                            class="fluid transparent"                        
+                            placeholder="Country"
+                            small='1'
+                            search='1'
+                            options="{{ formatCountryList(meta.countrylist) }}"
+                            >
+                        </ui-select>
+                        </td>                
+                        </tr>
+                        <tr>
+                            <td>State</td>
+                            <td id='divstate'>
+
+                        <ui-select
+                            value="{{profileform.statecode}}"
+                            class="fluid transparent"                        
+                            placeholder="State"
+                            search='1'
+                            small='1'
+                            options="{{ formatStateList(statelist) }}"
+                            >
+                        </ui-select>
+                        </td>                
+                        </tr>
+                        <tr>
+                            <td>City</td>
+                            <td id='divcity'>
+
+                        <ui-select
+                            value="{{profileform.citycode}}"
+                            class="fluid transparent"                        
+                            placeholder="City"
+                            search='1'
+                            small='1'
+                            options="{{ formatCityList(citylist) }}"
+                            >
+                        </ui-select>
+                        </td>                
+                        </tr>
+                        <tr>
+                            <td>Pin Code</td>
+                            <td>
+                        <ui-input  name="pincode" placeholder="Pin Code"  value="{{profileform.pincode}}"></ui-input>
+                        </td>
+                        </tr>
+                        </table>
+                        </div>
+
+
+                        <div class="one column row">
+                            <div class="column">                               
+                                {{#if myprofile.edit}}
+                                <div on-click="edit()" class="ui button massive fluid">Update Profile</div>
+                                {{/if}}
+                            </div>
+                        </div>
+                        </div>
+<div class="ui four column grid">
+        <div class="row">
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+        </div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+      </div>
+                        </form>

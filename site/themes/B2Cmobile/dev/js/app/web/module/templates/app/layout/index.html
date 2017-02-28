@@ -1,0 +1,111 @@
+
+{{#if !mybookings.print}}
+<header style="display: table-caption;">
+    
+    <div class="ui large fixed top menu">
+        <div class="header item" onclick="window.location.href='/b2c/flights/search'"></div>
+        <a class="active item flights" href="/b2c/flights/search">Flights</a>
+        
+        <div class="ui dropdown  right item currency" tabindex="0" id="currency">
+           {{#if meta.display_currency}}
+        <div id ="curterm" style="display:{{#if meta.display_currency=='INR' }}none{{else}}block{{/if}}">All payments are charged in INR. All other currencies are indicative</div>
+        {{/if}}
+            <span class="currencytxt">Currency:</span>
+            <i class="{{ meta.display_currency.toLowerCase() }} icon currency"></i>
+            <i class="dropdown icon" tabindex="0"></i>
+            <div class="menu transition hidden" tabindex="-1" style="z-index: 1010;">
+                <a class="item" on-click="setCurrency('INR')"><i class="inr icon currency"></i> Rupee</a>
+                <a class="item" on-click="setCurrency('USD')"><i class="usd icon currency"></i> US Dollar</a>
+                <a class="item" on-click="setCurrency('EUR')"><i class="eur icon currency"></i> Euro</a>
+                <a class="item" on-click="setCurrency('GBP')"><i class="gbp icon currency"></i> UK Pound</a>
+                <a class="item" on-click="setCurrency('AUD')"><i class="usd icon currency"></i> Australian Dollar</a>
+                <a class="item" on-click="setCurrency('JPY')"><i class="jpy icon currency"></i> Japanese Yen</a>
+                <a class="item" on-click="setCurrency('RUB')"><i class="rub icon currency"></i> Russian Ruble</a>
+                <a class="item" on-click="setCurrency('AED')"><i class="aed icon currency"></i> Dirham</a>
+            </div>
+        </div>
+       
+    </div>
+</header>
+{{/if}}
+<div class="wrapper">
+    {{#if panel}}
+        {{#if !mybookings.print}}
+        <div class="panel" >
+            {{yield panel}}
+        </div>
+        {{/if}}
+    {{/if}}
+    <div class="content"  >
+        {{yield}}
+    </div>
+</div>
+
+{{#if !mybookings.print}}
+
+<footer class="ui bootom aligned vertical footer segment" style="display:none;  background-color: rgb(232, 231, 231);">
+    <div class="ui four column center aligned stackable grid">
+
+
+        <div class="top aligned column">
+            <h4 >Quick Links</h4>
+            <div class="ui link list ">
+                <a class="item" href="/b2c/cms/aboutUs/5" target="_blank">About Us</a>
+                <a class="item" href="/b2c/cms/contactUs/1" target="_blank">Contact Us</a>
+                <a id="Cpop" class="item"  target="_blank">Terms of Service</a><!--b2c/cms/termsAndConditions/2-->
+                <a class="item" href="/b2c/cms/privacyPolicy/4" target="_blank">Privacy Policy</a>
+                <a class="item" href="/b2c/cms/visa/14" target="_blank">Visa</a>
+
+            </div>
+
+        </div>
+        <div class="top aligned column">
+            <h4>Accredited by</h4>
+            <img src="/themes/B2C/dev/img/iata_blue.png" alt="">
+        </div>
+        <div class="top aligned column">
+            <h4>Payment Options</h4>
+            <img src="/themes/B2C/dev/img/cardTypes.png" alt="">
+            <br>
+            Internet Banking<br>
+             <img src="/themes/B2C/img/verified/100-Percent-sSecure-Payment.jpg" style="  width: 100px; ">
+
+        </div>
+
+    </div>
+    <div class="row column copyright" >&copy; Airtickets India Pvt. Ltd - All Rights Reserved</div>
+    <div class="footerBottom">
+    <ul>
+        <li><a class="item" href="/b2c/cms/cheapairlinestickets/9" target="_blank">Cheap Airline Ticket</a></li>
+        <li><a class="item" href="/b2c/cms/airtravelcompany/10" target="_blank">Air Travel Company</a></li>
+        
+         <li><a class="item" href="/b2c/cms/onlineflightbooking/11" target="_blank">Online Flight Booking</a></li>
+         <li><a class="item" href="/b2c/cms/international/12" target="_blank">International</a></li>
+         <li><a class="item" href="/b2c/cms/domesticflights/13" target="_blank">Domestic Flights</a></li>
+         <li><a class="item" href="/b2c/cms/iataaccreditedagent/15" target="_blank">Iata Accredited Agent</a></li>
+         <li><a class="item" href="/b2c/cms/lowcostairlines/16" target="_blank">Low Cost Airlines</a></li>
+         <li><a class="item" href="/b2c/cms/team/17" target="_blank">Team</a></li>
+         <li><a class="item" href="/b2c/cms/traveltips/18" target="_blank">Travel Tips</a></li>
+                
+    </ul>
+    </div>
+</footer>
+
+{{/if}}
+
+<div id="popup-container">
+
+</div>
+
+<div class="infoPop">
+     
+    <div class="modalinfo" id="minfo">
+       <p id="closeinfo"><button class="ui grey  button">Close</button></p>
+        <h4>Terms And Conditions</h4>
+        <div class="modalContent">
+        {{{meta.terms}}}
+        </div>
+        
+    </div>
+</div>
+

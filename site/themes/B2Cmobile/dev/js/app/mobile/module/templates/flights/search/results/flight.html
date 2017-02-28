@@ -1,0 +1,45 @@
+{{#flight}}
+<div class="mult_info_ban fff {{#if selected == .}}selected{{/if}}" on-click="select()">
+    <div class="ui four column grid">
+        <div class="column flightDetail">
+            <img class="country" src="{{ carriers.0.logo }}" alt="india">
+            <div class="flight">{{ carriers.0.name }} <br>{{ first(segments.0).flight }}</div>
+        </div>
+        <div class="column departTime">
+            <div class="mult_dep_time">{{ first(segments.0).depart.format('HH:mm') }}</div>
+            <div class="mult_dep_date">{{ duration.format(first(segments.0).time) }}</div>
+        </div>
+        <div class="column  arrivalTime">
+            <div class="mult_dep_time">{{ last(segments.0).arrive.format('HH:mm') }}</div>
+            <div class="mult_dep_date">{{# { n: stops(segments.0) } }}{{#if 0 == n }}non-stop{{else}} {{ n }} stop(s){{/if}}{{/}}</div>
+        </div>
+        <div class="column flightPrice">
+            <div class="mult_price">
+                {{#if onward}}
+                    {{# { save: discount([onward, flight]) } }}
+                        {{#if save}}
+                            <div class="discount">{{{ $(price, meta.display_currency) }}}</div>
+                            {{{ $(price - save, meta.display_currency) }}}
+                        {{else}}
+                            {{{ $(price, meta.display_currency) }}}
+                        {{/if}}
+                    {{/}}
+                {{else}}
+                    {{#if backward && !selected}}
+                        {{# { save: discount([flight, backward]) } }}
+                            {{#if save}}
+                                <div class="discount">{{{ $(price, meta.display_currency) }}}</div>
+                                {{{ $(price - save, meta.display_currency) }}}
+                            {{else}}
+                                {{{ $(price, meta.display_currency) }}}
+                            {{/if}}
+                        {{/}}
+                    {{else}}
+                        {{{ $(price, meta.display_currency) }}}
+                    {{/if}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
+{{/flight}}
